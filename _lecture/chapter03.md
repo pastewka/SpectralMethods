@@ -1,90 +1,321 @@
 ---
 layout: default
-title: "Chapter 03"
-parent: Lecture
-date: 2021-08-18
+title: "Kapitel 03"
+parent: Vorlesung
+date: 2021-09-27
 categories: lecture
 author: Lars Pastewka
-nav_order: 03
----
+nav_order: 3
 ---
 
-<h2 class='chapterHead'><span class='titlemark'>Chapter 3</span><br />
-<a id='x1-10003'></a>Pair potentials</h2>
-<div class='framedenv' id='shaded*-1'><!--  l. 4  -->
-<p class='noindent'><span class='underline'><span class='cmbx-12'>Context:</span></span> Interatomic forces or interatomic potentials determine the material that we want to study. There is a plethora of interatomic potentials of varying accuracy, transferability and computational cost available in the literature. We here discuss simple pair potentials and point out algorithmic considerations.</p>
-</div>
-<h3 class='sectionHead'><span class='titlemark'>3.1</span> <a id='x1-20003.1'></a>Introduction</h3>
-<!--  l. 10  -->
-<p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=42ad47da-d1c1-48bc-9eda-ad2301538f4f' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=42ad47da-d1c1-48bc-9eda-ad2301538f4f</span></a></p>
-<!--  l. 12  -->
-<p class='indent'>The expression for \(E_\text{pot}\left (\{ \vec{r}_{i} \} \right )\) is the <span class='cmti-12'>model for the material</span> that we use in our molecular dynamics calculations. It determines whether we model water, proteins, metals, or any other physical object. Models are typically characterized by their <span class='cmti-12'>accuracy</span>, their <span class='cmti-12'>transferability</span> and the <span class='cmti-12'>computational cost</span> involved. (Computational cost also
-includes the <span class='cmti-12'>computational complexity</span>.) At constant computational cost, there is always a tradeoff between accuracy and transferability. Accuracy and transferability can typically only be improved at the expense of additional computational cost.</p>
-<ul class='itemize1'>
-<li class='itemize'><span class='cmti-12'>Accuracy:</span> How close to we get to the true, measured value. For example, the absolute error of vacancy formation energy \(E_{\text{vac}} - E_{\text{vac}}^{\exp }\) with respect to experiment can be \(1\ \text{eV}\), \(0.1\ \text{eV}\) (typical), \(0.01\ \text{eV}\) (computationally expensive!). The vacancy formation energy is the energy required to remove a single atom from a solid. The resulting “hole” in the solid is called a vacancy.</li>
-<li class='itemize'><span class='cmti-12'>Transferability:</span> Let’s assume we get the vacancy formation energy right to within \(0.1\ \text{eV}\) of the experimental value. Does the interstitial formation energy, i.e. the energy to insert an additional atoms between lattice sites, give the same value? If so, then the potential is transferable between these two situations. <span class='cmti-12'>Most interatomic potentials are not</span> <span class='cmti-12'>generally transferable,</span> and they need
-to be tested when used in new situations, e.g. when the potential has been used to study crystals but you want to use it now to study a glass.</li>
-<li class='itemize'><span class='cmti-12'>Computational cost:</span> The number of floating point operations determine how expensive it is to compute an energy or a force. (Nowadays, actual energy requirement for doing the calculation would be a better measure.) This is related to computational complexity, that says how the computational cost (i.e. the number of operations requires to compute the result) scales with the number of atoms. We want \(O(N)\) complexity, but many methods scale worse. Quantum
-methods (tight-binding, density-functional theory) are usually \(O(N^{3})\) or worse.</li>
-</ul>
-<!--  l. 43  -->
-<p class='noindent'></p>
-<h3 class='sectionHead'><span class='titlemark'>3.2</span> <a id='x1-30003.2'></a>Pair potentials</h3>
-<!--  l. 45  -->
-<p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=35001264-ad07-4873-89f1-ad2301538f75' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=35001264-ad07-4873-89f1-ad2301538f75</span></a></p>
-<!--  l. 47  -->
-<p class='indent'>We have already encountered the simplest (and oldest) form of an interaction potentials, the pair potential. The total energy for a system interacting in <span class='cmti-12'>pairs</span> can be written quite generally as \begin{equation} E_\text{pot}\left ( \{ \vec{r}_{i} \} \right ) = \frac{1}{2}\sum _{i = 1}^{N}{\sum _{j = 1}^{N}{V\left ( r_{ij} \right ) = \sum _{i &lt; j} V(r_{ij})}} \label{eq:pairpot} \end{equation} where \(r_{ij} = |\vec{r}_{i} - \vec{r}_{j}|\) is the distance
-between atom <span class='cmti-12'>i</span> and atom <span class='cmti-12'>j</span>. \(V(r_{ij})\) is the pair interaction energy or just the pair potential and we assume that the interaction is pair-wise additive. The sum on the right (\(\sum _{i&lt;j}\)) runs over all pairs while sum on the left double counts each pair and therefore needs the factor \(1/2\). We have already seen a combination of the electrostatic potential and Pauli repulsion as an example of a pair-potential earlier.</p>
-<!--  l. 59  -->
-<p class='indent'>Forces are computed by taking the negative gradient of this expression. The force on atom \(k\) is given by \begin{equation} \vec{f}_k = - \frac{\partial E_\text{pot}}{\partial \vec{r}_k} = - \frac{1}{2} \sum _{ij} \frac{\partial V}{\partial r_{ij}} \frac{\partial r_{ij}}{\partial \vec{r}_k} = - \frac{1}{2} \sum _{ij} \frac{\partial V}{\partial r_{ij}} \hat{r}_{ij} \left (\delta _{ik} - \delta _{jk}\right ) = \sum _i \frac{\partial V}{\partial r_{ik}} \hat{r}_{ik}, \end{equation} where
-\(\hat{r}_{ik}=\vec{r}_{ik}/r_{ik}\) is the unit vector pointing from atom \(k\) to atom \(i\). Note that these forces are symmetric, i.e. the term \(\partial V/\partial r_{ik} \hat{r}_{ik}\) shows up in the expression not only for the force on atom \(k\), but also (with an opposite sign) for the force on atom \(k\). This a consequence of momentum conservation. (The sum over all forces needs to vanish.) In an implementation one can therefore loop over all <span class='cmti-12'>pairs</span> between atoms,
-compute this pair term and add it to the array entries holding the forces for both atoms.</p>
-<!--  l. 85  -->
-<p class='noindent'></p>
-<h4 class='subsectionHead'><span class='titlemark'>3.2.1</span> <a id='x1-40003.2.1'></a>Dispersion forces</h4>
-<!--  l. 87  -->
-<p class='noindent'>An important contribution to interatomic and intermolecular interactions is the London dispersion force. This interaction is attractive, and acts between all atoms even noble gases. Its origin lies in fluctuations of the atomic dipole moment. (This is a quantum mechanical effect, but the simplest model would be an electron orbiting a nucleus with a rotating dipole moment.) This fluctuating dipole <span class='cmti-12'>induces</span> a dipole in a second atom and these interact. The
-interaction decays as \(r^{-6}\) at short distances. London dispersion forces are one of the forces that are often subsumed under the term van-der-Waals interaction.</p>
-<!--  l. 89  -->
-<p class='noindent'></p>
-<h4 class='subsectionHead'><span class='titlemark'>3.2.2</span> <a id='x1-50003.2.2'></a>Lennard-Jones potential</h4>
-<!--  l. 91  -->
-<p class='noindent'>The Lennard-Jones potential combines dispersion forces with an empirical \(r^{- 12}\) model for Pauli repulsion. It is typically used for the interaction of noble atoms or molecules, i.e. systems that have closed electronic shells and therefore do not form covalent bonds. The interaction described by the Lennard-Jones potential are often called nonbonded interactions, because the typical interaction energy is on the order of \(k_B T\) (with room temperature for \(T\)). Thermal
-fluctuation can thereby break this bond, hence the term nonbonded.</p>
-<!--  l. 93  -->
-<p class='indent'>One typical form to writing the Lennard-Jones potential is \begin{equation} V(r) = 4\varepsilon \left [ \left (\frac{\sigma }{r}\right )^{12} - \left (\frac{\sigma }{r}\right )^6 \right ] \end{equation} where \(\varepsilon \) is an energy and \(\sigma \) a length. The potential has a minimum as \(r=2^{1/6} \sigma \) and is repulsive for shorter distances and attractive for larger distances. For a noble gas (e.g. Argon), \(\varepsilon \sim 0.01\) eV and \(\sigma \sim 3\) Å.</p>
-<!--  l. 99  -->
-<p class='noindent'></p>
-<h3 class='sectionHead'><span class='titlemark'>3.3</span> <a id='x1-60003.3'></a>Short-ranged potentials</h3>
-<!--  l. 101  -->
-<p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=16d8770d-f056-45c4-a6c6-ad2301538f27' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=16d8770d-f056-45c4-a6c6-ad2301538f27</span></a></p>
-<!--  l. 103  -->
-<p class='indent'>Implementing Eq. \eqref{eq:pairpot} naively leads to a complexity of \(O\left ( N^{2} \right )\) because the sum contains \(N^2\) terms. The trick is to cut the interaction range, i.e. set energies and forces to zero for distances larger than a certain cut-off distance \(r_c\). This is possible because the asymptotic behavior \(V\left ( r \right ) \rightarrow 0\) as \(r \rightarrow \infty \). Potentials for which this asymptotic decay is fast enough can be cut-off and are called
-short-ranged. Note that we have already encountered a case in Chap. <span class='cmbx-12'>??</span> for which this is not possible, the Coulomb interaction that has the form \(V\left ( r \right ) \propto 1/r\).</p>
-<!--  l. 110  -->
-<p class='indent'>A simple way to see why this is not possible for the Coulomb interaction is to lump the charge-neutral infinite solid into charge-neutral dipoles. The effective interaction between dipoles then falls of as \(V^{\text{eff}}\left ( r \right ) \propto 1/r^{3}\). The contribution to the energy from all dipoles at distance \(r\) is \(V\left ( r \right )r^{2} \propto 1/r\). The full energy is obtained by integrating this function over \(r\), but the integral does not converge! This illustrates
-the problem. The discrete sum is convergent, but only conditionally so, i.e. the outcome depends on the order of summation. We therefore can only cut interactions that decay as \(r^{-4}\) or faster.</p>
-<!--  l. 117  -->
-<p class='indent'>The potential energy with a cutoff looks as follows: \begin{equation} E_\text{pot}\left ( \{ \vec{r}_{i} \} \right ) = \frac{1}{2}\sum _{i = 1}^{N}{\sum _{\{ j|r_{ij} &lt; r_{c}\}}^{}{V\left ( r_{ij} \right )}} \label{eq:pairpotcut} \end{equation} The difference to Eq. \eqref{eq:pairpot} is that the second sum runs only over <span class='cmti-12'>neighbors</span> of \(i\), i.e. those atoms \(j\) whose distance \(r_{ij}&lt;r_c\) where \(r_c\) is the cutoff radius. This sum has
-\(N\bar{n}\) elements where \(\bar{n}\) is a constant, is the average number of neighbors within the cutoff radius \(r_{c}\). The complexity of an algorithm that implements the above sum is hence \(O(N)\).</p>
-<!--  l. 126  -->
-<p class='indent'>A simple pair potential is often shifted at the cutoff to make the energy continuous (since \(V\left ( r_{c} \right ) \neq 0\)). The potential energy expression is then \(E_\text{pot} = \sum _{i &lt; j}^{}\left ( V\left ( r_{ij} \right ) - V\left ( r_{c} \right ) \right )\). Note that only by shifting the potential, forces and potential energy become consistent. Since only the forces affect the dynamics, the potential energy must be continuous and the integral of the forces, otherwise the
-Hamiltonian \(H\) is not a conserved quantity. The shifted potential fulfills these requirements, the unshifted one does not.</p>
-<!--  l. 131  -->
-<p class='noindent'></p>
-<h3 class='sectionHead'><span class='titlemark'>3.4</span> <a id='x1-70003.4'></a>Neighbor list search</h3>
-<!--  l. 133  -->
-<p class='noindent'>The sum Eq. \eqref{eq:pairpotcut} runs over all neighbors. One important algorithmic step with complexity \(O(N)\) in molecular dynamics codes is to build a <span class='cmti-12'>neighbor list</span>, i.e. find all pairs <span class='cmti-12'>i-j</span> with \(r_{ij} &lt; r_{c}\). This is usually done using a <span class='cmti-12'>domain</span> <span class='cmti-12'>decomposition</span> (see Fig. <a href='#x1-7001r1'>3.1<!--  tex4ht:ref: fig:neighborsearch   --></a>) that
-divides the simulation domain in cells of a certain size and sorts all atoms into one of these cells. The neighbor list can then be constructed by looking for neighbors in neighboring cells only. If the cell size \(b\) is larger than the cutoff radius, \(b&gt;r_c\), then we only need to look exactly the neighboring cells.</p>
-<figure class='figure'><a id='x1-7001r1'></a> <!--  l. 143  -->
-<p class='noindent'><img height='390' width='390' src='figures/neighbor_list_search.png' alt='PIC' /> <a id='x1-7002'></a></p>
-<figcaption class='caption'><span class='id'>Figure 3.1:</span><span class='content'>Illustration of the typical data structure used for an \(O(N)\) neighbor search in a molecular dynamics simulation. For searching the neighbors within a cutoff \(r_c\) of the red atom, we only need to consider the candidate atoms that are in the cell adjacent to the red atom.</span></figcaption>
-<!--  tex4ht:label?: x1-7001r3.4   --></figure>
-<!--  l. 148  -->
-<p class='indent'>We will here illustrate a typical neighbor search using the two-dimensional example shown in Fig. <a href='#x1-7001r1'>3.1<!--  tex4ht:ref: fig:neighborsearch   --></a>. Let us assume that each atom has a unique index \(i\in [1,N]\), where \(N\) is total number of atoms. (Attention, in C++ and other languages indices typically start at \(0\) and run to \(N-1\).) A typically algorithm first builds individual lists \(\{B_{k,mn}\}\) that contain the indices off all atoms in cell
-\((m,n)\), i.e. \(k\in N_{nm}\) where \(N_{nm}\) is the number of atoms in this cell. The cell can simply be determined by dividing the position of the atom by the cell size \(b\), i.e. atom \(i\) resides in cell \(m_i=\lfloor x_i/b \rfloor \) and \(n_i=\lfloor y_i/b \rfloor \) where \(\lfloor \cdot \rfloor \) indicates the closest smaller integer. The lists \(\{B_{k,mn}\}\) are most conveniently stored in a single contiguous array; for purposes of accessing individual cells a second array is required that
-stores the index of the first entry of cell \((m,n)\). Note that this second array is equal to the number of cells and can become prohibitively large when the system contains a lot of vacuum.</p>
-<!--  l. 150  -->
-<p class='indent'>The neighbor search then proceeds as follows: For atom \(i\), compute the cell \((m_i,n_i)\) in which this atom resides and then loop over all atoms in this cell and in cells \((m_i\pm 1,n_i)\), \((m_i, n_i\pm 1)\) and \((m_i\pm 1, n_i\pm 1)\). In two dimensions, this yields a loop over \(9\) cells, in three-dimensions there the loop runs over \(27\). If the distance between these two atoms is smaller than the cutoff \(r_c\), we add it to the neighbor list. Note that if the cell size
-\(b\) is smaller than \(r_c\) we need include more cells in the search.</p>
-<h2 class='likechapterHead'><a id='x1-80003.4'></a>Bibliography</h2>
+                                                                          
+   <h2 class='chapterHead'><span class='titlemark'>Kapitel 3</span><br /><a id='x1-10003'></a>Transporttheorie</h2>
+   <div class='framedenv' id='shaded*-1'>
+<!-- l. 8 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Dieses Lernmodul führt die Grundlagen des Modellproblems ein,
+welches wir im Laufe der Lehrveranstaltung mit numerischen Methoden lösen
+werden. Hier geht es zunächst um die Grundlagen der Transporttheorie. </p></div>
+   <h3 class='sectionHead'><span class='titlemark'>3.1   </span> <a id='x1-20003.1'></a>Diffusion und Drift</h3>
+<!-- l. 14 --><p class='noindent'>Diffusiver Transport ist einfach zugänglich über das Bild des “Random Walk”,
+einer zufälligen stochastischen Bewegung von Teilchen. Solche zufälligen
+Bewegungsprozesse wurden zuerst von dem Botaniker <span class='cmti-12'>Robert Brown </span>(1773-1858)
+beschrieben und tragen den Namen <span class='cmti-12'>Brownsche Bewegung </span>oder <span class='cmti-12'>Brownsche
+</span><span class='cmti-12'>Molekularbewegung</span>. Robert Brown wusste damals allerdings nicht von
+Molekülen und dachte zu seinen Lebzeiten, dass diese Bewegung auf
+aktive Prozesse (der “Lebenskraft” der Pollen) zurückzuführen sei.
+Heute wissen wir, dass diese Bewegung durch thermische Fluktuationen
+verursacht wird, also Moleküle die zufällig auf die Pollen treffen und diese
+in eine Richtung stoßen. Diese Erklärung benötigt die Existenz von
+Atomen und wurde erst 1905 von Albert Einstein <a href='#Xeinstein_uber_1905'>Einstein</a> (<a href='#Xeinstein_uber_1905'>1905</a>) hoffähig
+gemacht.
+</p><!-- l. 16 --><p class='indent'>   Brownsche Molekularbewegung führt zu diffusiven Transport. Abbildung <a href='#x1-2001r1'>3.1<!-- tex4ht:ref: fig:brownian  --></a>
+zeigt ein einfaches qualitatives Gedankenexperiment. Die Konfiguration in
+Abb. <a href='#x1-2001r1'>3.1<!-- tex4ht:ref: fig:brownian  --></a>a zeigt eine Lokalisierung der “Pollen” in der linken Hälfte der
+gezeigten Domäne. Durch die zufällige Bewegung der Pollen (als Beispiel
+gezeigt an der roten Linie in Abb. <a href='#x1-2001r1'>3.1<!-- tex4ht:ref: fig:brownian  --></a>a) werden einige der Pollen die
+gestrichelte Grenzlinie in rechte Hälfte überschreiten und auch wieder zurück
+kommen. Nach einer gewissen Zeit lässt sich der Anfangszustand nicht
+mehr identifizieren und die Pollen verteilen sich in der gesamten Domäne
+(Abb. <a href='#x1-2001r1'>3.1<!-- tex4ht:ref: fig:brownian  --></a>b). Die Konzentration ist nun konstant. Die Pollen bewegen sich zwar
+weiter, aber in Mittel bewegt sich die gleiche Zahl Pollen nach links wie
+nach rechts. Im Fall der in Abb. <a href='#x1-2001r1'>3.1<!-- tex4ht:ref: fig:brownian  --></a>a gezeigt ist, ist diese Symmetrie
+gebrochen.
+</p>
+   <figure class='figure'> 
+
+                                                                          
+
+                                                                          
+                                                                          
+
+                                                                          
+<!-- l. 22 --><p class='noindent'> <img height='222' alt='PIC' src='Figures/Brownian_Motion-.png' width='585' /> <a id='x1-2001r1'></a>
+<a id='x1-2002'></a>
+</p>
+<figcaption class='caption'><span class='id'>Abbildung 3.1:: </span><span class='content'>Illustration eines Diffusionsprozesses. Die “Pollen” in (a)
+bewegen sich zufällig in der gezeigten Domäne. Nach einer gewissen Zeit
+(b) ist der anfängliche Konzentrationsunterschied zwischen dem linken und
+rechten Teil der Domäne ausgeglichen.
+</span></figcaption><!-- tex4ht:label?: x1-2001r3.1  -->
+                                                                          
+
+                                                                          
+   </figure>
+<!-- l. 28 --><p class='indent'>   Dieses Gedankenexperiment kann einfach mathematisch formalisiert werden.
+Wir betrachten ein Teilchen, das eine Zufallsbewegung in einer Dimension
+vollführt. Wir beginnen mit einem Teilchen, das zufällig auf einer Geraden hin-
+und herspringt. Die Gerade liege entlang der x-Richtung. Das Teilchen
+kann nur zu vorher festgelegten Positionen auf der x-Achse springen,
+die wir mit \(x_j\) bezeichnen und die äquidistant verteilt seien, \(x_j-x_{j-1}=\Delta x\) für \(j\in \mathbb{Z}\) (siehe
+Abb. <a href='#x1-2003r2'>3.2<!-- tex4ht:ref: fig:Brown  --></a>).
+</p>
+   <figure class='figure'> 
+
+                                                                          
+
+                                                                          
+                                                                          
+
+                                                                          
+<!-- l. 36 --><p class='center'><img src='ch030x.png' alt='PICT' />
+<a id='x1-2003r2'></a>
+<a id='x1-2004'></a>
+</p>
+<figcaption class='caption'><span class='id'>Abbildung 3.2::  </span><span class='content'>Zufallsbewegung  in  einer  Dimension  ist  gegeben  durch
+Übergangswahrscheinlichkeiten \(p\) (für eine Bewegung nach links) und \(q\) für
+eine Bewegung nach rechts.
+</span></figcaption><!-- tex4ht:label?: x1-2003r3.1  -->
+                                                                          
+
+                                                                          
+   </figure>
+<!-- l. 60 --><p class='indent'>   Ein Teilchen springe mit einer Wahrscheinlichkeit \(p\) nach links und mit einer
+Wahrscheinlichkeit \(q\) nach rechts. Darüberhinaus haben wir die Wahrscheinlichkeit
+überhaupt ein Teilchen zur Zeit \(t\) bei Position \(x\) zu finden. Diese ist auf dem 1D
+Gitter durch die Funktion \(P(x,t)\) gegeben.
+</p>
+   <h4 class='subsectionHead'><span class='titlemark'>3.1.1   </span> <a id='x1-30003.1.1'></a>Diffusion</h4>
+<!-- l. 66 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e45b44b6-d450-4025-ac9d-ac750109f647' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e45b44b6-d450-4025-ac9d-ac750109f647</span></a>
+</p><!-- l. 68 --><p class='indent'>   Wir betrachten zunächst den Fall \(p=q=1/2\), also dass die Wahrscheinlichkeiten für
+die Sprünge nach links und rechts identisch sind. Wir nehmen an, das Teilchen
+springe von einem Platz zum benachbarten in einem diskreten, endlichen und
+konstanten Zeitschritt \(\tau \). Dann ist die Wahrscheinlichkeit ein Teilchen zur Zeit \(t+\tau \) am
+Ort \(x\) zu finden, wenn zur Zeit \(t\) mit einer Wahrscheinlichkeit \(P(x-\Delta x,t)\) ein Teilchen bei der
+Position \(x-\Delta x\) zu finden war und mit der Wahrscheinlichkeit \(P(x+\Delta x,t)\) eines bei \(x+\Delta x\), gegeben durch
+\begin{equation} P(x,t+\tau )=\frac{1}{2}P(x+\Delta x,t)+\frac{1}{2}P(x-\Delta x,t). \end{equation}
+Indem wir \(P(x,t)\) auf beiden Seiten abziehen und durch \(\tau \) teilen, erhalten wir die folgende
+äquivalente Form: \begin{equation} \frac{P(x,t+\tau )-P(x,t)}{\tau } = \frac{\Delta x^2}{2\tau }\frac{P(x+\Delta x,t)-2P(x,t)+P(x-\Delta x,t)}{\Delta x^2} \end{equation}
+Wir können nun den Grenzübergang zum “Kontinuum” machen. Für \(\tau \rightarrow 0\) und
+gleichzeitig \(h\rightarrow 0\) unter der Bedingung, dass \begin{equation} \lim _{\Delta x\rightarrow 0, \tau \rightarrow 0}\frac{\Delta x^2}{2\tau }=D \end{equation}
+erhält man \begin{equation} \frac{\partial P(x,t)}{\partial t}=D\frac{\partial ^2 P(x,t)}{\partial x^2}. \end{equation}
+Dies die wohlbekannte Diffusionsgleichung. In mehreren Dimensionen wird aus der
+zweiten Ableitung der Laplace-Operator \(\nabla ^2\), \begin{equation} \frac{\partial P(x,t)}{\partial t}=D \nabla ^2 P(x,t). \label{eq:diffusion} \end{equation}
+Diese Gleichung ist nur dann korrekt, wenn die Diffusionskonstante auch wirklich
+konstant ist und nicht räumlich variiert.
+</p><!-- l. 100 --><p class='noindent'>
+</p>
+   <h4 class='subsectionHead'><span class='titlemark'>3.1.2   </span> <a id='x1-40003.1.2'></a>Drift</h4>
+<!-- l. 102 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=3443491b-853e-4a3b-b627-ac750109f67d' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=3443491b-853e-4a3b-b627-ac750109f67d</span></a>
+</p><!-- l. 104 --><p class='indent'>   Wie sieht es aus, wenn die Wahrscheinlichkeiten für die Sprünge nach rechts
+oder links nicht gleich sind, \(p\ne q\) (aber natürlich \(p+q=1\))? Wir gehen nach wie vor von
+diskreten, gleichförmigen Zeitschritten und äquidistanten Stützstellen
+aus.
+</p><!-- l. 107 --><p class='indent'>   In diesem Fall haben wir \begin{equation} P(x,t+\tau )=pP(x+\Delta x,t)+qP(x-\Delta x,t) \end{equation}
+und somit folgt \begin{equation} \frac{P(x,t+\tau )-P(x,t)}{\tau }=\frac{\Delta x^2}{\tau }\frac{pP(x+\Delta x,t)-P(x,t)+qP(x-\Delta x,t)}{\Delta x^2}. \label{eq:driftpq} \end{equation}
+Wir schreiben \begin{equation} p=\frac{1}{2}-\varepsilon \quad \text{und}\quad q=\frac{1}{2}+\varepsilon \quad \text{mit}\quad 0\le |\varepsilon |\le \frac{1}{2} \quad \text{oder}\quad 2\varepsilon = q-p, \end{equation}
+wobei \(\varepsilon \) nun angibt, um wieviel wahrscheinlicher ein Sprung nach <span class='cmti-12'>rechts </span>als nach
+                                                                          
+
+                                                                          
+links ist. Ein positives \(\varepsilon \) heißt also, dass die Partikel sich im Mittel nach
+rechts bewegen werden – dies ist die Driftbewegung. Wir können nun
+Gl. \eqref{eq:driftpq} mit Hilfe von \(\varepsilon \) als \begin{equation} \begin{split} \frac{P(x,t+\tau )-P(x,t)}{\tau }=&amp; \frac{\Delta x^2}{2\tau }\frac{P(x+\Delta x,t)-2P(x,t)+P(x-\Delta x,t)}{\Delta x^2}\\ &amp;-\frac{2\varepsilon \Delta x}{\tau }\frac{P(x+\Delta x,t)-P(x-\Delta x,t)}{2\Delta x} \end{split} \end{equation}
+ausdrücken. In den Grenzfällen \(\tau \rightarrow 0\) und \(\Delta x\rightarrow 0\) fordern wir \begin{equation} \lim _{\Delta x\rightarrow 0, \tau \rightarrow 0}\frac{\Delta x^2}{2\tau }=D \quad \text{ und }\quad \lim _{\Delta x\rightarrow 0, \tau \rightarrow 0}\frac{2\varepsilon \Delta x}{\tau }=v \label{eq:limit2} \end{equation}
+und erhalten somit die Drift-Diffusions-Gleichung \begin{equation} \frac{\partial P(x,t)}{\partial t}=\left (D\frac{\partial ^2}{\partial x^2} -v\frac{\partial }{\partial x}\right ) P(x,t). \label{eq:driftdiffusion} \end{equation}
+Hier beschreibt der erste Summand auf der rechten Seite wieder den
+Diffusionsprozess. Der zweite Summand ist ein Driftprozess und \(v\) eine konstante
+<span class='cmti-12'>Drift</span>geschwindigkeit. (Aus Gl. \eqref{eq:limit2} und \eqref{eq:driftdiffusion}
+wird ersichtlich, dass die Einheit von \(v\) genau einer Geschwindigkeit entspricht.) Es
+ist die Geschwindigkeit mit der sich das Teilchen (im Mittel) entlang der \(x\)-Achse
+bewegen. Die Lösung dieser Gleichung wurde bereits im vorhergehenden
+Kapitel besprochen. Aus der Lösung von Gl. \eqref{eq:transportexample}
+wird auch klar, dass die Driftbewegung für positive \(v\) in Richtung der
+positiven \(x\)-Achse ist. Dies ist konsistent mit der obigen Definition von
+\(\varepsilon \).
+</p>
+   <div class='framedenv' id='shaded*-1'>
+<!-- l. 150 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Die Bewegung unseres Teilchen wurde mit Hilfe einer
+Aufenthalts<span class='cmti-12'>wahrscheinlichkeit</span> \(P\) modelliert. Im thermodynamischen Limes, also
+für ganz viele Teilchen (üblicherweise in Größenordnung der Avogadroschen
+Zahl \(N_A\)), wird aus dieser Wahrscheinlich die Dichte \(\rho \) oder die Konzentration \(c\). Man
+kann also einfach in den oben genannten Gleichungen die Wahrscheinlichkeit \(P\)
+durch eine Teilchenkonzentration \(c\) ersetzen. Der Grund hierfür ist, dass
+wir die Teilchenkonzentration als <span class='cmti-12'>Ensemble</span>-Mittel schreiben können,
+\begin{equation} c(x, t) = \langle 1 \rangle (x, t), \end{equation}
+wobei der Mittelwert \begin{equation} \langle f(x) \rangle (x, t) = f(x) P(x, t) \end{equation}
+</p></div>
+<!-- l. 161 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead'><span class='titlemark'>3.2   </span> <a id='x1-50003.2'></a>Kontinuität</h3>
+<!-- l. 163 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a68a4595-c00c-46ad-bc29-ac75011ef1b2' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a68a4595-c00c-46ad-bc29-ac75011ef1b2</span></a>
+</p><!-- l. 165 --><p class='indent'>   Die Gleichungen \eqref{eq:diffusion} und \eqref{eq:driftdiffusion} vermischen
+zwei Konzepte, die wir hier jetzt getrennt behandeln wollen: Die Erhaltung der
+Anzahl der Teilchen (Kontinuität) und der Prozess, welcher zu einem
+Teilchenstrom führt (Diffusion oder Drift). Die Teilchenzahl ist einfach
+deshalb erhalten, weil wir keine Atome aus dem Nichts erzeugen oder in das
+                                                                          
+
+                                                                          
+Nichts vernichten können. Wir wissen also, dass wenn wir eine gewissen
+Anzahl Teilchen \(N_{\text{tot}}\) in unserem Gesamtsystem haben, dass diese Anzahl
+\begin{equation} N_{\text{tot}} = \int d^3r \, c(\v{r}) \end{equation}
+sich nicht über die Zeit ändern kann: \(\dif N_{\text{tot}}/\dif t=0\).
+</p><!-- l. 171 --><p class='indent'>   Für einen kleinen Ausschnitt mit Volumen \(V\) aus diesem Gesamtvolumen kann
+sich die Teilchenzahl ändern, weil diese über die Wände des Probevolumens
+fließen können (siehe Abb. <a href='#x1-5001r3'>3.3<!-- tex4ht:ref: fig:continuity  --></a>). Die Änderung dieser Teilchenzahl ist zum einen
+gegeben durch \begin{equation} \dot{N} = \frac{\partial }{\partial t} \int _V d^3r \, c(\v{r}, t) = \int _V d^3r \, \frac{\partial c}{\partial t}. \label{eq:nchange} \end{equation}
+Die Änderung \(\dot{N}\) muss aber auch durch die Anzahl der Partikel, die über die
+Seitenwände abfließen, gegeben sein. Für einen Würfel (Abb. <a href='#x1-5001r3'>3.3<!-- tex4ht:ref: fig:continuity  --></a>) mit sechs
+Wänden gilt \begin{equation} \begin{split} \dot{N} = &amp; - j_{\text{rechts}} A_{\text{rechts}} - j_{\text{links}} A_{\text{links}} \\ &amp; - j_{\text{oben}} A_{\text{oben}} - j_{\text{unten}} A_{\text{unten}} \\ &amp; - j_{\text{vorne}} A_{\text{vorne}} - j_{\text{hinten}} A_{\text{hinten}} \end{split} \label{eq:dotN} \end{equation}
+wenn die Wände klein genug sind, so dass \(j\) nahezu konstant über \(A\) ist. (Die
+Stromdichte \(j\) hat die Einheit Anzahl Partikel/Zeit/Fläche.)
+</p>
+   <figure class='figure'> 
+
+                                                                          
+
+                                                                          
+                                                                          
+
+                                                                          
+<!-- l. 211 --><p class='noindent'><img height='282' alt='PIC' src='Figures/continuity.png' width='272' /> <a id='x1-5001r3'></a>
+<a id='x1-5002'></a>
+</p>
+<figcaption class='caption'><span class='id'>Abbildung 3.3:: </span><span class='content'>Teilchen können das Volumen \(V\) nur durch die Seitenwände
+verlassen. Die Änderung der Teilchenzahl \(N\) über ein Zeitintervall \(\tau \) ist daher
+durch die Anzahl der Teilchen gegeben, die durch die Wände fließen. Hierzu
+brauchen wir die Teilchenströme \(j\). Die Anzahl der Teilchen, welche durch
+eine Oberfläche fließen ist dann gegeben durch \(j\,A\tau \), wobei \(A\) die Fläche der
+Seitenwand ist.
+</span></figcaption><!-- tex4ht:label?: x1-5001r3.2  -->
+                                                                          
+
+                                                                          
+   </figure>
+<!-- l. 217 --><p class='indent'>   Hier bezeichnet der skalare Strom \(j\) den Strom, der aus der Fläche heraus
+fließt. Für eine allgemeine vektorielle Stromdichte \(\v{j}\), welche die Stärke und
+Richtung des Teilchenstroms angibt, ist \(j_i = \v{j}_i \cdot \hat{n}_i\) wobei \(\hat{n}_i\) der Normalenvektor auf die Wand
+\(i\) ist. Der Strom durch die Wand ist also nur die Komponente von \(\v{j}\), die parallel zur
+Oberflächennormale steht. Mit diesem Argument können wir die Änderung der
+Teilchenzahl allgemein als \begin{equation} \dot{N} = -\int _{\partial V} d^2r \, \v{j}(\v{r})\cdot \hat{n}(\v{r}) \label{eq:flux} \end{equation}
+ausdrücken, wobei \(\partial V\) die Oberfläche des Volumens \(V\) bezeichnet. In dieser
+Gleichung ist explizit angezeigt, dass selbstverständlich sowohl der Fluss \(\v{j}\) als
+auch die Oberflächennormale \(\hat{n}\) von der Position \(\v{r}\) auf der Oberfläche
+abhängen.
+</p><!-- l. 224 --><p class='indent'>   Alternativ können wir auch die Änderung der Teilchenzahl Gl. \eqref{eq:dotN}
+folgendermaßen gruppieren: \begin{equation} \begin{split} \dot{N} = &amp; - (j_{\text{rechts}} + j_{\text{links}}) A_{\text{rechts/links}} \\ &amp; - (j_{\text{oben}} + j_{\text{unten}}) A_{\text{oben/unten}} \\ &amp; - (j_{\text{vorne}} + j_{\text{hinten}}) A_{\text{vorne/hinten}} \end{split} \end{equation}
+Hierbei haben wir die Tatsache genutzt, dass \(A_{\text{rechts}}=A_{\text{links}}\equiv A_{\text{rechts/links}}\). Nun ist aber \begin{equation} \begin{split} j_{\text{rechts}} &amp;= \hat{x} \cdot \v{j}(x+\Delta x/2,y,z) = j_x(x+\Delta x/2,y,z) \quad \text{und} \\ j_{\text{links}} &amp;= -\hat{x} \cdot \v{j}(x-\Delta x/2,y,z) = -j_x(x-\Delta x/2,y,z) \end{split} \end{equation}
+da \(\hat{n}=\hat{x}\) für die rechte Wand aber \(\hat{n}=-\hat{x}\) für die linke Wand. Hierbei ist \(\hat{x}\) der
+Normalenvektor entlang der \(x\)-Achse des Koordinatensystems. Es dreht
+sich also zwischen der rechten und linken Fläche das Vorzeichen der
+Oberflächennormale um. Das gleiche gilt für die Wände oben/unten und
+vorne/hinten. Wir können diese Gleichung weiterhin umschreiben als
+\begin{equation} \begin{split} \dot{N} = &amp; - \frac{j_x(x+\Delta x/2,y,z) - j_x(x-\Delta x/2,y,z)}{\Delta x} V \\ &amp; - \frac{j_y(x,y+\Delta y/2,z) - j_y(x,y-\Delta y/2,z)}{\Delta y} V \\ &amp; - \frac{j_z(x,y,z+\Delta z/2) - j_z(x,y,z-\Delta z/2)}{\Delta z} V, \end{split} \label{eq:dotNdiscr} \end{equation}
+da \(V=A_{\text{rechts/links}}\Delta x=A_{\text{oben/unten}}\Delta y=A_{\text{vorne/hinten}}\Delta z\). Die Faktoren vor dem Volumen \(V\) in Gl. \eqref{eq:dotNdiscr} sind
+nun aber genau der Differenzenquotienten der Flüsse \(j_i\), jeweils in die \(x\)-, \(y\)-
+und \(z\)-Richtung. Für kleine Volumina (und kleine \(\Delta x\), etc.) wird dies zu
+\begin{equation} \dot{N} = -\int _{V} \dif ^3r \, \nabla \cdot \v{j}(\v{r}). \label{eq:flux2} \end{equation}
+Wir habe hier gerade heuristisch den Gaussschen Satz (engl. “Divergence
+Theorem” - siehe auch Gl. \eqref{eq:divergence˙theorem}) hergeleitet, um
+Gl. \eqref{eq:flux} als Volumenintegral auszudrücken.
+</p>
+   <div class='framedenv' id='shaded*-1'>
+<!-- l. 290 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Der Gausssche Satz ist ein wichtiges Ergebnis der Vektoranalysis.
+Er wandelt ein Integral über ein Volumen \(V\) in ein Integral über die Oberfläche \(\partial V\)
+dieses Volumens um. Für ein Vektorfeld \(\v{f}(\v{r})\) gilt: \begin{equation} \int _V \dif ^3 r\, \nabla \cdot \v{f}(\v{r}) = \int _{\partial V} \dif ^2 r\, \v{f}(\v{r}) \cdot \hat{n}(\v{r}) \label{eq:divergence_theorem} \end{equation}
+Hier ist \(\hat{n}(\v{r})\) der Normalenvektor, welcher auf dem Rand \(\partial V\) des Volumens \(V\) nach außen
+zeigt. </p></div>
+<!-- l. 301 --><p class='indent'>   Gleichung \eqref{eq:nchange} und \eqref{eq:flux2} zusammen ergeben
+\begin{equation} \int _V \dif ^3r \, \left \{\frac{\partial c}{\partial t}+\nabla \cdot \v{j}\right \} = 0. \label{eq:continuityweak} \end{equation}
+Da dies für jedes beliebige Volumen \(V\) gilt, muss auch \begin{equation} \frac{\partial c}{\partial t}+\nabla \cdot \v{j} = 0 \label{eq:continuity} \end{equation}
+erfüllt sein. Diese Gleichung trägt den Namen <span class='cmti-12'>Kontinuitätsgleichung</span>. Sie
+beschreibt die Erhaltung der Teilchenzahl bzw. der Masse des Systems.
+                                                                          
+
+                                                                          
+</p>
+   <div class='framedenv' id='shaded*-1'>
+<!-- l. 313 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> In der hier dargestellten Herleitung haben wir implizit bereits die
+<span class='cmti-12'>starke </span>Formulierung und eine <span class='cmti-12'>schwache </span>Formulierung (engl. “weak formulation”
+einer Differentialgleichung kennengelernt. Gleichung \eqref{eq:continuity} ist die
+starke Formulierung der Kontinuitätsgleichung. Diese verlangt, dass die
+Differentialgleichung für jeden räumlichen Punkt \(\v{r}\) erfüllt ist. Die entsprechende
+schwache Formulierung ist Gl. \eqref{eq:continuityweak}. Hier wird nur verlangt,
+dass die Gleichung in einer Art Mittelwert, hier als Integral über ein
+Probevolumen \(V\), erfüllt ist. Innerhalb des Volumens muss die starke Form nicht
+erfüllt sein, aber das Integral über diese Abweichungen (die wir später
+als “Residuum” bezeichnen werden) muss verschwinden. Die schwache
+Formulierung ist für endliche Probevolumina \(V\) damit eine Näherung. In
+der Methode der finiten Elemente löst man eine schwache Gleichung
+für eine gewissen (approximative) Ansatzfunktion exakt. Die schwache
+Formulierung wird daher im Verlauf dieser Veranstaltung wichtig werden. </p></div>
+<!-- l. 317 --><p class='indent'>   Wir können weiterhin noch verlangen, dass innerhalb unseres Probevolumens
+“Teilchen” produziert werden. In der aktuellen Interpretation der Gleichung
+wären dies z.B. chemische Reaktionen, die einen Teilchentyp in einen anderen
+umwandeln. Eine identische Gleichung gilt für den Wärmetransport. Hier wäre
+ein Quellterm die Produktion von Wärme, z.B. durch einen Heizelement.
+Gegeben ein Quellenstrom \(Q\) (mit Einheit Anzahl Partikel/Zeit/Volumen), kann die
+Kontinuitätsgleichung auf \begin{equation} \frac{\partial c}{\partial t}+\nabla \cdot \v{j} = Q \label{eq:continuitywithsource} \end{equation}
+erweitert werden. Die Kontinuitätsgleichung mit Quellterm wird auch manchmal
+als <span class='cmti-12'>Bilanzgleichung </span>bezeichnet.
+</p>
+   <div class='framedenv' id='shaded*-1'>
+<!-- l. 324 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Gleichung \eqref{eq:continuitywithsource} beschreibt die zeitliche
+Veränderung der Konzentration \(c\). Eine verwandte Frage ist die nach der Lösung
+dieser Gleichung nach sehr langer Zeit - wenn sich ein dynamisches Gleichgewicht
+eingestellt hat. Dieses Gleichgewicht ist dadurch gekennzeichnet, dass \(\partial c/\partial t=0\). Die
+Gleichung \begin{equation} \nabla \cdot \v{j} = Q \end{equation}
+ist die <span class='cmti-12'>stationäre </span>Variante der Kontinuitätsgleichung. </p></div>
+                                                                          
+
+                                                                          
+   <h4 class='subsectionHead'><span class='titlemark'>3.2.1   </span> <a id='x1-60003.2.1'></a>Drift</h4>
+<!-- l. 334 --><p class='noindent'>Kommen wir zurück zu Transportprozessen, zunächst zu Drift. Wenn sich alle
+Teilchen in unserem Probevolumen in mit der Geschwindigkeit \(\v{v}\) bewegen, dann
+führt das zu einem Teilchenstrom \begin{equation} \v{j}_{\text{Drift}} = c \v{v}. \label{eq:drift} \end{equation}
+Eingesetzt in die Kontinuitätsgleichung \eqref{eq:continuity} ergibt dies den
+Drift-Beitrag zur Drift-Diffusions-Gleichung \eqref{eq:driftdiffusion}.
+</p><!-- l. 341 --><p class='noindent'>
+</p>
+   <h4 class='subsectionHead'><span class='titlemark'>3.2.2   </span> <a id='x1-70003.2.2'></a>Diffusion</h4>
+<!-- l. 343 --><p class='noindent'>Aus unserem obigen Gedankenexperiment wird klar, dass der Diffusionstrom
+immer in Richtung der niedrigen Konzentration, also in entgegengesetzte Richtung
+des Gradienten \(\nabla c\) der Konzentration, gehen muss. Der entsprechende Strom ist
+gegeben durch \begin{equation} \v{j}_{\text{Diffusion}} = - D \nabla c. \label{eq:stationary} \end{equation}
+Eingesetzt in die Kontinuitätsgleichung \eqref{eq:continuity} ergibt dies die
+Diffusionsgleichung \eqref{eq:diffusion}.
+</p><!-- l. 350 --><p class='indent'>   Die gesamte Drift-Diffusionsgleichung hat daher die Form \begin{equation} \frac{\partial c}{\partial t} + \nabla \cdot \left \{-D\nabla c + c\v{v}\right \}=0. \label{eq:drift-diffusion-full} \end{equation}
+Im Gegensatz zu Gleichungen \eqref{eq:diffusion} und \eqref{eq:driftdiffusion}, gilt
+diese Gleichung auch wenn die Diffusionskonstante \(D\) oder Drift-Geschwindigkeit \(\v{v}\)
+räumlich variiert.
+</p>
+   <div class='framedenv' id='shaded*-1'>
+<!-- l. 357 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Wir haben hier die Transporttheorie im Sinne einer
+Teilchenkonzentration \(c\) eingeführt. Die Kontinuitätsgleichung beschreibt jedoch
+allgemein die <span class='cmti-12'>Erhaltung </span>einer bestimmten Größe, in unserem Fall der
+Teilchenzahl (oder äquivalent der Masse). Andere physikalisch erhaltene Größen
+sind der Impuls und die Energie. Die Kontinuitätsgleichung für den Impuls
+führt zur Navier-Stokes Gleichung. Die Kontinuitätsgleichung für die Energie
+führt zur Wärmeleitungsgleichung. Für das Beispiel dieser Veranstaltung ist
+nur die Erhaltung der Masse relevant. </p></div>
+                                                                          
+
+                                                                          
+   <h2 class='likechapterHead'><a id='x1-80003.2.2'></a>Literaturverzeichnis</h2>
+  <div class='thebibliography'>
+  <p class='bibitem'><span class='biblabel'>
+<a id='Xeinstein_uber_1905'></a><span class='bibsp'>   </span></span>A. Einstein. Über die von der molekularkinetischen Theorie der Wärme
+  geforderte  Bewegung  von  in  ruhenden  Flüssigkeiten  suspendierten
+  Teilchen. <span class='cmti-12'>Ann. Phys.</span>, 17:549, 1905.
+</p>
+  </div>
+    

@@ -1,153 +1,274 @@
 ---
 layout: default
-title: "Chapter 02"
-parent: Lecture
-date: 2021-08-18
+title: "Kapitel 02"
+parent: Vorlesung
+date: 2021-09-27
 categories: lecture
 author: Lars Pastewka
-nav_order: 02
----
+nav_order: 2
 ---
 
-<h2 class='chapterHead'><span class='titlemark'>Chapter 2</span><br />
-<a id='x1-10002'></a>Molecular dynamics</h2>
-<div id='shaded*-1' class='framedenv'><!--  l. 3  -->
-<p class='noindent'><span class='underline'><span class='cmbx-12'>Context:</span></span> Molecular <span class='cmti-12'>dynamics</span> follows the motion of individual atoms through a solution of Newton’s equations of motion. We need integration algorithms to be able to solve this set of coupled differential equations on a computer.</p>
-</div>
-<h3 class='sectionHead'><span class='titlemark'>2.1</span> <a id='x1-20002.1'></a>Equations of motion</h3>
-<!--  l. 11  -->
-<p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d3188a05-4143-4602-b6c2-ad15014fe21d' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d3188a05-4143-4602-b6c2-ad15014fe21d</span></a></p>
-<!--  l. 13  -->
-<p class='noindent'></p>
-<h4 class='subsectionHead'><span class='titlemark'>2.1.1</span> <a id='x1-30002.1.1'></a>Newton’s equations of motion</h4>
-<!--  l. 18  -->
-<p class='noindent'>We have now (almost) all the ingredients to carry out a molecular dynamics simulation. From our or potential energy expression \(E_{\text{pot}}(\{\vec{r}_i\})\) discussed in the previous chapter, we obtain the force \begin{equation} \vec{f}_i = \partial E_{\text{pot}}/\partial \vec{r}_i \end{equation} on each of the \(N\) atoms. Once we know the forces, we can obtain the accelerations \(\vec{a}_i\) through Newton’s third law, \begin{equation} \vec{f}_i = m_i \vec{a}_i. \end{equation} We
-are therefore assuming that atom \(i\) can be described as a point of mass \(m_i\)! The mass can be obtained from the periodic table of elements. Note that the mass listed in the periodic table is usually the average over all isotopes weighted by their occurrence on earth, and this mass is used for most practical purposes. For some application, in particular to understand the different behavior of Hydrogen and Deuterium, it can be necessary to actually model the individual isotopes by using their
-respective mass.</p>
-<!--  l. 28  -->
-<p class='indent'>We further have \(\vec{a}_i = \dot{\vec{v}}_i\), where \(\vec{v}_i\) is the velocity of atom \(i\), and \(\vec{v}_i = \dot{\vec{r}}_i\). The dot superscript indicates derivative with respect to time. The set of linear differential equations to solve is therefore \begin{equation} \dot{v}_i(t) = \vec{f}_i(t)/m_i\{\text{ and} }\ \dot{\vec{r}}_i(t) = \vec{v}_i(t) \label{eq:Newton} \end{equation} with the initial (boundary) conditions \(\vec{r}_i(0) = \vec{r}_0\) and \(\vec{v}_i(0) =
-\vec{v}_0\). Note that the boundary condition is an integral part of the differential Eq. \eqref{eq:Newton}. The state of the system is therefore fully and uniquely determined by the positions \(\vec{r}_i\) and the velocities \(\vec{v}_i\) of all atoms. This set of positions \(\vec{r}_i\) and momenta \(\vec{p}_i = \vec{v}_i/m_i\) defines a point in <span class='cmti-12'>phase-space</span> \(\vec{\Gamma } = \{ \vec{r}_i, \vec{p}_i\}\). The evolution of position and velocities given by
-Eq. \eqref{eq:Newton} can therefore be thought of as a single point moving in the \(6N\) dimensional phase-space. The concept of a phase-space will become important in the next chapter when we talk about statistical mechanics.</p>
-<div id='shaded*-1' class='framedenv'><!--  l. 35  -->
-<p class='noindent'><span class='underline'><span class='cmbx-12'>Code example:</span></span> For a molecular dynamics code, it is useful to have a data structure that represents the state of the simulation and stores at least positions and velocities. This data structure could also store element names (or atomic numbers), masses and forces. An example that uses <a href='https://eigen.tuxfamily.org/'>Eigen</a> arrays as the basic array container is shown below.</p>
-<!--  l. 37  -->
-<div id='listing-1' class='lstlisting'><span class='label'><a id='x1-3001r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>using Positions_t = Eigen::Array3Xd; </span><br />
-<span class='label'><a id='x1-3002r2'></a><span class='cmr-6'>2</span></span><span class='cmtt-10'>using Velocities_t = Eigen::Array3Xd; </span><br />
-<span class='label'><a id='x1-3003r3'></a><span class='cmr-6'>3</span></span><span class='cmtt-10'>using Forces_t = Eigen::Array3Xd; </span><br />
-<span class='label'><a id='x1-3004r4'></a><span class='cmr-6'>4</span></span><span class='cmtt-10'> </span><br />
-<span class='label'><a id='x1-3005r5'></a><span class='cmr-6'>5</span></span><span class='cmtt-10'>class Atoms { </span><br />
-<span class='label'><a id='x1-3006r6'></a><span class='cmr-6'>6</span></span><span class='cmtt-10'>public: </span><br />
-<span class='label'><a id='x1-3007r7'></a><span class='cmr-6'>7</span></span><span class='cmtt-10'>    Positions_t positions; </span><br />
-<span class='label'><a id='x1-3008r8'></a><span class='cmr-6'>8</span></span><span class='cmtt-10'>    Velocities_t velocities; </span><br />
-<span class='label'><a id='x1-3009r9'></a><span class='cmr-6'>9</span></span><span class='cmtt-10'>    Forces_t forces; </span><br />
-<span class='label'><a id='x1-3010r10'></a><span class='cmr-6'>10</span></span><span class='cmtt-10'> </span><br />
-<span class='label'><a id='x1-3011r11'></a><span class='cmr-6'>11</span></span><span class='cmtt-10'>    Atoms(Positions_t &amp;p) : </span><br />
-<span class='label'><a id='x1-3012r12'></a><span class='cmr-6'>12</span></span><span class='cmtt-10'>            positions{p}, velocities{3, p.cols()}, forces{3, p.cols()} { </span><br />
-<span class='label'><a id='x1-3013r13'></a><span class='cmr-6'>13</span></span><span class='cmtt-10'>        velocities.setZero(); </span><br />
-<span class='label'><a id='x1-3014r14'></a><span class='cmr-6'>14</span></span><span class='cmtt-10'>        forces.setZero(); </span><br />
-<span class='label'><a id='x1-3015r15'></a><span class='cmr-6'>15</span></span><span class='cmtt-10'>    } </span><br />
-<span class='label'><a id='x1-3016r16'></a><span class='cmr-6'>16</span></span><span class='cmtt-10'> </span><br />
-<span class='label'><a id='x1-3017r17'></a><span class='cmr-6'>17</span></span><span class='cmtt-10'>    size_t nb_atoms() const { </span><br />
-<span class='label'><a id='x1-3018r18'></a><span class='cmr-6'>18</span></span><span class='cmtt-10'>        return positions.cols(); </span><br />
-<span class='label'><a id='x1-3019r19'></a><span class='cmr-6'>19</span></span><span class='cmtt-10'>    } </span><br />
-<span class='label'><a id='x1-3020r20'></a><span class='cmr-6'>20</span></span><span class='cmtt-10'>};</span></div>
-<!--  l. 59  -->
-<p class='indent'>As a general rule, the data structure should be designed in a way that data that is processed consecutively is also stored in memory in a continuous manner. This ensures <a href='https://en.wikipedia.org/wiki/Cache_coherence'>cache coherenece</a>. For example, we could be tempted to create a class <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>Atom</span></span></span> that contains the positions, velocities, etc. of a single atom and than use an array (e.g.
-<span class='obeylines-h'><span class='verb'><span class='cmtt-12'>std::vector&lt;Atom&gt; atoms</span></span></span>) of that class as the basic data structure. However, positions are then no longer consecutive in memory. A function (e.g. computing forces) does not need the velocities would still load them into the cache, as the <a href='https://en.wikipedia.org/wiki/CPU_cache'>cache line size</a> for all modern CPUs is \(64\) bytes. For high-performance numerical code, it is therefore <span class='cmti-12'>always</span> preferable to use structures of arrays rather than arrays of structure.</p>
-</div>
-<!--  l. 62  -->
-<p class='noindent'></p>
-<h4 class='subsectionHead'><span class='titlemark'>2.1.2</span> <a id='x1-40002.1.2'></a>Kinetic energy and energy conservation</h4>
-<!--  l. 64  -->
-<p class='noindent'>In addition to the potential energy \(E_{\text{pot}}(\{ \vec{r}_i\})\), the dynamical state of a system is characterized by its kinetic energy, \begin{equation} E_{\text{kin}}(\{ \vec{p}_i\}) = \sum _i \frac{1}{2} \frac{p_i^2}{m_i}. \end{equation}</p>
-<div id='shaded*-1' class='framedenv'><!--  l. 69  -->
-<p class='noindent'><span class='underline'><span class='cmbx-12'>Note:</span></span> The <span class='cmti-12'>temperature</span> is simply a measure of the kinetic energy of the system, \(\frac{3}{2} N k_B T = E_{\text{kin}}\) where \(N\) is the number of atoms. In other words, \(E_{\text{kin}}\) measures the variance of the velocity distribution, which is Gaussian. We will learn more about this when discussing the basics of statistical mechanics.</p>
-</div>
-<!--  l. 73  -->
-<p class='indent'>The total energy \begin{equation} H(\{ \vec{r}_i\},\{ \vec{p}_i\}) = E_{\text{kin}}(\{ \vec{p}_i\}) + E_{\text{pot}}(\{ \vec{r}_i\}) \label{eq:hamil} \end{equation} is a conserved quantity during the motion of the atoms. This can be seen by showing that the derivative of the total energy with respect to time vanishes, \begin{equation} \dot{H} = \dot{E}_{\text{kin}} + \dot{E}_{\text{pot}} = \sum _i \frac{\vec{p}_i \dot{\vec{p}}_i}{m_i} + \sum _i \frac{\partial E_{\text{pot}}}{\partial
-\vec{r}_i} \dot{\vec{r_i}} = \sum _i \vec{v}_i \vec{f}_i - \sum _i \vec{v}_i \vec{f}_i = 0. \end{equation} \(H\) is also called the <span class='cmti-12'>Hamiltonian</span> of the system.</p>
-<div id='shaded*-1' class='framedenv'><!--  l. 85  -->
-<p class='noindent'><span class='underline'><span class='cmbx-12'>Note:</span></span> Measuring the total energy (or any other conserved quantity!) and checking whether it is constant in a molecular dynamics simulation is a way of testing if the time step \(\Delta t\) used in the numerical integration is small enough. We will discuss numerical integration in detail below.</p>
-</div>
-<!--  l. 89  -->
-<p class='indent'>A generalization of Newton’s equations of motion are <span class='cmti-12'>Hamilton’s equations of</span> <span class='cmti-12'>motion</span>, \begin{align} \dot{\vec{r}}_i &amp;= \frac{\partial H}{\partial \vec{p}_i} \\ \dot{\vec{p}}_i &amp;= -\frac{\partial H}{\partial \vec{r}_i}, \end{align}</p>
-<!--  l. 94  -->
-<p class='indent'>and it is straightforward to show that these equations reduce to Newton’s equations of motions for the Hamiltonian given by Eq. \eqref{eq:hamil}. Hamilton’s equation of motion remain valid when positions \(\vec{r}_i\) and momenta \(\vec{p}_i\) are replaced by generalized coordinates that consider constraints, such as for example the angle of a (rigid) pendulum. These equations will become important when we discuss statistical mechanics and temperature control in molecular dynamics
-simulations using <span class='cmti-12'>thermostats</span>, where a generalized degree of freedom is the internal state of the heat bath that controls the temperature. A full derivation of Hamilton’s equations of motion is given in Chap. <span class='cmbx-12'>??</span>.</p>
-<!--  l. 96  -->
-<p class='noindent'></p>
-<h3 class='sectionHead'><span class='titlemark'>2.2</span> <a id='x1-50002.2'></a>Integration algorithms</h3>
-<!--  l. 99  -->
-<p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=50b66784-6560-4aea-8654-ad16004e1442' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=50b66784-6560-4aea-8654-ad16004e1442</span></a></p>
-<!--  l. 101  -->
-<p class='indent'>The main ingredient in any molecular dynamics simulation, regardless of the underlying model, is the numerical solution of Eqs. \eqref{eq:Newton}. A plethora of algorithms have been developed over the years, but for most practical purposes the Velocity-Verlet algorithm is used nowadays. For instructive purposes we will start out with a simple integration method, the Euler integration, before discussing Velocity-Verlet.</p>
-<!--  l. 103  -->
-<p class='noindent'></p>
-<h4 class='subsectionHead'><span class='titlemark'>2.2.1</span> <a id='x1-60002.2.1'></a>Euler integration</h4>
-<!--  l. 104  -->
-<p class='noindent'>In order to follow the trajectories of all atoms we need to integrate the above differential equation. On a computer, a continuous differential equation needs to be replaced by a discrete equation. Equations \eqref{eq:Newton} are continuous in time and hence need to be discretized. (Note that our system is already discrete spatially since we are dealing with mass points, but each of these points corresponds to a physical object so this is not the result of a discretization
-procedure.) The simplest integration is the Euler algorithm in which forces and velocities are assumed to be constant over time intervals \(\Delta t\).</p>
-<!--  l. 107  -->
-<p class='indent'>To see this, we write the above differential equation as \begin{equation} d \vec{v}_i = \frac{\vec{f}_i(t)}{m_i}\{\text{ and} }\ d\vec{r}_i(t) = \vec{v}_i(t)\,dt \end{equation} i.e., we move the differential \(d t\) of \(\dot{\vec{v}}_i = d\vec{v}/d t\) to the right hand side of the equation. We can now straightforwardly integrate the equation from time \(t\) to time \(t + \Delta t\) while assuming that \(\vec{f}_i\) and \(\vec{v}_i\) remain constant. This yields \begin{align}
-\vec{v}_i(t+\Delta t) - \vec{v}_i(t) &amp;= \frac{\vec{f}_i(t)}{m_i} \Delta t \label{eq:eulerexplicita} \\ \vec{r}_i(t+\Delta t) - \vec{r}_i(t) &amp;= \vec{v}_i(t) \Delta t \label{eq:eulerexplicitb} \end{align}</p>
-<!--  l. 116  -->
-<p class='indent'>which is obviously only a good approximation for small \(\Delta t\)! This algorithm is called Euler integration.</p>
-<!--  l. 118  -->
-<p class='indent'>Same equation can be derived by Taylor-expanding \(\vec{r}_i(t+\Delta t)\) up to first order in \(\Delta t\). The algorithm is hence \(O(\Delta t^2)\). The Euler algorithm is not reversible, i.e. starting from time \(t+\Delta t\) and integrating backwards one ends up with a different result at time \(t\). Applying the Euler algorithm with timestep \(-\Delta t\) gives \begin{align} \vec{v}_i(t) - \vec{v}_i(t+\Delta t) &amp;= -\frac{\vec{f}_i(t+\Delta t)}{m_i} \Delta t \\ \vec{r}_i(t)
-- \vec{r}_i(t+\Delta t) &amp;= -\vec{v}_i(t+\Delta t) \Delta t \end{align}</p>
-<!--  l. 126  -->
-<p class='indent'>These equations cannot be re-arranged to give Eqs. \eqref{eq:eulerexplicita} and \eqref{eq:eulerexplicitb}. Euler integration is generally not a good algorithm and requires very small time steps.</p>
-<!--  l. 131  -->
-<p class='noindent'></p>
-<h4 class='subsectionHead'><span class='titlemark'>2.2.2</span> <a id='x1-70002.2.2'></a>Leap-frog integration</h4>
-<!--  l. 132  -->
-<p class='noindent'>Leap-frog stores position at times \(t_i\) and velocities at times \(t_i+\Delta t/2\) and can be derived from a argument similar to the one given above. Specifically, we combine the results of a Taylor expansion \(\pm \Delta t/2\), yielding \begin{align} \vec{v}_i(t+\Delta t/2) - \vec{v}_i(t-\Delta t/2) &amp;= \frac{\vec{f}_i(t)}{m_i} \Delta t \label{eq:leapfrog1} \\ \vec{r}_i(t+\Delta t) - \vec{r}_i(t) &amp;= \vec{v}_i(t+\Delta t/2) \Delta t. \end{align}</p>
-<!--  l. 139  -->
-<p class='indent'>Note that Eq. \eqref{eq:leapfrog1} is similar to Eq. \eqref{eq:eulerexplicita}, except the force is evaluated at the mid-point. The resulting algorithm is reversible. Applying the Leap-frog algorithm with timestep \(-\Delta t\) gives \begin{align} \vec{v}_i(t-\Delta t/2) - \vec{v}_i(t+\Delta t/2) &amp;= -\frac{\vec{f}_i(t)}{m_i} \Delta t \\ \vec{r}_i(t) - \vec{r}_i(t+\Delta t) &amp;= -\vec{v}_i(t+\Delta t/2) \Delta t \end{align}</p>
-<!--  l. 145  -->
-<p class='indent'>Bring the terms on the left hand side to the right and vice-versa, and you arrive at the original equations for forward integration. Leap-frog is therefore <span class='cmti-12'>reversible</span>.</p>
-<!--  l. 147  -->
-<p class='noindent'></p>
-<h4 class='subsectionHead'><span class='titlemark'>2.2.3</span> <a id='x1-80002.2.3'></a>Verlet integration</h4>
-<!--  l. 149  -->
-<p class='noindent'>Let us now Taylor expand \(\vec{r}_i(t\pm \Delta t)\) up to third order in \(\pm \Delta t\), \begin{equation} \label{eq:taylor_tplus} \vec{r}_i(t\pm \Delta t) = \vec{r}_i(t) \pm \vec{v}_i(t) \Delta t + \frac{1}{2m_i} \vec{f}_i(t) \Delta t^2 \pm \frac{1}{6} \dot{\dot{\dot{\vec{r}}}}_i(t) \Delta t^3 + O(\Delta t^4). \end{equation} Note that only the odd exponents see the sign of \(\pm \Delta t\). The sum of this equation for expansion in \(+\Delta t\) and \(-\Delta t\) gives the positions
-update, \begin{equation} \vec{r}_i(t+\Delta t) + \vec{r}_i(t-\Delta t) = 2\vec{r}_i(t) + \frac{1}{m_i} \vec{f}_i(t) \Delta t^2 + O(\Delta t^4). \label{eq:verlet} \end{equation} Eq. \eqref{eq:verlet} is called the Verlet algorithm. Instead of requiring the positions \(\{ \vec{r}_i(t)\}\) and velocities \(\{ \vec{v}_i(t)\}\) it requires the positions of the current \(\{ \vec{r}_i(t)\}\) and past \(\{ \vec{r}_i(t-\Delta t)\}\) times for the integration.</p>
-<!--  l. 162  -->
-<p class='indent'>The difference between the expansion for \(+\Delta t\) and \(-\Delta t\) yields the velocities, \begin{equation} \vec{r}_i(t+\Delta t) - \vec{r}_i(t-\Delta t) = 2\vec{v}_i(t) \Delta t + O(\Delta t^3). \end{equation} Note that in order to compute the velocities at time t in the regular Verlet algorithm, we need to know the positions at time \(t + \Delta t\). Verlet and Leap-Frog are identical algorithms, since Leap-Frog stores the velocities at the intermediate time \(t+\Delta t/2\). It is
-usually useful to be able to know both, positions and velocities, at time \(t\). This problem is solved by the Velocity-Verlet algorithm, described in the following section.</p>
-<!--  l. 169  -->
-<p class='noindent'></p>
-<h4 class='subsectionHead'><span class='titlemark'>2.2.4</span> <a id='x1-90002.2.4'></a>Velocity-Verlet integration</h4>
-<!--  l. 171  -->
-<p class='noindent'>Let us now also Taylor expand \(\vec{r}_i(t)\) up to third order in \(\Delta t\) at \(\vec{r}_i(t+\Delta t)\), i.e. we integrate backwards in time from \(t + \Delta t\) to \(t\). This gives \begin{equation} \vec{r}_i(t) = \vec{r}_i(t+\Delta t) - \vec{v}_i(t+\Delta t) \Delta t + \frac{1}{2m_i} \vec{f}_i(t+\Delta t) \Delta t^2 - \frac{1}{6} \dot{\dot{\dot{\vec{r}}}}_i(t) \Delta t^3 + O(\Delta t^3) \label{eq:taylor_r} \end{equation} Equation \eqref{eq:taylor˙tplus} is the positions
-update of the Velocity-Verlet algorithm. The sum of Eq. \eqref{eq:taylor˙tplus} and Eq. \eqref{eq:taylor˙r} gives the velocity update in the Velocity-Verlet algorithm: \begin{align} \vec{r}_i(t+\Delta t) &amp;= \vec{r}_i(t) + \vec{v}_i(t)\Delta t + \frac{1}{2m_i} \vec{f}_i(t) \Delta t^2\\ \vec{v}_i(t+\Delta t) &amp;= \vec{v}_i(t) + \frac{1}{2m_i} \left (\vec{f}_i(t) + \vec{f}_i(t+\Delta t) \right ) \Delta t, \end{align}</p>
-<!--  l. 181  -->
-<p class='indent'>Note that this algorithm is often split in the form of a predictor-corrector scheme since this saves computation time and the necessity to keep past forces around. The predictor step is \begin{align} \vec{v}_i(t+\Delta t/2) &amp;= \vec{v}_i(t) + \frac{1}{2m_i} \vec{f}_i(t) \Delta t \label{eq:vvpred1} \\ \vec{r}_i(t+\Delta t) &amp;= \vec{r}_i(t) + \vec{v}_i(t+\Delta t/2) \Delta t \label{eq:vvpred2} \end{align}</p>
-<!--  l. 189  -->
-<p class='indent'>where \(\vec{v}_i(t+\Delta t/2)\) is the predicted velocity. After this we compute new forces, \(\vec{f}_i(t+\Delta t)\). We then correct the velocities via \begin{equation} \vec{v}_i(t+\Delta t) = \vec{v}_i(t+\Delta t/2) + \frac{1}{2m_i} \vec{f}_i(t+\Delta t) \Delta t \end{equation} The Velocity-Verlet algorithm is the integration algorithm used in most molecular dynamics codes. It has the additional properties that is it <span class='cmti-12'>symplectic</span>, which means it conserves
-phase-space volume. We will come back to what this mean when talking about statistical mechanics.</p>
-<div id='shaded*-1' class='framedenv'><!--  l. 196  -->
-<p class='noindent'><span class='underline'><span class='cmbx-12'>Code example:</span></span> We can implement the velocity-verlet algorithm in a few lines of C++ code using vectorized <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>Eigen</span></span></span> operations. The prediction step</p>
-<!--  l. 198  -->
-<div id='listing-2' class='lstlisting'><span class='label'><a id='x1-9001r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>void verlet_step1(Atoms &amp;atoms, double timestep, double mass) { </span><br />
-<span class='label'><a id='x1-9002r2'></a><span class='cmr-6'>2</span></span><span class='cmtt-10'>    atoms.velocities += 0.5 * atoms.forces * timestep / mass; </span><br />
-<span class='label'><a id='x1-9003r3'></a><span class='cmr-6'>3</span></span><span class='cmtt-10'>    atoms.positions += atoms.velocities * timestep; </span><br />
-<span class='label'><a id='x1-9004r4'></a><span class='cmr-6'>4</span></span><span class='cmtt-10'>}</span></div>
-<!--  l. 204  -->
-<p class='indent'>implements Eq. \eqref{eq:vvpred1}. We then compute new forces and correct the velocities via</p>
-<!--  l. 205  -->
-<div id='listing-3' class='lstlisting'><span class='label'><a id='x1-9005r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>void verlet_step2(Atoms &amp;atoms, double timestep, double mass) { </span><br />
-<span class='label'><a id='x1-9006r2'></a><span class='cmr-6'>2</span></span><span class='cmtt-10'>    atoms.velocities += 0.5 * atoms.forces * timestep / mass; </span><br />
-<span class='label'><a id='x1-9007r3'></a><span class='cmr-6'>3</span></span><span class='cmtt-10'>}</span></div>
-</div>
-<div id='shaded*-1' class='framedenv'><!--  l. 215  -->
-<p class='noindent'><span class='underline'><span class='cmbx-12'>Note:</span></span> The timestep in MD simulations has to be on the order of femtoseconds, in order to resolve the fastest atomic vibrations. For example, in simulations with metals and Embedded Atom Method (EAM) potentials, \(\Delta t=1\) fs is typically a safe choice. How can we check that the timestep is sensible? One possibility is to simply propage a configuration in time using the Velocity-Verlet algorithm. This is sometimes
-called the micro-canonical or NVE ensemble. (NVE because number of atoms, volume and energy is constant.) We then record the evolution of the total (kinetic plus potential) energy, which should be constant. The discrete time integration scheme will introduce numerical errors. If \(\Delta t\) is too large, there will be noticeable drift of the total energy. The figures below show the results of such a simulation. A system of \(108000\) Au atoms was simulated for \(100\) ps with various values of
-\(\Delta t\). The \(y\)-axis shows the difference between the current and initial values of the total energy. The data was smoothened to suppress high-frequency fluctuations in the figure. For this system, even \(5\) fs would still be an acceptable time step.</p>
-<div class='center'><!--  l. 226  -->
-<p class='noindent'></p>
-<!--  l. 227  -->
-<p class='noindent'><img width='390' height='390' src='figures/etot_vs_time_as_function_of_timestep_Grochola_Au_NVE_ensemble_01.png' alt='PIC' /> <img width='390' height='390' src='figures/etot_vs_time_as_function_of_timestep_Grochola_Au_NVE_ensemble_02.png' alt='PIC' /></p>
-</div>
-</div>
-<h2 class='likechapterHead'><a id='x1-100002.2.4'></a>Bibliography</h2>
+                                                                          
+   <h2 class='chapterHead'><span class='titlemark'>Kapitel 2</span><br /><a id='x1-10002'></a>Gleichungstypen</h2>
+   <div id='shaded*-1' class='framedenv'>
+<!-- l. 7 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Die meisten Phänomene denen wir in den Ingenieurwissenschaften
+begegnen, werden sehr gut durch Differentialgleichungen beschrieben. Wir
+erinnern uns an die diskreten Netzwerkmodelle aus Elektrotechnik und
+Systemtheorie. Sie werden z.B. durch ein System linearer gewöhnlicher
+Differentialgleichungen (engl. “ordinary differential equations”) mit der Zeit als
+unabängiger Veränderlicher beschrieben. Wir erinnern uns auch an den
+Diffusionsprozess, wie z.B. den Wärmetransport in einem Bauteil auf einem
+Kühlkörper, das einer Wärmequelle ausgesetzt ist. Dieses Phänomen
+wird am Besten mit einer partiellen Differentialgleichung (engl. “partial
+differential equation”) beschrieben. In diesem Kapitel beschäftigen wir
+uns mit einer abstrakten Klassifikation von Differentialgleichungen. Der
+Diffusionsprozess wird in mehr Detail im nächsten Kapitel wiederholt. </p></div>
+   <h3 class='sectionHead'><span class='titlemark'>2.1   </span> <a id='x1-20002.1'></a>Gewöhnliche Differentialgleichungen</h3>
+<!-- l. 21 --><p class='noindent'>Wir erinnern uns an die Klassifizierung (Eigenschaften) der <span class='cmti-12'>gewöhnlichen</span>
+Differentialgleichungen (GDGLs) und erkennen die verschiedenen Typen von
+Differentialgleichungen. Bei all diesen Differentialgleichungen sind wir immer
+an einer Lösung für einen bestimmten Anfangswert (oder Randwert)
+interessiert, also z.B. \(x(t=0)=x_0\) etc. Dieser Anfangswert ist immer Teil der Definition der
+Differentialgleichung.
+</p><!-- l. 23 --><p class='indent'>   <a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=c0711e7d-ca67-4039-a9f7-ac7201124448' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=c0711e7d-ca67-4039-a9f7-ac7201124448</span></a>
+</p><!-- l. 25 --><p class='noindent'>
+</p>
+   <h4 class='subsectionHead'><span class='titlemark'>2.1.1   </span> <a id='x1-30002.1.1'></a>Linear und nichtlinear</h4>
+<!-- l. 27 --><p class='noindent'>Eine lineare Differentialgleichung ist beispielsweise \begin{equation} m\ddot{x}(t)+c\dot{x}(t)+kx=f(t) \label{eq:linear} \end{equation}
+die den gedämpften und getriebenen harmonischen Oszillator beschreibt,
+während \begin{equation} \frac{\dif ^2x}{\dif t^2}+\mu (x^2-1)\frac{\dif x}{\dif t}+x= 0 \label{eq:nichtlinear} \end{equation}
+eine nichtlineare Bewegungsgleichung für \(x\) ist. Sie beschreibt den so genannten
+Van-der-Pol Oszillator. Die Nichtlinearität ist hier dadurch zu erkennen, dass \(x^2\)
+die Ableitung \(\dif x/\dif t\) multipliziert.
+</p>
+   <div id='shaded*-1' class='framedenv'>
+<!-- l. 40 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Die Ableitung erster oder höherer Ordnung ist eine lineare
+                                                                          
+
+                                                                          
+Operation, da \begin{equation} \frac{\dif ^n}{\dif x^n} \lambda f(x) = \lambda \frac{\dif ^n}{\dif x^n} f(x) \end{equation}
+für eine Konstante \(\lambda \) und \begin{equation} \frac{\dif ^n}{\dif x^n} \left [f(x) + g(x)\right ] = \frac{\dif ^n}{\dif x^n} f(x) + \frac{\dif ^n}{\dif x^n} g(x). \end{equation}
+Zeitliche Ableitungen werden mit einem Punkt angezeigt, \begin{equation} \dot{x}(t)=\frac{\dif }{\dif t} x(t). \end{equation}
+Für Funktionen einer Variable wird die Ableitung oft mit einem Strich angezeigt,
+\begin{equation} f'(x)=\frac{\dif }{\dif x} f(x). \end{equation}
+Für Funktionen mehrere Variablen ist das nicht mehr möglich. Hier werden
+daher immer explizit der Differentialoperator verwendet. </p></div>
+<!-- l. 60 --><p class='noindent'>
+</p>
+   <h4 class='subsectionHead'><span class='titlemark'>2.1.2   </span> <a id='x1-40002.1.2'></a>Ordnung</h4>
+<!-- l. 62 --><p class='noindent'>Die Ordnung einer Differentialgleichung ist gegeben durch die höchste
+Ableitung die in der Gleichung auftaucht. So sind Gl. \eqref{eq:linear} und
+Gl. \eqref{eq:nichtlinear} Beispiele für Differentialgleichungen zweiter
+Ordnung.
+</p><!-- l. 64 --><p class='noindent'>
+</p>
+   <h4 class='subsectionHead'><span class='titlemark'>2.1.3   </span> <a id='x1-50002.1.3'></a>Systeme</h4>
+<!-- l. 66 --><p class='noindent'>Ein System von Differentialgleichungen 1. Ordnung bilden z.B. \begin{align} \frac{\dif x}{\dif t} =&amp; x(m - n y) \label{eq:sys1} \\ \frac{\dif y}{\dif t} =&amp; - y(\gamma - \delta x) \label{eq:sys2} \end{align}
+</p><!-- l. 71 --><p class='indent'>   die bekannten Räuber-Beute-Gleichungen oder auch Lotka-Volterra-Gleichungen.
+Gleichungen \eqref{eq:sys1} und \eqref{eq:sys2} sind weiterhin nichtlinear.
+</p><!-- l. 73 --><p class='indent'>   Differentialgleichungen höherer Ordnung können in ein System von
+Gleichungen 1. Ordnung umgeschrieben werden. Im Beispiel des gedämpften
+harmonische Oszillators, \begin{equation} \ddot{x}(t)+c\dot{x}(t)+kx=f(t), \end{equation}
+ersetzen wir \(\dot{x} = y\) und erhalten dadurch zwei Gleichungen erster Ordnung anstatt der
+ursprünglichen Gleichung zweiter Ordnung, nämlich \begin{align} \dot{x} =&amp; y \\ m\dot{y} =&amp; -cy-kx+f(t) \end{align}
+</p><!-- l. 84 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead'><span class='titlemark'>2.2   </span> <a id='x1-60002.2'></a>Partielle Differentialgleichungen</h3>
+<!-- l. 87 --><p class='noindent'>Partielle Differentialgleichungen (PDGLs) sind Differentialgleichungen mit
+                                                                          
+
+                                                                          
+mehr als einer unabhängigen Variablen. Als Beispiel stellen wir uns ein
+zeitabhängiges Wärmetransportproblem in einer Dimension vor. Dieses wird
+mit einer Diffusionsgleichung für die lokale Temperatur des Systems dargestellt.
+Die Temperatur wird daher als Funktion zweier unabhängiger Variablen, der Zeit
+\(t\) und der räumlichen Position \(x\), dargestellt: \(T(x, t)\). Die Zeitentwicklung der
+Temperature ist gegeben durch \begin{equation} \frac{\partial T(x,t)}{\partial t}=\kappa \frac{\partial ^2 T(x,t)}{\partial x^2}, \label{eq:heateq} \end{equation}
+wobei \(\kappa \) den Wärmeleitungskoeffizienten bezeichnet. Diese Gleichung wurde von
+Joseph Fourier (*1768, \(\dagger \)1830) entwickelt, dem wir im Laufe dieser Veranstaltung
+wieder begegnen werden.
+</p>
+   <div id='shaded*-1' class='framedenv'>
+<!-- l. 99 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> In Gl. <span class='cmbx-12'>??</span> bezeichnet \(\partial /\partial t\) die <span class='cmti-12'>partielle Ableitung</span>. Dies ist die Ableitung
+nach einem der Argumente (hier \(t\)), also die Variation der Funktion, wenn alle
+anderen Argumente konstant gehalten werden. Bei GDGLs tauchen im
+Gegensatz zu PDGLs nur Ableitung nach einer Variable (üblicherweise der
+Zeit \(t\)) auf, die dann mit dem Differentialoperator \(\dif /\dif t\) bezeichnet werden. </p></div>
+<!-- l. 103 --><p class='noindent'>
+</p>
+   <h4 class='subsectionHead'><span class='titlemark'>2.2.1   </span> <a id='x1-70002.2.1'></a>Erste Ordnung</h4>
+<!-- l. 104 --><p class='noindent'>Quasilineare PDGLs erster Ordnung, also Gleichungen der Form \begin{equation} P(x,t;u)\frac{\partial u(x,t)}{\partial x}+ Q(x,t;u)\frac{\partial u(x,t)}{\partial t}= R(x,t;u), \label{eq:PDE1Oquasi} \end{equation}
+für eine (unbekannte) Funktion \(u(x,t)\) und der Anfangsbedingung \(u(x,t=0)=u_0(x)\) können
+systematisch auf ein System gekoppelter GDGLs erster Ordnung zurückgeführt
+werden. Diese wichtige Eigenschaft wollen wir untersuchen. </p><div id='shaded*-1' class='framedenv'>
+<!-- l. 111 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> In Gl. \eqref{eq:PDE1Oquasi} wurde zur Illustration eine
+Darstellung mit zwei Variablen \(x\) und \(t\) gewählt. Allgemein können wir schreiben:
+\begin{equation} \sum \limits _i P_i(\{x_i\};u)\frac{\partial u(\{x_i\})}{\partial x_i}= R(\{x_i\};u) \end{equation}
+Hier wurde als Notation \(u(\{x_i\})=u(x_0, x_1, x_2, \ldots )\) genutzt, also die geschweiften Klammern bezeichnen alle
+Freiheitsgrade \(x_i\). </p></div>
+<!-- l. 120 --><p class='indent'>   Gleichung \eqref{eq:PDE1Oquasi} können wir auf ein System von GDGLs
+transformieren. Dies wird die Methode der Charakteristiken genannt. Wir können
+dann die Formalismen (analytisch oder numerisch) zur Lösung von Systemen von
+GDGLs anwenden, die wir in der Vorlesung “Differentialgleichungen”
+kennengelernt haben.
+                                                                          
+
+                                                                          
+</p><!-- l. 122 --><p class='indent'>   Wir gehen folgendermaßen vor:
+      </p><ol class='enumerate1'>
+      <li id='x1-7002x1' class='enumerate'>Zunächst parametrisieren wir die unabhängigen Veränderlichen in
+      Gl. \eqref{eq:PDE1Oquasi} mit einem Parameter \(s\) gemäß \(x(s)\) und \(t(s)\).
+      </li>
+      <li id='x1-7004x2' class='enumerate'>Wir bilden dann die <span class='cmti-12'>totale Ableitung </span>von \(u(x(s),t(s))\) nach \(s\) \begin{equation} \frac{\dif u(x(s),t(s))}{\dif s}= \frac{\partial u(x(s),t(s))}{\partial x}\frac{\dif x(s)}{\dif s}+ \frac{\partial u(x(s),t(s))}{\partial t}\frac{\dif t(s)}{\dif s}. \label{eq:totalderiv} \end{equation}
+      </li>
+      <li id='x1-7006x3' class='enumerate'>Durch den Vergleich der Koeffizienten der totalen Ableitung \eqref{eq:totalderiv}
+      mit der PDGL \eqref{eq:PDE1Oquasi} sieht man, dass diese DGL genau
+      denn gelöst wird, wenn \begin{align} \frac{dx(s)}{ds}&amp;=P(x,t,u),\label{eq:transode1}\\ \frac{dt(s)}{ds}&amp;=Q(x,t,u)\quad \text{und}\\ \frac{du(s)}{ds} &amp;= R(u(s)).\label{eq:transode3} \end{align}
+      <!-- l. 138 --><p class='noindent'>erfüllt ist. Dies beschreibt die Lösung entlang bestimmter Kurven in der
+      \((x,t)\)-Ebene.</p></li></ol>
+<!-- l. 140 --><p class='noindent'>Wir haben damit die PDGL in einen Satz gekoppelter GDGLs erster Ordnung,
+Gl. \eqref{eq:transex1}-\eqref{eq:transex3} umgewandelt.
+</p>
+   <div id='shaded*-1' class='framedenv'>
+<!-- l. 142 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Beispiel:</span></span> Die Transportgleichung \begin{equation} \frac{\partial u(x,t)}{\partial t}+c\frac{\partial u(x,t)}{\partial x}=0 \label{eq:transportexample} \end{equation}
+mit der Anfangsbedingung \(u(x,t=0)=u_0(x)\) soll gelöst werden. Wir gehen nach obigem Rezept
+vor:
+      </p><ol class='enumerate1'>
+      <li id='x1-7008x1' class='enumerate'>Wir parameterisieren die Variablen \(x\) und \(t\) mit Hilfe einer neuen Variable
+      \(s\), also \(x(s)\) und \(t(s)\). Wir suchen nun nach einem Ausdruck, mit dem wir \(x(s)\) und \(t(s)\)
+      bestimmen können.
+      </li>
+      <li id='x1-7010x2' class='enumerate'>Wir stellen nun die Frage, wie sich die Funktion \(u(x(s),t(s))\) verhält. Diese Funktion
+      beschreibt die Änderung eines Anfangswertes \(u(x(0),t(0))\) mit der Variable \(s\). Die totale
+      Ableitung wird zu \begin{equation} \frac{\dif u(x(s),t(s))}{\dif s}=\frac{\partial u}{\partial t}\frac{\dif t(s)}{\dif s}+\frac{\partial u}{\partial x}\frac{\dif x(s)}{\dif s}. \end{equation}
+      </li>
+      <li id='x1-7012x3' class='enumerate'>Die totale Ableitung ist genau dann identisch zu der partiellen
+      Differentialgleichung die wir lösen wollen, wenn \begin{align} \frac{\dif x(s)}{\dif s} &amp;=c\quad \text{und} \label{eq:transex1}\\ \frac{\dif t(s)}{\dif s} &amp;=1. \end{align}
+      <!-- l. 160 --><p class='noindent'>In diesem Fall gilt \begin{equation} \frac{\dif u(s)}{\dif s} = 0.\label{eq:transex3} \end{equation}
+                                                                          
+
+                                                                          
+      </p></li>
+      <li id='x1-7014x4' class='enumerate'>Die allgemeinen Lösungen für die drei gewöhnlichen
+      Differentialgleichungen \eqref{eq:transex1}-\eqref{eq:transex3} sind
+      gegeben durch \begin{align} x(s) &amp;= cs + \text{const.},\\ t(s) &amp;= s + \text{const.}\quad \text{und}\\ u(s) &amp;= \text{const.} \end{align}
+      </li>
+      <li id='x1-7016x5' class='enumerate'>Mit den Anfangsbedingungen \(t(0)=0\), \(x(0)=\xi \) und \(u(x,t=0)=f(\xi )\) erhält man \(t=s\), \(x=ct+\xi \) und \(u=f(\xi )=f(x-ct)\),</li></ol>
+<!-- l. 172 --><p class='noindent'>Die Anfangsbedingung \(f(\xi )\) wird mit der Geschwindigkeit \(c\) in die positive x-Richtung
+transportiert. Die Lösung für \(u\) bleibt konstant, da die Ableitung von \(u\)
+Null ist, also behält \(u\) den durch die Anfangsbedingung gegebenen Wert.
+Das Feld \(u(x,0)\) wird also mit einer konstanten Geschwindigkeit \(c\) verschoben: \(u(x,t)=u(x-ct,0)\). </p></div>
+<!-- l. 175 --><p class='noindent'>
+</p>
+   <h4 class='subsectionHead'><span class='titlemark'>2.2.2   </span> <a id='x1-80002.2.2'></a>Zweite Ordnung</h4>
+<!-- l. 179 --><p class='noindent'>Beispiele von PDGLs zweiter Ordnung sind die...<br class='newline' /></p>
+      <ul class='itemize1'>
+      <li class='itemize'>...Wellengleichung: \begin{equation} \frac{\partial ^2 u}{\partial t^2}-\frac{\partial ^2 u}{\partial x^2}=0 \end{equation}
+      </li>
+      <li class='itemize'>...Diffusionsgleichung (mit der wir uns hier näher beschäfigen werden): \begin{equation} \frac{\partial u}{\partial t}-\frac{\partial ^2 u}{\partial x^2}=0 \end{equation}
+      </li>
+      <li class='itemize'>...Laplacegleichung (die wir auch näher kennen lernen werden):
+      \begin{equation} \frac{\partial ^2 u}{\partial x^2}+\frac{\partial ^2 u}{\partial y^2}=0 \end{equation}
+      </li></ul>
+<!-- l. 194 --><p class='noindent'>Die zweite Ordnung bezieht sich hier auf die zweite Ableitung. Diese Beispiel sind
+für zwei Variablen formuliert, aber diese Differentialgleichungen können auch
+für mehr Freiheitsgrade aufgeschrieben werden.
+                                                                          
+
+                                                                          
+</p><!-- l. 196 --><p class='indent'>   Für zwei Variablen lautet die allgemeine Form linearer PDGLs zweiter
+Ordnung, \begin{equation} a(x,y) \frac{\partial ^2 u}{\partial x^2}+ b(x,y)\frac{\partial ^2 u}{\partial x\partial y}+ c(x,y)\frac{\partial ^2 u}{\partial y^2}=F\left (x,y;u,\frac{\partial u}{\partial x},\frac{\partial u}{\partial y}\right ), \end{equation}
+wobei \(F\) selbst natürlich auch linear in den Argumenten sein muss. Wir nehmen
+nun eine Klassifizierung von PDGLs 2. Ordnung vor, stellen aber vorweg, dass
+diese Klassifizierung nicht erschöpfend ist und dass sie nur punktweise gilt.
+Letzteres heißt, dass die PDGL an unterschiedlichen Raumpunkten in eine andere
+Klassifizierung fallen kann.
+</p><!-- l. 205 --><p class='indent'>   <a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=676322ed-a634-4f96-9561-ac7201129f7c' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=676322ed-a634-4f96-9561-ac7201129f7c</span></a>
+</p><!-- l. 207 --><p class='indent'>   Wir nehmen zunächst an, dass \(F=0\) und \(a\), \(b\), \(c\) konstant seien. Dann erhalten wir:
+\begin{equation} a\frac{\partial ^2 u}{\partial x^2}+b\frac{\partial ^2 u}{\partial x\partial y}+ c\frac{\partial ^2 u}{\partial y^2}=0. \label{eq:n2ndoconst} \end{equation}
+Wir schreiben diese Gleichung um als die quadratische Form \begin{equation} \begin{pmatrix} \partial /\partial x \\ \partial /\partial y \end{pmatrix} \cdot \begin{pmatrix} a &amp; b/2 \\ b/2 &amp; c \end{pmatrix} \cdot \begin{pmatrix} \partial /\partial x \\ \partial /\partial y \end{pmatrix} u = \nabla \cdot \t{C} \cdot \nabla u =0 \label{eq:quadform} \end{equation}
+Die Koeffizientenmatrix \(\t{C}\) können wir nun diagonalisieren. Dies für zu
+\begin{equation} \t{C} = \t{U} \cdot \begin{pmatrix} \lambda _1 &amp; 0 \\ 0 &amp; \lambda _2 \end{pmatrix}\cdot \t{U}^T, \label{eq:diagquadform} \end{equation}
+wobei \(\t{U}\) auf Grund der Symmetrie von \(\t{C}\) unitär ist, \(\t{U}^T \cdot \t{U}=\t{1}\). Die geometrische
+Interpretation der Operation \(\t{U}\) ist eine Rotation. Wir führen nun transformierte
+Koordinaten \(x'\) und \(y'\) ein, so dass \begin{equation} \nabla = \t{U} \cdot \nabla ' \end{equation}
+mit \(\nabla '=(\partial /\partial x', \partial /\partial y')\). Mit anderen Worten, die Transformationsmatrix ist gegeben als
+\begin{equation} \t{U} = \begin{pmatrix} \partial x'/\partial x &amp; \partial y'/\partial x \\ \partial x'/\partial y &amp; \partial y'/\partial y \end{pmatrix}. \end{equation}
+Gleichung \eqref{eq:n2ndoconst} wird zu \begin{equation} \lambda _1 \frac{\partial ^2 u}{\partial x'^2} + \lambda _2 \frac{\partial ^2 u}{\partial y'^2} = 0. \label{eq:diag2nd} \end{equation}
+Wir haben die Koeffizienten der Differentialgleichung diagonalisiert. Für eine
+beliebige zweifach differenzierbare Funktion \(f(z)\), ist \begin{equation} u(x', y') = f\left (\sqrt{\lambda _2} x' + i\sqrt{\lambda _1} y'\right ) \end{equation}
+eine Lösung von Gl. <span class='cmbx-12'>??</span>.
+</p><!-- l. 275 --><p class='indent'>   Wir unterscheiden nun drei Fälle:
+      </p><dl class='description'><dt class='description'>
+<span class='cmbx-12'>Der Fall</span> \(\det \t{C}=\lambda _1\lambda _2=ac-b^4/4=0\) <span class='cmbx-12'>mit</span> \(b\ne 0\) <span class='cmbx-12'>und</span> \(a\ne 0\) </dt><dd class='description'>führt zu einer parabolischen PDGL. Diese PDGL heißt
+      parabolisch, weil die quadratische Form Gl. \eqref{eq:quadform} bzw.
+      \eqref{eq:diagquadform} eine Parabel beschreibt. (Dies ist natürlich eine
+      Analogie. Man muss die Differentialoperatoren durch Koordinaten ersetzen
+      damit diese funktioniert.) Ohne Beschränkung der Allgemeinheit sei \(\lambda _2=0\). Dann
+      bekommen wir \begin{equation} \frac{\partial ^2 u}{\partial x'^2}=0. \label{eqnparab} \end{equation}
+      Dies ist die kanonische Form einer parabolischen PDGL.
+      </dd><dt class='description'>
+<span class='cmbx-12'>Der Fall</span> \(\det \t{C}=\lambda _1 \lambda _2=ac-b^2/4&gt;0\) </dt><dd class='description'>führt zu einer elliptischen PDGL. Diese PDGL heißt elliptisch, weil die
+      quadratische Form Gl. \eqref{eq:quadform} bzw. \eqref{eq:diagquadform}
+      für eine konstante rechte Seite eine Ellipse beschreibt. (Für \(\lambda _1=\lambda _2\) ist es ein
+      Kreis.) Wir formen nun die Gleichung für den elliptischen Fall auf eine
+      standardisierte Form um und führen die skalierten Koordinaten \(x'=\sqrt{\lambda _1} x''\) und \(y'=\sqrt{\lambda _2} y''\) ein.
+      Dann wird aus Gl. \eqref{eq:diag2nd} die kanonische elliptische PDGL
+      \begin{equation} \frac{\partial ^2 u}{\partial x''^2}+\frac{\partial ^2 u}{\partial y''^2}=0. \label{eqnelliptic} \end{equation}
+      Die kanonische elliptische PDGL ist daher die Laplace-Gleichung,
+                                                                          
+
+                                                                          
+      Gl. \eqref{eqnelliptic} (hier im Zweidimensionalen). Lösungen der
+      Laplace-Gleichung heißen <span class='cmti-12'>harmonische Funktionen</span>.
+      </dd><dt class='description'>
+<span class='cmbx-12'>Der Fall</span> \(\det \t{C}=\lambda _1\lambda _2=ac-b^2/4&lt;0\) </dt><dd class='description'>ergibt die so genannte hyperbolische PDGL. Diese PDGL heißt
+      hyperbolisch, weil die quadratische Form Gl. \eqref{eq:quadform} bzw.
+      \eqref{eq:diagquadform} für eine konstante rechte Seite eine Hyperbel
+      beschreibt. Ohne Beschränkung der Allgemeinheit fordern wir nun \(\lambda _1&gt;0\) und \(\lambda _2&lt;0\).
+      Dann können wir wieder skalierte Koordinaten \(x'=\sqrt{\lambda _1}x''\) und \(y'=\sqrt{-\lambda _2}y''\) einführen, so dass
+      \begin{equation} \frac{\partial ^2 u}{\partial x''^2} - \frac{\partial ^2 u}{\partial y''^2} = \begin{pmatrix} \partial u/\partial x'' \\ \partial u/\partial y'' \end{pmatrix} \cdot \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix} \cdot \begin{pmatrix} \partial u/\partial x'' \\ \partial u/\partial y'' \end{pmatrix} = 0. \label{eq:hyb} \end{equation}
+      Wir können nun durch eine weitere Koordinatentransformation, nämlich
+      eine Rotation um \(45^\circ \), die Koeffizientenmatrix in Gl. \eqref{eq:hyb} auf eine
+      Form bringen, in der die Diagonalelemente \(0\) und die Nebendiagonalelemente \(1\)
+      sind. Dies ergibt die Differentialgleichung \begin{equation} \frac{\partial ^2 u}{\partial x''' \partial y'''}=0, \label{eqnd2udxideta0} \end{equation}
+      wobei \(x'''\) und \(y'''\) die entsprechend rotierten Koordinaten sind. Diese
+      Gleichung ist die kanonische Form einer hyperbolischen PDGL und
+      äquivalent zu Gl. \eqref{eq:n2ndoconst} in den neuen Variablen \(x'''\) und
+      \(y'''\).</dd></dl>
+<!-- l. 323 --><p class='indent'>   Für höherdimensionale Probleme müssen wir uns die Eigenwerte
+der Koeffizientenmatrix \(\t{C}\) anschauen. Die PDGL heißt <span class='cmti-12'>parabolisch</span>, wenn
+es einen Eigenwert gibt der verschwindet, aber alle anderen Eigenwerte
+entweder größer oder kleiner als Null sind. Die PDGL heißt <span class='cmti-12'>elliptisch</span>, wenn
+alle Eigenwerte entweder größer Null oder kleiner Null sind. Die PDGL
+heißt <span class='cmti-12'>hyperbolisch</span>, wenn es genau einen negativen Eigenwert gibt und alle
+anderen positiv sind oder es genau einen positiven Eigenwert gibt und alle
+anderen negativ sind. Es ist klar, dass für PDGLs mit mehr als zwei
+Variablen, diese drei Klassen von PDGLs nicht erschöpfend sind und es
+Koeffizientenmatrizen gibt, die aus diesem Klassifizierungschema fallen. Für
+Probleme mit genau zwei Variablen führt diese Klassifzierung zu den
+Bedingungen für die Determinanten der Koeffizientenmatrix die oben genannt
+wurden.
+</p><!-- l. 325 --><p class='indent'>   Diese drei Typen linearer PDEs 2. Ordnung lassen sich für manche
+Problemstellungen auch analytisch lösen. Wir geben im Folgenden ein Beispiel
+hierzu.
+</p>
+   <div id='shaded*-1' class='framedenv'>
+<!-- l. 329 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Beispiel:</span></span> Wir lösen die eindimensionale Wellengleichung. \begin{equation} \frac{\partial ^2 u}{\partial x^2}-\frac{1}{c^2}\frac{\partial ^2 u}{\partial t^2}=0 \label{eqn1Dwaveeqn} \end{equation}
+durch Separation der Variablen. Dafür machen wir den Ansatz \(u(x,t)=X(x)T(t)\), was zu
+\begin{equation} \frac{1}{X}\frac{\partial ^2 X}{\partial x^2}=\frac{1}{c^2}\frac{1}{T}\frac{\partial ^2 T}{\partial t^2} \label{eqnseparate} \end{equation}
+führt. In Gl. \eqref{eqnseparate} hängt die linke Seite nur von der Variablen \(x\)
+ab, während die rechte Seite nur von \(t\) abhängt. Für beliebige \(x\) und \(t\) kann diese
+                                                                          
+
+                                                                          
+Gleichung nur erfüllt werden, wenn beide Seiten gleich einer Konstanten sind
+und wir erhalten somit \begin{equation} \frac{1}{X}\frac{\partial ^2 X}{\partial x^2}=-k^2=\frac{1}{c^2}\frac{1}{T}\frac{\partial ^2 T}{\partial t^2}\,\mathrm{.} \end{equation}
+Dies ergibt die folgenden zwei Gleichungen \[\frac{\partial ^2 X}{\partial x^2}+k^2X=0\] mit der Lösung \(X(x)=e^{\pm ikx}\) und \[\frac{\partial ^2 T}{\partial t^2}+\omega ^2T=0\] mit der
+Lösung \(T(t)=e^{\pm i\omega t}\), wobei wir \(\omega ^2=c^2k^2\) gesetzt haben. Dieses Beispiel braucht zur Ergänzung
+Anfangsbedingungen, damit wir eine Lösung finden können. </p></div>
+                                                                          
+
+                                                                          
+   <h2 class='likechapterHead'><a id='x1-90002.2.2'></a>Literaturverzeichnis</h2>
+    

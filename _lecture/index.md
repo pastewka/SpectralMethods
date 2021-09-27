@@ -13,7 +13,7 @@ Herzlich willkommen zur Vorlesung **Simulationstechniken**. Sie finden hier das 
 
 Es gibt zwei Arten von Lernmaterial:
 * Videos mit kurzen (bis zu 30 Minuten) Vorlesungsschnipseln zu Aspekten dieses Kurses
-* Geschriebenen Text (das klassische "Skript")
+* Geschriebenen Text (das klassische "Skript"), welche Sie auch [hier](Simulationstechniken.pdf) als eine PDF Datei herunterladen können
 
 Das Lernmaterial ist nach Wochen sortiert um einen Takt vorzugeben, in dem Sie durch das Material arbeiten sollten. Sie können sich das Lernmaterial selbstverständlich schneller aneignen, sollten aber nicht zurückfallen.
 

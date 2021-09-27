@@ -1,63 +1,273 @@
 ---
 layout: default
-title: "Chapter 01"
-parent: Lecture
-date: 2021-08-18
+title: "Kapitel 01"
+parent: Vorlesung
+date: 2021-09-27
 categories: lecture
 author: Lars Pastewka
-nav_order: 01
----
+nav_order: 1
 ---
 
-<h2 class='chapterHead'><span class='titlemark'>Chapter 1</span><br />
-<a id='x1-10001'></a>Introduction</h2>
-<div class='framedenv' id='shaded*-1'><!--  l. 4  -->
-<p class='noindent'><span class='underline'><span class='cmbx-12'>Context:</span></span> We start by introducing the concept of the potential energy and the interatomic force. Those are the central ingredients to the molecular dynamics simulation method.</p>
+                                                                          
+   <h2 class='chapterHead'><span class='titlemark'>Kapitel 1</span><br /><a id='x1-10001'></a>Einleitung</h2>
+   <div class='framedenv' id='shaded*-1'>
+<!-- l. 6 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Die <span class='cmti-12'>Simulation </span>beschäftigt sich mit der numerischen
+(computergestützten) Lösung von <span class='cmti-12'>Modellen</span>. In diesem einleitenden Kapitel
+gehen wir auf Modellbildung ein und stellen unterschiedliche Klassen von
+Modellen vor. Diese Modelle werden mathematisch üblicherweise mit Hilfe
+von <span class='cmti-12'>Differentialgleichungen </span>beschrieben, d.h. die Simulation ist oft (aber
+nicht immer) die numerische Lösung von gewöhnlichen oder partiellen
+Differentialgleichungen. In dieser Lehrveranstaltung werden wir vornehmlich die
+Lösung von partiellen Differentialgleichungen mit Hilfe der <span class='cmti-12'>Methode der finiten
+</span><span class='cmti-12'>Elemente </span>besprechen. </p></div>
+<!-- l. 10 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e484ec5a-a280-479d-8144-ac7201129f9f' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e484ec5a-a280-479d-8144-ac7201129f9f</span></a>
+</p>
+   <h3 class='sectionHead'><span class='titlemark'>1.1   </span> <a id='x1-20001.1'></a>Modelle</h3>
+<!-- l. 14 --><p class='noindent'>Modelle sind üblicherweise für bestimmte Längenskalen angemessen. So kann
+z.B. ein Modell, welches explizit Atome beschreibt, auf Längenskalen \(\sim \text{nm}\)
+angemessen sein; ein “makroskopisches” System mit Abmessungen
+\(\sim \text{mm}\) würden wir mit einem solchen Modell aber nicht beschreiben
+wollen.<span class='footnote-mark'><a href='ch012.html#fn1x1'><sup class='textsuperscript'>1</sup></a></span><a id='x1-2001f1'></a> 
+Wir müssen uns daher darüber klar werden, welches der Phänomene der
+Ingenieurswissenschaften die Anwendung welcher physikalischer Modelle und
+welcher mathematischer Methoden verlangt.
+</p><!-- l. 18 --><p class='indent'>   Abbildung <a href='#x1-2002r1'>1.1<!-- tex4ht:ref: fig:Scheme  --></a> zeigt in der vertikalen Anordnung von <span class='cmti-12'>Längenskalen </span>und deren
+Zuordnung zu verschiedenen Beschreibungsebenen. Auf der kürzesten
+Längenskala ist meist eine quantenmechanische Beschreibung notwendig. Dies
+bedeutet, wenn wir die Phänomene in Å auflösen wollen, befinden wir uns auf
+der Beschreibungsebene der Quantenmechanik und alle zugrundeliegenden
+Modelle sind von quantenmechanischer Natur. D.h. wir haben es hier im
+nichtrelativistischen Fall mit der Schrödingergleichung zu tun. Diese ist in
+verschiedenen Methoden implementiert, wie z.B. der <span class='cmti-12'>Dichtefunktionaltheorie</span>, einer
+Vielteilchenbeschreibung des quantenmechanischen elektronischen Systems. Bei
+dieser Art der Vielteilchenbeschreibung handelt es sich, im Gegensatz zur
+                                                                          
+
+                                                                          
+<span class='cmti-12'>Molekulardynamik </span>als Methode auf einer größeren Längenskala, nicht um eine
+Beschreibung von Punktteilchen, sondern um gekoppelte Felder, was den Aufwand
+im Vergleich zu einer reinen Punktmechanik wesentlich erhöht. In der
+Punktmechanik haben wir es mit drei Orts- und drei Geschwindigkeitsvariablen
+für jedes der \(n\) wechselwirkenden Teilchen zu tun, während wir in einer
+quantenmechanischen Vielteilchenbeschreibung es mit einem Feld mit je drei \(n\)
+Ortsvariablen zu tun haben, nämlich \(\Psi (\v{r}_1,\v{r}_2,\dots ,\v{r}_n;t)\).
+</p>
+   <figure class='figure'> 
+
+                                                                          
+
+                                                                          
+                                                                          
+
+                                                                          
+<div class='center'>
+<!-- l. 37 --><p class='noindent'>
+</p><!-- l. 41 --><p class='noindent'> <img width='774' height='585' src='Figures/ExtendedSchemeD-.png' alt='PIC' /> <a id='x1-2002r1'></a>
+<a id='x1-2003'></a>
+</p>
+<figcaption class='caption'><span class='id'>Abbildung 1.1::  </span><span class='content'>Die  vertikale  Anordnung  der  Kisten  repräsentiert  die
+Längenskale, welche auf der rechten Seite gezeigt ist. In den Kästen selbst
+stehen Simulationsmethode welche auf diesen Skalen Anwendung finden. In
+dieser Lehrveranstaltung beschäftigen wir uns mit der Diskretisierung von
+Feldern und wählen einen spezifischen Anwendungsfall, der in die <span class='cmti-12'>lokale
+</span><span class='cmti-12'>Bilanz </span>hineinfällt.                                                       </span></figcaption><!-- tex4ht:label?: x1-2002r1.1  -->
 </div>
-<h3 class='sectionHead'><span class='titlemark'>1.1</span> <a id='x1-20001.1'></a>Structure of matter at the atomic scale</h3>
-<!--  l. 10  -->
-<p class='noindent'>All matter is build out of quark and leptons, or perhaps even smaller particles, but for the sake of modeling the real material world the atom is the fundamental unit. Atoms can be described by nuclei and electrons or through “coarse-grained” models that ignore the fact that there are electrons. Both types of models are useful for describing materials, and the latter ones will be extensively used in this class.</p>
-<!--  l. 12  -->
-<p class='indent'>Atoms in solids can arrange in different configurations that are called crystals when there is long-ranged order or glasses when there is not. (All solid matter typically has short-ranged order that is determined by the chemical bonds between atoms.) Atoms in solids are immobile and self-diffusion is limited. Conversely, liquids and gases are disordered (like glasses) but have mobile constituent atoms. Macroscopic object typically contain a lot of atoms – on the order of Avogadro’s
-constant \(N_A\approx 6\times 10^{23}\). The atomic-scale simulation techniques discussed in this class can at the time of this writing (2020) treat on order of \(\sim 10^6\) atoms, \(10^8-10^9\) if you use the biggest computers available to us. Of course, this boundary is pushed towards larger systems as computer technology evolves.</p>
-<!--  l. 15  -->
-<p class='indent'>We can nowadays even observe matter at atomic scales and “see” individual atoms. The <a href='https://www.sfb-transregio103.de/'>collaborative research center 103</a> has produced an extremely instructive video on the structure of specific type of alloys, dubbed “superalloy”, that is used in e.g. turbine blades. Enjoy the ride from the blade to the atom. This class is about modeling matter at the smallest scales that you see in this video.</p>
-<!--  l. 17  -->
-<p class='indent'><a class='url' href='https://www.youtube.com/embed/wYHch5QIWTQ'><span class='cmtt-12'>https://www.youtube.com/embed/wYHch5QIWTQ</span></a></p>
-<!--  l. 19  -->
-<p class='noindent'></p>
-<h3 class='sectionHead'><span class='titlemark'>1.2</span> <a id='x1-30001.2'></a>Interatomic forces and the potential energy</h3>
-<!--  l. 21  -->
-<p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a12a8064-84e7-47f6-80ab-ad15014bae8a'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a12a8064-84e7-47f6-80ab-ad15014bae8a</span></a></p>
-<!--  l. 23  -->
-<p class='indent'>Atoms interact via forces. As Feynman put it in his famous lectures on physics, the fundamental truth about man’s understanding of the physical world is “that all things are made of atoms – little particles that move around in perpetual motion, attracting each other when they are a little distance apart, but repelling upon being squeezed into one another”. Indeed this is the essence of the molecular dynamics simulation method.</p>
-<!--  l. 25  -->
-<p class='indent'>As the simplest example why atoms attract each other, let us consider the example of simple salt, e.g. Na-Cl that we all have sitting in our kitchen. Na-Cl in its solid form is an ionic crystal. Na atoms have approximately a charge of \(q_{\text{Na}}=+1|e|\), where \(e\) is the electron charge, and Cl atoms have a charge of approximately \(q_{\text{Na}}=-1|e|\). The Coulomb interaction between these atoms is a fundamental force of nature. Basic physical principles tell us, that the
-interaction energy between a Na and a Cl atom is given by \begin{equation} V_{\text{Coulomb}}(r;q_{\text{Na}},q_{\text{Cl}}) = \frac{1}{4\pi \varepsilon _0} \frac{q_{\text{Na}} q_{\text{Cl}}}{r}. \end{equation} We also know that this energy is pair-wise additive, allowing us to write down the Coulomb interaction energy for Na-Cl consisting of \(N\) atoms, \begin{equation} E_{\text{Coulomb}}(\{\vec{r}_i\}) = \sum _{i=1}^N \sum _{j=i+1}^N V_{\text{Coulomb}}(r_{ij};q_i, q_j) = \frac{1}{4\pi \varepsilon _0}
-\sum _{i=1}^N \sum _{j=i+1}^N \frac{q_i q_j}{r_{ij}} \label{eqn:coulomb} \end{equation} where \(q_i\) is the charge on atom \(i\) and \(r_{ij}=|\vec{r}_i - \vec{r}_j|\) the distance between atom \(i\) and \(j\). Note that we have introduced — in passing — a central quantity of the molecular dynamics method, the atomic positions \(\vec{r}_i\) and Eq. \eqref{eqn:coulomb} indicates that the interaction energy depends on the positions of all atoms.</p>
-<!--  l. 36  -->
-<p class='indent'>The Coulomb interaction has a singularity at \(r\to 0\). The attractive force between opposite charges becomes infinitely large. The salt crystal does not collapse because atoms are, as Feynman puts it, “repelling upon being squeezed into one another”. While the attraction between our Na and Cl atoms are described by a fundamental force of nature, it is more difficult to understand the origin of this repulsion. Hand-wavingly, it goes back to the fact that electrons are Fermions and
-electrons from the electron shells of Na and Cl therefore cannot exist at the same point in space (and the same spin state). This is the Pauli exclusion principle and the resulting repulsive force is called Pauli repulsion.</p>
-<!--  l. 38  -->
-<p class='indent'>Different models for the Pauli repulsion exist. While the Coulomb interaction is a fundamental force of nature, these models are approximations to the true quantum physics that is the origin of the repulsive form. Two common forms are exponential repulsion, \begin{equation} E_{\text{rep,exp}}(\{\vec{r}_i\}) = \sum _{i=1}^N \sum _{j=i+1}^N A e^{-r/\rho }, \end{equation} or an algebraic repulsion of the form \begin{equation} E_{\text{rep,12}}(\{\vec{r}_i\}) = \sum _{i=1}^N \sum _{j=i+1}^N A
-r^{-12}. \end{equation} Note that \(A\) and \(\rho \) are <span class='cmti-12'>parameters</span>, that need to be somehow determined. This can be done with the help of either experimental data or <span class='cmti-12'>first-principles</span> calculations, that treat the electrons explicitly. These parameters depend on the atom types under consideration and in contrast to the parameter that show up in the Coulomb interaction (the permittivity \(\varepsilon _0\)), they are not universal.</p>
-<!--  l. 48  -->
-<p class='indent'>For our Na-Cl model, we combine Coulomb interaction with an exponential repulsion, to give the total energy \begin{equation} E_{\text{pot}}(\{\vec{r}_i\}) = \sum _{i=1}^N \sum _{j=i+1}^N \left (A_{ij} e^{-r_{ij}/\rho _{ij}} + \frac{1}{4\pi \varepsilon _0} \frac{q_i q_j}{r_{ij}}\right ). \label{eqn:NaCl} \end{equation} This energy is called the <span class='cmti-12'>potential energy</span> and is the central property of an atomic-scale model. With Eq. \eqref{eqn:NaCl}, we have also
-encountered our first atomic-scale model for a real material. Potentials that can be decomposed as Eq. \eqref{eqn:NaCl} into pair-wise terms are called <span class='cmti-12'>pair potentials</span>. They are often written as \begin{equation} E_{\text{pot}}(\{\vec{r}_i\}) = \sum _{i=1}^N \sum _{j=i+1}^N V(r_{ij}), \end{equation} with \begin{equation} V(r_{ij}) = A_{ij} e^{-r_{ij}/\rho _{ij}} + \frac{1}{4\pi \varepsilon _0} \frac{q_i q_j}{r_{ij}} \end{equation} for the above potential. The quantity
-\(V(r_{ij})\) is called the pair interaction energy.</p>
-<!--  l. 63  -->
-<p class='indent'>Likely the most famous pair-potential is the Lennard-Jones potential. Its pair interaction energy is given by \begin{equation} V(r_{ij}) = 4\varepsilon \left [\left (\frac{\sigma }{r}\right )^{12} - \left (\frac{\sigma }{r}\right )^6\right ]. \end{equation} The repulsive term \(\propto r^{-12}\) is one of the models for Pauli repulsion discussed above. The attractive term \(\propto r^{-6}\) arises from <span class='cmti-12'>London dispersion interactions</span>. Dispersion forces exist
-between all atoms, even uncharged molecules or noble gases. They are widely employed for the nonbonded portion of valence force-fields. Simple Lennard-Jones systems are often used to study generic phenomena found in real materials, e.g. for example the glass transition or plasticity of amorphous materials. There are limitations of pair potentials and more sophisticated potential energy models have been developed over the past decades. We will discuss a few of those in Chapter <span class='cmbx-12'>??</span>.</p>
-<div class='framedenv' id='shaded*-1'><!--  l. 69  -->
-<p class='noindent'><span class='underline'><span class='cmbx-12'>Note:</span></span> A repulsive term of the form \(r^{-12}\) is more attractive from a simulation point of view since it is faster to compute than an exponential. This has helped popularize the Lennard-Jones potential in the early days of molecular dynamics simulations.</p>
+                                                                          
+
+                                                                          
+   </figure>
+   <div class='framedenv' id='shaded*-1'>
+<!-- l. 47 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> </p>
+      <ul class='itemize1'>
+      <li class='itemize'>\(1\AA =10^{-10}\,\text{m}\)
+      </li>
+      <li class='itemize'>Atome
+      in  unserer  Umwelt  werden  durch  quantenmechanische  Phänomene
+      zusammengehalten. Modelle die auf quantenmechanischen Prinzipien
+      fußen, heißen auch <span class='cmti-12'>ab-initio </span>(“von Anfang an”) Modelle. Im Englischen
+      werden solche Modell auch als “first principles” Modelle bezeichnet.
+      Die  fundamentale  Gleichung,  welche  quantenmechanische  Objekte
+      beschreibt, ist die <span class='cmti-12'>Schrödingergleichung</span>. Diese selbst ist in der Tat
+      bereits eine Näherung!
+      </li>
+      <li class='itemize'>Die                                           Einteilchen-Schrödingergleichung
+      lautet \(i\hbar \frac{\partial }{\partial t} \Psi (\v{r},t) = \hat{H} \Psi (\v{r},t)\). Dies ist eine partielle Differentialgleichung für das orts- und
+      zeitabhängige skalare Materiefeld \(\Psi (\v{r},t)\), mit der Planckschen Konstanten \(\hbar \)
+      und dem Hamiltonoperator \(\hat{H}\), der die Details des Modells enthält. Eine
+      Bewegungsgleichung für viele wechselwirkende Teilchen, wie sie durch
+      \(\Psi (\v{r}_1,\v{r}_2,\dots ,\v{r}_n;t)\) beschrieben wird, ist unvergleichlich umfangreicher.
+      </li>
+      <li class='itemize'>“Semiklassisch“  bedeutet,  dass  die  Bewegung  der  Teilchen  nach
+      der  klassischen  Mechanik  berechnet  werden,  die  Wechselwirkungen
+      der Teilchen untereinander aber aus quantenmechanischen Gesetzen
+      abgeleitet  sind.  Dies  ist  natürlich  eine  Näherung,  die  es  zu
+      rechtfertigen gilt.
+      </li>
+      <li class='itemize'>“Mesoskopisch” heißt, dass das Modell über eine innere Längenskala
+      verfügt  und/oder  thermische  Fluktuationen  wichtig  sind.  Diese
+      Modelle operieren meistens auf Längenskalen oberhalb der atomare
+      Skala (\(\sim \) nm) aber wesentlich kleiner als das, was wir täglich in der
+      Wechselwirkung mit unsere Umwelt wahrnehmen (\(\sim \) mm).
+      </li>
+      <li class='itemize'>“Bilanz”      heißt,      dass      der      Kern      der      Beschreibung
+      eine <span class='cmti-12'>Erhaltungsgröße </span>ist, die einfach gezählt werden kann. Erhalten
+      sind z.B. Teilchenzahlen. Eine <span class='cmti-12'>Bilanzgleichung </span>oder Bilanzierung zählt
+                                                                          
+
+                                                                          
+      dann einfach die Teilchen, die über ein gewisses Zeitinterval in ein
+      Volumen hinein fließen, heraus fließen oder darin produziert werden.
+      Weitere Erhaltungsgrößen, die man bilanzieren kann, sind der Impuls
+      und die Energie. Die Bilanzgleichung wird auch <span class='cmti-12'>Kontinuitätsgleichung</span>
+      genannt.</li></ul>
 </div>
-<!--  l. 73  -->
-<p class='indent'>The significance of the potential energy is that we can derive forces from it, \begin{equation} \vec{f}_k = -\frac{\partial }{\partial \vec{r}_k} E_{\text{pot}}(\{\vec{r}_i\}). \label{eq:forces} \end{equation} These forces are the essential ingredient to <span class='cmti-12'>molecular dynamics</span>, as they determine the motion of the atoms.</p>
-<!--  l. 80  -->
-<p class='indent'>The potential energy itself describes what is called the <span class='cmti-12'>potential energy</span> <span class='cmti-12'>landscape</span>. The potential energy landscape depends on \(3N\) degrees of freedom (as compared to the landscape we experience while walking, which depends on \(2\) degrees of freedom); it is therefore an object that is complex to visualize. Simplifying aspects of it is the core of <span class='cmti-12'>molecular statics</span>. For example, it is typically
-important to at least identify the ground-state of a system; this is the most stable configuration of a material and has the lowest possible potential energy. There is usually some crystal that is lower in energy than the energy of a glass with the same stoichiometry. Yet, in many real-world engineering applications the materials are not in their crystalline ground-state, the most common material we encounter with this property may be window glass. In molecular statics we therefore seek to enumerate those
-<span class='cmti-12'>local</span> <span class='cmti-12'>minima</span> of the potential energy landscape and energy barriers between them.</p>
-<!--  l. 82  -->
-<p class='indent'>Since the dynamics of a molecular system is determined by the forces, we only need to specify the potential energy up to a constant which disappears in the derivative Eq. \eqref{eq:forces}. We can therefore measure the potential energy with respect to any reference configuration. This reference configuration is often the atomized state of the material, where all of the constituent atoms sit individually in vacuum and are not interacting with each other. If this reference situation is
-assigned the energy \(0\), then the potential energy is generally negative, because if it was positive the system would spontaneously atomize. (Remember, any physical system evolves to a state of lower energy.)</p>
-<h2 class='likechapterHead'><a id='x1-40001.2'></a>Bibliography</h2>
+<!-- l. 66 --><p class='indent'>   Auf der Ebene der semiklassischen und klassischen Mechanik, auch
+als kinetische Ebene bezeichnet, werden die Modelle entweder durch die
+Molekulardynamik beschrieben oder durch die Bewegungsgleichung der
+Einteilchen-Wahrscheinlichkeitsdichte im Phasenraum \(f(\v{r},\v{p})\) - mit den unabhängigen
+Variablen Ort \(\v{r}\) und Impuls \(\v{p}\). Im zweiten Fall haben wir eine Funktion \(f(\v{r}(t),\v{p}(t),t)\) die von
+Ort, Impuls und der Zeit sowohl explizit, als auch implizit über \(\v{r}(t)\) und \(\v{p}(t)\)
+abhängt. Nehmen wir an, wir müssen \(f(\v{r}(t),\v{p}(t),t)\) durch diskrete Stützstellen
+interpolieren. Dies sind bei einer geringen Auflösung von 10 Punkten pro
+Variabler schon bereits 10.000.000 Interpolationspunkte. Dies ist vielleicht
+handhabbar, die Auflösung ist aber nicht besonders gut. Und daher ist
+dieses Unterfangen eher unnütz. Wir wollen nicht verschweigen, dass es
+durchaus Methoden zur numerischen Lösung der beiden oben beschriebenen
+Probleme gibt, auf diese werden aber in dieser Veranstaltung nicht näher
+eingegangen.
+</p>
+   <h3 class='sectionHead'><span class='titlemark'>1.2   </span> <a id='x1-30001.2'></a>Partikel</h3>
+<!-- l. 83 --><p class='noindent'>Grob können wir daher zwei Arten von Modellen unterscheiden: Modelle, die
+einzelne diskrete Elemente, beispielsweise Partikel (Atome, Moleküle, Körner,
+etc.), als zentrales Element haben und Modelle die kontinuierliche Felder
+(elektrostatisches Potential, Ionenkonzentrationen, Spannungen und Dehnungen)
+als zentrales Element haben. Im ersten Modelltyp werden Evolutionsgleichungen
+für diskrete Eigenschaften, welche auf den Partikeln definiert sind, wie z.B. deren
+Positionen \(\v{r}_i\) und Geschwindigkeiten \(\v{v}_i\), formuliert.
+</p><!-- l. 85 --><p class='indent'>   Um beispielsweise die Kinetik dieser Partikel zu beschreiben, könnten wir die
+Newtonschen Bewegungsgleichungen lösen. D.h. wir müssen für jedes der \(n\)
+Teilchen \(6\) gewöhnliche Differentialgleichungen, die noch untereinander gekoppelt
+sind, lösen, nämlich: \begin{equation} \dot{\v{r}}_i(t)=\v{v}_i(t)=\frac{\v{p}_i(t)}{m_i} \label{eq:posupdate} \end{equation}
+Dies ist die Gleichung für die Bahnkurve des Teilchens \(i\) im Ortsraum. Da \(\v{r}\) ein
+Vektor ist, ist Gl. \eqref{eq:posupdate} ein System aus \(3\) gewöhnlichen
+                                                                          
+
+                                                                          
+Differentialgleichungen. Die Geschwindigkeit \(\v{v}_i\) des Teilchen \(i\) zum Zeitpunkt \(t\)
+unterliegt durch den Impuls \(\v{p}_i\) ebenfalls einem System von Differentialgleichungen:
+\begin{equation} \dot{\v{p}}_i(t)=\sum _j\v{F}_{ij}(t) \label{eq:velupdate} \end{equation}
+(<span class='cmbx-12'>??</span>) beschreibt die zeitliche Entwicklung des Impulses des Teilchens \(i\). (<span class='cmbx-12'>??</span>) und
+(<span class='cmbx-12'>??</span>) sind je \(3\times n\) gekoppelte gewöhnliche Differentialgleichungen. Wollen wir z.B. die
+Bewegung sämtlicher Moleküle in einem Liter Wasser durch eine Simulation
+beschreiben, so ist dies ob der großen Zahl an Gleichungen unmöglich und wir
+müssen übergehen zu einer Beschreibung mit Hilfe von Bilanzgleichungen und
+Feldern.
+</p><!-- l. 108 --><p class='indent'>   Die Newtonschen Bewegungsgleichungen \eqref{eq:posupdate} und
+\eqref{eq:velupdate} sind von ihrer Natur her <span class='cmti-12'>physikalische Grundprinzipien</span>. Sie
+gelten so für Atome oder Planeten. Die Natur der Kraft selbst, \(\v{F}_{ij}\) in den
+Gleichungen oben, basiert natürlich auf physikalisch beschreibbaren Effekten, ist
+aber nicht notwendigerweise ein Naturprinzip. Als einfaches Beispiel sei die
+Lennard-Jones-Wechselwirkung genannt, für welche \begin{equation} V_{ij} = 4\varepsilon \left [ \left (\frac{\sigma }{r_{ij}}\right )^{12} - \left (\frac{\sigma }{r_{ij}}\right )^{6}\right ] \label{eq:lj_potential} \end{equation}
+und damit \begin{equation} \v{F}_{ij} = -4\varepsilon \left [ 12\left (\frac{\sigma ^{12}}{r_{ij}^{13}}\right ) - 6\left (\frac{\sigma ^{6}}{r_{ij}^{7}}\right )\right ]\hat{r}_{ij} \label{eq:lj} \end{equation}
+gilt, wobei \(r_{ij}\) der Abstand zwischen den Partikeln (hier Atomen oder Molekülen) \(i\)
+und \(j\) ist. Der Term \(\propto r^{-13}\) beschreibt die Abstoßung der Atome auf Grund des
+Paulischen Ausschließungsprinzip und der Term \(\propto r^{-7}\) beschreibt die Anziehung der
+Atome auf Grund der Londonschen Dispersionswechselwirkung. Beide
+Wechselwirkungen fußen auf physikalischen Grundprinzipien, aber die
+Formulierung Gl. \eqref{eq:lj} reduziert diese komplexen Phänomene
+auf ein einfaches konstituierendes Gesetz. Solche Gesetze werden oft
+<span class='cmti-12'>Konstitutivgesetze</span><span class='footnote-mark'><a href='ch013.html#fn2x1'><sup class='textsuperscript'>2</sup></a></span><a id='x1-3001f2'></a> 
+genannt. Die numerische Lösung der Newtonschen Bewegungsgleichungen für
+Atome wird als <span class='cmti-12'>Molekulardynamiksimulation </span>bezeichnet.
+</p><!-- l. 120 --><p class='indent'>   Ein weiteres Beispiel von Modellen mit diskreten Elemente sind
+Netzwerkmodelle für elektrische Schaltkreise. Hierbei verknüpft ein Element
+eine Potentialdifferenz (Energiedifferenz) mit einem fließenden Strom,
+beispielweise beschreibt \begin{equation} i = u / R \label{eq:resistor} \end{equation}
+den Strom \(i\), der durch einen Widerstand \(R\) fließt, über den die Spannung \(u\) abfällt.
+Hinzu kommen die Kirchhoffschen Regeln für Strom und Spannung. Solche
+Modelle werden im englischen oft als “lumped-element models” bezeichnet.
+Gleichung \eqref{eq:resistor} hat natürlich auch die Qualität eines
+<span class='cmti-12'>Konstitutivgesetzes</span>, da komplexe elektronische Prozesse hinter dem einzelnen
+Parameter \(R\) stehen. Die Kirchhoffschen Regeln hingegen haben die Qualität einer
+                                                                          
+
+                                                                          
+<span class='cmti-12'>Bilanzgleichung</span>. In Abb. <a href='#x1-2002r1'>1.1<!-- tex4ht:ref: fig:Scheme  --></a> werden diese Modelle daher mit dem Begriff
+<span class='cmti-12'>globale Bilanz </span>bezeichnet. “Lumped-element models” führen auch zu
+Systemen gewöhnlicher Differentialgleichungen, die oft numerisch durch
+explizite Zeitpropagation gelöst werden. Bekannte Vertreter dieser Gattung
+Simulationssoftware sind z.B. <span class='cmti-12'>SPICE </span>oder <span class='cmti-12'>MATLAB Simulink</span>.
+</p><!-- l. 127 --><p class='indent'>   Diese globale Bilanzebene ist geprägt durch das Desinteresse an lokaler
+Auflösung. Wir interessieren uns nicht für Dichten, sondern nur für
+Gesamtmassen, nicht für Stromdichten sondern nur für Ströme. Am besten
+lässt sich dies an dem o.g. Widerstand verdeutlichen, dessen Kontakte auf
+unterschiedlichen Potentialen liegen. Dies hat im einfachsten Fall einen Stromfluss
+zur Folge. Wir fragen uns nicht, wie der Strom in dem Widerstand verteilt ist.
+Wir fragen nicht einmal, ob der Widerstand homogen oder inhomogen ist,
+wir nehmen ihn als Gesamtwert, als schwarzen Kasten, dem wir einen
+Parameterwert zuordnen. Diese Herangehensweise wurden schon ausführlich in
+der Elektrotechnik und der Systemtheorie besprochen.
+</p>
+   <h3 class='sectionHead'><span class='titlemark'>1.3   </span> <a id='x1-40001.3'></a>Felder</h3>
+<!-- l. 140 --><p class='noindent'>Wenn wir nun aber feststellen, dass der schwarze Kasten mit einem Parameter nur
+ungenügend beschrieben ist, dann fangen wir an, ihn zu ersetzen durch einen
+komplexeren Ersatzschaltkreis mit Details, die den inneren Zustand des Bauteils
+auflösen. Dies kann man wiederum soweit treiben, dass zum Schluss ein
+Kontinuum entsteht - wir sind auf der <span class='cmti-12'>lokalen Bilanzebene </span>angekommen. Dazu
+wiederum brauchen wir Parameter, wie z.B. die Viskosität oder die Diffusivität,
+die ihrerseits als Modelle nicht aus der kontinuierlichen Beschreibung der lokalen
+Bilanz ableitbar sind. Man braucht beispielsweise Experimente oder <span class='cmti-12'>ab-initio</span>
+Simulationen, um diese Größen zu ermitteln.
+</p><!-- l. 149 --><p class='indent'>   Lokale Bilanz bedeutet, dass wir an jedem Raumpunkt dem System eine
+Dichte, Konzentration, Temperatur oder ähnliche Größe zuordnen können.
+Damit sind aber die zeitlichen Veränderungen der Ortsfreiheitsgrade - also die
+Impulse, respektive die Geschwindigkeiten - in ihrer Verteilung durch eine
+<span class='cmti-12'>lokale, thermodynamische Gleichgewichtsbedingung </span>festgelegt. (Die Impulse
+genügen im thermodynamischen Gleichgewicht einer Maxwell-Boltzmann
+Verteilung.) Dieses lokale Gleichgewicht bedeutet nicht, dass wir keine
+Dynamik mehr haben. Aber wenn wir an einen Schwarm von Gas- oder
+Flüssigkeitsteilchen denken, dann folgen eben deren individuelle Geschwindkeiten
+einer Gleichgewichtsverteilungsfunktion, deren Mittel folgt aber der
+Bilanzgleichung. Die Dynamik läuft also gemittelt über eine riesige Zahl
+dieser Teilchen hinweg ab. Lokale Bilanz bedeutet auch nicht, dass an
+                                                                          
+
+                                                                          
+unterschiedlichen Orten nicht unterschiedliche Temperaturen oder Dichten
+vorliegen können. Die Unterschiede in diesen Parametern sind dann die
+treibenden Kräfte der Dynamik - Temparaturgradient, Dichtegradient,
+etc.
+</p><!-- l. 161 --><p class='indent'>   Solche Modelle fallen in den Bereich der Feldtheorien, und deren
+mathematische Beschreibung erfolgt über <span class='cmti-12'>partielle </span>Differentialgleichungen. (Dies
+steht im Gegensatz zu den gewöhnlichen Differentialgleichungen der
+diskreten Modelle.) Eine Feldtheorie, die auf Bilanzierung von Masse,
+Impuls oder Energie basiert, benötigt immer Konstitutivgesetze für die
+Beschreibung des Materialverhaltens. Diese Konstitutivgesetze enthalten
+<span class='cmti-12'>Transportparameter </span>wie die Viskosität oder Diffusionskonstante. Es gibt auch
+Feldtheorien, die den Charakter eines physikalischen Grundprinzips haben.
+Dies ist beispielsweise die o.g. Schrödingergleichung oder aber auch die
+Maxwell-Gleichungen der Elektrodynamik. In dieser Lehrveranstaltung
+wollen wir uns auf solche kontinuierliche Systeme konzentrieren, die als
+Feldtheorie mit Hilfe von partiellen Differentialgleichungen formuliert
+werden.
+</p><!-- l. 164 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead'><span class='titlemark'>1.4   </span> <a id='x1-50001.4'></a>Welches Modell ist das richtige?</h3>
+<!-- l. 166 --><p class='noindent'>Wohlgemerkt, wir haben keine der Beschreibungsebenen auf verschiedenen
+Längenskalen mit irgendeiner Wertung versehen. Nur weil sie Quantenmechanik
+heisst und den Einen oder die Andere ob ihrer Komplexität in Ehrfurcht
+erstarren lässt, bietet sie nicht notwendigerweise die Lösung. Ganz im
+Gegenteil, es kann sogar hinderlich sein, zu viel Detail aufösen zu wollen und wir
+müssen uns ständig fragen, wieviel Detail in der Simulation notwendig ist. Mehr
+noch, fragen wir uns stets bevor wir eine Simulation angehen: “Ist eine
+Simulation dieser Komplexität wirklich notwendig, oder kann ich das Problem
+vereinfachen?” Die Simulation sollte als Hilfsmittel gesehen werden und nicht als
+Selbstzweck, frei nach dem amerikanischen Mathematiker Richard Wesley
+Hamming (*1915, \(\dagger \)1998): <span class='cmti-12'>The purpose of computing is about insight, not about nice
+</span><span class='cmti-12'>viewgraphs</span>.
+                                                                          
+
+                                                                          
+</p>
+   <h2 class='likechapterHead'><a id='x1-60001.4'></a>Literaturverzeichnis</h2>
+    

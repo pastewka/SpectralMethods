@@ -1,94 +1,165 @@
 ---
 layout: default
-title: "Chapter 05"
-parent: Lecture
-date: 2021-08-18
+title: "Kapitel 05"
+parent: Vorlesung
+date: 2021-09-27
 categories: lecture
 author: Lars Pastewka
-nav_order: 05
----
+nav_order: 5
 ---
 
-<h2 class='chapterHead'><span class='titlemark'>Chapter 5</span><br />
-<a id='x1-10005'></a>Embedded-atom method potentials</h2>
-<div class='framedenv' id='shaded*-1'><!--  l. 4  -->
-<p class='noindent'><span class='underline'><span class='cmbx-12'>Context:</span></span> We here introduce a more complex interatomic potential that is suitable for modeling metals, the embedded atom method potential. It belongs to the class of <span class='cmti-12'>many-body</span> interatomic potentials and can be used to model mechanical or thermodynamic properties of metals.</p>
-</div>
-<!--  l. 8  -->
-<p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1dc294f7-cc2e-4a41-8d21-ad23015fff7d' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1dc294f7-cc2e-4a41-8d21-ad23015fff7d</span></a></p>
-<h3 class='sectionHead'><span class='titlemark'>5.1</span> <a id='x1-20005.1'></a>Introduction</h3>
-<!--  l. 12  -->
-<p class='noindent'>Metals are often cubic crystals with anisotropic mechanical properties. Crystals with cubic symmetry have three independent elastic constants, \(C_{11}\), \(C_{12}\) and \(C_{44}\) that roughly describe the resistance to volume change, dilational shear and simple shear. The original driving force behind the development of the embedded atom method (EAM) was to overcome the zero Cauchy pressure \(P_{C} = (C_{11} - C_{44})/2\) for solids obtained for pair potentials: Pair potentials always
-satisfy the <span class='cmti-12'>Cauchy relation</span> \(C_{11}=C_{44}\), hence there are only two independent elastic constants for cubic solids. [Compare: For an <span class='cmti-12'>isotropic</span> solid there are also two independent elastic constants, but this condition is different, bulk modulus \(K = (C_{11} + 2C_{12})/3\) and shear modulus \(G = C_{44} = ( C_{11} - C_{12} )/2\).] The Cauchy relation can be relaxed by adding an energy term that depends on the volume per atom \(v =
-V/N\) (<a href='#Xvitek_pair_1996'>Vitek</a>, <a href='#Xvitek_pair_1996'>1996</a>) \begin{equation} E( \{ \vec{r}_{i} \} ) = \frac{1}{2}\sum _{i = 1}^{N}{\sum _{j = 1}^{N}{V(r_{ij} ) + NU(V/N)}} \label{eq:pairplusdens} \end{equation} The <span class='cmti-12'>volume dependent term</span> contributes only to deformation modes that do not conserve the volume, i.e. \(C_{11}\) or \(C_{12}\). This hence breaks the Cauchy relationship \(C_{12} = C_{44}\) and gives a non-zero Cauchy-pressure \(P_{C} =
-(C_{12} - C_{44})/2\)</p>
-<!--  l. 31  -->
-<p class='indent'>While a potential of the type given by Eq. \eqref{eq:pairplusdens} can be adjusted to give the correct elastic constant (and can therefore be accurate), <span class='cmti-12'>it cannot be used for e.g. free surfaces</span> (and is therefore not transferable). This has historically driven the development of more advanced methods for modeling solids such as the EAM described here. Note that EAM potentials are not confined to the realm of solids but can also be used for studying
-properties of melt, or the transition between solid and melt.</p>
-<!--  l. 38  -->
-<p class='noindent'></p>
-<h3 class='sectionHead'><span class='titlemark'>5.2</span> <a id='x1-30005.2'></a>Functional form</h3>
-<!--  l. 40  -->
-<p class='noindent'>The EAM is based on the assumption that the energy of an impurity in a host crystal lattice is a functional of the overall electron density \(\rho (\vec{r})\) (that leads to an attraction), plus some form of repulsion (i.e. due to Pauli exclusion). This can be written as \(E_\text{pot}=\mathcal{F}\left \lbrack \rho ( \vec{r} ) \right \rbrack + \phi \), where \(\mathcal{F}\) is called the embedding functional that tells us the relationship between energy and electron density and \(\phi
-\) some repulsive interaction.</p>
-<!--  l. 44  -->
-<p class='indent'>We view each individual atom in the system as an impurity in the host consisting of all other atoms (<a href='#Xdaw_semiempirical_1983'>Daw and Baskes</a>, <a href='#Xdaw_semiempirical_1983'>1983</a>). \(\mathcal{F}\) is then approximated by a <span class='cmti-12'>function</span> that depends on the <span class='cmti-12'>local</span> electron density \(\rho _{i}\) at atom \(i\): \begin{equation} E_\text{pot}( \{ \vec{r}_{i} \} ) = \sum _{i} \mathcal{F}( \rho _{i} ) +
-\frac{1}{2}\sum _{i,j} \phi ( r_{ij} ) \end{equation} Note the first sum is over atoms, not pairs, and the second term is a simple pair interaction. The missing ingredient is now the local electron density \(\rho _i\), which we approximate from the local density of the nuclei. This assumes that each atom in the vicinity of atom \(i\) contributes a certain number of electrons to the position of atom \(i\).</p>
-<!--  l. 54  -->
-<p class='indent'>The embedding function \(\mathcal{F(}\rho )\) is negative and (typically) decreases monotonously with increasing density. The more closely a structure is packed the lower the energy. The repulsive term that is physically due to electrostatic and Pauli repulsion then stabilizes the structure. This is balance between attractive and repulsive contribution a common feature of most interatomic potentials, and we have already seen it for the Lennard-Jones potential.</p>
-<!--  l. 61  -->
-<p class='indent'>The local density of the atomic system is easily computed from \begin{equation} \rho _{i} = \sum _{j}{f(r_{ij})} \end{equation} If \(f(r)\) is a step function that drops to zero at a distance \(r_{c}\) then \(\rho _{i}\) becomes the coordination number, i.e. the number of atoms within a sphere of radius \(r_{c}\). By normalizing the step function with the volume of the sphere, it becomes clear that \(\rho _{i}\) is some measure of the average atomic density within a distance \(r_{c}\)
-from atom <span class='cmti-12'>i</span>. However, a step function is not differentiable. All distance dependent functions are therefore smoothly connected to zero at a distance \(r_{c}\) (the cutoff). This makes the whole functional form differentiable at least once!</p>
-<!--  l. 75  -->
-<p class='indent'>Examples of early EAMs are <a href='#Xgupta_lattice_1981'>Gupta</a> (<a href='#Xgupta_lattice_1981'>1981</a>), <a href='#Xfinnis_simple_1984'>Finnis and Sinclair</a> (<a href='#Xfinnis_simple_1984'>1984</a>) and <a href='#Xcleri_tight-binding_1993'>Cleri and Rosato</a> (<a href='#Xcleri_tight-binding_1993'>1993</a>). They all employ the specific functional forms \begin{align} \mathcal{F}\left ( \rho \right ) &amp;= - A\sqrt{\rho } \\ f\left ( r_{ij} \right ) &amp;= e^{-
-2q(r_{ij} - r_{0})} \\ V\left ( r_{ij} \right ) &amp;= Be^{- p(r_{ij} - r_{0})} \end{align}</p>
-<!--  l. 81  -->
-<p class='indent'>where \(A\), \(B\), \(q\), \(p\) and \(R_{0}\) are parameters. For example, <a href='#Xcleri_tight-binding_1993'>Cleri and Rosato</a> (<a href='#Xcleri_tight-binding_1993'>1993</a>) give parameters for the elements Ni, Cu, Rh, Pd, Ag, Ir, Pt, Au, Al, Pb, Ti, Zr, Co, Cd, Zn and Mg. Note that the cutoff radius \(r_c\) in most potentials based on the embedded-atom approach reaches out to second nearest neighbors or further, e.g. to fifth nearest neighbor for fcc metals in the <a href='#Xcleri_tight-binding_1993'>Cleri and Rosato</a> (<a href='#Xcleri_tight-binding_1993'>1993</a>) potential. These potentials do not describe fundamental forces of nature but they must be parametrized for a specific material. The parametrization also includes choice of cutoff radius \(r_c\).</p>
-<!--  l. 85  -->
-<p class='noindent'></p>
-<h3 class='sectionHead'><span class='titlemark'>5.3</span> <a id='x1-40005.3'></a>Parameterization</h3>
-<!--  l. 87  -->
-<p class='noindent'>There exist different strategies to actually determine the parameters of a potential. <a href='#Xcleri_tight-binding_1993'>Cleri and Rosato</a> (<a href='#Xcleri_tight-binding_1993'>1993</a>), as an example, have five parameters and they fit the potential directly to <span class='cmti-12'>experimental values</span> of the cohesive energy, lattice constant and the three cubic elastic constants.</p>
-<!--  l. 93  -->
-<p class='indent'>Some authors adjust the either embedding function or repulsive pair potential to reproduce the <span class='cmti-12'>universal equation of state</span> (see <a href='#Xferrante_diatomic_1983'>Ferrante et al.</a> (<a href='#Xferrante_diatomic_1983'>1983</a>); <a href='#Xrose_universal_1984'>Rose et al.</a> (<a href='#Xrose_universal_1984'>1984</a>)). For example, <a href='#Xfoiles_embedded-atom-method_1986'>Foiles et al.</a> (<a href='#Xfoiles_embedded-atom-method_1986'>1986</a>) obtain \(f(r_{ij})\) from the electron density of free atom calculations, and assume the pair repulsion is entirely electrostatic, \(V\left ( r_{ij} \right ) = Z_{i}\left ( r_{ij} \right )Z_{j}(r_{ij})/r_{ij}\) (with atomic charges \(Z_{i}\) actually depending on the distance between atoms, \(Z\left ( r_{ij} \right ) = Z_{0}\left ( 1 + \beta R^{\nu } \right )\exp{( - \alpha r_{ij})}\) where \(Z_{0}\), \(\beta \), \(\nu \) and \(\alpha \) are parameters). The
-embedding function \(F(\rho )\) is then adjusted to reproduce the universal equation of state. Note that <a href='#Xfoiles_embedded-atom-method_1986'>Foiles et al.</a> (<a href='#Xfoiles_embedded-atom-method_1986'>1986</a>) have more parameters in their model than <a href='#Xcleri_tight-binding_1993'>Cleri and Rosato</a> (<a href='#Xcleri_tight-binding_1993'>1993</a>)!</p>
-<!--  l. 106  -->
-<p class='indent'>A more modern approach is <span class='cmti-12'>force matching</span> due to <a href='#Xercolessi_interatomic_1994'>Ercolessi and Adams</a> (<a href='#Xercolessi_interatomic_1994'>1994</a>). Force matching potentials are fit to a set of calculations carried out with a more accurate and more transferable but also more expensive method (e.g. a quantum chemical method) at finite temperature. This generates a molecular dynamics trajectory that has configurations with nonzero forces on
-each atom. (Fitting to equilibrium properties such as Cleri-Rosato means fitting to structures where all forces are zero.) The potential parameters are then fit to reproduce these forces. This method has the advantage that, in principle, an unlimited set of fitting target can be generated easily and the potential can be fit to a large number of parameters. An example of a force-matched EAM is <a href='#Xgrochola_fitting_2005'>Grochola et al.</a> (<a href='#Xgrochola_fitting_2005'>2005</a>). It
-has no fixed functional form, but splines are used to represent the three functions \(\mathcal{F}(\rho )\), \(f(r)\) and \(V(r_ij)\). Figure <a href='#x1-4001r1'>5.1<!--  tex4ht:ref: fig:grochola   --></a> shows these functions for the <a href='#Xgrochola_fitting_2005'>Grochola et al.</a> (<a href='#Xgrochola_fitting_2005'>2005</a>) potential.</p>
-<div class='framedenv' id='shaded*-1'><!--  l. 117  -->
-<p class='noindent'><span class='underline'><span class='cmbx-12'>Note:</span></span> While early EAM potentials had a purely attractive embedding contribution \(\mathcal{F}(\rho )\) and a purely repulsive pair contribution \(\phi (r)\), this condition is relaxed in more complex potential. As can be seen from Fig. <a href='#x1-4001r1'>5.1<!--  tex4ht:ref: fig:grochola   --></a>, <a href='#Xgrochola_fitting_2005'>Grochola et al.</a> (<a href='#Xgrochola_fitting_2005'>2005</a>)’s potential
-includes a repulsive contribution from the embedding term.</p>
-</div>
-<figure class='figure'><a id='x1-4001r1'></a> <!--  l. 122  -->
-<p class='noindent'><img height='284' src='figures/image6.png' width='356' alt='PIC' /> <img height='284' src='figures/image7.png' width='356' alt='PIC' /> <img height='284' src='figures/image8.png' width='356' alt='PIC' /> <a id='x1-4002'></a></p>
-<figcaption class='caption'><span class='id'>Figure 5.1:</span><span class='content'>\(\mathcal{F}(\rho )\), \(f(r)\) and \(V(r_ij)\) as employed in the Au potential by <a href='#Xgrochola_fitting_2005'>Grochola et al.</a> (<a href='#Xgrochola_fitting_2005'>2005</a>).</span></figcaption>
-<!--  tex4ht:label?: x1-4001r5.3   --></figure>
-<div class='framedenv' id='shaded*-1'><!--  l. 129  -->
-<p class='noindent'><span class='underline'><span class='cmbx-12'>Note:</span></span> Note that these two approaches, fitting to experimental ground-state data and force-matching, are quite different from a philosophical point of view. It has been argued by <a href='#Xsukhomlinov_constraints_2016'>Sukhomlinov and Müser</a> (<a href='#Xsukhomlinov_constraints_2016'>2016</a>), that the potential should contains as few parameters as possible (Occam’s razor!) to achieve best transferability. Potential
-with many parameters are often accurate for the fitting data set but not accurate outside and hence not transferable. This problem is typically referred to as overfitting.</p>
-</div>
-<h3 class='sectionHead'><span class='titlemark'>5.4</span> <a id='x1-50005.4'></a>Forces</h3>
-<!--  l. 135  -->
-<p class='noindent'>From the total energy expression we can straightforwardly derive forces, \(\vec{f}_{k} = - \partial E/\partial \vec{r}_{k}\), leading to \begin{align} \vec{f}_{k} &amp;= - \sum _{i}^{}\frac{\partial \mathcal{F}\left ( \rho _{i} \right )}{\partial \rho _{i}}\frac{\partial \rho _{i}}{\partial{\vec{r}}_{k}} - \frac{1}{2}\sum _{i,j}^{}\frac{\partial V}{\partial r_{ij}}\frac{\partial r_{ij}}{\partial{\vec{r}}_{ij}} \\ &amp;= - \sum _{i}^{}\frac{\partial \mathcal{F}\left ( \rho _{i} \right
-)}{\partial \rho _{i}}\sum _{j}^{}{\frac{\partial f}{\partial r_{ij}}\frac{\partial r_{ij}}{\partial{\vec{r}}_{k}}} - \frac{1}{2}\sum _{i,j}^{}\frac{\partial V}{\partial r_{ij}}\frac{\partial r_{ij}}{\partial{\vec{r}}_{k}} \end{align}</p>
-<!--  l. 143  -->
-<p class='indent'>Note that \(\partial r_{ij}/\partial \vec{r}_{k} = \left ( \delta _{ik} - \delta _{jk} \right ) \hat{r}_{ij}\). Hence \begin{align} \vec{f}_{k} &amp;= - \sum _{i}^{}\frac{\partial \mathcal{F}\left ( \rho _{i} \right )}{\partial \rho _{i}}\sum _{j}^{}{\frac{\partial f}{\partial r_{ij}}\left ( \delta _{ik} - \delta _{jk} \right ){\hat{r}}_{ij}} - \frac{1}{2}\sum _{i,j} \frac{\partial V}{\partial r_{ij}}\left ( \delta _{ik} - \delta _{jk} \right ){\hat{r}}_{ij} \\ &amp;= - \sum _{i}^{}\left
-( \frac{\partial \mathcal{F}\left ( \rho _{k} \right )}{\partial \rho _{k}}\frac{\partial f}{\partial r_{ki}}{\hat{r}}_{ki} - \frac{\partial \mathcal{F}\left ( \rho _{i} \right )}{\partial \rho _{i}}\frac{\partial f}{\partial r_{ik}}{\hat{r}}_{ik} \right ) - \frac{1}{2}\sum _{i}^{}\left ( \frac{\partial V}{\partial r_{ki}}{\hat{r}}_{ki} - \frac{\partial V}{\partial r_{ik}}\hat{r}_{ik} \right ) \end{align}</p>
-<!--  l. 150  -->
-<p class='indent'>Using \(\hat{r}_{ik} = - \hat{r}_{ki}\) gives \begin{equation} \vec{f}_{k} = \sum _{i} \left ( \frac{\partial \mathcal{F}\left ( \rho _{k} \right )}{\partial \rho _{k}} + \frac{\partial \mathcal{F}\left ( \rho _{i} \right )}{\partial \rho _{i}} \right )\frac{\partial f}{\partial r_{ik}}{\hat{r}}_{ik} + \sum _{i} \frac{\partial V}{\partial r_{ik}}{\hat{r}}_{ik} \end{equation} Energies and forces are typically implemented analytically in a molecular dynamics code. Derivation (and correct
-implementation) of the force can be tedious for complicated potential expressions!</p>
-<h2 class='likechapterHead'><a id='x1-60005.4'></a>Bibliography</h2>
-<div class='thebibliography'>
-<p class='bibitem'><span class='biblabel'><a id='Xcleri_tight-binding_1993'></a><span class='bibsp'>   </span></span>F. Cleri and V. Rosato. Tight-binding potentials for transition metals and alloys. <span class='cmti-12'>Phys. Rev. B</span>, 48(1):22–33, 1993. URL <a href='https://doi.org/10.1103/PhysRevB.48.22' class='url'><span class='cmtt-12'>https://doi.org/10.1103/PhysRevB.48.22</span></a>.</p>
-<p class='bibitem'><span class='biblabel'><a id='Xdaw_semiempirical_1983'></a><span class='bibsp'>   </span></span>M. S. Daw and M. I. Baskes. Semiempirical, quantum mechanical calculation of hydrogen embrittlement in metals. <span class='cmti-12'>Phys. Rev. Lett.</span>, 50(17):1285–1288, 1983. URL <a href='https://doi.org/10.1103/PhysRevLett.50.1285' class='url'><span class='cmtt-12'>https://doi.org/10.1103/PhysRevLett.50.1285</span></a>.</p>
-<p class='bibitem'><span class='biblabel'><a id='Xercolessi_interatomic_1994'></a><span class='bibsp'>   </span></span>F. Ercolessi and J. B. Adams. Interatomic Potentials from First-Principles Calculations: The Force-Matching Method. <span class='cmti-12'>EPL</span>, 26(8): 583–588, 1994. URL <a href='https://doi.org/10.1209/0295-5075/26/8/005' class='url'><span class='cmtt-12'>https://doi.org/10.1209/0295-5075/26/8/005</span></a>.</p>
-<p class='bibitem'><span class='biblabel'><a id='Xferrante_diatomic_1983'></a><span class='bibsp'>   </span></span>J. Ferrante, J. Smith, and J. Rose. Diatomic Molecules and Metallic Adhesion, Cohesion, and Chemisorption: A Single Binding-Energy Relation. <span class='cmti-12'>Phys.</span> <span class='cmti-12'>Rev. Lett.</span>, 50(18):1385–1386, 1983. doi: 10.1103/PhysRevLett.50.1385. URL <a href='http://www.ncbi.nlm.nih.gov/pubmed/23357448' class='url'><span class='cmtt-12'>http://www.ncbi.nlm.nih.gov/pubmed/23357448</span></a>.</p>
-<p class='bibitem'><span class='biblabel'><a id='Xfinnis_simple_1984'></a><span class='bibsp'>   </span></span>M. W. Finnis and J. E. Sinclair. A simple empirical N-body potential for transition metals. <span class='cmti-12'>Phil. Mag. A</span>, 50(1):45–55, 1984. URL <a href='https://doi.org/10.1080/01418618408244210' class='url'><span class='cmtt-12'>https://doi.org/10.1080/01418618408244210</span></a>.</p>
-<p class='bibitem'><span class='biblabel'><a id='Xfoiles_embedded-atom-method_1986'></a><span class='bibsp'>   </span></span>S. M. Foiles, M. I. Baskes, and M. S. Daw. Embedded-atom-method functions for the fcc metals Cu, Ag, Au, Ni, Pd, Pt, and their alloys. <span class='cmti-12'>Phys. Rev. B</span>, 33(12):7983–7991, 1986. URL <a href='https://doi.org/10.1103/PhysRevB.33.7983' class='url'><span class='cmtt-12'>https://doi.org/10.1103/PhysRevB.33.7983</span></a>.</p>
-<p class='bibitem'><span class='biblabel'><a id='Xgrochola_fitting_2005'></a><span class='bibsp'>   </span></span>G. Grochola, S. P. Russo, and I. K. Snook. On fitting a gold embedded atom method potential using the force matching method. <span class='cmti-12'>J. Chem. Phys.</span>, 123(20):204719, 2005. URL <a href='https://doi.org/10.1063/1.2124667' class='url'><span class='cmtt-12'>https://doi.org/10.1063/1.2124667</span></a>.</p>
-<p class='bibitem'><span class='biblabel'><a id='Xgupta_lattice_1981'></a><span class='bibsp'>   </span></span>R. P. Gupta. Lattice relaxation at a metal surface. <span class='cmti-12'>Phys. Rev. B</span>, 23(12): 6265–6270, 1981. URL <a href='https://doi.org/10.1103/PhysRevB.23.6265' class='url'><span class='cmtt-12'>https://doi.org/10.1103/PhysRevB.23.6265</span></a>.</p>
-<p class='bibitem'><span class='biblabel'><a id='Xrose_universal_1984'></a><span class='bibsp'>   </span></span>J. Rose, J. Smith, F. Guinea, and J. Ferrante. Universal features of the equation of state of metals. <span class='cmti-12'>Phys. Rev. B</span>, 29(6):2963–2969, 1984. URL <a href='https://doi.org/10.1103/PhysRevB.29.2963' class='url'><span class='cmtt-12'>https://doi.org/10.1103/PhysRevB.29.2963</span></a>.</p>
-<p class='bibitem'><span class='biblabel'><a id='Xsukhomlinov_constraints_2016'></a><span class='bibsp'>   </span></span>S. V. Sukhomlinov and M. H. Müser. Constraints on phase stability, defect energies, and elastic constants of metals described by EAM-type potentials. <span class='cmti-12'>J. Phys.: Condens. Matter</span>, 28(39):395701, 2016. URL <a href='https://doi.org/10.1088/0953-8984/28/39/395701' class='url'><span class='cmtt-12'>https://doi.org/10.1088/0953-8984/28/39/395701</span></a>.</p>
-<p class='bibitem'><span class='biblabel'><a id='Xvitek_pair_1996'></a><span class='bibsp'>   </span></span>V. Vitek. Pair potentials in atomistic computer simulations. <span class='cmti-12'>MRS Bull.</span>, 21(2):20–23, 1996. URL <a href='https://doi.org/10.1557/S088376940004625X' class='url'><span class='cmtt-12'>https://doi.org/10.1557/S088376940004625X</span></a>.</p>
-</div>
+                                                                          
+   <h2 class='chapterHead'><span class='titlemark'>Kapitel 5</span><br /><a id='x1-10005'></a>Numerische Lösungsstrategien</h2>
+   <div id='shaded*-1' class='framedenv'>
+<!-- l. 6 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Wir legen jetzt das Transportproblem für eine Weile zur Seite
+und wollen uns der <span class='cmti-12'>numerischen </span>Lösung von Differentialgleichungen
+widmen. Dieses Kapitel zeigt die Grundzüge der numerischen Analyse von
+Differentialgleichungen und führt ein paar wichtige Konzepte ein, insbesondere
+die Reihenentwicklung und das Residuum. Die Darstellung hier folgt Kapitel 1 aus
+<a href='#Xboyd_chebyshev_2000'>Boyd</a> (<a href='#Xboyd_chebyshev_2000'>2000</a>). </p></div>
+   <h3 class='sectionHead'><span class='titlemark'>5.1   </span> <a id='x1-20005.1'></a>Reihenentwicklung</h3>
+<!-- l. 12 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=2c5c9440-a3de-442a-9d84-ac840105f558' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=2c5c9440-a3de-442a-9d84-ac840105f558</span></a>
+</p><!-- l. 14 --><p class='indent'>   In abstrakter Schreibweise suchen wir nach unbekannten Funktionen \(u(x,y,z,...)\) die einen
+Satz von Differentialgleichungen \begin{equation} \mathcal{L} u(x,y,z,\ldots ) = f(x,y,z,\ldots ) \label{eq:gendgl} \end{equation}
+erfüllen. Hierbei ist \(\mathcal{L}\) ein (nicht zwingend linearer) Operator, der die
+Differential- (oder Integral-)operationen enthält. Zur (numerischen) Lösung
+der Differentialgleichung führen wir nun ein wichtiges Konzept ein: Wir
+nähern die Funktion \(u\) durch eine <span class='cmti-12'>Reihenentwicklung </span>an. Wir schreiben
+\begin{equation} u_N(x, y, z, \ldots ) = \sum _{n=0}^N a_n \varphi _n(x,y,z,\ldots ) \label{eq:seriesexpansion} \end{equation}
+wobei die \(\varphi _n\) als “Basisfunktionen” bezeichnet werden. Wir werden die Eigenschaften
+dieser Basisfunktionen in mehr Details im nächsten Kapitel diskutieren.
+</p><!-- l. 29 --><p class='indent'>   Die Differentialgleichung können wir nun schreiben als, \begin{equation} \mathcal{L} u_N(x,y,z,\ldots ) = f(x,y,z,\ldots ). \end{equation}
+Durch diese Darstellung wird erreicht, dass wir nun die Frage nach der
+unbekannten Funktion \(u\) durch die Frage nach den unbekannte Koeffizienten \(a_n\)
+ersetzt haben. Den Differentialoperator \(\mathcal{L}\) müssen wir nur auf die (bekannten)
+Basisfunktionen \(\varphi _n\) wirken lassen, und dies können wir analytisch berechnen.
+</p><!-- l. 36 --><p class='indent'>   Was verbleibt ist die Bestimmung der Koeffizienten \(a_n\). Diese Koeffizienten
+sind Zahlen, und diese Zahlen können von einem Computer berechnet
+werden. Gleichung \eqref{eq:seriesexpansion} ist selbstverständlich eine
+Näherung. Für gewisse Basisfunktionen kann gezeigt werden, dass diese
+“vollständig” sind und damit bestimmte Klassen von Funktionen exakt
+abbilden können. Dies stimmt aber nur unter der Bedingung, dass die Reihe
+Gl. \eqref{eq:seriesexpansion} bis \(N\to \infty \) geführt wird. Für alle praktischen
+Anwendungsfälle (so wie Implementierungen in Computercode), muss diese
+Reihenentwicklung jedoch abgebrochen werden. Eine “gute” Reihenentwicklung
+approximiert die exakte Lösung bereits bei niedrigem \(N\) mit niedrigem Fehler. Wir
+müssten bei dieser Aussage natürlich noch spezifizieren, wie wir Fehler
+quantifizieren möchten. Numerisch suchen wir dann genau nach den
+Koeffizienten \(a_n\), die den Fehler minimieren.
+                                                                          
+
+                                                                          
+</p><!-- l. 39 --><p class='indent'>   Die Wahl guter Basisfunktion ist nicht-trivial. Wir werden hier hauptsächlich
+“finite Elemente” als Basisfunktionen nutzen und andere Arten kurz ansprechen.
+Bevor wir tiefer in dieses Thema einsteigen, brauchen wir noch weitere Konzepte
+für das Verständnis der numerischen Analyse.
+</p><!-- l. 41 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead'><span class='titlemark'>5.2   </span> <a id='x1-30005.2'></a>Residuum</h3>
+<!-- l. 43 --><p class='noindent'>Ein wichtiges Konzept ist das des <span class='cmti-12'>Residuums</span>. Unser Ziel ist es, Gl. \eqref{eq:gendgl}
+zu lösen. Für die exakte Lösung wäre \(\mathcal{L} u - f\equiv 0\). Da wir aber nur eine Näherungslösung
+konstruieren können, wird diese Bedingung nicht exakt erfüllt sein. Wir
+definieren das Residuum als genau diese Abweichung von der exakten Lösung,
+nämlich \begin{equation} R(x,y,z,\ldots ; a_0, a_1, \ldots , a_N) = \mathcal{L} u_N(x,y,z,\ldots ) - f(x,y,z,\ldots ). \label{eq:residual} \end{equation}
+Das Residuum ist damit eine Art Maß für den Fehler den wir machen. Die Strategie
+zur numerischen Lösung der Differentialgleichung Gl. \eqref{eq:gendgl}, ist es nun,
+die Koeffizienten \(a_n\) so zu bestimmen, dass das Residuum Gl. \eqref{eq:residual}
+minimal wird. Wir haben damit die Lösung der Differentialgleichung auf ein
+Optimierungsproblem abgebildet. Die unterschiedlichen numerischen Verfahren,
+die wir in den nächsten Kapiteln diskutieren werden, entscheiden sich hier
+hauptsächlich in der spezifischen Optimierungsstrategie.
+</p>
+   <div id='shaded*-1' class='framedenv'>
+<!-- l. 52 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Numerische Verfahren für die <span class='cmti-12'>Optimierung </span>sind ein zentraler
+Kern der numerischen Lösung von Differentialgleichungen und damit der
+Simulationstechniken. Es gibt unzählige Optimierungsverfahren, die in
+unterschiedlichen Situationen besser oder schlechter funktionieren. Wir
+werden hier zunächst solche Optimierer als “Black Box” behandeln.
+Zum Ende der Lehrveranstaltung werden wir zur Frage der Optimierung
+zurückkehren und einige bekannte Optimierungsverfahren diskutieren. Der
+Begriff <span class='cmti-12'>Minimierungsverfahren </span>wird oft synonym zu Optimierungsverfahren
+verwendet. Eine gute Übersicht über Optimierungsverfahren bietet das Buch
+von <a href='#Xnocedal_numerical_2006'>Nocedal and Wright</a> (<a href='#Xnocedal_numerical_2006'>2006</a>). </p></div>
+<!-- l. 56 --><p class='noindent'>
+</p>
+                                                                          
+
+                                                                          
+   <h3 class='sectionHead'><span class='titlemark'>5.3   </span> <a id='x1-40005.3'></a>Ein erstes Beispiel</h3>
+<!-- l. 59 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=025ad4dc-b395-4980-8fdc-ac84016870c8' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=025ad4dc-b395-4980-8fdc-ac84016870c8</span></a>
+</p><!-- l. 61 --><p class='indent'>   Wir wollen nun diese abstrakten Ideen an einem Beispiel konkretisieren und
+ein paar wichtige Begriffe einführen. Wir schauen uns das eindimensionale
+Randwertproblem \begin{equation} \frac{\dif ^2 u}{\dif x^2} - (x^6 + 3x^2)u = 0 \label{eq:odeexample} \end{equation}
+mit den Randbedingungen \(u(-1)=u(1)=1\) an. (D.h. \(x\in [-1,1]\) ist die Domäne auf der wir die Lösung
+suchen.) Der abstrakte Differentialoperator \(\mathcal{L}\) nimmt in diesem Fall die konkrete
+Form \begin{equation} \mathcal{L} = \frac{\dif ^2 }{\dif x^2} - (x^6 + 3x^2) \end{equation}
+an. Die exakte Lösung dieses Problems ist gegeben durch \begin{equation} u(x) = \exp \left [(x^4-1)/4\right ]. \end{equation}
+</p><!-- l. 76 --><p class='indent'>   Wir raten nun eine Näherungslösung als Reihenentwicklung für diese
+Gleichung. Diese Näherungslösung sollte bereits die Randbedingungen
+erfüllen. Die Gleichung \begin{equation} u_2(x) = 1 + (1-x^2)(a_0 + a_1 x + a_2 x^2) \label{eq:approxexample} \end{equation}
+ist so konstruiert, dass die Randbedingungen erfüllt sind. Wir können diese als
+\begin{equation} u_2(x) = 1 + a_0 (1-x^2) + a_1 x (1-x^2) + a_2 x^2 (1-x^2) \end{equation}
+umschreiben, um die Basisfunktionen \(\varphi _i(x)\) zu exponieren. Hier \(\varphi _0(x)=1-x^2\), \(\varphi _1(x)= x (1-x^2)\) und \(\varphi _2(x) = x^2 (1-x^2)\). Da diese
+Basisfunktionen auf der gesamten Domäne \([-1,1]\) ungleich Null sind, heißt diese Basis
+eine <span class='cmti-12'>spektrale </span>Basis. (Mathematisch: Der Träger der Funktion entspricht der
+Domäne.)
+</p><!-- l. 87 --><p class='indent'>   Im nächsten Schritt müssen wir das Residuum \begin{equation} R(x; a_0, a_1, a_2) = \frac{\dif ^2 u_2}{\dif x^2} - (x^6 + 3x^2)u_2 \end{equation}
+minimieren. Hierfür wählen wir eine Strategie, die als <span class='cmti-12'>Kollokation </span>bezeichnet
+wird: Wir verlangen, dass an drei ausgewählten Punkten das Residuum exakt
+verschwindet: \begin{equation} R(x_i; a_0, a_1, a_2)=0 \quad \text{für}\quad x_0=-1/2, x_1=0\;\text{und}\;x_2=1/2. \end{equation}
+</p>
+   <div id='shaded*-1' class='framedenv'>
+<!-- l. 98 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Das Verschwinden des Residuums bei \(x_i\) bedeutet nicht, dass auch \(u_2(x_i)\equiv u(x_i)\),
+also dass bei \(x_i\) unser approximative Lösung der exakten Lösung entspricht. Wir
+sind immer noch auf einen begrenzten Satz von Funktionen, nämlich die
+Funktionen die durch Gl. \eqref{eq:approxexample} erfasst werden, beschränkt. </p></div>
+<!-- l. 102 --><p class='indent'>   Aus der Kollokationsbedingung bekommen wir nun ein lineares Gleichungssystem
+mit drei Unbekannten: \begin{align} R(x_0; a_0, a_1, a_2) \equiv &amp; -\frac{659}{256} a_0 + \frac{1683}{512} a_1 - \frac{1171}{1024} a_2 - \frac{49}{64} = 0 \\ R(x_1; a_0, a_1, a_2) \equiv &amp; -2(a_0-a_2) = 0 \\ R(x_2; a_0, a_1, a_2) \equiv &amp; -\frac{659}{256} a_0 - \frac{1683}{512} a_1 - \frac{1171}{1024} a_2 - \frac{49}{64} = 0 \\ \end{align}
+</p><!-- l. 108 --><p class='indent'>   Die Lösung dieser Gleichungen ergibt \begin{equation} a_0 = -\frac{784}{3807}, \quad a_1 = 0 \quad \text{und} \quad a_2 = a_0. \end{equation}
+Abbildung <a href='#x1-4001r1'>5.1<!-- tex4ht:ref: fig:first_example  --></a> zeigt die “numerische” Lösung \(u_2(x)\) im Vergleich mit der exakten
+Lösung \(u(x)\).
+</p>
+   <figure class='figure'> 
+
+                                                                          
+
+                                                                          
+                                                                          
+
+                                                                          
+<!-- l. 118 --><p class='noindent'> <img height='250' alt='PIC' src='Figures/numerical_example-.png' width='585' /> <a id='x1-4001r1'></a>
+<a id='x1-4002'></a>
+</p>
+<figcaption class='caption'><span class='id'>Abbildung 5.1::  </span><span class='content'>Analytische  Lösung  \(u(x)\)  und  “numerische”  approximative
+Lösung \(u_2(x)\) der GDGL \eqref{eq:odeexample}.
+</span></figcaption><!-- tex4ht:label?: x1-4001r5.3  -->
+                                                                          
+
+                                                                          
+   </figure>
+<!-- l. 124 --><p class='indent'>   In dem hier dargestellten numerischen Beispiel können sowohl die
+Basisfunktion als auch die Strategie für die Minimierung des Residuums variiert
+werden. Im Laufe dieser Lehrveranstaltung werden wir als Basisfunktionen die
+finiten Elemente etablieren und als Minimierungsstrategie die Galerkin-Methode.
+Hierzu müssen wir zunächst Eigenschaften möglicher Basisfunktionen
+diskutieren.
+</p>
+   <div id='shaded*-1' class='framedenv'>
+<!-- l. 126 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Das hier dargestellte Beispiel ist ein einfacher Fall einer
+<span class='cmti-12'>Diskretisierung</span>. Wir sind von einer kontinuierlichen Funktion auf die diskreten
+Koeffizienten \(a_0\), \(a_1\), \(a_2\) übergegangen. </p></div>
+                                                                          
+
+                                                                          
+   <h2 class='likechapterHead'><a id='x1-50005.3'></a>Literaturverzeichnis</h2>
+  <div class='thebibliography'>
+  <p class='bibitem'><span class='biblabel'>
+<a id='Xboyd_chebyshev_2000'></a><span class='bibsp'>   </span></span>J. P. Boyd. <span class='cmti-12'>Chebyshev and Fourier Spectral Methods</span>. Dover Publications,
+  New York, 2000. 05628.
+  </p>
+  <p class='bibitem'><span class='biblabel'>
+<a id='Xnocedal_numerical_2006'></a><span class='bibsp'>   </span></span>J. Nocedal and S. J. Wright.  <span class='cmti-12'>Numerical Optimization</span>.  Springer, New
+  York, 2nd ed edition, 2006.
+</p>
+  </div>
+    
