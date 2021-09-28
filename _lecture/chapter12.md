@@ -10,7 +10,7 @@ nav_order: 12
 
                                                                           
    <h2 class='chapterHead'><span class='titlemark'>Kapitel 12</span><br /><a id='x1-100012'></a>Zeitabhängige Probleme</h2>
-   <div id='shaded*-1' class='framedenv'>
+   <div class='framedenv' id='shaded*-1'>
 <!-- l. 3 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Viele Probleme denen wir begegnen, wie z.B. der bereits diskutierte
 Diffusionsprozess, sind zeitabhängig. Wir haben bislang nur die stationäre Lösung
 von linearen Problemen behandelt. Eine Behandlung des Anfangswertproblems,
@@ -57,7 +57,7 @@ Basis ist diese dünnbesetzt aber nicht mehr diagonal. Wir können aber
 Gl. \eqref{eq:discrete-time-dependent} formal von links mit \(\t{M}^{-1}\) multiplizieren und
 erhalten, \begin{equation} \frac{\dif \v{a}}{\dif t} = - \t{M}^{-1} \cdot \t{K} \cdot \v{a}(t) + \t{M}^{-1} \cdot \v{f}(t) \equiv \v{g}(\v{a}(t), t). \label{eq:discrete-time-dependent-invmass} \end{equation}
 </p>
-   <div id='shaded*-1' class='framedenv'>
+   <div class='framedenv' id='shaded*-1'>
 <!-- l. 68 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Da sich die Massematrix in der Zeitentwicklung nicht ändert,
 kann \(\t{M}^{-1}\) hier einmal vorberechnet werden. Da \(\t{M}\) üblicherweise dünnbesetzt
 ist, kann es aber auch numerisch effizienter sein, in jedem Schritt das
@@ -66,7 +66,7 @@ dünnbesetzten Matrix nicht mehr dünnbesetzt ist. Damit braucht die
 Multiplikation mit \(\t{M}^{-1}\) \(\sim N^2\) Operationen, während das Lösen des Gleichungssystems
 nur \(\sim N\) Operationen benötigt. Die Anzahl der benötigten Operationen nennt man
 die <span class='cmti-12'>Komplexität </span>eines Algorithmus. </p></div>
-   <div id='shaded*-1' class='framedenv'>
+   <div class='framedenv' id='shaded*-1'>
 <!-- l. 72 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Beispiel:</span></span> Für die Basis der finite Elemente, die in Kapitel <span class='cmbx-12'>??</span> eingeführt wurde,
 kann die Massematrix wieder als Summe über entsprechende Elementmatrizen \(\t{M}^{(n)}\)
 ausgedrückt werden. Die Komponenten dieser Elementmassematrizen sind durch
@@ -129,7 +129,7 @@ Unter Vorgabe einer globalen Fehlerschranke, kann dann der Zeitschritt
 so angepasst werden, dass der Fehler immer unterhalb dieser Schranke
 bleibt.
 </p>
-   <div id='shaded*-1' class='framedenv'>
+   <div class='framedenv' id='shaded*-1'>
 <!-- l. 146 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Sowohl die Euler-Integration als auch das Heun-Verfahren
 gehören zur Klasse der <span class='cmti-12'>Runge-Kutta Methoden</span>. Es gibt eine ganze Reihe von
 Runge-Kutta Methoden mit unterschiedlichen Konvergenzordnungen. Interessant
@@ -149,7 +149,7 @@ beispielhaft die eindimensionale Diffusionsgleichung, \begin{equation} \frac{\pa
 Eine Diskretisierung der räumlichen Ableitung mit linearen finiten Elementen
 führt zu \begin{equation} \frac{\partial c}{\partial t} = \frac{D}{\Delta x^2} \left (c(x-\Delta x) - 2c(x) + c(x+\Delta x)\right ). \label{eq:fediff} \end{equation}
 </p>
-   <div id='shaded*-1' class='framedenv'>
+   <div class='framedenv' id='shaded*-1'>
 <!-- l. 166 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Eigenlich müsste auf der linken Seite von Gl. \eqref{eq:fediff} die
                                                                           
 
@@ -175,7 +175,7 @@ die Bedingung Gl. \eqref{eq:diff-cfl} eine <span class='cmti-12'>CFL-Bedingung<
 Form der CFL-Bedingung hängt von der PDGL und dem Algorithmus
 ab.
 </p>
-   <div id='shaded*-1' class='framedenv'>
+   <div class='framedenv' id='shaded*-1'>
 <!-- l. 208 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Die CFL-Bedingung sagt, dass der maximale Zeitschritt
 \begin{equation} \Delta t &lt; \frac{1}{2D} \Delta x^2 \end{equation}
 von der räumlichen Diskretisierung \(\Delta x\) abhängt. D.h. wenn wir die räumliche

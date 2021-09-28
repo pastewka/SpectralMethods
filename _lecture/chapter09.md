@@ -16,7 +16,7 @@ anhand eindimensionaler Beispiele diskutiert. Insbesondere wird gezeigt, wie mit
 linearen Elementen PDGLs zweiter Ordnung diskretisiert werden und wie
 Randbedingungen in den finiten Elementen eingebaut werden können. </p></div>
    <h3 class='sectionHead'><span class='titlemark'>9.1   </span> <a id='x1-20009.1'></a>Differenzierbarkeit der Basisfunktionen</h3>
-<!-- l. 10 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5f1094b6-98c3-40a4-9f67-aca900bc1ddd' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5f1094b6-98c3-40a4-9f67-aca900bc1ddd</span></a>
+<!-- l. 10 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5f1094b6-98c3-40a4-9f67-aca900bc1ddd'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5f1094b6-98c3-40a4-9f67-aca900bc1ddd</span></a>
 </p><!-- l. 12 --><p class='indent'>   Der einfachste Fall einer Basis der finiten Elemente in einer Dimension wurde
 bereits in Kapitel <span class='cmbx-12'>??</span> eingeführt. Die Basisfunktionen sind “Zelt-” oder
 “Hutfunktionen” die jeweils auf einem Knoten maximal (\(=1\)) sind und dann zu den
@@ -89,7 +89,7 @@ Verbreitung gefunden hat. </p></div>
 <!-- l. 75 --><p class='noindent'>
 </p>
    <h3 class='sectionHead'><span class='titlemark'>9.2   </span> <a id='x1-30009.2'></a>Galerkin-Methode</h3>
-<!-- l. 78 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=7e114881-a10b-449a-95be-aca900bc1dad' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=7e114881-a10b-449a-95be-aca900bc1dad</span></a>
+<!-- l. 78 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=7e114881-a10b-449a-95be-aca900bc1dad'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=7e114881-a10b-449a-95be-aca900bc1dad</span></a>
 </p><!-- l. 80 --><p class='indent'>   Im Rahmen der schwachen Formulierung Gl. \eqref{eq:afterpartialint}, wird
 nun die Galerkin-Methode angesetzt. Wir schreiben wieder \begin{equation} \Phi (x) \approx \Phi _N(x) = \sum _{n=0}^N a_n \varphi _n(x) \end{equation}
 als (endliche) Reihenentwicklung mit unseren finiten Elementen, den Zeltfunktionen \(\varphi _n(x)\).
@@ -169,7 +169,7 @@ hätte aber jede beliebige Zeile durch diese Bedingung ersetzen können. </p></d
 <!-- l. 210 --><p class='noindent'>
 </p>
    <h3 class='sectionHead'><span class='titlemark'>9.3   </span> <a id='x1-40009.3'></a>Randbedingungen</h3>
-<!-- l. 212 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=fd06f299-0d14-4e00-ac51-acaa00b40ea2' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=fd06f299-0d14-4e00-ac51-acaa00b40ea2</span></a>
+<!-- l. 212 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=fd06f299-0d14-4e00-ac51-acaa00b40ea2'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=fd06f299-0d14-4e00-ac51-acaa00b40ea2</span></a>
 </p><!-- l. 214 --><p class='indent'>   Die Mittelwertbedingung des vorhergehenden Beispiels ist ein Spezialfall
 einer Randbedingung. Meistens werden Probleme auf endlichen Gebieten \(\Omega \)
 behandelt, in denen entweder der Funktionswert \(\Phi (x)\) oder die Ableitung \(\dif \Phi /\dif x\) auf dem
@@ -246,7 +246,7 @@ entsprechenden Zeltes integriert werden muss. </p></div>
 <!-- l. 340 --><p class='noindent'>
 </p>
    <h3 class='sectionHead'><span class='titlemark'>9.4   </span> <a id='x1-70009.4'></a>Formfunktionen</h3>
-<!-- l. 342 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=b390b0a2-cbb2-4d89-aad5-aca9011cf294' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=b390b0a2-cbb2-4d89-aad5-aca9011cf294</span></a>
+<!-- l. 342 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=b390b0a2-cbb2-4d89-aad5-aca9011cf294'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=b390b0a2-cbb2-4d89-aad5-aca9011cf294</span></a>
 </p><!-- l. 344 --><p class='indent'>   Die Methode der finiten Elemente wird oft nicht mit Hilfe der Basisfunktionen
 sondern mit Hilfe der sogenannten <span class='cmti-12'>Formfunktionen </span>(engl. “shape functions”)
 formuliert. Der Grund hierfür ist, dass die Formfunktionen einen intuitiveren

@@ -76,7 +76,7 @@ Testfunktion \(v(\v{r})\) und des Potentials \(\Phi (\v{r})\) berechnen können.
                                                                           
 
                                                                           
-<!-- l. 76 --><p class='noindent'> <img src='Figures/Integration_Domain-.png' width='312' height='233' alt='PIC' /> <a id='x1-2001r1'></a>
+<!-- l. 76 --><p class='noindent'> <img height='233' alt='PIC' width='312' src='Figures/Integration_Domain-.png' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 10.1::              </span><span class='content'>Der              Rand              \(\partial \Omega \)              begrenzt
@@ -123,7 +123,7 @@ gezeigt.
                                                                           
 
                                                                           
-<!-- l. 96 --><p class='noindent'> <img src='Figures/mesh-.png' width='585' height='276' alt='PIC' /> <a id='x1-4001r2'></a>
+<!-- l. 96 --><p class='noindent'> <img height='276' alt='PIC' width='585' src='Figures/mesh-.png' /> <a id='x1-4001r2'></a>
 <a id='x1-4002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 10.2::  </span><span class='content'>Triangulierung  eines  rechteckigen  Gebiets  \(\Omega \)  in  ein  (a)
@@ -164,7 +164,7 @@ Knoten.
                                                                           
 
                                                                           
-<!-- l. 120 --><p class='noindent'><img src='Figures/structured_grid.svg' width='780' height='426' alt='PIC' /> <a id='x1-5001r3'></a>
+<!-- l. 120 --><p class='noindent'><img height='426' alt='PIC' width='780' src='Figures/structured_grid.svg' /> <a id='x1-5001r3'></a>
 <a id='x1-5002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 10.3:: </span><span class='content'>Zerlegung eines rechteckigen Gebiets in ein strukturiertes
@@ -234,7 +234,7 @@ Element \((1)\) lauten die Formfunktionen \begin{align} N^{(1)}_0(\xi , \eta ) &
                                                                           
 
                                                                           
-<!-- l. 168 --><p class='noindent'><img src='Figures/febasis2d.svg' width='350' height='280' alt='PIC' /> <a id='x1-6001r4'></a>
+<!-- l. 168 --><p class='noindent'><img height='280' alt='PIC' width='350' src='Figures/febasis2d.svg' /> <a id='x1-6001r4'></a>
 <a id='x1-6002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 10.4::  </span><span class='content'>Formfunktionen  für  lineare  Dreieckelemente  in  zwei

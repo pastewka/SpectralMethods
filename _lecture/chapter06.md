@@ -139,7 +139,7 @@ bis \(N\) läuft und man \(2N+1\) Koeffizienten erhält.
                                                                           
 
                                                                           
-<!-- l. 131 --><p class='noindent'><img alt='PIC' width='390' src='Figures/fourierbasis.svg' height='229' /> <a id='x1-5001r1'></a>
+<!-- l. 131 --><p class='noindent'><img alt='PIC' src='Figures/fourierbasis.svg' width='390' height='229' /> <a id='x1-5001r1'></a>
 <a id='x1-5002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 6.1::
@@ -178,7 +178,7 @@ höherer Ordnung eingesetzt.
                                                                           
 
                                                                           
-<!-- l. 165 --><p class='noindent'><img alt='PIC' width='390' src='Figures/febasis.svg' height='115' /> <a id='x1-6001r2'></a>
+<!-- l. 165 --><p class='noindent'><img alt='PIC' src='Figures/febasis.svg' width='390' height='115' /> <a id='x1-6001r2'></a>
 <a id='x1-6002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 6.2::  </span><span class='content'>Die  Basis  der  finiten  Elemente  in  ihrer  einfachsten,
