@@ -10,7 +10,7 @@ nav_order: 4
 
 
 <h2 class='chapterHead'><span class='titlemark'>Kapitel 4</span><br /><a id='x1-10004'></a>Ladungstransport</h2>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 6 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> In diesem Lernmodul führen wir die spezifischen Gleichungen ein,
 welche Ladungstransport beschreiben. Ähnliche Gleichungen finden sich für
 Ladungstransport in Halbleitern und in Elektrolyten. Insbesondere sollten
@@ -47,7 +47,7 @@ Konzentrationen, \(\rho (\v{r})=|e|(c_+(\v{r})-c_-(\v{r}))\).
 
 </p>
 <h3 class='sectionHead'><span class='titlemark'>4.2 </span> <a id='x1-30004.2'></a>Drift im elektrischen Feld</h3>
-<!-- l. 37 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=f822dd82-e8d9-4f93-90ce-ac75011ef18a' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=f822dd82-e8d9-4f93-90ce-ac75011ef18a</span></a>
+<!-- l. 37 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=f822dd82-e8d9-4f93-90ce-ac75011ef18a'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=f822dd82-e8d9-4f93-90ce-ac75011ef18a</span></a>
 </p><!-- l. 39 --><p class='indent'> Die Ladungen in unserem Elektrolyten erzeugen nicht nur ein elektrischen
 Feld, sie reagieren auch auf dieses. Die Kraft \(\v{f}\), welche auf ein Teilchen mit Ladung
 \(q\) wirkt, ist gegeben durch \begin{equation} \v{f}_{\text{E}} = q \v{E}. \end{equation}
@@ -78,7 +78,7 @@ beispielsweise für die Elektronenleitung in Metallen.
 
 
 
-<!-- l. 64 --><p class='noindent'> <img alt='PIC' src='Figures/Drag_Force-.png' width='585' height='273' /> <a id='x1-3001r1'></a>
+<!-- l. 64 --><p class='noindent'> <img alt='PIC' height='273' src='Figures/Drag_Force-.png' width='585' /> <a id='x1-3001r1'></a>
 <a id='x1-3002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 4.1:: </span><span class='content'>Ein Teilchen (z.B. ein Ion), welches sich in einer
@@ -91,7 +91,7 @@ umströmenden Fluids hervorgerufen.
 
 </figure>
 <h3 class='sectionHead'><span class='titlemark'>4.3 </span> <a id='x1-40004.3'></a>Nernst-Planck-Gleichung</h3>
-<!-- l. 72 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5dda06b4-a5c4-478c-a191-ac7501230300' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5dda06b4-a5c4-478c-a191-ac7501230300</span></a>
+<!-- l. 72 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5dda06b4-a5c4-478c-a191-ac7501230300'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5dda06b4-a5c4-478c-a191-ac7501230300</span></a>
 </p><!-- l. 74 --><p class='indent'> Ein Diffusionsstrom in Kombination mit Drift im elektrischen Feld ergibt die
 <span class='cmti-12'>Nernst-Planck-Gleichung</span>. Die Stromdichte für Ionenspezies \(\alpha \) ist gegeben durch
 \begin{equation} \v{j}_\alpha = - D_\alpha \nabla c_\alpha + q_\alpha \Lambda _\alpha c_\alpha \v{E}, \end{equation}
@@ -115,7 +115,7 @@ unserer Elektrolytlösung beschreibt, sieht daher folgendermaßen aus: \begin{al
 Kurses mit Hilfe der Methode der finiten Elemente lösen. Man nennt diese
 Gleichungen die <span class='cmti-12'>Poisson-Nernst-Planck Gleichungen</span>.
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 130 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Ein Satz von Gleichungen identisch zu Gl. \eqref{eq:continuityplus}
 bis \eqref{eq:poissonfinal} beschreibt den Transport von Ladungsträgern in
 Halbleitern. Die positiven Ladungsträger sind dann Löcher und die negativen
@@ -155,7 +155,7 @@ zur Bestimmung von \(\Phi \) heißt auch die <span class='cmti-12'>Poisson-Boltz
 <!-- l. 164 --><p class='noindent'>Im folgende Video diskutieren wir die Anwendung der Poisson-Nernst-Planck-Gleichung
 für die Modellierung von Ladungstransport in Superkondensatoren mit porösen
 Elektroden.
-</p><!-- l. 166 --><p class='indent'> <a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=7053001f-75d5-4340-af5e-ac75012302cf' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=7053001f-75d5-4340-af5e-ac75012302cf</span></a>
+</p><!-- l. 166 --><p class='indent'> <a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=7053001f-75d5-4340-af5e-ac75012302cf'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=7053001f-75d5-4340-af5e-ac75012302cf</span></a>
 
 
 

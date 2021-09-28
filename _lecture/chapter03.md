@@ -48,7 +48,7 @@ gebrochen.
 
 
 
-<!-- l. 22 --><p class='noindent'> <img src='Figures/Brownian_Motion-.png' height='222' width='585' alt='PIC' /> <a id='x1-2001r1'></a>
+<!-- l. 22 --><p class='noindent'> <img width='585' src='Figures/Brownian_Motion-.png' height='222' alt='PIC' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 3.1:: </span><span class='content'>Illustration eines Diffusionsprozesses. Die “Pollen” in (a)
@@ -76,7 +76,7 @@ Abb. <a href='#x1-2003r2'>3.2<!-- tex4ht:ref: fig:Brown --></a>).
 
 
 
-<!-- l. 36 --><p class='center'><img src='ch030x.png' alt='PICT' />
+<!-- l. 36 --><p class='center'><img alt='PICT' src='ch030x.png' />
 <a id='x1-2003r2'></a>
 <a id='x1-2004'></a>
 </p>
@@ -186,7 +186,7 @@ Stromdichte \(j\) hat die Einheit Anzahl Partikel/Zeit/Fläche.)
 
 
 
-<!-- l. 211 --><p class='noindent'><img src='Figures/continuity.png' height='282' width='272' alt='PIC' /> <a id='x1-5001r3'></a>
+<!-- l. 211 --><p class='noindent'><img width='272' src='Figures/continuity.png' height='282' alt='PIC' /> <a id='x1-5001r3'></a>
 <a id='x1-5002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 3.3:: </span><span class='content'>Teilchen können das Volumen \(V\) nur durch die Seitenwände
