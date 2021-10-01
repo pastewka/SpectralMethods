@@ -9,7 +9,7 @@ has_children: true
 
 ## Abgabe der Übungsaufgaben
 
-Im folgenden finden Sie die Übungsblätter für die Lehrveranstaltung. Die Abgabe der Übungsblätter muss vor Mitternacht des in ILIAS genannten Datums geschehen. Zum Bestehen der Veranstaltung benötigen Sie 50% der Punkte auf jedem Übungsblatt. Bitte beachten Sie die [Regeln für gute Abbildungen]. Wir ziehen für formale Fehler auch Punkte ab.
+Im folgenden finden Sie die Übungsblätter für die Lehrveranstaltung. Die Abgabe der Übungsblätter muss vor Mitternacht des in ILIAS genannten Datums geschehen. Zum Bestehen der Veranstaltung benötigen Sie 50% der Punkte auf **jedem** Übungsblatt. Für MST und SSE Studierende ist diese Veranstaltung eine unbenotete Prüfungsleistung. Falls Sie ESE studieren und diese Veranstaltung als Wahlpflicht belegt haben, so werden wir das letzte Übungsblatt benoten. Bitte beachten Sie die [Regeln für gute Abbildungen]. Wir ziehen für formale Fehler auch Punkte ab.
 
 ## Technische Hinweise
 
