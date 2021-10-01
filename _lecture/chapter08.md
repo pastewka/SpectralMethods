@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 08"
 parent: Vorlesung
-date: 2021-09-28
+date: 2021-10-01
 categories: lecture
 author: Lars Pastewka
 nav_order: 8
@@ -23,13 +23,13 @@ erweitern wir hier die Lösungsansätze auch auf mehrdimensionale Räume. </p></
 <!-- l. 12 --><p class='noindent'>Für die Lösung von Differentialgleichungen nutzen wir nun exakt die gleichen
 Methoden, die wir im vorhergehenden Kapitel entwickelt haben: Minimierung des
 Residuums mit Hilfe der Galerkin-Methode. Unser Residuum hat nun die
-allgemeine Form (siehe auch Gl. \eqref{eq:residual}), \begin{equation} R(x,y,z,\ldots ; a_0, a_1, \ldots , a_N) = \mathcal{L} u_N(x,y,z,\ldots ) - f(x,y,z,\ldots ), \end{equation}
+allgemeine Form, \begin{equation} R(x,y,z,\ldots ; a_0, a_1, \ldots , a_N) = \mathcal{L} u_N(x,y,z,\ldots ) - f(x,y,z,\ldots ), \end{equation}
 wobei die unbekannte Funktion \(u_N\) hier als eine Reihenentwicklung in eine
 bestimme Basis \(\varphi _n(x,y,z)\) dargestellt ist. In der Galerkin-Methode verlangt man
 \begin{equation} (\varphi _n, R) = 0 \end{equation}
 für jedes \(n\).
 </p><!-- l. 24 --><p class='indent'> Wir diskutieren zunächst die Fourier-Basis für periodische Funktionen auf \(x\in [0,L]\)
-in einer Dimension (siehe auch Gl. \eqref{eq:fourier-basis}), \begin{equation} \varphi _n(x) = \exp (i q_n x) \label{eq:fourierbasis} \end{equation}
+in einer Dimension, \begin{equation} \varphi _n(x) = \exp (i q_n x) \label{eq:fourierbasis} \end{equation}
 mit \(q_n = 2\pi n/L\). Der Operator \(\mathcal{L}\) kann beliebige Differentialoperationen enthalten, die auf die
 Basisfunktionen wirken, beispielsweise \begin{align} \frac{d}{dx} \varphi _n(x) &amp;= iq_n \varphi _n(x) \\ \frac{d^2}{dx^2} \varphi _n(x) &amp;= -q_n^2 \varphi _n(x). \end{align}
 </p><!-- l. 34 --><p class='indent'> D.h. die Ableitungen der (Fourier-)Basisfunktionen ergeben die <span class='cmti-12'>gleiche</span>
@@ -46,7 +46,7 @@ bestimmen können.
 
 </p>
 <h3 class='sectionHead'><span class='titlemark'>8.2 </span> <a id='x1-30008.2'></a>Poisson-Gleichung in einer Dimension</h3>
-<!-- l. 41 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=88c55914-ce6f-4a02-96b5-aca8010e6886' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=88c55914-ce6f-4a02-96b5-aca8010e6886</span></a>
+<!-- l. 41 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=88c55914-ce6f-4a02-96b5-aca8010e6886'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=88c55914-ce6f-4a02-96b5-aca8010e6886</span></a>
 </p><!-- l. 43 --><p class='indent'> Als Demonstrator für diese Verhalten nutzen wir die (eindimensionale)
 Poisson-Gleichung, \begin{equation} \nabla ^2 \Phi \equiv \frac{\dif ^2 \Phi }{\dif x^2} = - \frac{\rho }{\varepsilon }. \label{eq:poisson-1d} \end{equation}
 Hier ist \(\rho \) eine Ladungsdichte und \(\Phi \) das elektrostatische Potential. Das Residuum ist
@@ -68,14 +68,14 @@ Dies ist die Fourier-Reihe der Lösung.
 </p><!-- l. 85 --><p class='noindent'>
 </p>
 <h3 class='sectionHead'><span class='titlemark'>8.3 </span> <a id='x1-40008.3'></a>Übergang zur Fourier-Transformation</h3>
-<!-- l. 87 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=bd5cfab2-323e-48dc-b7b9-aca9011cf271' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=bd5cfab2-323e-48dc-b7b9-aca9011cf271</span></a>
+<!-- l. 87 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=bd5cfab2-323e-48dc-b7b9-aca9011cf271'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=bd5cfab2-323e-48dc-b7b9-aca9011cf271</span></a>
 </p><!-- l. 89 --><p class='indent'> Die Fourier-Basis Gl. \eqref{eq:fourier-basis} ist auf einen finite Gebiet der
 Länge \(L\) periodisch. Wenn wir die Länge \(L\) gegen unendlich gehen lassen,
 bekommen wir eine Formulierung für nicht-periodische Funktionen. Dies führt
 direkt zur <span class='cmti-12'>Fourier-Transformation</span>.
 </p><!-- l. 91 --><p class='indent'> Wir schreiben die Reihenentwicklung als \begin{equation} \Phi _N(x) = \sum _{n=-N}^N a_n \varphi _n(x) = \sum _{n=-N}^N a_n \exp \left ( i q_n x \right ) = \sum _{n=-N}^N \frac{\Delta q}{2\pi }\,\tilde{\Phi }(q_n) \exp \left ( i q_n x \right ) \label{eq:fouriertrafo1} \end{equation}
 mit \(\Delta q = q_{n+1}-q_n = 2\pi /L\) und umskalierten Koeffizienten \(\tilde{\Phi }(q_n)=L a_n\). Hier wurde auf der rechten Seite von
-Gl. \eqref{eq:fouriertrafo1} lediglich der Faktor \(1=L \Delta q/2\pi \) eingefügt. Die hilft nun, den
+Gl. \eqref{eq:fouriertrafo1} lediglich der Faktor \(1=L \Delta q/2\pi \) eingefügt. Dies hilft nun, den
 Limes \(L\to \infty \) und \(N\to \infty \) zu bilden. In diesem Fall wird \(\Delta q \to dq\) und die Summe zum Integral. Man
 erhält \begin{equation} \Phi (x) = \int _{-\infty }^\infty \frac{\dif q}{2\pi }\,\tilde{\Phi }(q) \exp \left ( i q x \right ), \label{eq:fouriertrafo2} \end{equation}
 die Fourier-Rück<span class='cmti-12'>transformation</span>.
@@ -97,8 +97,8 @@ hierfür ist die Periodizität des betrachteten Gebiets. </p></div>
 <!-- l. 128 --><p class='noindent'>
 </p>
 <h3 class='sectionHead'><span class='titlemark'>8.4 </span> <a id='x1-50008.4'></a>Poisson-Gleichung in mehreren Dimensionen</h3>
-<!-- l. 130 --><p class='noindent'>Ähnlich wie wir eine approximierte Lösung eine Differentialgleichung mit Hilfe
-einer Reihenentwicklung konstruiert haben, können wir nun den Ansatz
+<!-- l. 130 --><p class='noindent'>Ähnlich wie wir eine approximierte Lösung für eine Differentialgleichung mit
+Hilfe einer Reihenentwicklung konstruiert haben, können wir nun den Ansatz
 Gl. \eqref{eq:fouriertrafo2} nutzen, um analytische Lösungen zu erhalten. In
 diesem Abschnitt wird dies mit Hilfe der Poisson-Gleichung in drei Dimensionen
 demonstriert.
@@ -141,7 +141,7 @@ Kronecker-\(\delta \) in der Orthogonalitätsrelation. </p></div>
 Man erhält \begin{equation} \tilde{\Phi }(\v{q}) = \frac{\tilde{\rho }(\v{q})}{\varepsilon q^2} \label{eq:fourierpoissonsol} \end{equation}
 mit \(q=|\v{q}|\). Dies ist äquivalent zur Lösung Gl. \eqref{eq:discrpoissonfouriersol} für
 die Poisson-Gleichung auf einem periodischen Gebiet. Die Schwierigkeit
-besteht nun da drin, für ein gegebenes \(\rho (x,y)\) die Hin- und Rücktransformation
+besteht nun da drin, für ein gegebenes \(\rho (x,y,z)\) die Hin- und Rücktransformation
 auszuwerten.
 </p>
 <div class='framedenv' id='shaded*-1'>
@@ -170,7 +170,7 @@ oder <span class='cmti-12'>Greensche Funktion </span>der (dreidimensionalen) Poi
 
 
 
-<!-- l. 255 --><p class='noindent'><img src='Figures/illustr_angles_1.svg' width='390' height='390' alt='PIC' /> <a id='x1-5001r1'></a>
+<!-- l. 255 --><p class='noindent'><img height='390' alt='PIC' src='Figures/illustr_angles_1.svg' width='390' /> <a id='x1-5001r1'></a>
 <a id='x1-5002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 8.1:: </span><span class='content'>Volumenelement für die Integration in Kugelkoordination

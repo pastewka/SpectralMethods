@@ -22,11 +22,17 @@ Das Lernmaterial ist nach Wochen sortiert um einen Takt vorzugeben, in dem Sie d
 Die Lehrveranstaltung ist grob nach folgenden Themen strukturiert:
 
 * Was ist Modellbildung und Simulation?
-* Einführung von Ionentransport in einem Elektrolyten als Modellproblem
-* Linear Funktionenräume und Basisfunktionen
+* Lineare Funktionenräume und Basisfunktionen
 * Approximation, Interpolation
 * Spektrale Methoden und die Methode der finiten Elemente
-* Numerische Optimierungsverfahren
+* Zeitpropagation
+* Numerische Optimierungsverfahren für nichtlineare Probleme
+* Unstrukturierte Gitter
+
+Wir diskutieren folgende Anwendungsbeispiele:
+
+* Ionentransport in einem Elektrolyten
+* Festkörpermechanik
 
 Bitte sprechen Sie uns an wenn Sie Fehler oder Unklarheiten im Lernmaterial entdecken. Wir sind nicht unfehlbar und machen durchaus Fehler. Bitte kontaktieren Sie uns in diesem Fall umgehend, idealerweise über den [Issue Tracker][issue] des zugehörigen [Github-Repositoriums][github].
 

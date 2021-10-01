@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 05"
 parent: Vorlesung
-date: 2021-09-28
+date: 2021-10-01
 categories: lecture
 author: Lars Pastewka
 nav_order: 5
@@ -127,7 +127,7 @@ Lösung \(u(x)\).
 
 
 
-<!-- l. 118 --><p class='noindent'> <img src='Figures/numerical_example-.png' width='585' alt='PIC' height='250' /> <a id='x1-4001r1'></a>
+<!-- l. 118 --><p class='noindent'> <img width='585' height='250' src='Figures/numerical_example-.png' alt='PIC' /> <a id='x1-4001r1'></a>
 <a id='x1-4002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 5.1:: </span><span class='content'>Analytische Lösung \(u(x)\) und “numerische” approximative

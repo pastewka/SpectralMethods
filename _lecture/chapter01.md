@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 01"
 parent: Vorlesung
-date: 2021-09-28
+date: 2021-10-01
 categories: lecture
 author: Lars Pastewka
 nav_order: 1
@@ -67,7 +67,7 @@ Ortsvariablen zu tun haben, nämlich \(\Psi (\v{r}_1,\v{r}_2,\dots ,\v{r}_n;t)\)
 
 <div class='center'>
 <!-- l. 41 --><p class='noindent'>
-</p><!-- l. 45 --><p class='noindent'> <img height='585' src='Figures/ExtendedSchemeD-.png' width='774' alt='PIC' /> <a id='x1-2001r1'></a>
+</p><!-- l. 45 --><p class='noindent'> <img alt='PIC' width='774' src='Figures/ExtendedSchemeD-.png' height='585' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 1.1:: </span><span class='content'>Die vertikale Anordnung der Kisten repräsentiert die

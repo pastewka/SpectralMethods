@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 07"
 parent: Vorlesung
-date: 2021-09-28
+date: 2021-10-01
 categories: lecture
 author: Lars Pastewka
 nav_order: 7
@@ -47,10 +47,9 @@ Reihenentwicklung entsprechen. Die Wahl der idealen Kollokationspunkte \(y_n\) s
 
 ist nicht-trivial, und wir werden hier nur spezifische Fälle besprechen.
 </p><!-- l. 36 --><p class='indent'> Als erstes Beispiel diskutieren wir hier eine Entwicklung mit \(N\) finiten
-Elementen, Gl. \eqref{eq:finite-element-basis}. Als Kollokationspunkte wählen
-wir die Stützstellen der Basis, \(y_n=x_n\). An diesen Stützstellen ist nur eine der
-Basisfunktionen ungleich Null, \(\varphi _n(y_n)=1\) und \(\varphi _n(y_k)=0\) falls \(n\not =k\). Damit führt die Bedingung
-\begin{equation} R(y_n) = 0 \end{equation}
+Elementen. Als Kollokationspunkte wählen wir die Stützstellen der Basis, \(y_n=x_n\). An
+diesen Stützstellen ist nur eine der Basisfunktionen ungleich Null, \(\varphi _n(y_n)=1\) und \(\varphi _n(y_k)=0\) falls \(n\not =k\).
+Damit führt die Bedingung \begin{equation} R(y_n) = 0 \end{equation}
 trivial zu \begin{equation} a_n = f(y_n). \end{equation}
 Die Koeffizienten \(a_n\) sind also durch den Funktionswert der zu approximierenden
 Funktion am Kollokationspunkt gegeben. Die Approximation ist damit eine
@@ -82,8 +81,8 @@ Kollokationspunkten.
 
 
 
-<!-- l. 106 --><p class='noindent'></p><!-- l. 107 --><p class='noindent'><img src='Figures/coll5.svg' alt='PIC' width='585' height='249' />
-</p><!-- l. 110 --><p class='noindent'><img src='Figures/coll11.svg' alt='PIC' width='585' height='256' />
+<!-- l. 106 --><p class='noindent'></p><!-- l. 107 --><p class='noindent'><img alt='PIC' height='249' width='585' src='Figures/coll5.svg' />
+</p><!-- l. 110 --><p class='noindent'><img alt='PIC' height='256' width='585' src='Figures/coll11.svg' />
 <a id='x1-3001r1'></a>
 <a id='x1-3002'></a>
 </p>
@@ -117,7 +116,7 @@ mit einer Funktion \(v(x)\) verschwindet. Wenn Gl. \eqref{eq:test-function}
 für jede beliebigen Testfunktion \(v(x)\) verschwindet, dann ist die “schwache”
 Formulierung Gl. \eqref{eq:test-function} identisch zur starken Formulierung \(R(x)=0\).
 Gleichung \eqref{eq:test-function} heißt “schwache” Formulierung, weil die
-Bedingung nur im integralen Sinne erfüllt ist. Insbesondere wird in Kapitel <span class='cmbx-12'>??</span>
+Bedingung nur im integralen Sinne erfüllt ist. Insbesondere wird in Kapitel 9
 gezeigt, dass diese schwache Formulierung zu einer schwachen <span class='cmti-12'>Lösung </span>(engl.
 “weak solution”) führt, die die ursprüngliche (starke) PDGL nicht in jedem
 Punkt erfüllen kann. Die Bedingung \eqref{eq:test-function} wird oft unter dem
@@ -149,7 +148,7 @@ bzw. \begin{equation} (\varphi _n, f_N) = (\varphi _n, f). \end{equation}
 </p><!-- l. 162 --><p class='indent'> Für einen orthogonalen Satz von Basisfunktionen erhält man direkt
 \begin{equation} a_n = \frac{(\varphi _n, f)}{(\varphi _n, \varphi _n)}. \end{equation}
 Dieser Ansatz wurde bereits in Abschnitt <span class='cmbx-12'>??</span> diskutiert.
-</p><!-- l. 168 --><p class='indent'> Für eine nicht-orthogonalen Basissatz, z.B. die Basis der finiten Elemente,
+</p><!-- l. 168 --><p class='indent'> Für einen nicht-orthogonalen Basissatz, z.B. der Basis der finiten Elemente,
 erhält man ein lineares Gleichungssystem, \begin{equation} \sum _{m=0}^N (\varphi _n,\varphi _m) a_m = (\varphi _n, f), \label{eq:galerkin-coefficients} \end{equation}
 wobei die Matrix \(A_{nm}=(\varphi _n,\varphi _m)\) für die finiten Elemente dünnbesetzt ist. (Dies wurde bereits
 in Abschnitt <span class='cmbx-12'>??</span> diskutiert.)
@@ -168,8 +167,8 @@ auch nicht an den Stützstellen exakt mit der zu approximierenden Funktion
 
 
 
-<!-- l. 186 --><p class='noindent'></p><!-- l. 187 --><p class='noindent'><img src='Figures/gal5.svg' alt='PIC' width='585' height='249' />
-</p><!-- l. 190 --><p class='noindent'><img src='Figures/gal11.svg' alt='PIC' width='585' height='247' />
+<!-- l. 186 --><p class='noindent'></p><!-- l. 187 --><p class='noindent'><img alt='PIC' height='249' width='585' src='Figures/gal5.svg' />
+</p><!-- l. 190 --><p class='noindent'><img alt='PIC' height='247' width='585' src='Figures/gal11.svg' />
 <a id='x1-5001r2'></a>
 <a id='x1-5002'></a>
 </p>

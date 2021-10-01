@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 04"
 parent: Vorlesung
-date: 2021-09-28
+date: 2021-10-01
 categories: lecture
 author: Lars Pastewka
 nav_order: 4
@@ -10,7 +10,7 @@ nav_order: 4
 
 
 <h2 class='chapterHead'><span class='titlemark'>Kapitel 4</span><br /><a id='x1-10004'></a>Ladungstransport</h2>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 6 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> In diesem Lernmodul führen wir die spezifischen Gleichungen ein,
 welche Ladungstransport beschreiben. Ähnliche Gleichungen finden sich für
 Ladungstransport in Halbleitern und in Elektrolyten. Insbesondere sollten
@@ -32,8 +32,7 @@ Gleichungen aufsplitten. Zunächst ist das elektrische Feld \(\v{E}\) gegeben du
 \begin{equation} \v{E} = -\nabla \Phi , \end{equation}
 den (negativen) Gradienten des Potentials. (Im Sinne der Analogie zur
 Diffusionsgleichung ist das Feld eine Art Stromdichte.) Die “Kontinuitätsgleichung”
-für das Feld ist gegeben durch (siehe auch Gl. \eqref{eq:stationary})
-\begin{equation} \nabla \cdot \v{E} = \frac{\rho }{\varepsilon }. \end{equation}
+für das Feld ist gegeben durch \begin{equation} \nabla \cdot \v{E} = \frac{\rho }{\varepsilon }. \end{equation}
 Zusammen ergeben diese Gleichungen die Poisson-Gleichung.
 </p><!-- l. 33 --><p class='indent'> Wir werden die Poisson-Gleichung benötigen, um das elektrostatische
 Potential (und damit auch das elektrische Feld) innerhalb eines Elektrolyten zu
@@ -42,10 +41,10 @@ eine negativ geladenen Spezies, mit entsprechenden Konzentrationen \(c_+(\v{r})\
 entsprechende Ladungsdichte ist dann proportional zur Differenz dieser
 Konzentrationen, \(\rho (\v{r})=|e|(c_+(\v{r})-c_-(\v{r}))\).
 </p><!-- l. 35 --><p class='noindent'>
-
-
-
 </p>
+
+
+
 <h3 class='sectionHead'><span class='titlemark'>4.2 </span> <a id='x1-30004.2'></a>Drift im elektrischen Feld</h3>
 <!-- l. 37 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=f822dd82-e8d9-4f93-90ce-ac75011ef18a'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=f822dd82-e8d9-4f93-90ce-ac75011ef18a</span></a>
 </p><!-- l. 39 --><p class='indent'> Die Ladungen in unserem Elektrolyten erzeugen nicht nur ein elektrischen
@@ -65,8 +64,8 @@ entgegen der Bewegungsrichtung und wird durch das Stokessche Gesetz,
 mit \(\Lambda =(6\pi \eta R)^{-1}\) beschrieben. Hier ist \(\eta \) die Viskosität der Flüssigkeit. Die Größe \(\Lambda \) nennt sich
 die <span class='cmti-12'>Mobilität</span>. Im Gleichgewicht \(\v{f}_{\text{E}} + \v{f}_{\text{Stokes}}=0\) ergibt sich die Driftgeschwindigkeit
 \begin{equation} \v{v} = q \Lambda \v{E}. \end{equation}
-Diese Driftgeschwindigkeit ergibt zusammen mit Gl. \eqref{eq:drift} den durch
-das elektrische Feld hervorgerufenen Driftstrom, \begin{equation} \v{j} = q\Lambda c \v{E} = \sigma \v{E} \end{equation}
+Diese Driftgeschwindigkeit ergibt zusammen mit \(\v{j} = c \v{v}\) den durch das elektrische Feld
+hervorgerufenen Driftstrom, \begin{equation} \v{j} = q\Lambda c \v{E} = \sigma \v{E} \end{equation}
 mit \(\sigma = q\Lambda c\). Die Größe \(\sigma \) wird auch Leitfähigkeit genannt. Ein äquivalentes Gesetz gilt
 beispielsweise für die Elektronenleitung in Metallen.
 </p>
@@ -78,7 +77,7 @@ beispielsweise für die Elektronenleitung in Metallen.
 
 
 
-<!-- l. 64 --><p class='noindent'> <img alt='PIC' height='273' src='Figures/Drag_Force-.png' width='585' /> <a id='x1-3001r1'></a>
+<!-- l. 64 --><p class='noindent'> <img alt='PIC' width='585' src='Figures/Drag_Force-.png' height='273' /> <a id='x1-3001r1'></a>
 <a id='x1-3002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 4.1:: </span><span class='content'>Ein Teilchen (z.B. ein Ion), welches sich in einer
@@ -115,7 +114,7 @@ unserer Elektrolytlösung beschreibt, sieht daher folgendermaßen aus: \begin{al
 Kurses mit Hilfe der Methode der finiten Elemente lösen. Man nennt diese
 Gleichungen die <span class='cmti-12'>Poisson-Nernst-Planck Gleichungen</span>.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 130 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Ein Satz von Gleichungen identisch zu Gl. \eqref{eq:continuityplus}
 bis \eqref{eq:poissonfinal} beschreibt den Transport von Ladungsträgern in
 Halbleitern. Die positiven Ladungsträger sind dann Löcher und die negativen

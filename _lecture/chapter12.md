@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 12"
 parent: Vorlesung
-date: 2021-09-28
+date: 2021-10-01
 categories: lecture
 author: Lars Pastewka
 nav_order: 12
@@ -33,7 +33,7 @@ Ableitungen kommen.
 </p><!-- l. 22 --><p class='noindent'>
 </p>
 <h3 class='sectionHead'><span class='titlemark'>12.2 </span> <a id='x1-300012.2'></a>Räumliche Ableitungen</h3>
-<!-- l. 24 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=f7743809-a4c4-47ee-aa5b-acc1012a8425'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=f7743809-a4c4-47ee-aa5b-acc1012a8425</span></a>
+<!-- l. 24 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=f7743809-a4c4-47ee-aa5b-acc1012a8425' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=f7743809-a4c4-47ee-aa5b-acc1012a8425</span></a>
 </p><!-- l. 26 --><p class='indent'> Wir approximieren nun wiederum die (nun zeitabhängige) Funktion \(u(\v{r}, t)\) durch
 eine Reihenentwicklung \(u_N(\v{r})\). Im Unterschied zu den vorhergehenden Kapiteln nehmen
 wir nun an, dass die Koeffizienten nicht mehr konstant sondern zeitabhängig
@@ -83,7 +83,7 @@ Systemmassematrix erhält man auf dem gleichen Weg wie die Systemmatrix. </p></d
 <!-- l. 111 --><p class='noindent'>
 </p>
 <h3 class='sectionHead'><span class='titlemark'>12.3 </span> <a id='x1-400012.3'></a>Runge-Kutta Methoden</h3>
-<!-- l. 113 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=13ac878b-710a-4f49-9653-acc1012a83f0'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=13ac878b-710a-4f49-9653-acc1012a83f0</span></a>
+<!-- l. 113 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=13ac878b-710a-4f49-9653-acc1012a83f0' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=13ac878b-710a-4f49-9653-acc1012a83f0</span></a>
 </p><!-- l. 115 --><p class='noindent'>
 </p>
 <h4 class='subsectionHead'><span class='titlemark'>12.3.1 </span> <a id='x1-500012.3.1'></a>Euler-Verfahren</h4>
@@ -140,7 +140,7 @@ Konvergenzordnungen \(2\)/\(3\) und \(4\)/\(5\) implementiert. Diese können üb
 <!-- l. 150 --><p class='noindent'>
 </p>
 <h3 class='sectionHead'><span class='titlemark'>12.4 </span> <a id='x1-800012.4'></a>Stabilitätsanalyse</h3>
-<!-- l. 152 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=90f02a91-a31d-47f8-b085-acc101358727'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=90f02a91-a31d-47f8-b085-acc101358727</span></a>
+<!-- l. 152 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=90f02a91-a31d-47f8-b085-acc101358727' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=90f02a91-a31d-47f8-b085-acc101358727</span></a>
 </p><!-- l. 154 --><p class='indent'> Zeitpropagationsverfahren werden bei zu hohen Zeitschritten instabil. Eine
 Schrittweitenkontrolle ist eine automatisierte Methode solche Instabilitäten zu
 verhindern.
