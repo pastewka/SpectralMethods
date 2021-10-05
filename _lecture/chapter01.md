@@ -134,7 +134,7 @@ Variablen Ort \(\v{r}\) und Impuls \(\v{p}\). Im zweiten Fall haben wir eine Fun
 Ort, Impuls und der Zeit sowohl explizit, als auch implizit über \(\v{r}(t)\) und \(\v{p}(t)\)
 abhängt. Nehmen wir an, wir müssen \(f(\v{r}(t),\v{p}(t),t)\) durch diskrete Stützstellen
 interpolieren. Dies sind bei einer geringen Auflösung von 10 Punkten pro
-Variabler schon bereits 10.000.000 Interpolationspunkte. Dies ist vielleicht
+Variable schon bereits 10.000.000 Interpolationspunkte. Dies ist vielleicht
 handhabbar, die Auflösung ist aber nicht besonders gut. Und daher ist
 dieses Unterfangen eher unnütz. Wir wollen nicht verschweigen, dass es
 durchaus Methoden zur numerischen Lösung der beiden oben beschriebenen
