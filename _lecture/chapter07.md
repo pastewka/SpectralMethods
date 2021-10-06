@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Kapitel 07"
+title: "Kapitel 07 [Nov. 29-Dec. 5]"
 parent: Vorlesung
-date: 2021-10-01
+date: 2021-10-06
 categories: lecture
 author: Lars Pastewka
 nav_order: 7
@@ -36,7 +36,7 @@ werden.
 </p><!-- l. 26 --><p class='noindent'>
 </p>
 <h3 class='sectionHead'><span class='titlemark'>7.2 </span> <a id='x1-30007.2'></a>Kollokation</h3>
-<!-- l. 28 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=0a7985a2-0753-4d29-83fe-aca8010a16f2' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=0a7985a2-0753-4d29-83fe-aca8010a16f2</span></a>
+<!-- l. 28 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=0a7985a2-0753-4d29-83fe-aca8010a16f2'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=0a7985a2-0753-4d29-83fe-aca8010a16f2</span></a>
 </p><!-- l. 30 --><p class='indent'> Als erste Minimierungsstrategie wird hier die <span class='cmti-12'>Kollokation </span>eingeführt.
 In diese Methode wird verlangt, dass das Residuum an ausgewählten
 Kollokationspunkten \(y_n\) verschwindet, \begin{equation} R(y_n) = 0 \quad \text{bzw.}\quad f_N(y_n) = f(y_n). \end{equation}
@@ -81,8 +81,8 @@ Kollokationspunkten.
 
 
 
-<!-- l. 106 --><p class='noindent'></p><!-- l. 107 --><p class='noindent'><img alt='PIC' height='249' width='585' src='Figures/coll5.svg' />
-</p><!-- l. 110 --><p class='noindent'><img alt='PIC' height='256' width='585' src='Figures/coll11.svg' />
+<!-- l. 106 --><p class='noindent'></p><!-- l. 107 --><p class='noindent'><img src='Figures/coll5.svg' height='249' width='585' alt='PIC' />
+</p><!-- l. 110 --><p class='noindent'><img src='Figures/coll11.svg' height='256' width='585' alt='PIC' />
 <a id='x1-3001r1'></a>
 <a id='x1-3002'></a>
 </p>
@@ -140,7 +140,7 @@ wobei \(\theta (x)\) die (Heaviside-)Stufenfunktion ist. </p></div>
 <!-- l. 148 --><p class='noindent'>
 </p>
 <h3 class='sectionHead'><span class='titlemark'>7.4 </span> <a id='x1-50007.4'></a>Galerkin-Methode</h3>
-<!-- l. 150 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=697b4e0d-37c0-45e6-a958-aca8010a16c3' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=697b4e0d-37c0-45e6-a958-aca8010a16c3</span></a>
+<!-- l. 150 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=697b4e0d-37c0-45e6-a958-aca8010a16c3'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=697b4e0d-37c0-45e6-a958-aca8010a16c3</span></a>
 </p><!-- l. 152 --><p class='indent'> Die Galerkin-Methode basiert auf der Idee, als Testfunktionen die
 Basisfunktionen \(\varphi _n\) der Reihenentwicklung zu verwenden. Dies führt zu den \(N\)
 Bedingungen \begin{equation} (\varphi _n, R) = 0, \label{eq:galerkinortho} \end{equation}
@@ -167,8 +167,8 @@ auch nicht an den Stützstellen exakt mit der zu approximierenden Funktion
 
 
 
-<!-- l. 186 --><p class='noindent'></p><!-- l. 187 --><p class='noindent'><img alt='PIC' height='249' width='585' src='Figures/gal5.svg' />
-</p><!-- l. 190 --><p class='noindent'><img alt='PIC' height='247' width='585' src='Figures/gal11.svg' />
+<!-- l. 186 --><p class='noindent'></p><!-- l. 187 --><p class='noindent'><img src='Figures/gal5.svg' height='249' width='585' alt='PIC' />
+</p><!-- l. 190 --><p class='noindent'><img src='Figures/gal11.svg' height='247' width='585' alt='PIC' />
 <a id='x1-5001r2'></a>
 <a id='x1-5002'></a>
 </p>

@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Kapitel 06"
+title: "Kapitel 06 [Nov. 22-28]"
 parent: Vorlesung
-date: 2021-10-01
+date: 2021-10-06
 categories: lecture
 author: Lars Pastewka
 nav_order: 6
@@ -10,7 +10,7 @@ nav_order: 6
 
 
 <h2 class='chapterHead'><span class='titlemark'>Kapitel 6</span><br /><a id='x1-10006'></a>Funktionenräume</h2>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 6 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Bevor wir tiefer in die numerische Lösung von partiellen
 Differentialgleichungen einsteigen, müssen wir hier ein leicht abstraktes Konzept
 einführen: Das Konzept der <span class='cmti-12'>Funktionenräume</span>, bzw. konkreter des <span class='cmti-12'>Hilbertraums</span>.
@@ -18,7 +18,7 @@ Funktionenräume sind nützlich, weil sie die Reihenentwicklung formalisieren
 und durch das Konzept der Basisfunktionen einen einfachen Zugang zu den
 Koeffizienten einer Reihenentwicklung liefern. </p></div>
 <h3 class='sectionHead'><span class='titlemark'>6.1 </span> <a id='x1-20006.1'></a>Vektoren</h3>
-<!-- l. 12 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=8efc0e26-23c7-4afc-80ab-ac840157f78f'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=8efc0e26-23c7-4afc-80ab-ac840157f78f</span></a>
+<!-- l. 12 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=8efc0e26-23c7-4afc-80ab-ac840157f78f' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=8efc0e26-23c7-4afc-80ab-ac840157f78f</span></a>
 </p><!-- l. 14 --><p class='indent'> Zur Einführung erinnern wir an die üblichen kartesischen Vektoren. Einen
 Vektor \(\v{a}=(a_0, a_1, a_2)\) können wir als Linearkombination aus Basisvektoren \(\hat{e}_0\), \(\hat{e}_1\) und \(\hat{e}_2\),
 \begin{equation} \v{a} = a_0 \hat{e}_0 + a_1 \hat{e}_1 + a_2 \hat{e}_2, \end{equation}
@@ -59,7 +59,7 @@ Skalarprodukt ist eine Abbildung mit den Eigenschaften </p>
 <!-- l. 47 --><p class='noindent'>Die Skalarprodukte Gl. \eqref{eq:vecscalar} und \eqref{eq:funcscalar} erfüllen
 beide diese Eigenschaften.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 49 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Das Skalarprodukt zwischen zwei Funktionen wird oft allgemeiner
 mit einer Gewichtsfunktion \(w(x)\) definiert, \begin{equation} (f,g) = \int _a^b \dif x\, f^*(x) g(x) w(x). \end{equation}
 Die Frage nach Orthogonalität zwischen Funktionen kann damit nur respektive
@@ -89,7 +89,7 @@ dieser Lehrveranstaltung.) Die Koeffizienten \(a_n\) heißen Koordinaten oder
 Koeffizienten. Die Anzahl der Basisfunktionen bzw. der Koordinaten \(N\) nennt man
 die <span class='cmti-12'>Dimension </span>des Vektorraums.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 75 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Ein <span class='cmti-12'>Vektorraum </span>ist eine Menge, auf der die Operationen der
 Addition und Skalarmultiplikation mit den üblichen Eigenschaften, wie der
 Existenz von neutralen und inversen Elementen und Assoziativ-, Kommutativ-
@@ -115,7 +115,7 @@ dem gleichen Kontext zu sehen.
 </p><!-- l. 102 --><p class='noindent'>
 </p>
 <h4 class='subsectionHead'><span class='titlemark'>6.3.1 </span> <a id='x1-50006.3.1'></a>Fourier-Basis</h4>
-<!-- l. 105 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=6e2bcafd-24b2-4ee5-b58c-ac840157f7bc'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=6e2bcafd-24b2-4ee5-b58c-ac840157f7bc</span></a>
+<!-- l. 105 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=6e2bcafd-24b2-4ee5-b58c-ac840157f7bc' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=6e2bcafd-24b2-4ee5-b58c-ac840157f7bc</span></a>
 </p><!-- l. 107 --><p class='indent'> Ein berühmter und wichtiger Satz von Basisfunktionen ist die <span class='cmti-12'>Fourier-Basis</span>,
 
 
@@ -139,7 +139,7 @@ bis \(N\) läuft und man \(2N+1\) Koeffizienten erhält.
 
 
 
-<!-- l. 131 --><p class='noindent'><img alt='PIC' src='Figures/fourierbasis.svg' width='390' height='229' /> <a id='x1-5001r1'></a>
+<!-- l. 131 --><p class='noindent'><img width='390' alt='PIC' src='Figures/fourierbasis.svg' height='229' /> <a id='x1-5001r1'></a>
 <a id='x1-5002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 6.1::
@@ -151,12 +151,12 @@ und repräsentieren höhere Frequenzen.
 
 
 </figure>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 137 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Konzeptuell beschreibt die Fourier-Basis unterschiedliche
 Frequenzkomponenten, während die Basis der im nächsten Abschnitt
 beschriebenen finiten Elemente unterschiedliche Raumbereiche beschreibt. </p></div>
 <h4 class='subsectionHead'><span class='titlemark'>6.3.2 </span> <a id='x1-60006.3.2'></a>Finite Elemente</h4>
-<!-- l. 144 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=ec080e9a-ff09-4366-8784-ac840166145c'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=ec080e9a-ff09-4366-8784-ac840166145c</span></a>
+<!-- l. 144 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=ec080e9a-ff09-4366-8784-ac840166145c' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=ec080e9a-ff09-4366-8784-ac840166145c</span></a>
 </p><!-- l. 146 --><p class='indent'> Wir werden hier hauptsächlich mit der Basis der finiten Elemente arbeiten.
 Im Gegensatz zur Fourier-Basis, die auf der gesamten Domäne nur an isolierten
 Punkten gleich Null wird, ist die Finite-Elemente-Basis im Raum lokalisiert und
@@ -178,7 +178,7 @@ höherer Ordnung eingesetzt.
 
 
 
-<!-- l. 165 --><p class='noindent'><img alt='PIC' src='Figures/febasis.svg' width='390' height='115' /> <a id='x1-6001r2'></a>
+<!-- l. 165 --><p class='noindent'><img width='390' alt='PIC' src='Figures/febasis.svg' height='115' /> <a id='x1-6001r2'></a>
 <a id='x1-6002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 6.2:: </span><span class='content'>Die Basis der finiten Elemente in ihrer einfachsten,
@@ -209,7 +209,7 @@ Um die Koeffizienten \(a_n\) zu finden, muss also ein (dünnbesetztes) lineares
 Gleichungssystem gelöst werden. Wir werden \(\t{M}\) später unter dem Namen
 <span class='cmti-12'>Massematrix </span>wieder treffen.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 207 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Basissätze, die nur an individuellen Punkten von Null verschieden
 sind, nennt man <span class='cmti-12'>spektrale </span>Basissätze. Insbesondere ist die Fourier-Basis ein
 spektraler Basissatz für periodische Funktionen. Grundsätzlich bilden die

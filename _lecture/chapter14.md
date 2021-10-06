@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Kapitel 14"
+title: "Kapitel 14 [Jan. 31-Feb. 6]"
 parent: Vorlesung
-date: 2021-10-01
+date: 2021-10-06
 categories: lecture
 author: Lars Pastewka
 nav_order: 14
@@ -40,7 +40,7 @@ wobei das Dreieck durch die Vektoren \(\v{R}_1=\v{r}_1-\v{r}_0\) und \(\v{R}_2=\
 
 
 
-<!-- l. 23 --><p class='noindent'><img src='Figures/coordinate_transformation.svg' width='312' height='240' alt='PIC' /> <a id='x1-2001r1'></a>
+<!-- l. 23 --><p class='noindent'><img height='240' width='312' alt='PIC' src='Figures/coordinate_transformation.svg' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 14.1:: </span><span class='content'>Illustration eines Dreiecks mit den normierten Koordinaten

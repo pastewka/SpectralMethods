@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Kapitel 04"
+title: "Kapitel 04 [Nov. 8-14]"
 parent: Vorlesung
-date: 2021-10-01
+date: 2021-10-06
 categories: lecture
 author: Lars Pastewka
 nav_order: 4
@@ -10,7 +10,7 @@ nav_order: 4
 
 
 <h2 class='chapterHead'><span class='titlemark'>Kapitel 4</span><br /><a id='x1-10004'></a>Ladungstransport</h2>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 6 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> In diesem Lernmodul führen wir die spezifischen Gleichungen ein,
 welche Ladungstransport beschreiben. Ähnliche Gleichungen finden sich für
 Ladungstransport in Halbleitern und in Elektrolyten. Insbesondere sollten
@@ -77,7 +77,7 @@ beispielsweise für die Elektronenleitung in Metallen.
 
 
 
-<!-- l. 64 --><p class='noindent'> <img alt='PIC' width='585' src='Figures/Drag_Force-.png' height='273' /> <a id='x1-3001r1'></a>
+<!-- l. 64 --><p class='noindent'> <img height='273' src='Figures/Drag_Force-.png' alt='PIC' width='585' /> <a id='x1-3001r1'></a>
 <a id='x1-3002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 4.1:: </span><span class='content'>Ein Teilchen (z.B. ein Ion), welches sich in einer
@@ -114,7 +114,7 @@ unserer Elektrolytlösung beschreibt, sieht daher folgendermaßen aus: \begin{al
 Kurses mit Hilfe der Methode der finiten Elemente lösen. Man nennt diese
 Gleichungen die <span class='cmti-12'>Poisson-Nernst-Planck Gleichungen</span>.
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 130 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Ein Satz von Gleichungen identisch zu Gl. \eqref{eq:continuityplus}
 bis \eqref{eq:poissonfinal} beschreibt den Transport von Ladungsträgern in
 Halbleitern. Die positiven Ladungsträger sind dann Löcher und die negativen
