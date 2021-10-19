@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="dreieck.svg"
+   width="50mm"
+   height="25mm"
+   viewBox="0 0 50 25"
+   version="1.1"
+   id="svg2152"
+   inkscape:version="1.0 (4035a4f, 2020-05-01)">
+  <defs
+     id="defs2146">
+    <rect
+       id="rect835"
+       height="5"
+       width="5"
+       y="125"
+       x="30" />
+  </defs>
+  <sodipodi:namedview
+     inkscape:snap-global="true"
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.0319954"
+     inkscape:cx="115.12974"
+     inkscape:cy="87.012758"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="true"
+     inkscape:window-width="1481"
+     inkscape:window-height="996"
+     inkscape:window-x="433"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:pagecheckerboard="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3176"
+       units="mm"
+       spacingx="5"
+       spacingy="5" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata2149">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       sodipodi:nodetypes="cccc"
+       id="path831"
+       d="M 6.6506003,5.0497687 13.038591,20.39578 39.134228,16.474846 Z"
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text
+       transform="translate(-20.620676,-104.19591)"
+       style="font-size:2.82222000000000017px;line-height:1.25;font-family:sans-serif;word-spacing:0px;white-space:pre;shape-inside:url(#rect835);"
+       id="text833"
+       xml:space="preserve"><tspan
+         x="30"
+         y="127.5748"><tspan>I</tspan></tspan></text>
+    <text
+       id="text841"
+       y="17.786304"
+       x="40.710651"
+       style="font-size:2.82223px;line-height:1.25;font-family:sans-serif;word-spacing:0px;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         style="stroke-width:0.264583"
+         y="17.786304"
+         x="40.710651"
+         id="tspan839"
+         sodipodi:role="line">J</tspan></text>
+    <text
+       id="text845"
+       y="3.5304732"
+       x="5.1638579"
+       style="font-size:2.82223px;line-height:1.25;font-family:sans-serif;word-spacing:0px;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         style="stroke-width:0.264583"
+         y="3.5304732"
+         x="5.1638579"
+         id="tspan843"
+         sodipodi:role="line">K</tspan></text>
+    <circle
+       r="0.82756805"
+       cy="20.394081"
+       cx="13.14054"
+       id="path865"
+       style="fill:#000000;fill-rule:evenodd;stroke-width:0.264999" />
+    <circle
+       style="fill:#000000;fill-rule:evenodd;stroke-width:0.264999"
+       id="circle867"
+       cx="6.6590233"
+       cy="5.1031785"
+       r="0.82756805" />
+    <circle
+       r="0.82756805"
+       cy="16.423012"
+       cx="39.020962"
+       id="circle869"
+       style="fill:#000000;fill-rule:evenodd;stroke-width:0.264999" />
+  </g>
+</svg>
