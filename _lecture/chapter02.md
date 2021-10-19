@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Kapitel 02 [Okt. 25-31]"
+title: "Kapitel 02 [Oct. 25-31]"
 parent: Vorlesung
-date: 2021-10-06
+date: 2021-10-19
 categories: lecture
 author: Lars Pastewka
 nav_order: 2

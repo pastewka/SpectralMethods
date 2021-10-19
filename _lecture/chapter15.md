@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 15 [Feb. 7-13]"
 parent: Vorlesung
-date: 2021-10-06
+date: 2021-10-19
 categories: lecture
 author: Lars Pastewka
 nav_order: 15
@@ -10,7 +10,7 @@ nav_order: 15
 
 
 <h2 class='chapterHead'><span class='titlemark'>Kapitel 15</span><br /><a id='x1-100015'></a>Festkörpermechanik</h2>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 3 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Die Methode der finiten Elementen hat ihren Ursprung in der
 Festkörpermechanik (auch <span class='cmti-12'>Strukturmechanik</span>). So gut wie alle Simulationen in
 diesem Bereich werden weiterhin mit Hilfe diese Methode durchgeführt. In
@@ -32,7 +32,7 @@ beschreibt drei unabhängige Impulsströme und Gl. \eqref{eq:elastostaticeq} is
 die stationäre Kontinuitätsgleichung, \(\nabla \cdot \v{j}=0\), für diese drei Impulsströme die durch
 die Spaltenvektoren des Tensors \(\t{\sigma }\) gegeben sind.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 20 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> In der Einsteinschen Summenkonvention lässt man
 Summationssymbole weg und impliziert Summation über wiederholte Indices. Im
 obigen Beispiel, \begin{equation} \partial _i \sigma _{ij} \equiv \sum _i \partial _i \sigma _{ij}. \end{equation}
@@ -58,7 +58,7 @@ beschrieben. Aus diesen Verschieben berechnen wir den Dehnungstensor
 \begin{equation} \t{\varepsilon } = \frac{1}{2}\left [ \nabla \v{u} + \left (\nabla \v{u}\right )^T \right ], \label{eq:strain} \end{equation}
 bzw. in Komponentenschreibweise \begin{equation} \varepsilon _{ij} = \frac{1}{2} \left ( \partial _i u_j + \partial _j u_i \right ). \end{equation}
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 44 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Der Ausdruck \(\nabla \v{u}\) ist <span class='cmti-12'>nicht </span>die Divergenz von \(\v{u}\). Diese ist gegeben
 durch \(\nabla \cdot \v{u}\) – der Punkt ist entscheidend. \(\nabla \v{u}\) ist der Gradient des Vektorfeldes \(\v{u}(\v{r})\) und damit
 ein Tensorfeld zweiter Ordnung. Die Komponenten sind gegeben durch
@@ -128,7 +128,7 @@ Elements \((n)\). Wir können Gl. \eqref{eq:voleq} schreiben als \begin{equatio
 Die Elementmatrix hat daher die Komponenten \begin{equation} K^{(n)}_{IiJj} = \lambda ^{(n)} k_{IiJj}^{(n)} + \mu ^{(n)} \delta _{ij} k_{IkJk}^{(n)} + \mu ^{(n)} k_{IjJi}^{(n)} \end{equation}
 mit \(k_{IiJj}^{(n)}=V^{(n)}\partial _i N_I^{(n)} \partial _j N_J^{(n)}\) und der Beitrag des Elements zum Lastvektor lautet \(f_{Ii}^{(n)}=V^{(n)}\sigma _{0,ij}^{(n)} \partial _j N_I^{(n)}\).
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 203 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Für unser strukturiertes zweidimensionales Gitter erhalten wir \(V^{(n)}=\Delta x\Delta y/2\)
 und \begin{equation} \t{k} = \frac{1}{2} \begin{pmatrix} \Delta y/\Delta x &amp; 1 &amp; -\Delta y/\Delta x &amp; \cdot &amp; \cdot &amp; -1 \\ 1 &amp; \Delta x/\Delta y &amp; -1 &amp; \cdot &amp; \cdot &amp; -\Delta x/\Delta y \\ -\Delta y/\Delta x &amp; -1 &amp; \Delta y/\Delta x &amp; \cdot &amp; \cdot &amp; 1 \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ -1 &amp; -\Delta x/\Delta y &amp; 1 &amp; \cdot &amp; \cdot &amp; \Delta x/\Delta y \end{pmatrix} \end{equation}
 sowohl für das untere linke als auch das obere rechte Dreieck. Der Lastvektor

@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 14 [Jan. 31-Feb. 6]"
 parent: Vorlesung
-date: 2021-10-06
+date: 2021-10-19
 categories: lecture
 author: Lars Pastewka
 nav_order: 14
@@ -10,7 +10,7 @@ nav_order: 14
 
 
 <h2 class='chapterHead'><span class='titlemark'>Kapitel 14</span><br /><a id='x1-100014'></a>Unstrukturierte Gitter</h2>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 5 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Wir zeigen hier wir die Methode der finiten Elemente für
 zweidimensionale unstrukturierte Gitter umgesetzt wird. Hierzu bauen wir
 auf den Ergebnissen der vorhergehenden Kapiteln auf und führen die
@@ -40,7 +40,7 @@ wobei das Dreieck durch die Vektoren \(\v{R}_1=\v{r}_1-\v{r}_0\) und \(\v{R}_2=\
 
 
 
-<!-- l. 23 --><p class='noindent'><img height='240' width='312' alt='PIC' src='Figures/coordinate_transformation.svg' /> <a id='x1-2001r1'></a>
+<!-- l. 23 --><p class='noindent'><img height='240' width='312' src='Figures/coordinate_transformation.svg' alt='PIC' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 14.1:: </span><span class='content'>Illustration eines Dreiecks mit den normierten Koordinaten

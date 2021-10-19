@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 06 [Nov. 22-28]"
 parent: Vorlesung
-date: 2021-10-06
+date: 2021-10-19
 categories: lecture
 author: Lars Pastewka
 nav_order: 6
@@ -120,7 +120,7 @@ dem gleichen Kontext zu sehen.
 
 
 
-\begin{equation} \varphi _n = \exp \left ( i q_n x \right ), \label{eq:fourier-basis} \end{equation}
+\begin{equation} \varphi _n(x) = \exp \left ( i q_n x \right ), \label{eq:fourier-basis} \end{equation}
 auf dem Interval \(x\in [0,L]\) mit \(q_n = 2\pi n/L\) und \(n\in \mathbb{Z}\). Die Fourier-Basis ist periodisch auf diesem
 Interval und in Abb. <a href='#x1-5001r1'>6.1<!-- tex4ht:ref: fig:fourierbasis --></a> gezeigt. Es kann einfach gezeigt werden, dass
 \begin{equation} (\varphi _n, \varphi _m) = L \delta _{nm}, \end{equation}
@@ -139,7 +139,7 @@ bis \(N\) läuft und man \(2N+1\) Koeffizienten erhält.
 
 
 
-<!-- l. 131 --><p class='noindent'><img width='390' alt='PIC' src='Figures/fourierbasis.svg' height='229' /> <a id='x1-5001r1'></a>
+<!-- l. 131 --><p class='noindent'><img alt='PIC' width='390' height='229' src='Figures/fourierbasis.svg' /> <a id='x1-5001r1'></a>
 <a id='x1-5002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 6.1::
@@ -178,7 +178,7 @@ höherer Ordnung eingesetzt.
 
 
 
-<!-- l. 165 --><p class='noindent'><img width='390' alt='PIC' src='Figures/febasis.svg' height='115' /> <a id='x1-6001r2'></a>
+<!-- l. 165 --><p class='noindent'><img alt='PIC' width='390' height='115' src='Figures/febasis.svg' /> <a id='x1-6001r2'></a>
 <a id='x1-6002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 6.2:: </span><span class='content'>Die Basis der finiten Elemente in ihrer einfachsten,

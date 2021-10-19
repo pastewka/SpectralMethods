@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Kapitel 08 [Dez. 6-12]"
+title: "Kapitel 08 [Dec. 6-12]"
 parent: Vorlesung
-date: 2021-10-06
+date: 2021-10-19
 categories: lecture
 author: Lars Pastewka
 nav_order: 8
@@ -29,7 +29,7 @@ bestimme Basis \(\varphi _n(x,y,z)\) dargestellt ist. In der Galerkin-Methode ve
 \begin{equation} (\varphi _n, R) = 0 \end{equation}
 für jedes \(n\).
 </p><!-- l. 24 --><p class='indent'> Wir diskutieren zunächst die Fourier-Basis für periodische Funktionen auf \(x\in [0,L]\)
-in einer Dimension, \begin{equation} \varphi _n(x) = \exp (i q_n x) \label{eq:fourierbasis} \end{equation}
+in einer Dimension, \begin{equation} \varphi _n(x) = \exp (i q_n x) \label{eq:fourierbasis2} \end{equation}
 mit \(q_n = 2\pi n/L\). Der Operator \(\mathcal{L}\) kann beliebige Differentialoperationen enthalten, die auf die
 Basisfunktionen wirken, beispielsweise \begin{align} \frac{d}{dx} \varphi _n(x) &amp;= iq_n \varphi _n(x) \\ \frac{d^2}{dx^2} \varphi _n(x) &amp;= -q_n^2 \varphi _n(x). \end{align}
 </p><!-- l. 34 --><p class='indent'> D.h. die Ableitungen der (Fourier-)Basisfunktionen ergeben die <span class='cmti-12'>gleiche</span>
@@ -46,7 +46,7 @@ bestimmen können.
 
 </p>
 <h3 class='sectionHead'><span class='titlemark'>8.2 </span> <a id='x1-30008.2'></a>Poisson-Gleichung in einer Dimension</h3>
-<!-- l. 41 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=88c55914-ce6f-4a02-96b5-aca8010e6886' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=88c55914-ce6f-4a02-96b5-aca8010e6886</span></a>
+<!-- l. 41 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=88c55914-ce6f-4a02-96b5-aca8010e6886'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=88c55914-ce6f-4a02-96b5-aca8010e6886</span></a>
 </p><!-- l. 43 --><p class='indent'> Als Demonstrator für diese Verhalten nutzen wir die (eindimensionale)
 Poisson-Gleichung, \begin{equation} \nabla ^2 \Phi \equiv \frac{\dif ^2 \Phi }{\dif x^2} = - \frac{\rho }{\varepsilon }. \label{eq:poisson-1d} \end{equation}
 Hier ist \(\rho \) eine Ladungsdichte und \(\Phi \) das elektrostatische Potential. Das Residuum ist
@@ -68,8 +68,8 @@ Dies ist die Fourier-Reihe der Lösung.
 </p><!-- l. 85 --><p class='noindent'>
 </p>
 <h3 class='sectionHead'><span class='titlemark'>8.3 </span> <a id='x1-40008.3'></a>Übergang zur Fourier-Transformation</h3>
-<!-- l. 87 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=bd5cfab2-323e-48dc-b7b9-aca9011cf271' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=bd5cfab2-323e-48dc-b7b9-aca9011cf271</span></a>
-</p><!-- l. 89 --><p class='indent'> Die Fourier-Basis Gl. \eqref{eq:fourier-basis} ist auf einen finite Gebiet der
+<!-- l. 87 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=bd5cfab2-323e-48dc-b7b9-aca9011cf271'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=bd5cfab2-323e-48dc-b7b9-aca9011cf271</span></a>
+</p><!-- l. 89 --><p class='indent'> Die Fourier-Basis Gl. \eqref{eq:fourierbasis2} ist auf einem finiten Gebiet der
 Länge \(L\) periodisch. Wenn wir die Länge \(L\) gegen unendlich gehen lassen,
 bekommen wir eine Formulierung für nicht-periodische Funktionen. Dies führt
 direkt zur <span class='cmti-12'>Fourier-Transformation</span>.
@@ -170,7 +170,7 @@ oder <span class='cmti-12'>Greensche Funktion </span>der (dreidimensionalen) Poi
 
 
 
-<!-- l. 255 --><p class='noindent'><img width='390' height='390' alt='PIC' src='Figures/illustr_angles_1.svg' /> <a id='x1-5001r1'></a>
+<!-- l. 255 --><p class='noindent'><img alt='PIC' src='Figures/illustr_angles_1.svg' width='390' height='390' /> <a id='x1-5001r1'></a>
 <a id='x1-5002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 8.1:: </span><span class='content'>Volumenelement für die Integration in Kugelkoordination

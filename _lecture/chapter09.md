@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Kapitel 09 [Dez. 13-19]"
+title: "Kapitel 09 [Dec. 13-19]"
 parent: Vorlesung
-date: 2021-10-06
+date: 2021-10-19
 categories: lecture
 author: Lars Pastewka
 nav_order: 9
@@ -10,25 +10,26 @@ nav_order: 9
 
 
 <h2 class='chapterHead'><span class='titlemark'>Kapitel 9</span><br /><a id='x1-10009'></a>Finite Elemente in einer Dimension</h2>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 4 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> In diesem Kapitel werden einige Eigenschaften der finiten Elemente
 anhand eindimensionaler Beispiele diskutiert. Insbesondere wird gezeigt, wie mit
 linearen Elementen PDGLs zweiter Ordnung diskretisiert werden und wie
 Randbedingungen in den finiten Elementen eingebaut werden können. </p></div>
 <h3 class='sectionHead'><span class='titlemark'>9.1 </span> <a id='x1-20009.1'></a>Differenzierbarkeit der Basisfunktionen</h3>
-<!-- l. 10 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5f1094b6-98c3-40a4-9f67-aca900bc1ddd' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5f1094b6-98c3-40a4-9f67-aca900bc1ddd</span></a>
+<!-- l. 10 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5f1094b6-98c3-40a4-9f67-aca900bc1ddd'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5f1094b6-98c3-40a4-9f67-aca900bc1ddd</span></a>
 </p><!-- l. 12 --><p class='indent'> Der einfachste Fall einer Basis der finiten Elemente in einer Dimension wurde
-bereits in Kapitel <span class='cmbx-12'>??</span> eingeführt. Die Basisfunktionen sind “Zelt-” oder
-“Hutfunktionen” die jeweils auf einem Knoten maximal (\(=1\)) sind und dann zu den
-beiden benachbarten Knoten linear abfallen. Im Gegensatz zu der Fourier-Basis
-ist diese Basis nicht (im klassischen Sinne noch nicht einmal) differenzierbar. Dies
-heißt eigentlich, dass wir diese Basis nicht als Reihenentwicklung für die
-Ansatzfunktion zur Lösung einer PDGL zweiter (bzw. sogar erster) Ordnung
-verwenden können, in denen Ableitungen auftauchen. Wir zeigen hier nun dass
-im Rahmen einer <span class='cmti-12'>schwachen </span>Formulierung eine schwache Lösung erhalten
-werden kann, die diese Anforderungen an die Differenzierbarkeit nicht erfüllen
-muss. Damit können diese Basisfunktionen doch für PDGLs zweiter Ordnung
-verwendet werden.
+bereits in den vorherigen Kapiteln eingeführt. Die Basisfunktionen sind
+“Zelt-” oder “Hutfunktionen” die jeweils auf einem Knoten maximal (\(=1\))
+sind und dann zu den beiden benachbarten Knoten linear abfallen. Im
+Gegensatz zu der Fourier-Basis ist diese Basis nicht (im klassischen Sinne noch
+nicht einmal) differenzierbar. Dies heißt eigentlich, dass wir diese Basis
+nicht als Reihenentwicklung für die Ansatzfunktion zur Lösung einer
+PDGL zweiter (bzw. sogar erster) Ordnung verwenden können, in denen
+Ableitungen auftauchen. Wir zeigen hier nun dass im Rahmen einer <span class='cmti-12'>schwachen</span>
+Formulierung eine schwache Lösung erhalten werden kann, die diese
+Anforderungen an die Differenzierbarkeit nicht erfüllen muss. Damit
+können diese Basisfunktionen doch für PDGLs zweiter Ordnung verwendet
+werden.
 </p><!-- l. 14 --><p class='indent'> Wir betrachten als Beispiel hier weiterhin die eindimensionale Poisson-Gleichung
 mit dem Residuum \begin{equation} R(x) = \frac{\dif ^2 \Phi }{\dif x^2} + \frac{\rho (x)}{\varepsilon }. \label{eq:strongresidual} \end{equation}
 In der Methode der gewichteten Residuen (siehe Kap. <span class='cmbx-12'>??</span>) wird verlangt, dass das
@@ -42,10 +43,10 @@ nutzen, um eine PDGL zweiter Ordnung zu diskretisieren. Im Folgenden werden
 wir das Simulationgsgebiet als \(\Omega \) bezeichnen. In dem eindimensionalen Fall der hier
 diskutiert wird ist \(\Omega =[a,b]\).
 </p>
-<div id='shaded*-1' class='framedenv'>
 
 
 
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 58 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Die linearen Basisfunktionen sind im klassischen Sinne
 noch nicht einmal einfach differenzierbar, weil sich der linksseitige und
 rechtsseitige Differenzenquotient an den Knicken der Funktion unterscheidet. Es
@@ -77,22 +78,22 @@ schwach differenzierbar sein. Gleichung \eqref{eq:afterpartialint} muss
 hier natürlich für alle einmal diffenzierbaren Testfunktionen \(v(x)\) erfüllt
 sein.
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 71 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> In der Kollokationsmethode wird die “starke” Anforderung der
 zweimaligen Differenzierbarkeit nicht aufgehoben. Das sieht man z.B. daran, dass
 die Testfunktion für die Kollokationsmethode, Gl. \eqref{eq:colloctest}, noch
 nicht einmal im schwachen Sinne differenzierbar ist. D.h. die Testfunktionen der
 Kollokationsmethode sind nicht in der Menge der Testfunktionen, für welche \((v,R)\equiv 0\) im
 Sinne der schwachen Lösung verlangt wird. Dies ist der Grund, warum die
+
+
+
 gewichteten Residuen und hier spezifisch die Galerkin-Methode eine so weite
-
-
-
 Verbreitung gefunden hat. </p></div>
 <!-- l. 75 --><p class='noindent'>
 </p>
 <h3 class='sectionHead'><span class='titlemark'>9.2 </span> <a id='x1-30009.2'></a>Galerkin-Methode</h3>
-<!-- l. 78 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=7e114881-a10b-449a-95be-aca900bc1dad' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=7e114881-a10b-449a-95be-aca900bc1dad</span></a>
+<!-- l. 78 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=7e114881-a10b-449a-95be-aca900bc1dad'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=7e114881-a10b-449a-95be-aca900bc1dad</span></a>
 </p><!-- l. 80 --><p class='indent'> Im Rahmen der schwachen Formulierung Gl. \eqref{eq:afterpartialint}, wird
 nun die Galerkin-Methode angesetzt. Wir schreiben wieder \begin{equation} \Phi (x) \approx \Phi _N(x) = \sum _{n=0}^N a_n \varphi _n(x) \end{equation}
 als (endliche) Reihenentwicklung mit unseren finiten Elementen, den Zeltfunktionen \(\varphi _n(x)\).
@@ -114,7 +115,7 @@ Elemente im Rahmen der Strukturmechanik.) Der Term \(\v{f}\) wird oft als “rec
 Seite” (engl. “right hand side”, oft als “rhs” abgekürzt) oder Lastvektor
 (wiederum aus der Strukturmechanik) bezeichnet.
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 126 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> In der Strukturmechanik, die sich mit der Verformung von
 Festkörpern beschäftigt, ist \(\t{K}\) so etwas wie eine Federkonstante, \(\v{f}\) eine Kraft und \(\v{a}\)
 die <span class='cmti-12'>Verschiebungen </span>(engl. “displacements”) der Knoten, also der Abstand zum
@@ -123,10 +124,10 @@ Verallgemeinerung eines Federgesetzes, des Hookschen Gesetzes. Aus diesem
 Grund werden traditionell die Symbole \(\t{K}\) und \(\v{f}\) genutzt. Die Strukturmechanik ist
 komplizierter als die meisten anderen numerischen Anwendungsfälle, weil sich
 das Gebiet, auf dem die konstituierenden Gleichungen diskretisiert wurden, durch
+
+
+
 die Verformung selbst verändert. Dies führt automatisch zu nicht-linearen
-
-
-
 Gleichungen, sogenannten geometrischen Nichtlinearitäten. In diesem Fall
 hängt dann \(\t{K}\) selbst von \(\v{a}\) ab. </p></div>
 <!-- l. 130 --><p class='indent'> Wir können nun die Elemente der Matrix \(\t{K}\) direkt ausrechnen. Aus
@@ -135,7 +136,7 @@ und damit \begin{align} K_{nn} &amp;= \frac{1}{x_n - x_{n-1}} + \frac{1}{x_{n+1}
 </p><!-- l. 146 --><p class='indent'> und \(K_{kn} = 0\) für \(|n-k|&gt;1\). Die Matrix \(\t{K}\) ist also dünnbesetzt, symmetrisch und nahezu
 tridiagonal.
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 149 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Beispiel:</span></span> Für äquidistante Knoten mit Abstand \(\Delta x = x_{n+1}-x_n\) auf einer periodischen Gebiet
 erhält man für beispielsweise \(6\) Knoten (\(N=5\)): \begin{equation} \t{K} = \frac{1}{\Delta x} \begin{pmatrix} 2 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; -1 \\ -1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 \\ -1 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 2 \\ \end{pmatrix} \label{eq:systemmatrix1d-periodic-not-regular} \end{equation}
 Man beachte, dass die \(-1\) in der rechten oberen und linken unteren Ecke (\(K_{0N}\)
@@ -162,17 +163,17 @@ Zeilen, genau eins kleiner als deren Dimension. Wir können daher eine
 dieser Gleichungen (bzw. Zeilen) entfernen und dafür die entsprechende
 Mittelwertbedingung einführen. Für den periodischen Fall lautet diese
 \begin{equation} \int _\Omega \dif x\, \Phi _N(x) = \sum _n a_n \int _\Omega \dif x\, \varphi _n(x) = \sum _n a_n \Delta x = 0. \label{eq:feaverage} \end{equation}
+
+
+
 Die reguläre Systemmatrix sieht dann folgendermaßen aus, \begin{equation} \t{K} = \frac{1}{\Delta x} \begin{pmatrix} 2 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; -1 \\ -1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 \\ 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\ \end{pmatrix} \label{eq:systemmatrix1d-periodic-regular} \end{equation}
-
-
-
 wobei nun auch \(f_N=0\) gelten muss. Die rechte Seite wird also zu \begin{equation} \v{f} = \begin{pmatrix} (\varphi _0(x), \rho (x))/\varepsilon \\ (\varphi _1(x), \rho (x))/\varepsilon \\ (\varphi _2(x), \rho (x))/\varepsilon \\ (\varphi _3(x), \rho (x))/\varepsilon \\ (\varphi _4(x), \rho (x))/\varepsilon \\ 0 \end{pmatrix}. \label{eq:rhs1d-periodic-regular} \end{equation}
 Die letzte Zeile entspricht der Mittelwertbedingung Gl. \eqref{eq:feaverage}, man
 hätte aber jede beliebige Zeile durch diese Bedingung ersetzen können. </p></div>
 <!-- l. 210 --><p class='noindent'>
 </p>
 <h3 class='sectionHead'><span class='titlemark'>9.3 </span> <a id='x1-40009.3'></a>Randbedingungen</h3>
-<!-- l. 212 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=fd06f299-0d14-4e00-ac51-acaa00b40ea2' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=fd06f299-0d14-4e00-ac51-acaa00b40ea2</span></a>
+<!-- l. 212 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=fd06f299-0d14-4e00-ac51-acaa00b40ea2'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=fd06f299-0d14-4e00-ac51-acaa00b40ea2</span></a>
 </p><!-- l. 214 --><p class='indent'> Die Mittelwertbedingung des vorhergehenden Beispiels ist ein Spezialfall
 einer Randbedingung. Meistens werden Probleme auf endlichen Gebieten \(\Omega \)
 behandelt, in denen entweder der Funktionswert \(\Phi (x)\) oder die Ableitung \(\dif \Phi /\dif x\) auf dem
@@ -194,13 +195,13 @@ hier implizit die Bedingungen \((\varphi _0, R)=0\) und \((\varphi _N, R)=0\) au
 wurden. Die Basisfunktionen \(\varphi _0(x)\) und \(\varphi _N(x)\) tauchen aber selbstverständlich noch in der
 Reihenentwicklung \(\Phi _N(x)\) auf.
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 225 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Beispiel:</span></span> In unserem Beispiel wird die Systemmatrix mit Dirichlet-Randbedingungen
 dann zu \begin{equation} \t{K} = \frac{1}{\Delta x} \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ -1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\ \end{pmatrix} \label{eq:systemmatrix1d-dirichlet} \end{equation}
+
+
+
 und \(f_0=\Phi _a/\Delta x\) und \(f_N=\Phi _b/\Delta x\): \begin{equation} \v{f} = \begin{pmatrix} \Phi _a/\Delta x \\ (\varphi _1(x), \rho (x))/\varepsilon \\ (\varphi _2(x), \rho (x))/\varepsilon \\ (\varphi _3(x), \rho (x))/\varepsilon \\ (\varphi _4(x), \rho (x))/\varepsilon \\ \Phi _b/\Delta x \end{pmatrix} \label{eq:rhs1d-dirichlet} \end{equation}
-
-
-
 Diese Matrix \(\t{K}\) ist regulär.
 </p><!-- l. 252 --><p class='indent'> Das \(\Delta x\) taucht auf der rechten Seite \(f_0\) und \(f_N\) nur auf, weil es als Vorfaktor in der
 Systemmatrix steht. In einer Implementierung würde man \(\Delta x\) komplett auf die
@@ -229,17 +230,17 @@ sowie alle weiteren \(K_{0n}=0\). Wir können dieses wieder (siehe Gl. \eqref{e
 schreiben. Ein entsprechender Satz von Gleichungen gilt für den rechten Rand
 mit \(k=N\).
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 310 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Beispiel:</span></span> In unserem Beispiel wird die Sytemmatrix für zwei
 Neumann-Randbedingungen dann zu \begin{equation} \t{K} = \frac{1}{\Delta x} \begin{pmatrix} 1 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ -1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 1 \\ \end{pmatrix}. \label{eq:systemmatrix1d-neumann} \end{equation}
 Man beachte, dass diese Systemmatrix sich leicht von der für
 Dirichlet-Randbedingungen, Gl. \eqref{eq:systemmatrix1d-dirichlet},
 unterscheidet. Diese Matrix ist nicht regulär und damit ist das Problem mit zwei
 Neumann-Randbedingungen unbestimmt. Der Grund hierfür ist der gleiche wie
+
+
+
 im periodischen Fall: Die Neumann-Randbedingungen legen den Absolutwert
-
-
-
 (Mittelwert) des Potentials \(\Phi \) nicht fest. Man braucht also entweder eine
 Dirichlet-Randbedingung (links oder rechts) oder wieder die Fixierung des
 Mittelwertes.
@@ -249,7 +250,7 @@ entsprechenden Zeltes integriert werden muss. </p></div>
 <!-- l. 340 --><p class='noindent'>
 </p>
 <h3 class='sectionHead'><span class='titlemark'>9.4 </span> <a id='x1-70009.4'></a>Formfunktionen</h3>
-<!-- l. 342 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=b390b0a2-cbb2-4d89-aad5-aca9011cf294' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=b390b0a2-cbb2-4d89-aad5-aca9011cf294</span></a>
+<!-- l. 342 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=b390b0a2-cbb2-4d89-aad5-aca9011cf294'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=b390b0a2-cbb2-4d89-aad5-aca9011cf294</span></a>
 </p><!-- l. 344 --><p class='indent'> Die Methode der finiten Elemente wird oft nicht mit Hilfe der Basisfunktionen
 sondern mit Hilfe der sogenannten <span class='cmti-12'>Formfunktionen </span>(engl. “shape functions”)
 formuliert. Der Grund hierfür ist, dass die Formfunktionen einen intuitiveren
@@ -275,16 +276,16 @@ bezeichnet \(\Omega ^{(n)}\) das Gebiet des \(n\)-ten Elements. Damit hat die Fu
 diesem Element den Verlauf (siehe Gl. \eqref{eq:finite-element-basis})
 \begin{equation} \begin{split} \phi ^{(n)}(x) =&amp; a_n \varphi _n(x) + a_{n+1}\varphi _{n+1}(x) \\ =&amp; a_n \frac{x_{n+1}-x}{x_{n+1} - x_n} + a_{n+1}\frac{x-x_n}{x_{n+1} - x_n} \\ =&amp; a_n N^{(n)}_{0}(\xi ^{(n)}(x)) + a_{n+1} N^{(n)}_{1}(\xi ^{(n)}(x)), \label{eq:basistoform} \end{split} \end{equation}
 mit \(\xi ^{(n)}(x)=(x-x_n)/(x_{n+1}-x_n)\) und \(x\in \Omega ^{(n)}\). Hier und im Folgenden bezeichnen hochgestellte Indices \(x^{(n)}\) Elemente und
+
+
+
 tiefgestellte Indices \(x_n\) Knoten. Die Funktionen \begin{equation} N_{0}^{(n)}(\xi ) = 1-\xi \quad \text{und}\quad N_{1}^{(n)}(\xi ) = \xi \label{eq:linel1d} \end{equation}
-
-
-
 mit \(\xi \in [0,1]\) heißen <span class='cmti-12'>Formfunktionen </span>(auch <span class='cmti-12'>Ansatzfunktionen</span>) und \(\xi ^{(n)}(x)\) ist eine
 Reskalierungsfunktion, die am linken Rand des \(n\)-ten Elements \(\xi ^{(n)}=0\) und am rechten
 Rand des Elements \(\xi ^{(n)}=1\) wird. Hiermit wird die Größe des Elements von der
 Interpolationsvorschrift (der “Form”) entkoppelt.
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 378 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Man beachte, dass es genau ein Element weniger als Knoten gibt,
 die wir bislang auch mit dem Index \(n\) bezeichnet haben. In dem eindimensionalen
 Fall ist der Zusammenhang zwischen globalen Knotenindice und Elementindice
@@ -302,7 +303,7 @@ den Basissatz den wir bislang verwendet haben, sind allerdings die linke
 und rechte Formfunktion (und damit der Elementyp) für alle Elemente
 identisch.
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 384 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Die Basisfunktionen \(\varphi _n(x)\) sind global definiert, d.h. sie leben auf dem
 gesamten Simulationsgebiet \(\Omega \) (verschwinden aber in Abschnitten daraus).
 Die Formfunktion \(N^{(n)}_{i}(x)\) ist nur auf dem einzelnen Element \(n\) definiert, d.h. sie
@@ -343,12 +344,12 @@ Element \(k\) (dessen linker Knoten der Knoten \(k\) ist) und Element \(k-1\) (d
 Knoten der Knoten \(k\) ist). Das Zusammenbauen der Systemmatrix wird im
 Englischen oft als “assembly” bezeichnet.
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 469 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Beispiel:</span></span> Wir formulieren das Beispielproblem (Poisson-Gleichung) hier noch
 einmal im Rahmen der Formfunktionen. Dies ist ein Prozess, welcher drei Schritte
 benötigt:
 </p><ol class='enumerate1'>
-<li id='x1-7002x1' class='enumerate'><span class='cmti-12'>Elementmatrix </span>und rechte Seite: Da alle Elemente identisch sind, sind
+<li class='enumerate' id='x1-7002x1'><span class='cmti-12'>Elementmatrix </span>und rechte Seite: Da alle Elemente identisch sind, sind
 auch die einzelnen Elementmatrizen identisch. Zunächst wenden
 wir wieder den Trick mit der partiellen Integration an, um die
 Differenzierbarkeitsbedingung zu reduzieren. Man erhält den Ausdruck
@@ -356,16 +357,16 @@ Differenzierbarkeitsbedingung zu reduzieren. Man erhält den Ausdruck
 der nur noch erste Ableitungen der Formfunktionen enthält. Diese
 Ableitungen sind Konstanten, da die Formfunktionen linear sind,
 Gl. \eqref{eq:linel1d}: \begin{align} \frac{\dif N^{(n)}_{0}}{\dif x} &amp;= -\frac{1}{\Delta x} \\ \frac{\dif N^{(n)}_{1}}{\dif x} &amp;= \frac{1}{\Delta x} \end{align}
+
+
+
 <!-- l. 485 --><p class='noindent'>Damit erhält man die Elementsteifigkeitsmatrix \begin{equation} \t{K}^{(n)} = \frac{1}{\Delta x} \begin{pmatrix} 1 &amp; -1 \\ -1 &amp; 1 \end{pmatrix}, \label{eq:elmat1d} \end{equation}
-
-
-
 die für alle Elemente identisch ist. Die rechte Seite für die Elemente wird
 zu \begin{equation} \t{f}^{(n)} = \begin{pmatrix} (N^{(n)}_{0}, \rho )/\varepsilon \\ (N^{(n)}_{1}, \rho )/\varepsilon \end{pmatrix}. \end{equation}
 Diese rechte Seite kann für die unterschiedlichen Elemente anders sein,
 wenn \(\rho \) räumlich variiert.
 </p></li>
-<li id='x1-7004x2' class='enumerate'>Zusammenbauen der <span class='cmti-12'>Systemmatrix </span>und der rechten Seite (engl.
+<li class='enumerate' id='x1-7004x2'>Zusammenbauen der <span class='cmti-12'>Systemmatrix </span>und der rechten Seite (engl.
 “assembly”): Die Regeln für das Zusammenbauen der Systemmatrix
 ergeben sich aus der Galerkin-Bedingung, Gl. \eqref{eq:galerkinform2}.
 Hierzu muss die \(2\times 2\) Elementmatrix auf die \(6\times 6\) Systemmatrix aufgespannt und
@@ -380,7 +381,7 @@ daraus einfach die Systemmatrix zusammenbauen kann. Der Zusammenbau
 der rechten Seite folgt analog, ist aber einfacher da es sich um einen Vektor
 handelt.
 </li>
-<li id='x1-7006x3' class='enumerate'>Randbedingungen: Wir haben im Rahmen der Formfunktionen noch
+<li class='enumerate' id='x1-7006x3'>Randbedingungen: Wir haben im Rahmen der Formfunktionen noch
 nicht über Randbedingungen gesprochen. Hierbei müssen die
 entsprechenden Zeilen der Systemmatrix und der rechten Seite durch
 die entsprechende Randbedingung ersetzt werden. Die Matrix \(\t{K}\) aus

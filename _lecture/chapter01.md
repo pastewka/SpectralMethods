@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Kapitel 01 [Okt. 18-24 (2021)]"
+title: "Kapitel 01 [Oct. 18-24 (2021)]"
 parent: Vorlesung
-date: 2021-10-06
+date: 2021-10-19
 categories: lecture
 author: Lars Pastewka
 nav_order: 1
@@ -67,7 +67,7 @@ Ortsvariablen zu tun haben, nämlich \(\Psi (\v{r}_1,\v{r}_2,\dots ,\v{r}_n;t)\)
 
 <div class='center'>
 <!-- l. 41 --><p class='noindent'>
-</p><!-- l. 45 --><p class='noindent'> <img alt='PIC' width='774' height='585' src='Figures/ExtendedSchemeD-.png' /> <a id='x1-2001r1'></a>
+</p><!-- l. 45 --><p class='noindent'> <img alt='PIC' src='Figures/ExtendedSchemeD-.png' height='585' width='774' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 1.1:: </span><span class='content'>Die vertikale Anordnung der Kisten repräsentiert die
@@ -134,7 +134,7 @@ Variablen Ort \(\v{r}\) und Impuls \(\v{p}\). Im zweiten Fall haben wir eine Fun
 Ort, Impuls und der Zeit sowohl explizit, als auch implizit über \(\v{r}(t)\) und \(\v{p}(t)\)
 abhängt. Nehmen wir an, wir müssen \(f(\v{r}(t),\v{p}(t),t)\) durch diskrete Stützstellen
 interpolieren. Dies sind bei einer geringen Auflösung von 10 Punkten pro
-Variable schon bereits 10.000.000 Interpolationspunkte. Dies ist vielleicht
+Variabler schon bereits 10.000.000 Interpolationspunkte. Dies ist vielleicht
 handhabbar, die Auflösung ist aber nicht besonders gut. Und daher ist
 dieses Unterfangen eher unnütz. Wir wollen nicht verschweigen, dass es
 durchaus Methoden zur numerischen Lösung der beiden oben beschriebenen
