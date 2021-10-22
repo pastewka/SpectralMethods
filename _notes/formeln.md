@@ -20,4 +20,4 @@ Das Lernmaterial nutzt Pfeile $$\vec{x}$$ für Vektoren und Unterstriche $$\unde
 
 ## Innere und äußere Produkte
 
-Ein inneres Produkt (Skalarprodukt) wird durch einen Punkt $$\cdot$$ ausgedrückt, $$\vec{a}\cdot\vec{b}$$. Der Ausdruck $$\vec{a}\vec{b}$$ ist *kein* Skalarprodukt sondern das äußere Produkt. Wir empfehlen ein spezifisches Symbol für das äußere Produkt zu verwenden um Ambiguität zu vermeiden, z.B. $$\vec{a}\otimes\vec{b}$$. Jeder Punkt (im Skalarprodukt oder der doppelten Kontraktion $$:$$) steht für eine Summe.
+Ein inneres Produkt (Skalarprodukt) wird durch einen Punkt $$\cdot$$ ausgedrückt, $$\vec{a}\cdot\vec{b}$$. Der Ausdruck $$\vec{a}\vec{b}$$ ist *kein* Skalarprodukt sondern das äußere Produkt. Wir empfehlen ein spezifisches Symbol für das äußere Produkt zu verwenden um Ambiguität zu vermeiden, z.B. $$\vec{a}\otimes\vec{b}$$. Jeder Punkt (im Skalarprodukt oder der doppelten Kontraktion $$\underline{A}:\underline{B}$$) steht für eine Summe.
