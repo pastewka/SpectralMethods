@@ -14,7 +14,7 @@ Sie werden für die Abgabe Ihre Übungsblätter auch mathematische Ausdrücke au
 
 ## Vektoren und Tensoren
 
-Das Symbol $$x$$ bezeichnet hier einen Skalar, es sei denn, Sie sagen uns explizit, dass es sich beispielweise um einen Vektor handelt, $$x\in\mathbb{R}^3$$. In den Ingenieurs- und den Naturwissenschaften ist es allerdings eher üblich, durch die Art des Symbols anzudeuten, um was für ein Objekt es sich handelt. Vektoren werden z.B. durch Pfeile, $$\vec{x}$$, repräsentiert. Eine Alternative sind fette Symbole, $$\mathbf{x}$$.
+Das Symbol $$x$$ bezeichnet hier einen Skalar, es sei denn, Sie sagen uns explizit, dass es sich beispielweise um einen Vektor handelt, $$x\in\mathbb{R}^3$$. In den Ingenieurs- und den Naturwissenschaften ist es allerdings eher üblich, durch die Art des Symbols anzudeuten, um was für ein Objekt es sich handelt. Vektoren werden z.B. durch Pfeile, $$\vec{x}$$, repräsentiert. Eine Alternative sind fette Symbole, $$\mathbf{x}$$. Komponenten eines Vektors, $$x_\alpha$$, haben keinen Pfeil weil diese Zahlen (Skalare) sind.
 
 Das Lernmaterial nutzt Pfeile $$\vec{x}$$ für Vektoren und Unterstriche $$\underline{K}$$ für Matrizen. Sollten Sie von dieser Notation abweichen, müssen Sie Ihre Notation in den Übungsblättern erklären. Wir nutzen Pfeile und Unterstriche, weil diese im Gegensatz zu fetten Symbolen auch im Tafelanschrieb einfach realisiert werden können.
 
