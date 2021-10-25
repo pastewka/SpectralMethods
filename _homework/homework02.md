@@ -34,16 +34,16 @@ Die Abgabe von Arbeitsblatt 1 bis 4 ist verpflichtend und konstituiert die Studi
 
 ### 1.1 Orthogonalität der 1D-Fourier-Basisfunktionen (3 Punkte)
 Auf Übungsblatt 1 haben Sie eine analytische Lösung der Diffusionsgleichung mithilfe der eindimensionalen Fourier-Reihe bestimmt. Weisen Sie nach, dass die Basisfunktionen dieser Fourier-Reihe eine orthogonale Basis bilden. Das Skalarprodukt zweier $$L$$-periodischen Funktion sei dabei definiert als:
-$$$$
+$$
 \left( f, g \right) = \frac{1}{L} \int_0^L dx \; f^*(x) g(x)
-$$$$
+$$
 wobei $$f^*(x)$$ für das komplex-konjugierte von $$f(x)$$ steht.
 
 ### 1.2 Orthogonalität der 2D-Fourier-Basisfunktionen (3 Punkte)
 Zeigen Sie, dass auch die Basisfunktionen der zweidimensionalen Fourier-Reihe eine orthogonale Basis bilden. Das Skalarprodukt zweier Funktionen, die in x-Richtung $$L_x$$-periodisch und in y-Richtung $$L_y$$-periodisch sind, sei dabei gegeben als
-$$$$
+$$
 \left(f, g \right) = \frac{1}{L_x L_y} \int_0^{L_y} \int_0^{L_x} dx\,dy \, \left( f^*(x,y) g(x,y) \right)
-$$$$
+$$
 
 ### 1.3 Fourier-Koeffizienten (2 Punkte)
 Leiten Sie die Formel für die Koeffizienten der zweidimensionalen Fourierreihe her, indem Sie die Funktion $$f(x,y)$$ auf die Fourierreihen-Basis projizieren.
