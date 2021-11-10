@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 03 [Nov. 1-7]"
 parent: Vorlesung
-date: 2021-10-19
+date: 2021-11-10
 categories: lecture
 author: Lars Pastewka
 nav_order: 3
@@ -10,7 +10,7 @@ nav_order: 3
 
 
 <h2 class='chapterHead'><span class='titlemark'>Kapitel 3</span><br /><a id='x1-10003'></a>Transporttheorie</h2>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 8 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Dieses Lernmodul führt die Grundlagen des Modellproblems ein,
 welches wir im Laufe der Lehrveranstaltung mit numerischen Methoden lösen
 werden. Hier geht es zunächst um die Grundlagen der Transporttheorie. </p></div>
@@ -48,10 +48,14 @@ gebrochen.
 
 
 
-<!-- l. 22 --><p class='noindent'> <img width='585' src='Figures/Brownian_Motion-.png' height='222' alt='PIC' /> <a id='x1-2001r1'></a>
+<!-- l. 22 --><p class='noindent'> <img width='585' height='222' src='Figures/Brownian_Motion-.png' alt='PIC' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
+</p><!-- l. 24 --><p class='noindent'>figureIllustration eines Diffusionsprozesses. Die “Pollen” in (a) bewegen sich
+zufällig in der gezeigten Domäne. Nach einer gewissen Zeit (b) ist der
+anfängliche Konzentrationsunterschied zwischen dem linken und rechten
+Teil der Domäne ausgeglichen.
 </p>
-<figcaption class='caption'><span class='id'>Abbildung 3.1:: </span><span class='content'>Illustration eines Diffusionsprozesses. Die “Pollen” in (a)
+<figcaption class='caption'><span class='id'>Abbildung 3.1: </span><span class='content'>Illustration eines Diffusionsprozesses. Die “Pollen” in (a)
 bewegen sich zufällig in der gezeigten Domäne. Nach einer gewissen Zeit
 (b) ist der anfängliche Konzentrationsunterschied zwischen dem linken und
 rechten Teil der Domäne ausgeglichen.
@@ -65,7 +69,7 @@ Wir betrachten ein Teilchen, das eine Zufallsbewegung in einer Dimension
 vollführt. Wir beginnen mit einem Teilchen, das zufällig auf einer Geraden hin-
 und herspringt. Die Gerade liege entlang der x-Richtung. Das Teilchen
 kann nur zu vorher festgelegten Positionen auf der x-Achse springen,
-die wir mit \(x_j\) bezeichnen und die äquidistant verteilt seien, \(x_j-x_{j-1}=\Delta x\) für \(j\in \mathbb{Z}\) (siehe
+die wir mit \(x_j\) bezeichnen und die äquidistant verteilt seien, \(x_j-x_{j-1}=\Delta x\) für \(j\in \mathbb {Z}\) (siehe
 Abb. <a href='#x1-2003r2'>3.2<!-- tex4ht:ref: fig:Brown --></a>).
 </p>
 <figure class='figure'>
@@ -76,11 +80,14 @@ Abb. <a href='#x1-2003r2'>3.2<!-- tex4ht:ref: fig:Brown --></a>).
 
 
 
-<!-- l. 36 --><p class='center'><img alt='PICT' src='ch030x.png' />
+<!-- l. 36 --><p class='center'><img alt='PICT' src='ch030x.svg' />
 <a id='x1-2003r2'></a>
 <a id='x1-2004'></a>
+</p><!-- l. 57 --><p class='noindent'>figureZufallsbewegung in einer Dimension ist gegeben durch
+Übergangswahrscheinlichkeiten \(p\) (für eine Bewegung nach links) und \(q\) für
+eine Bewegung nach rechts.
 </p>
-<figcaption class='caption'><span class='id'>Abbildung 3.2:: </span><span class='content'>Zufallsbewegung in einer Dimension ist gegeben durch
+<figcaption class='caption'><span class='id'>Abbildung 3.2: </span><span class='content'>Zufallsbewegung in einer Dimension ist gegeben durch
 Übergangswahrscheinlichkeiten \(p\) (für eine Bewegung nach links) und \(q\) für
 eine Bewegung nach rechts.
 </span></figcaption><!-- tex4ht:label?: x1-2003r3.1 -->
@@ -101,14 +108,14 @@ springe von einem Platz zum benachbarten in einem diskreten, endlichen und
 konstanten Zeitschritt \(\tau \). Dann ist die Wahrscheinlichkeit ein Teilchen zur Zeit \(t+\tau \) am
 Ort \(x\) zu finden, wenn zur Zeit \(t\) mit einer Wahrscheinlichkeit \(P(x-\Delta x,t)\) ein Teilchen bei der
 Position \(x-\Delta x\) zu finden war und mit der Wahrscheinlichkeit \(P(x+\Delta x,t)\) eines bei \(x+\Delta x\), gegeben durch
-\begin{equation} P(x,t+\tau )=\frac{1}{2}P(x+\Delta x,t)+\frac{1}{2}P(x-\Delta x,t). \end{equation}
+\begin {equation} P(x,t+\tau )=\frac {1}{2}P(x+\Delta x,t)+\frac {1}{2}P(x-\Delta x,t). \end {equation}
 Indem wir \(P(x,t)\) auf beiden Seiten abziehen und durch \(\tau \) teilen, erhalten wir die folgende
-äquivalente Form: \begin{equation} \frac{P(x,t+\tau )-P(x,t)}{\tau } = \frac{\Delta x^2}{2\tau }\frac{P(x+\Delta x,t)-2P(x,t)+P(x-\Delta x,t)}{\Delta x^2} \end{equation}
+äquivalente Form: \begin {equation} \frac {P(x,t+\tau )-P(x,t)}{\tau } = \frac {\Delta x^2}{2\tau }\frac {P(x+\Delta x,t)-2P(x,t)+P(x-\Delta x,t)}{\Delta x^2} \end {equation}
 Wir können nun den Grenzübergang zum “Kontinuum” machen. Für \(\tau \rightarrow 0\) und
-gleichzeitig \(h\rightarrow 0\) unter der Bedingung, dass \begin{equation} \lim _{\Delta x\rightarrow 0, \tau \rightarrow 0}\frac{\Delta x^2}{2\tau }=D \end{equation}
-erhält man \begin{equation} \frac{\partial P(x,t)}{\partial t}=D\frac{\partial ^2 P(x,t)}{\partial x^2}. \end{equation}
+gleichzeitig \(h\rightarrow 0\) unter der Bedingung, dass \begin {equation} \lim _{\Delta x\rightarrow 0, \tau \rightarrow 0}\frac {\Delta x^2}{2\tau }=D \end {equation}
+erhält man \begin {equation} \frac {\partial P(x,t)}{\partial t}=D\frac {\partial ^2 P(x,t)}{\partial x^2}. \end {equation}
 Dies die wohlbekannte Diffusionsgleichung. In mehreren Dimensionen wird aus der
-zweiten Ableitung der Laplace-Operator \(\nabla ^2\), \begin{equation} \frac{\partial P(x,t)}{\partial t}=D \nabla ^2 P(x,t). \label{eq:diffusion} \end{equation}
+zweiten Ableitung der Laplace-Operator \(\nabla ^2\), \begin {equation} \frac {\partial P(x,t)}{\partial t}=D \nabla ^2 P(x,t). \label {eq:diffusion} \end {equation}
 Diese Gleichung ist nur dann korrekt, wenn die Diffusionskonstante auch wirklich
 konstant ist und nicht räumlich variiert.
 </p><!-- l. 100 --><p class='noindent'>
@@ -119,18 +126,18 @@ konstant ist und nicht räumlich variiert.
 oder links nicht gleich sind, \(p\ne q\) (aber natürlich \(p+q=1\))? Wir gehen nach wie vor von
 diskreten, gleichförmigen Zeitschritten und äquidistanten Stützstellen
 aus.
-</p><!-- l. 107 --><p class='indent'> In diesem Fall haben wir \begin{equation} P(x,t+\tau )=pP(x+\Delta x,t)+qP(x-\Delta x,t) \end{equation}
-und somit folgt \begin{equation} \frac{P(x,t+\tau )-P(x,t)}{\tau }=\frac{\Delta x^2}{\tau }\frac{pP(x+\Delta x,t)-P(x,t)+qP(x-\Delta x,t)}{\Delta x^2}. \label{eq:driftpq} \end{equation}
-Wir schreiben \begin{equation} p=\frac{1}{2}-\varepsilon \quad \text{und}\quad q=\frac{1}{2}+\varepsilon \quad \text{mit}\quad 0\le |\varepsilon |\le \frac{1}{2} \quad \text{oder}\quad 2\varepsilon = q-p, \end{equation}
+</p><!-- l. 107 --><p class='indent'> In diesem Fall haben wir \begin {equation} P(x,t+\tau )=pP(x+\Delta x,t)+qP(x-\Delta x,t) \end {equation}
+und somit folgt \begin {equation} \frac {P(x,t+\tau )-P(x,t)}{\tau }=\frac {\Delta x^2}{\tau }\frac {pP(x+\Delta x,t)-P(x,t)+qP(x-\Delta x,t)}{\Delta x^2}. \label {eq:driftpq} \end {equation}
+Wir schreiben \begin {equation} p=\frac {1}{2}-\varepsilon \quad \text {und}\quad q=\frac {1}{2}+\varepsilon \quad \text {mit}\quad 0\le |\varepsilon |\le \frac {1}{2} \quad \text {oder}\quad 2\varepsilon = q-p, \end {equation}
 wobei \(\varepsilon \) nun angibt, um wieviel wahrscheinlicher ein Sprung nach <span class='cmti-12'>rechts </span>als nach
 
 
 
 links ist. Ein positives \(\varepsilon \) heißt also, dass die Partikel sich im Mittel nach
 rechts bewegen werden – dies ist die Driftbewegung. Wir können nun
-Gl. \eqref{eq:driftpq} mit Hilfe von \(\varepsilon \) als \begin{equation} \begin{split} \frac{P(x,t+\tau )-P(x,t)}{\tau }=&amp; \frac{\Delta x^2}{2\tau }\frac{P(x+\Delta x,t)-2P(x,t)+P(x-\Delta x,t)}{\Delta x^2}\\ &amp;-\frac{2\varepsilon \Delta x}{\tau }\frac{P(x+\Delta x,t)-P(x-\Delta x,t)}{2\Delta x} \end{split} \end{equation}
-ausdrücken. In den Grenzfällen \(\tau \rightarrow 0\) und \(\Delta x\rightarrow 0\) fordern wir \begin{equation} \lim _{\Delta x\rightarrow 0, \tau \rightarrow 0}\frac{\Delta x^2}{2\tau }=D \quad \text{ und }\quad \lim _{\Delta x\rightarrow 0, \tau \rightarrow 0}\frac{2\varepsilon \Delta x}{\tau }=v \label{eq:limit2} \end{equation}
-und erhalten somit die Drift-Diffusions-Gleichung \begin{equation} \frac{\partial P(x,t)}{\partial t}=\left (D\frac{\partial ^2}{\partial x^2} -v\frac{\partial }{\partial x}\right ) P(x,t). \label{eq:driftdiffusion} \end{equation}
+Gl. \eqref{eq:driftpq} mit Hilfe von \(\varepsilon \) als \begin {equation} \begin {split} \frac {P(x,t+\tau )-P(x,t)}{\tau }=&amp; \frac {\Delta x^2}{2\tau }\frac {P(x+\Delta x,t)-2P(x,t)+P(x-\Delta x,t)}{\Delta x^2}\\ &amp;-\frac {2\varepsilon \Delta x}{\tau }\frac {P(x+\Delta x,t)-P(x-\Delta x,t)}{2\Delta x} \end {split} \end {equation}
+ausdrücken. In den Grenzfällen \(\tau \rightarrow 0\) und \(\Delta x\rightarrow 0\) fordern wir \begin {equation} \lim _{\Delta x\rightarrow 0, \tau \rightarrow 0}\frac {\Delta x^2}{2\tau }=D \quad \text { und }\quad \lim _{\Delta x\rightarrow 0, \tau \rightarrow 0}\frac {2\varepsilon \Delta x}{\tau }=v \label {eq:limit2} \end {equation}
+und erhalten somit die Drift-Diffusions-Gleichung \begin {equation} \frac {\partial P(x,t)}{\partial t}=\left (D\frac {\partial ^2}{\partial x^2} -v\frac {\partial }{\partial x}\right ) P(x,t). \label {eq:driftdiffusion} \end {equation}
 Hier beschreibt der erste Summand auf der rechten Seite wieder den
 Diffusionsprozess. Der zweite Summand ist ein Driftprozess und \(v\) eine konstante
 <span class='cmti-12'>Drift</span>geschwindigkeit. (Aus Gl. \eqref{eq:limit2} und \eqref{eq:driftdiffusion}
@@ -141,7 +148,7 @@ besprochen. Aus der Lösung des vorhergehenden Kapitels wird auch klar, dass
 die Driftbewegung für positive \(v\) in Richtung der positiven \(x\)-Achse ist. Dies ist
 konsistent mit der obigen Definition von \(\varepsilon \).
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 150 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Die Bewegung unseres Teilchen wurde mit Hilfe einer
 Aufenthalts<span class='cmti-12'>wahrscheinlichkeit</span> \(P\) modelliert. Im thermodynamischen Limes, also
 für ganz viele Teilchen (üblicherweise in Größenordnung der Avogadroschen
@@ -149,8 +156,8 @@ Zahl \(N_A\)), wird aus dieser Wahrscheinlich die Dichte \(\rho \) oder die Konz
 kann also einfach in den oben genannten Gleichungen die Wahrscheinlichkeit \(P\)
 durch eine Teilchenkonzentration \(c\) ersetzen. Der Grund hierfür ist, dass
 wir die Teilchenkonzentration als <span class='cmti-12'>Ensemble</span>-Mittel schreiben können,
-\begin{equation} c(x, t) = \langle 1 \rangle (x, t), \end{equation}
-wobei der Mittelwert \begin{equation} \langle f(x) \rangle (x, t) = f(x) P(x, t). \end{equation}
+\begin {equation} c(x, t) = \langle 1 \rangle (x, t), \end {equation}
+wobei der Mittelwert \begin {equation} \langle f(x) \rangle (x, t) = f(x) P(x, t). \end {equation}
 </p></div>
 <!-- l. 161 --><p class='noindent'>
 </p>
@@ -165,16 +172,16 @@ das Nichts vernichten können. Wir wissen also, wenn wir eine gewissen
 
 
 
-Anzahl Teilchen \(N_{\text{tot}}\) in unserem Gesamtsystem haben, dass diese Anzahl
-\begin{equation} N_{\text{tot}} = \int \dif ^3r \, c(\v{r}) \end{equation}
-sich nicht über die Zeit ändern kann: \(\dif N_{\text{tot}}/\dif t=0\).
+Anzahl Teilchen \(N_{\text {tot}}\) in unserem Gesamtsystem haben, dass diese Anzahl
+\begin {equation} N_{\text {tot}} = \int \dif ^3r \, c(\v {r}) \end {equation}
+sich nicht über die Zeit ändern kann: \(\dif N_{\text {tot}}/\dif t=0\).
 </p><!-- l. 171 --><p class='indent'> Für einen kleinen Ausschnitt mit Volumen \(V\) aus diesem Gesamtvolumen kann
 sich die Teilchenzahl ändern, weil diese über die Wände des Probevolumens
 fließen können (siehe Abb. <a href='#x1-5001r3'>3.3<!-- tex4ht:ref: fig:continuity --></a>). Die Änderung dieser Teilchenzahl ist zum einen
-gegeben durch \begin{equation} \dot{N} = \frac{\partial }{\partial t} \int _V \dif ^3r \, c(\v{r}, t) = \int _V \dif ^3r \, \frac{\partial c}{\partial t}. \label{eq:nchange} \end{equation}
-Die Änderung \(\dot{N}\) muss aber auch durch die Anzahl der Partikel, die über die
+gegeben durch \begin {equation} \dot {N} = \frac {\partial }{\partial t} \int _V \dif ^3r \, c(\v {r}, t) = \int _V \dif ^3r \, \frac {\partial c}{\partial t}. \label {eq:nchange} \end {equation}
+Die Änderung \(\dot {N}\) muss aber auch durch die Anzahl der Partikel, die über die
 Seitenwände abfließen, gegeben sein. Für einen Würfel (Abb. <a href='#x1-5001r3'>3.3<!-- tex4ht:ref: fig:continuity --></a>) mit sechs
-Wänden gilt \begin{equation} \begin{split} \dot{N} = &amp; - j_{\text{rechts}} A_{\text{rechts}} - j_{\text{links}} A_{\text{links}} \\ &amp; - j_{\text{oben}} A_{\text{oben}} - j_{\text{unten}} A_{\text{unten}} \\ &amp; - j_{\text{vorne}} A_{\text{vorne}} - j_{\text{hinten}} A_{\text{hinten}} \end{split} \label{eq:dotN} \end{equation}
+Wänden gilt \begin {equation} \begin {split} \dot {N} = &amp; - j_{\text {rechts}} A_{\text {rechts}} - j_{\text {links}} A_{\text {links}} \\ &amp; - j_{\text {oben}} A_{\text {oben}} - j_{\text {unten}} A_{\text {unten}} \\ &amp; - j_{\text {vorne}} A_{\text {vorne}} - j_{\text {hinten}} A_{\text {hinten}} \end {split} \label {eq:dotN} \end {equation}
 wenn die Wände klein genug sind, so dass \(j\) nahezu konstant über \(A\) ist. (Die
 Stromdichte \(j\) hat die Einheit Anzahl Partikel/Zeit/Fläche.)
 </p>
@@ -186,10 +193,16 @@ Stromdichte \(j\) hat die Einheit Anzahl Partikel/Zeit/Fläche.)
 
 
 
-<!-- l. 211 --><p class='noindent'><img width='272' src='Figures/continuity.png' height='282' alt='PIC' /> <a id='x1-5001r3'></a>
+<!-- l. 211 --><p class='noindent'><img width='272' height='282' src='Figures/continuity.png' alt='PIC' /> <a id='x1-5001r3'></a>
 <a id='x1-5002'></a>
+</p><!-- l. 213 --><p class='noindent'>figureTeilchen können das Volumen \(V\) nur durch die Seitenwände verlassen.
+Die Änderung der Teilchenzahl \(N\) über ein Zeitintervall \(\tau \) ist daher durch
+die Anzahl der Teilchen gegeben, die durch die Wände fließen. Hierzu
+brauchen wir die Teilchenströme \(j\). Die Anzahl der Teilchen, welche durch
+eine Oberfläche fließen ist dann gegeben durch \(j\,A\tau \), wobei \(A\) die Fläche der
+Seitenwand ist.
 </p>
-<figcaption class='caption'><span class='id'>Abbildung 3.3:: </span><span class='content'>Teilchen können das Volumen \(V\) nur durch die Seitenwände
+<figcaption class='caption'><span class='id'>Abbildung 3.3: </span><span class='content'>Teilchen können das Volumen \(V\) nur durch die Seitenwände
 verlassen. Die Änderung der Teilchenzahl \(N\) über ein Zeitintervall \(\tau \) ist daher
 durch die Anzahl der Teilchen gegeben, die durch die Wände fließen. Hierzu
 brauchen wir die Teilchenströme \(j\). Die Anzahl der Teilchen, welche durch
@@ -201,53 +214,53 @@ Seitenwand ist.
 
 </figure>
 <!-- l. 217 --><p class='indent'> Hier bezeichnet der skalare Strom \(j\) den Strom, der aus der Fläche heraus
-fließt. Für eine allgemeine vektorielle Stromdichte \(\v{j}\), welche die Stärke und
-Richtung des Teilchenstroms angibt, ist \(j_i = \v{j}_i \cdot \hat{n}_i\) wobei \(\hat{n}_i\) der Normalenvektor auf die Wand
-\(i\) ist. Der Strom durch die Wand ist also nur die Komponente von \(\v{j}\), die parallel zur
+fließt. Für eine allgemeine vektorielle Stromdichte \(\v {j}\), welche die Stärke und
+Richtung des Teilchenstroms angibt, ist \(j_i = \v {j}_i \cdot \hat {n}_i\) wobei \(\hat {n}_i\) der Normalenvektor auf die Wand
+\(i\) ist. Der Strom durch die Wand ist also nur die Komponente von \(\v {j}\), die parallel zur
 Oberflächennormale steht. Mit diesem Argument können wir die Änderung der
-Teilchenzahl allgemein als \begin{equation} \dot{N} = -\int _{\partial V} \dif ^2r \, \v{j}(\v{r})\cdot \hat{n}(\v{r}) \label{eq:flux} \end{equation}
+Teilchenzahl allgemein als \begin {equation} \dot {N} = -\int _{\partial V} \dif ^2r \, \v {j}(\v {r})\cdot \hat {n}(\v {r}) \label {eq:flux} \end {equation}
 ausdrücken, wobei \(\partial V\) die Oberfläche des Volumens \(V\) bezeichnet. In dieser
-Gleichung ist explizit angezeigt, dass selbstverständlich sowohl der Fluss \(\v{j}\) als
-auch die Oberflächennormale \(\hat{n}\) von der Position \(\v{r}\) auf der Oberfläche
+Gleichung ist explizit angezeigt, dass selbstverständlich sowohl der Fluss \(\v {j}\) als
+auch die Oberflächennormale \(\hat {n}\) von der Position \(\v {r}\) auf der Oberfläche
 abhängen.
 </p><!-- l. 224 --><p class='indent'> Alternativ können wir auch die Änderung der Teilchenzahl Gl. \eqref{eq:dotN}
-folgendermaßen gruppieren: \begin{equation} \begin{split} \dot{N} = &amp; - (j_{\text{rechts}} + j_{\text{links}}) A_{\text{rechts/links}} \\ &amp; - (j_{\text{oben}} + j_{\text{unten}}) A_{\text{oben/unten}} \\ &amp; - (j_{\text{vorne}} + j_{\text{hinten}}) A_{\text{vorne/hinten}} \end{split} \end{equation}
-Hierbei haben wir die Tatsache genutzt, dass \(A_{\text{rechts}}=A_{\text{links}}\equiv A_{\text{rechts/links}}\). Nun ist aber \begin{equation} \begin{split} j_{\text{rechts}} &amp;= \hat{x} \cdot \v{j}(x+\Delta x/2,y,z) = j_x(x+\Delta x/2,y,z) \quad \text{und} \\ j_{\text{links}} &amp;= -\hat{x} \cdot \v{j}(x-\Delta x/2,y,z) = -j_x(x-\Delta x/2,y,z) \end{split} \end{equation}
-da \(\hat{n}=\hat{x}\) für die rechte Wand aber \(\hat{n}=-\hat{x}\) für die linke Wand. Hierbei ist \(\hat{x}\) der
+folgendermaßen gruppieren: \begin {equation} \begin {split} \dot {N} = &amp; - (j_{\text {rechts}} + j_{\text {links}}) A_{\text {rechts/links}} \\ &amp; - (j_{\text {oben}} + j_{\text {unten}}) A_{\text {oben/unten}} \\ &amp; - (j_{\text {vorne}} + j_{\text {hinten}}) A_{\text {vorne/hinten}} \end {split} \end {equation}
+Hierbei haben wir die Tatsache genutzt, dass \(A_{\text {rechts}}=A_{\text {links}}\equiv A_{\text {rechts/links}}\). Nun ist aber \begin {equation} \begin {split} j_{\text {rechts}} &amp;= \hat {x} \cdot \v {j}(x+\Delta x/2,y,z) = j_x(x+\Delta x/2,y,z) \quad \text {und} \\ j_{\text {links}} &amp;= -\hat {x} \cdot \v {j}(x-\Delta x/2,y,z) = -j_x(x-\Delta x/2,y,z) \end {split} \end {equation}
+da \(\hat {n}=\hat {x}\) für die rechte Wand aber \(\hat {n}=-\hat {x}\) für die linke Wand. Hierbei ist \(\hat {x}\) der
 Normalenvektor entlang der \(x\)-Achse des Koordinatensystems. Es dreht
 sich also zwischen der rechten und linken Fläche das Vorzeichen der
 Oberflächennormale um. Das gleiche gilt für die Wände oben/unten und
 vorne/hinten. Wir können diese Gleichung weiterhin umschreiben als
-\begin{equation} \begin{split} \dot{N} = &amp; - \frac{j_x(x+\Delta x/2,y,z) - j_x(x-\Delta x/2,y,z)}{\Delta x} V \\ &amp; - \frac{j_y(x,y+\Delta y/2,z) - j_y(x,y-\Delta y/2,z)}{\Delta y} V \\ &amp; - \frac{j_z(x,y,z+\Delta z/2) - j_z(x,y,z-\Delta z/2)}{\Delta z} V, \end{split} \label{eq:dotNdiscr} \end{equation}
-da \(V=A_{\text{rechts/links}}\Delta x=A_{\text{oben/unten}}\Delta y=A_{\text{vorne/hinten}}\Delta z\). Die Faktoren vor dem Volumen \(V\) in Gl. \eqref{eq:dotNdiscr} sind
+\begin {equation} \begin {split} \dot {N} = &amp; - \frac {j_x(x+\Delta x/2,y,z) - j_x(x-\Delta x/2,y,z)}{\Delta x} V \\ &amp; - \frac {j_y(x,y+\Delta y/2,z) - j_y(x,y-\Delta y/2,z)}{\Delta y} V \\ &amp; - \frac {j_z(x,y,z+\Delta z/2) - j_z(x,y,z-\Delta z/2)}{\Delta z} V, \end {split} \label {eq:dotNdiscr} \end {equation}
+da \(V=A_{\text {rechts/links}}\Delta x=A_{\text {oben/unten}}\Delta y=A_{\text {vorne/hinten}}\Delta z\). Die Faktoren vor dem Volumen \(V\) in Gl. \eqref{eq:dotNdiscr} sind
 nun aber genau der Differenzenquotienten der Flüsse \(j_i\), jeweils in die \(x\)-, \(y\)-
 und \(z\)-Richtung. Für kleine Volumina (und kleine \(\Delta x\), etc.) wird dies zu
-\begin{equation} \dot{N} = -\int _{V} \dif ^3r \, \nabla \cdot \v{j}(\v{r}). \label{eq:flux2} \end{equation}
+\begin {equation} \dot {N} = -\int _{V} \dif ^3r \, \nabla \cdot \v {j}(\v {r}). \label {eq:flux2} \end {equation}
 Wir habe hier gerade heuristisch den Gaussschen Satz (engl. “Divergence
 Theorem” - siehe auch Gl. \eqref{eq:divergencetheorem}) hergeleitet, um
 Gl. \eqref{eq:flux} als Volumenintegral auszudrücken.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 290 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Der Gausssche Satz ist ein wichtiges Ergebnis der Vektoranalysis.
 Er wandelt ein Integral über ein Volumen \(V\) in ein Integral über die Oberfläche \(\partial V\)
-dieses Volumens um. Für ein Vektorfeld \(\v{f}(\v{r})\) gilt: \begin{equation} \int _V \dif ^3 r\, \nabla \cdot \v{f}(\v{r}) = \int _{\partial V} \dif ^2 r\, \v{f}(\v{r}) \cdot \hat{n}(\v{r}) \label{eq:divergencetheorem} \end{equation}
-Hier ist \(\hat{n}(\v{r})\) der Normalenvektor, welcher auf dem Rand \(\partial V\) des Volumens \(V\) nach außen
+dieses Volumens um. Für ein Vektorfeld \(\v {f}(\v {r})\) gilt: \begin {equation} \int _V \dif ^3 r\, \nabla \cdot \v {f}(\v {r}) = \int _{\partial V} \dif ^2 r\, \v {f}(\v {r}) \cdot \hat {n}(\v {r}) \label {eq:divergencetheorem} \end {equation}
+Hier ist \(\hat {n}(\v {r})\) der Normalenvektor, welcher auf dem Rand \(\partial V\) des Volumens \(V\) nach außen
 zeigt. </p></div>
 <!-- l. 301 --><p class='indent'> Gleichung \eqref{eq:nchange} und \eqref{eq:flux2} zusammen ergeben
-\begin{equation} \int _V \dif ^3r \, \left \{\frac{\partial c}{\partial t}+\nabla \cdot \v{j}\right \} = 0. \label{eq:continuityweak} \end{equation}
-Da dies für jedes beliebige Volumen \(V\) gilt, muss auch \begin{equation} \frac{\partial c}{\partial t}+\nabla \cdot \v{j} = 0 \label{eq:continuity} \end{equation}
+\begin {equation} \int _V \dif ^3r \, \left \{\frac {\partial c}{\partial t}+\nabla \cdot \v {j}\right \} = 0. \label {eq:continuityweak} \end {equation}
+Da dies für jedes beliebige Volumen \(V\) gilt, muss auch \begin {equation} \frac {\partial c}{\partial t}+\nabla \cdot \v {j} = 0 \label {eq:continuity} \end {equation}
 erfüllt sein. Diese Gleichung trägt den Namen <span class='cmti-12'>Kontinuitätsgleichung</span>. Sie
 beschreibt die Erhaltung der Teilchenzahl bzw. der Masse des Systems.
 
 
 
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 313 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> In der hier dargestellten Herleitung haben wir implizit bereits die
 <span class='cmti-12'>starke </span>Formulierung und eine <span class='cmti-12'>schwache </span>Formulierung (engl. “weak formulation”
 einer Differentialgleichung kennengelernt. Gleichung \eqref{eq:continuity} ist die
 starke Formulierung der Kontinuitätsgleichung. Diese verlangt, dass die
-Differentialgleichung für jeden räumlichen Punkt \(\v{r}\) erfüllt ist. Die entsprechende
+Differentialgleichung für jeden räumlichen Punkt \(\v {r}\) erfüllt ist. Die entsprechende
 schwache Formulierung ist Gl. \eqref{eq:continuityweak}. Hier wird nur verlangt,
 dass die Gleichung in einer Art Mittelwert, hier als Integral über ein
 Probevolumen \(V\), erfüllt ist. Innerhalb des Volumens muss die starke Form nicht
@@ -263,24 +276,24 @@ wären dies z.B. chemische Reaktionen, die einen Teilchentyp in einen anderen
 umwandeln. Eine identische Gleichung gilt für den Wärmetransport. Hier wäre
 ein Quellterm die Produktion von Wärme, z.B. durch ein Heizelement. Gegeben
 ein Quellenstrom \(Q\) (mit Einheit Anzahl Partikel/Zeit/Volumen), kann die
-Kontinuitätsgleichung auf \begin{equation} \frac{\partial c}{\partial t}+\nabla \cdot \v{j} = Q \label{eq:continuitywithsource} \end{equation}
+Kontinuitätsgleichung auf \begin {equation} \frac {\partial c}{\partial t}+\nabla \cdot \v {j} = Q \label {eq:continuitywithsource} \end {equation}
 erweitert werden. Die Kontinuitätsgleichung mit Quellterm wird auch manchmal
 als <span class='cmti-12'>Bilanzgleichung </span>bezeichnet.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 324 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Gleichung \eqref{eq:continuitywithsource} beschreibt die zeitliche
 Veränderung der Konzentration \(c\). Eine verwandte Frage ist die nach der Lösung
 dieser Gleichung nach sehr langer Zeit - wenn sich ein dynamisches Gleichgewicht
 eingestellt hat. Dieses Gleichgewicht ist dadurch gekennzeichnet, dass \(\partial c/\partial t=0\). Die
-Gleichung \begin{equation} \nabla \cdot \v{j} = Q \end{equation}
+Gleichung \begin {equation} \nabla \cdot \v {j} = Q \end {equation}
 ist die <span class='cmti-12'>stationäre </span>Variante der Kontinuitätsgleichung. </p></div>
 
 
 
 <h4 class='subsectionHead'><span class='titlemark'>3.2.1 </span> <a id='x1-60003.2.1'></a>Drift</h4>
 <!-- l. 334 --><p class='noindent'>Kommen wir zurück zu Transportprozessen, zunächst zu Drift. Wenn sich alle
-Teilchen in unserem Probevolumen in mit der Geschwindigkeit \(\v{v}\) bewegen, dann
-führt das zu einem Teilchenstrom \begin{equation} \v{j}_{\text{Drift}} = c \v{v}. \label{eq:drift} \end{equation}
+Teilchen in unserem Probevolumen in mit der Geschwindigkeit \(\v {v}\) bewegen, dann
+führt das zu einem Teilchenstrom \begin {equation} \v {j}_{\text {Drift}} = c \v {v}. \label {eq:drift} \end {equation}
 Eingesetzt in die Kontinuitätsgleichung \eqref{eq:continuity} ergibt dies den
 Drift-Beitrag zur Drift-Diffusions-Gleichung \eqref{eq:driftdiffusion}.
 </p><!-- l. 341 --><p class='noindent'>
@@ -289,15 +302,15 @@ Drift-Beitrag zur Drift-Diffusions-Gleichung \eqref{eq:driftdiffusion}.
 <!-- l. 343 --><p class='noindent'>Aus unserem obigen Gedankenexperiment wird klar, dass der Diffusionstrom
 immer in Richtung der niedrigen Konzentration, also in entgegengesetzte Richtung
 des Gradienten \(\nabla c\) der Konzentration, gehen muss. Der entsprechende Strom ist
-gegeben durch \begin{equation} \v{j}_{\text{Diffusion}} = - D \nabla c. \label{eq:stationary} \end{equation}
+gegeben durch \begin {equation} \v {j}_{\text {Diffusion}} = - D \nabla c. \label {eq:stationary} \end {equation}
 Eingesetzt in die Kontinuitätsgleichung \eqref{eq:continuity} ergibt dies die
 Diffusionsgleichung \eqref{eq:diffusion}.
-</p><!-- l. 350 --><p class='indent'> Die gesamte Drift-Diffusionsgleichung hat daher die Form \begin{equation} \frac{\partial c}{\partial t} + \nabla \cdot \left \{-D\nabla c + c\v{v}\right \}=0. \label{eq:drift-diffusion-full} \end{equation}
+</p><!-- l. 350 --><p class='indent'> Die gesamte Drift-Diffusionsgleichung hat daher die Form \begin {equation} \frac {\partial c}{\partial t} + \nabla \cdot \left \{-D\nabla c + c\v {v}\right \}=0. \label {eq:drift-diffusion-full} \end {equation}
 Im Gegensatz zu Gleichungen \eqref{eq:diffusion} und \eqref{eq:driftdiffusion} gilt
-diese Gleichung auch wenn die Diffusionskonstante \(D\) oder Drift-Geschwindigkeit \(\v{v}\)
+diese Gleichung auch wenn die Diffusionskonstante \(D\) oder Drift-Geschwindigkeit \(\v {v}\)
 räumlich variiert.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 357 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Wir haben hier die Transporttheorie im Sinne einer
 Teilchenkonzentration \(c\) eingeführt. Die Kontinuitätsgleichung beschreibt jedoch
 allgemein die <span class='cmti-12'>Erhaltung </span>einer bestimmten Größe, in unserem Fall der

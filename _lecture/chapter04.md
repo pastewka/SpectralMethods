@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 04 [Nov. 8-14]"
 parent: Vorlesung
-date: 2021-10-19
+date: 2021-11-10
 categories: lecture
 author: Lars Pastewka
 nav_order: 4
@@ -20,26 +20,26 @@ entwickeln. Ziel des Kapitels ist die Einführung der Poisson-Nernst-Planck
 Gleichung, die wir im Rest der Veranstaltung numerisch lösen werden. </p></div>
 <h3 class='sectionHead'><span class='titlemark'>4.1 </span> <a id='x1-20004.1'></a>Elektrostatik</h3>
 <!-- l. 12 --><p class='noindent'>Wir wiederholen hier die Grundlagen der Elektrostatik. Eine Punktladung \(q\) am
-Ort \(\v{r}_0\) erzeugt ein elektrostatisches Potential der Form \begin{equation} \Phi (\v{r}) = \frac{1}{4\pi \varepsilon } \frac{q}{|\v{r}-\v{r}_0|}, \label{eq:pointcharge} \end{equation}
+Ort \(\v {r}_0\) erzeugt ein elektrostatisches Potential der Form \begin {equation} \Phi (\v {r}) = \frac {1}{4\pi \varepsilon } \frac {q}{|\v {r}-\v {r}_0|}, \label {eq:pointcharge} \end {equation}
 wobei \(\varepsilon =\varepsilon _0 \varepsilon _r\) die Permittivität ist. Im Vakuum ist \(\varepsilon _r=1\). Wir werden hier ausschließlich
 (wässrige) Elektrolyte behandeln, also Ionen die in Wasser gelöst sind. Für
 Wasser ist \(\varepsilon _r\approx 80\). Gleichung \eqref{eq:pointcharge} ist die spezifische Lösung der
-Poisson-Gleichung, \begin{equation} \nabla ^2 \Phi (\v{r}) = -\frac{\rho (\v{r})}{\varepsilon } \end{equation}
-für eine Punktladung \(\rho (\v{r})=q\delta (\v{r}-\v{r}_0)\).
+Poisson-Gleichung, \begin {equation} \nabla ^2 \Phi (\v {r}) = -\frac {\rho (\v {r})}{\varepsilon } \end {equation}
+für eine Punktladung \(\rho (\v {r})=q\delta (\v {r}-\v {r}_0)\).
 </p><!-- l. 23 --><p class='indent'> Die Poisson-Gleichung hat die gleiche Form wie die (stationäre)
 Diffusionsgleichung aus Kapitel 3. Wir können auch diese wieder in zwei
-Gleichungen aufsplitten. Zunächst ist das elektrische Feld \(\v{E}\) gegeben durch
-\begin{equation} \v{E} = -\nabla \Phi , \end{equation}
+Gleichungen aufsplitten. Zunächst ist das elektrische Feld \(\v {E}\) gegeben durch
+\begin {equation} \v {E} = -\nabla \Phi , \end {equation}
 den (negativen) Gradienten des Potentials. (Im Sinne der Analogie zur
 Diffusionsgleichung ist das Feld eine Art Stromdichte.) Die “Kontinuitätsgleichung”
-für das Feld ist gegeben durch \begin{equation} \nabla \cdot \v{E} = \frac{\rho }{\varepsilon }. \end{equation}
+für das Feld ist gegeben durch \begin {equation} \nabla \cdot \v {E} = \frac {\rho }{\varepsilon }. \end {equation}
 Zusammen ergeben diese Gleichungen die Poisson-Gleichung.
 </p><!-- l. 33 --><p class='indent'> Wir werden die Poisson-Gleichung benötigen, um das elektrostatische
 Potential (und damit auch das elektrische Feld) innerhalb eines Elektrolyten zu
 berechnen. Innerhalb des Elektrolyten haben wir üblicherweise eine positiv und
-eine negativ geladenen Spezies, mit entsprechenden Konzentrationen \(c_+(\v{r})\) und \(c_-(\v{r})\). Die
+eine negativ geladenen Spezies, mit entsprechenden Konzentrationen \(c_+(\v {r})\) und \(c_-(\v {r})\). Die
 entsprechende Ladungsdichte ist dann proportional zur Differenz dieser
-Konzentrationen, \(\rho (\v{r})=|e|(c_+(\v{r})-c_-(\v{r}))\).
+Konzentrationen, \(\rho (\v {r})=|e|(c_+(\v {r})-c_-(\v {r}))\).
 </p><!-- l. 35 --><p class='noindent'>
 </p>
 
@@ -48,8 +48,8 @@ Konzentrationen, \(\rho (\v{r})=|e|(c_+(\v{r})-c_-(\v{r}))\).
 <h3 class='sectionHead'><span class='titlemark'>4.2 </span> <a id='x1-30004.2'></a>Drift im elektrischen Feld</h3>
 <!-- l. 37 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=f822dd82-e8d9-4f93-90ce-ac75011ef18a' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=f822dd82-e8d9-4f93-90ce-ac75011ef18a</span></a>
 </p><!-- l. 39 --><p class='indent'> Die Ladungen in unserem Elektrolyten erzeugen nicht nur ein elektrischen
-Feld, sie reagieren auch auf dieses. Die Kraft \(\v{f}\), welche auf ein Teilchen mit Ladung
-\(q\) wirkt, ist gegeben durch \begin{equation} \v{f}_{\text{E}} = q \v{E}. \end{equation}
+Feld, sie reagieren auch auf dieses. Die Kraft \(\v {f}\), welche auf ein Teilchen mit Ladung
+\(q\) wirkt, ist gegeben durch \begin {equation} \v {f}_{\text {E}} = q \v {E}. \end {equation}
 Positiv geladene Teilchen bewegen sich in Richtung des elektrischen Feldes,
 negativ geladene Teilchen entgegen dieser Richtung.
 </p><!-- l. 45 --><p class='indent'> Es wirkt also auf Grund des elektrischen Feldes eine <span class='cmti-12'>Kraft </span>auf unsere Ionen.
@@ -60,12 +60,12 @@ einen Strömungswiderstand (siehe Abb. <a href='#x1-3001r1'>4.1<!-- tex4ht:ref:
 um ein sphärisches Teilchen mit Radius \(R\) wird dieser nur durch innere
 Reibung innerhalb des Fluids hervorgerufen. Die resultieren Kraft wirkt
 entgegen der Bewegungsrichtung und wird durch das Stokessche Gesetz,
-\begin{equation} \v{f}_{\text{Stokes}} = -6\pi \eta R \v{v} = -\v{v}/\Lambda , \end{equation}
+\begin {equation} \v {f}_{\text {Stokes}} = -6\pi \eta R \v {v} = -\v {v}/\Lambda , \end {equation}
 mit \(\Lambda =(6\pi \eta R)^{-1}\) beschrieben. Hier ist \(\eta \) die Viskosität der Flüssigkeit. Die Größe \(\Lambda \) nennt sich
-die <span class='cmti-12'>Mobilität</span>. Im Gleichgewicht \(\v{f}_{\text{E}} + \v{f}_{\text{Stokes}}=0\) ergibt sich die Driftgeschwindigkeit
-\begin{equation} \v{v} = q \Lambda \v{E}. \end{equation}
-Diese Driftgeschwindigkeit ergibt zusammen mit \(\v{j} = c \v{v}\) den durch das elektrische Feld
-hervorgerufenen Driftstrom, \begin{equation} \v{j} = q\Lambda c \v{E} = \sigma \v{E} \end{equation}
+die <span class='cmti-12'>Mobilität</span>. Im Gleichgewicht \(\v {f}_{\text {E}} + \v {f}_{\text {Stokes}}=0\) ergibt sich die Driftgeschwindigkeit
+\begin {equation} \v {v} = q \Lambda \v {E}. \end {equation}
+Diese Driftgeschwindigkeit ergibt zusammen mit \(\v {j} = c \v {v}\) den durch das elektrische Feld
+hervorgerufenen Driftstrom, \begin {equation} \v {j} = q\Lambda c \v {E} = \sigma \v {E} \end {equation}
 mit \(\sigma = q\Lambda c\). Die Größe \(\sigma \) wird auch Leitfähigkeit genannt. Ein äquivalentes Gesetz gilt
 beispielsweise für die Elektronenleitung in Metallen.
 </p>
@@ -77,10 +77,14 @@ beispielsweise für die Elektronenleitung in Metallen.
 
 
 
-<!-- l. 64 --><p class='noindent'> <img src='Figures/Drag_Force-.png' width='585' height='273' alt='PIC' /> <a id='x1-3001r1'></a>
+<!-- l. 64 --><p class='noindent'> <img height='273' width='585' src='Figures/Drag_Force-.png' alt='PIC' /> <a id='x1-3001r1'></a>
 <a id='x1-3002'></a>
+</p><!-- l. 66 --><p class='noindent'>figureEin Teilchen (z.B. ein Ion), welches sich in einer Flüsiggkeit bewegt,
+erfährt einen Strömungswiderstand. Bei geringen Geschwindigkeiten
+wird dieser durch innere Reibung innerhalb des umströmenden Fluids
+hervorgerufen.
 </p>
-<figcaption class='caption'><span class='id'>Abbildung 4.1:: </span><span class='content'>Ein Teilchen (z.B. ein Ion), welches sich in einer
+<figcaption class='caption'><span class='id'>Abbildung 4.1: </span><span class='content'>Ein Teilchen (z.B. ein Ion), welches sich in einer
 Flüsiggkeit bewegt, erfährt einen Strömungswiderstand. Bei geringen
 Geschwindigkeiten wird dieser durch innere Reibung innerhalb des
 umströmenden Fluids hervorgerufen.
@@ -93,13 +97,13 @@ umströmenden Fluids hervorgerufen.
 <!-- l. 72 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5dda06b4-a5c4-478c-a191-ac7501230300' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5dda06b4-a5c4-478c-a191-ac7501230300</span></a>
 </p><!-- l. 74 --><p class='indent'> Ein Diffusionsstrom in Kombination mit Drift im elektrischen Feld ergibt die
 <span class='cmti-12'>Nernst-Planck-Gleichung</span>. Die Stromdichte für Ionenspezies \(\alpha \) ist gegeben durch
-\begin{equation} \v{j}_\alpha = - D_\alpha \nabla c_\alpha + q_\alpha \Lambda _\alpha c_\alpha \v{E}, \end{equation}
+\begin {equation} \v {j}_\alpha = - D_\alpha \nabla c_\alpha + q_\alpha \Lambda _\alpha c_\alpha \v {E}, \end {equation}
 wobei wir explizit durch den Index \(\alpha \) darauf hingewiesen haben, dass die
 Transportparameter (\(D\), \(\Lambda \)), die Ladung \(q\) und die Konzentration \(c\) von der ionischen
 Spezies abhängen. Mit Hilfe der Einstein-Smoluchowski-Beziehung, \(D = \Lambda k_B T\) kann die
 Mobilität \(\Lambda \) mit der Diffusionskonstante \(D\) ausgedrückt werden. Dies führt zu der
-üblichen Form der Nernst-Planck-Gleichung, \begin{equation} \v{j}_\alpha = - D_\alpha \left (\nabla c_\alpha + \frac{q_\alpha }{k_B T} c_\alpha \nabla \Phi \right ), \label{eq:NPcurrent} \end{equation}
-in der wir das elektrische Feld als \(\v{E}=-\nabla \Phi \) ausgedrückt haben.
+üblichen Form der Nernst-Planck-Gleichung, \begin {equation} \v {j}_\alpha = - D_\alpha \left (\nabla c_\alpha + \frac {q_\alpha }{k_B T} c_\alpha \nabla \Phi \right ), \label {eq:NPcurrent} \end {equation}
+in der wir das elektrische Feld als \(\v {E}=-\nabla \Phi \) ausgedrückt haben.
 </p><!-- l. 89 --><p class='noindent'>
 </p>
 <h3 class='sectionHead'><span class='titlemark'>4.4 </span> <a id='x1-50004.4'></a>Poisson-Nernst-Planck-Gleichungen</h3>
@@ -109,7 +113,7 @@ müssen hier zwei Ionenspecies betrachten, eine positiv (Ladung \(q_+\)) und ein
 negativ (Ladung \(q_-\)) geladene. Damit müssen wir neben dem Potential \(\Phi \) zwei
 Konzentrationen \(c_+\) und \(c_-\) bestimmen.
 </p><!-- l. 93 --><p class='indent'> Das gekoppelte Gleichungssystem, welches die Transportprozesse in
-unserer Elektrolytlösung beschreibt, sieht daher folgendermaßen aus: \begin{align} \frac{\partial }{\partial t} c_+ + \nabla \cdot \v{j}_+ = 0 &amp; \quad \quad \text{(Erhaltung der positiven Spezies)} \label{eq:continuityplus} \\ \v{j}_+ = - D_+ \left (\nabla c_+ + \frac{q_+}{k_B T} c_+ \nabla \Phi \right ) &amp; \quad \quad \text{(Transport der positiven Spezies)} \label{eq:currentplus} \\ \frac{\partial }{\partial t} c_- + \nabla \cdot \v{j}_- = 0 &amp; \quad \quad \text{(Erhaltung der negative Spezies)} \label{eq:continuityminus} \\ \v{j}_- = - D_- \left (\nabla c_- + \frac{q_-}{k_B T} c_- \nabla \Phi \right ) &amp; \quad \quad \text{(Transport der negative Spezies)} \label{eq:currentminus} \\ \nabla ^2 \Phi = -\frac{q_+ c_+ + q_- c_-}{\varepsilon } &amp; \quad \quad \text{(Elektrostatisches Potential)} \label{eq:poissonfinal} \end{align}
+unserer Elektrolytlösung beschreibt, sieht daher folgendermaßen aus: \begin {align} \frac {\partial }{\partial t} c_+ + \nabla \cdot \v {j}_+ = 0 &amp; \quad \quad \text {(Erhaltung der positiven Spezies)} \label {eq:continuityplus} \\ \v {j}_+ = - D_+ \left (\nabla c_+ + \frac {q_+}{k_B T} c_+ \nabla \Phi \right ) &amp; \quad \quad \text {(Transport der positiven Spezies)} \label {eq:currentplus} \\ \frac {\partial }{\partial t} c_- + \nabla \cdot \v {j}_- = 0 &amp; \quad \quad \text {(Erhaltung der negative Spezies)} \label {eq:continuityminus} \\ \v {j}_- = - D_- \left (\nabla c_- + \frac {q_-}{k_B T} c_- \nabla \Phi \right ) &amp; \quad \quad \text {(Transport der negative Spezies)} \label {eq:currentminus} \\ \nabla ^2 \Phi = -\frac {q_+ c_+ + q_- c_-}{\varepsilon } &amp; \quad \quad \text {(Elektrostatisches Potential)} \label {eq:poissonfinal} \end {align}
 </p><!-- l. 128 --><p class='indent'> Wir werden dieses gekoppelte Differentialgleichungssystem im Rahmen dieses
 Kurses mit Hilfe der Methode der finiten Elemente lösen. Man nennt diese
 Gleichungen die <span class='cmti-12'>Poisson-Nernst-Planck Gleichungen</span>.
@@ -134,18 +138,18 @@ Lösung dieses und ähnlicher Gleichungssystems betrachten.
 <h3 class='sectionHead'><span class='titlemark'>4.5 </span> <a id='x1-60004.5'></a>Poisson-Boltzmann-Gleichung</h3>
 <!-- l. 139 --><p class='noindent'>Die Nernst-Planck-Gleichung kann durch die Einführung eines <span class='cmti-12'>chemischen
 </span><span class='cmti-12'>Potentials </span>vereinfacht werden. Das chemische Potential integriert den Effekt der
-Diffusion in ein effektives Potential \begin{equation} \mu _\alpha (\v{r}) = q_\alpha \Phi (\v{r}) + k_B T \ln c_\alpha (\v{r}). \label{eq:chempot} \end{equation}
+Diffusion in ein effektives Potential \begin {equation} \mu _\alpha (\v {r}) = q_\alpha \Phi (\v {r}) + k_B T \ln c_\alpha (\v {r}). \label {eq:chempot} \end {equation}
 Der Term \(q_\alpha \Phi \) ist hier die potentielle Energie eines Ions mit Ladung \(q_\alpha \) in einem
 elektrischen Feld. Der Term \(k_B T \ln c_\alpha \) ist die freie Energie eines idealen Gases mit Dichte \(c_\alpha \).
 Wir können hier die Ionen als ideales Gas beschreiben, weil diese (in
 unserem Modell) nur über das elektrostatische Potential wechselwirken. Die
 Stromdichte wird dann proportional zum Gradienten des chemischen Potentials \(\mu \),
-\begin{equation} \v{j}_\alpha = -\frac{D_\alpha }{k_B T} c_\alpha \nabla \mu = -\Lambda _\alpha c_\alpha \nabla \mu . \label{eq:NPcompact} \end{equation}
+\begin {equation} \v {j}_\alpha = -\frac {D_\alpha }{k_B T} c_\alpha \nabla \mu = -\Lambda _\alpha c_\alpha \nabla \mu . \label {eq:NPcompact} \end {equation}
 Durch Einsetzen von Gl. \eqref{eq:chempot} in Gl. \eqref{eq:NPcompact}
 erhält man Gl. \eqref{eq:NPcurrent}.
 </p><!-- l. 155 --><p class='indent'> Gleichung \eqref{eq:NPcompact} sagt uns, dass kein Strom fließt, wenn das
 chemische Potential \(\mu \) räumlich konstant ist. Dies ist genau dann der Fall, wenn
-\begin{equation} c_\alpha (\v{r}) = c_0 \exp \left (-\frac{q_\alpha \Phi (\v{r})}{k_B T}\right ) \end{equation}
+\begin {equation} c_\alpha (\v {r}) = c_0 \exp \left (-\frac {q_\alpha \Phi (\v {r})}{k_B T}\right ) \end {equation}
 mit einer Konstanten \(c_0\). Diese Gleichung in Verbindung mit der Poisson-Gleichung
 zur Bestimmung von \(\Phi \) heißt auch die <span class='cmti-12'>Poisson-Boltzmann-Gleichung</span>.
 </p><!-- l. 162 --><p class='noindent'>

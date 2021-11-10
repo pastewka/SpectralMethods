@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Kapitel 01 [Oct. 18-24 (2021)]"
+title: "Kapitel 01 [18.-24. Okt. (2021)]"
 parent: Vorlesung
-date: 2021-10-19
+date: 2021-11-10
 categories: lecture
 author: Lars Pastewka
 nav_order: 1
@@ -10,7 +10,7 @@ nav_order: 1
 
 
 <h2 class='chapterHead'><span class='titlemark'>Kapitel 1</span><br /><a id='x1-10001'></a>Einleitung</h2>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 6 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Die <span class='cmti-12'>Simulation </span>beschäftigt sich mit der numerischen
 (computergestützten) Lösung von <span class='cmti-12'>Modellen</span>. In diesem einleitenden Kapitel
 gehen wir auf Modellbildung ein und stellen unterschiedliche Klassen von
@@ -24,14 +24,14 @@ Lösung von partiellen Differentialgleichungen mit Hilfe der <span class='cmti-1
 </p>
 <h3 class='sectionHead'><span class='titlemark'>1.1 </span> <a id='x1-20001.1'></a>Modelle</h3>
 <!-- l. 14 --><p class='noindent'>Modelle sind üblicherweise für bestimmte Längenskalen angemessen. So kann
-z.B. ein Modell, welches explizit Atome beschreibt, auf Längenskalen \(\sim \text{nm}\)
-angemessen sein; ein “makroskopisches” System mit Abmessungen \(\sim \text{mm}\) würden wir
+z.B. ein Modell, welches explizit Atome beschreibt, auf Längenskalen \(\sim \text {nm}\)
+angemessen sein; ein “makroskopisches” System mit Abmessungen \(\sim \text {mm}\) würden wir
 mit einem solchen Modell aber nicht beschreiben wollen. Wir müssen uns daher
 darüber klar werden, welches der Phänomene der Ingenieurswissenschaften die
 Anwendung welcher physikalischer Modelle und welcher mathematischer
 Methoden verlangt.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 18 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> “Wollen” ist hier das falsche Wort. Zum einen ist es auf Grund
 begrenzter Computerressourcen nicht möglich, zum anderen versteckt
 sich in einem solchen Modell unter Umständen die essentielle Frage,
@@ -55,7 +55,7 @@ im Vergleich zu einer reinen Punktmechanik wesentlich erhöht. In der
 Punktmechanik haben wir es mit drei Orts- und drei Geschwindigkeitsvariablen
 für jedes der \(n\) wechselwirkenden Teilchen zu tun, während wir in einer
 quantenmechanischen Vielteilchenbeschreibung es mit einem Feld mit je drei \(n\)
-Ortsvariablen zu tun haben, nämlich \(\Psi (\v{r}_1,\v{r}_2,\dots ,\v{r}_n;t)\).
+Ortsvariablen zu tun haben, nämlich \(\Psi (\v {r}_1,\v {r}_2,\dots ,\v {r}_n;t)\).
 </p>
 <figure class='figure'>
 
@@ -67,10 +67,16 @@ Ortsvariablen zu tun haben, nämlich \(\Psi (\v{r}_1,\v{r}_2,\dots ,\v{r}_n;t)\)
 
 <div class='center'>
 <!-- l. 41 --><p class='noindent'>
-</p><!-- l. 45 --><p class='noindent'> <img alt='PIC' src='Figures/ExtendedSchemeD-.png' height='585' width='774' /> <a id='x1-2001r1'></a>
+</p><!-- l. 45 --><p class='noindent'> <img src='Figures/ExtendedSchemeD-.png' alt='PIC' height='585' width='774' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
+</p><!-- l. 47 --><p class='noindent'>figureDie vertikale Anordnung der Kisten repräsentiert die Längenskale,
+welche auf der rechten Seite gezeigt ist. In den Kästen selbst stehen
+Simulationsmethode welche auf diesen Skalen Anwendung finden. In dieser
+Lehrveranstaltung beschäftigen wir uns mit der Diskretisierung von Feldern
+und wählen einen spezifischen Anwendungsfall, der in die <span class='cmti-12'>lokale Bilanz</span>
+hineinfällt.
 </p>
-<figcaption class='caption'><span class='id'>Abbildung 1.1:: </span><span class='content'>Die vertikale Anordnung der Kisten repräsentiert die
+<figcaption class='caption'><span class='id'>Abbildung 1.1: </span><span class='content'>Die vertikale Anordnung der Kisten repräsentiert die
 Längenskale, welche auf der rechten Seite gezeigt ist. In den Kästen selbst
 stehen Simulationsmethode welche auf diesen Skalen Anwendung finden. In
 dieser Lehrveranstaltung beschäftigen wir uns mit der Diskretisierung von
@@ -81,10 +87,10 @@ Feldern und wählen einen spezifischen Anwendungsfall, der in die <span class='c
 
 
 </figure>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 51 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> </p>
 <ul class='itemize1'>
-<li class='itemize'>\(1\,\AA =10^{-10}\,\text{m}\)
+<li class='itemize'>\(1\,\AA =10^{-10}\,\text {m}\)
 </li>
 <li class='itemize'>Atome
 in unserer Umwelt werden durch quantenmechanische Phänomene
@@ -96,11 +102,11 @@ beschreibt, ist die <span class='cmti-12'>Schrödingergleichung</span>. Diese se
 bereits eine Näherung!
 </li>
 <li class='itemize'>Die Einteilchen-Schrödingergleichung
-lautet \(i\hbar \frac{\partial }{\partial t} \Psi (\v{r},t) = \hat{H} \Psi (\v{r},t)\). Dies ist eine partielle Differentialgleichung für das orts- und
-zeitabhängige skalare Materiefeld \(\Psi (\v{r},t)\), mit der Planckschen Konstanten \(\hbar \)
-und dem Hamiltonoperator \(\hat{H}\), der die Details des Modells enthält. Eine
+lautet \(i\hbar \frac {\partial }{\partial t} \Psi (\v {r},t) = \hat {H} \Psi (\v {r},t)\). Dies ist eine partielle Differentialgleichung für das orts- und
+zeitabhängige skalare Materiefeld \(\Psi (\v {r},t)\), mit der Planckschen Konstanten \(\hbar \)
+und dem Hamiltonoperator \(\hat {H}\), der die Details des Modells enthält. Eine
 Bewegungsgleichung für viele wechselwirkende Teilchen, wie sie durch
-\(\Psi (\v{r}_1,\v{r}_2,\dots ,\v{r}_n;t)\) beschrieben wird, ist unvergleichlich umfangreicher.
+\(\Psi (\v {r}_1,\v {r}_2,\dots ,\v {r}_n;t)\) beschrieben wird, ist unvergleichlich umfangreicher.
 </li>
 <li class='itemize'>“Semiklassisch“ bedeutet, dass die Bewegung der Teilchen nach
 der klassischen Mechanik berechnet werden, die Wechselwirkungen
@@ -129,10 +135,10 @@ genannt.</li></ul>
 <!-- l. 70 --><p class='indent'> Auf der Ebene der semiklassischen und klassischen Mechanik, auch
 als kinetische Ebene bezeichnet, werden die Modelle entweder durch die
 Molekulardynamik beschrieben oder durch die Bewegungsgleichung der
-Einteilchen-Wahrscheinlichkeitsdichte im Phasenraum \(f(\v{r},\v{p})\) - mit den unabhängigen
-Variablen Ort \(\v{r}\) und Impuls \(\v{p}\). Im zweiten Fall haben wir eine Funktion \(f(\v{r}(t),\v{p}(t),t)\) die von
-Ort, Impuls und der Zeit sowohl explizit, als auch implizit über \(\v{r}(t)\) und \(\v{p}(t)\)
-abhängt. Nehmen wir an, wir müssen \(f(\v{r}(t),\v{p}(t),t)\) durch diskrete Stützstellen
+Einteilchen-Wahrscheinlichkeitsdichte im Phasenraum \(f(\v {r},\v {p})\) - mit den unabhängigen
+Variablen Ort \(\v {r}\) und Impuls \(\v {p}\). Im zweiten Fall haben wir eine Funktion \(f(\v {r}(t),\v {p}(t),t)\) die von
+Ort, Impuls und der Zeit sowohl explizit, als auch implizit über \(\v {r}(t)\) und \(\v {p}(t)\)
+abhängt. Nehmen wir an, wir müssen \(f(\v {r}(t),\v {p}(t),t)\) durch diskrete Stützstellen
 interpolieren. Dies sind bei einer geringen Auflösung von 10 Punkten pro
 Variabler schon bereits 10.000.000 Interpolationspunkte. Dies ist vielleicht
 handhabbar, die Auflösung ist aber nicht besonders gut. Und daher ist
@@ -148,20 +154,20 @@ Körner, etc.), als zentrales Element haben und Modelle die kontinuierliche
 Felder (elektrostatisches Potential, Ionenkonzentrationen, mechanische
 Spannungen und Dehnungen) als zentrales Element haben. Im ersten Modelltyp
 werden Evolutionsgleichungen für diskrete Eigenschaften, welche auf den
-Partikeln definiert sind, wie z.B. deren Positionen \(\v{r}_i\) und Geschwindigkeiten \(\v{v}_i\),
+Partikeln definiert sind, wie z.B. deren Positionen \(\v {r}_i\) und Geschwindigkeiten \(\v {v}_i\),
 formuliert.
 </p><!-- l. 89 --><p class='indent'> Um beispielsweise die Kinetik dieser Partikel zu beschreiben, könnten wir die
 Newtonschen Bewegungsgleichungen lösen. D.h. wir müssen für jedes der \(n\)
 Teilchen \(6\) gewöhnliche Differentialgleichungen, die noch untereinander gekoppelt
-sind, lösen, nämlich: \begin{equation} \dot{\v{r}}_i(t)=\v{v}_i(t)=\frac{\v{p}_i(t)}{m_i} \label{eq:posupdate} \end{equation}
-Dies ist die Gleichung für die Bahnkurve des Teilchens \(i\) im Ortsraum. Da \(\v{r}\) ein
+sind, lösen, nämlich: \begin {equation} \dot {\v {r}}_i(t)=\v {v}_i(t)=\frac {\v {p}_i(t)}{m_i} \label {eq:posupdate} \end {equation}
+Dies ist die Gleichung für die Bahnkurve des Teilchens \(i\) im Ortsraum. Da \(\v {r}\) ein
 
 
 
 Vektor ist, ist Gl. \eqref{eq:posupdate} ein System aus \(3\) gewöhnlichen
-Differentialgleichungen. Die Geschwindigkeit \(\v{v}_i\) des Teilchen \(i\) zum Zeitpunkt \(t\)
-unterliegt durch den Impuls \(\v{p}_i\) ebenfalls einem System von Differentialgleichungen:
-\begin{equation} \dot{\v{p}}_i(t)=\sum _j\v{F}_{ij}(t) \label{eq:velupdate} \end{equation}
+Differentialgleichungen. Die Geschwindigkeit \(\v {v}_i\) des Teilchen \(i\) zum Zeitpunkt \(t\)
+unterliegt durch den Impuls \(\v {p}_i\) ebenfalls einem System von Differentialgleichungen:
+\begin {equation} \dot {\v {p}}_i(t)=\sum _j\v {F}_{ij}(t) \label {eq:velupdate} \end {equation}
 Gleichung \eqref{eq:velupdate} beschreibt die zeitliche Entwicklung des Impulses
 des Teilchens \(i\). Gleichung \eqref{eq:posupdate} und \eqref{eq:velupdate} sind je \(3\times n\)
 gekoppelte gewöhnliche Differentialgleichungen. Wollen wir z.B. die Bewegung
@@ -171,12 +177,12 @@ so ist dies ob der großen Zahl an Gleichungen unmöglich und wir müssen
 Feldern.
 </p><!-- l. 112 --><p class='indent'> Die Newtonschen Bewegungsgleichungen \eqref{eq:posupdate} und
 \eqref{eq:velupdate} sind von ihrer Natur her <span class='cmti-12'>physikalische Grundprinzipien</span>. Sie
-gelten so für Atome oder Planeten. Die Natur der Kraft selbst, \(\v{F}_{ij}\) in den
+gelten so für Atome oder Planeten. Die Natur der Kraft selbst, \(\v {F}_{ij}\) in den
 Gleichungen oben, basiert natürlich auf physikalisch beschreibbaren Effekten, ist
 aber nicht notwendigerweise ein Naturprinzip. Als einfaches Beispiel sei die
 Lennard-Jones-Wechselwirkung genannt, für welche die Wechselwirkungsenergie
-\begin{equation} V_{ij} = 4\varepsilon \left [ \left (\frac{\sigma }{r_{ij}}\right )^{12} - \left (\frac{\sigma }{r_{ij}}\right )^{6}\right ] \label{eq:lj_potential} \end{equation}
-und damit die Kraft \begin{equation} \v{F}_{ij} = -4\varepsilon \left [ 12\left (\frac{\sigma ^{12}}{r_{ij}^{13}}\right ) - 6\left (\frac{\sigma ^{6}}{r_{ij}^{7}}\right )\right ]\hat{r}_{ij} \label{eq:lj} \end{equation}
+\begin {equation} V_{ij} = 4\varepsilon \left [ \left (\frac {\sigma }{r_{ij}}\right )^{12} - \left (\frac {\sigma }{r_{ij}}\right )^{6}\right ] \label {eq:lj_potential} \end {equation}
+und damit die Kraft \begin {equation} \v {F}_{ij} = -4\varepsilon \left [ 12\left (\frac {\sigma ^{12}}{r_{ij}^{13}}\right ) - 6\left (\frac {\sigma ^{6}}{r_{ij}^{7}}\right )\right ]\hat {r}_{ij} \label {eq:lj} \end {equation}
 gilt, wobei \(r_{ij}\) der Abstand zwischen den Partikeln (hier Atomen oder Molekülen) \(i\)
 und \(j\) ist. Der Term \(\propto r^{-13}\) beschreibt die Abstoßung der Atome auf Grund des
 Paulischen Ausschließungsprinzips und der Term \(\propto r^{-7}\) beschreibt die Anziehung der
@@ -187,7 +193,7 @@ einfaches konstituierendes Gesetz. Solche Gesetze werden oft <span class='cmti-1
 genannt. Die numerische Lösung der Newtonschen Bewegungsgleichungen für
 Atome wird als <span class='cmti-12'>Molekulardynamiksimulation </span>bezeichnet.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 124 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Der Begriff Konstitutivgesetz taucht öfter im Rahmen von
 Feldtheorien auf. Für das Lennard-Jones-Potential ist dieser Begriff eher
 ungewöhnlich, dieses Gesetzes ist aber trotzdem durchaus einer konstitutiven
@@ -195,7 +201,7 @@ Natur. </p></div>
 <!-- l. 128 --><p class='indent'> Ein weiteres Beispiel von Modellen mit diskreten Elemente sind
 Netzwerkmodelle für elektrische Schaltkreise. Hierbei verknüpft ein Element
 eine Potentialdifferenz (Energiedifferenz) mit einem fließenden Strom,
-beispielweise beschreibt \begin{equation} i = u / R \label{eq:resistor} \end{equation}
+beispielweise beschreibt \begin {equation} i = u / R \label {eq:resistor} \end {equation}
 den Strom \(i\), der durch einen Widerstand \(R\) fließt, über den die Spannung \(u\) abfällt.
 
 

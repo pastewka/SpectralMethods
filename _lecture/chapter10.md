@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 10 [Dec. 20-Jan. 9]"
 parent: Vorlesung
-date: 2021-10-19
+date: 2021-11-10
 categories: lecture
 author: Lars Pastewka
 nav_order: 10
@@ -25,20 +25,20 @@ Elementen wichtig. </p></div>
 höherdimensionalen Problemen reduziert werden kann, und wir damit
 wieder lineare Basisfunktionen verwenden können, wird hier weiter die
 Poisson-Gleichung betrachtet. In \(D\)-Dimensionen (mit üblicherweise \(D=2\) oder \(D=3\)) führt
-die Poisson-Gleichung zu dem Residuum \begin{equation} R(\v{r}) = \nabla ^2 \Phi + \frac{\rho (\v{r})}{\varepsilon } = \nabla \cdot \left (\nabla \Phi \right ) + \frac{\rho (\v{r})}{\varepsilon } \label{eq:poissonreshighd} \end{equation}
-wobei \(\v{r}=(x,y,z,\ldots )\) nun ein \(D\)-dimensionaler Vektor ist, der die Position bezeichnet,
-und \(\nabla ^2\) der Laplace-Operator in \(D\)-Dimensionen. Das Potential \(\Phi (\v{r})\) hängt nun
-selbstverständlich auch von der räumlichen Position \(\v{r}\) ab. Die rechte Seite von
+die Poisson-Gleichung zu dem Residuum \begin {equation} R(\v {r}) = \nabla ^2 \Phi + \frac {\rho (\v {r})}{\varepsilon } = \nabla \cdot \left (\nabla \Phi \right ) + \frac {\rho (\v {r})}{\varepsilon } \label {eq:poissonreshighd} \end {equation}
+wobei \(\v {r}=(x,y,z,\ldots )\) nun ein \(D\)-dimensionaler Vektor ist, der die Position bezeichnet,
+und \(\nabla ^2\) der Laplace-Operator in \(D\)-Dimensionen. Das Potential \(\Phi (\v {r})\) hängt nun
+selbstverständlich auch von der räumlichen Position \(\v {r}\) ab. Die rechte Seite von
 Gl. \eqref{eq:poissonreshighd} ist explizit so geschrieben, dass man die
 Verknüpfung aus Divergenz und Gradient erkennt, die den Laplace-Operator
 ergibt.
 </p><!-- l. 23 --><p class='indent'> Wir schreiben nun das gewichtete Residuum auf. Das Skalarprodukt mit einer
-Testfunktion \(v(\v{r})\) ergibt \begin{align} (v(\v{r}), R(\v{r})) =&amp; \int _\Omega \dif ^Dr\, v(\v{r}) \left ( \nabla ^2 \Phi + \frac{\rho (\v{r})}{\varepsilon } \right ) \\ =&amp; \int _{\partial \Omega } \dif ^{D-1} r\, v(\v{r}) \left (\nabla \Phi \cdot \hat{n}(\v{r})\right ) -\int _\Omega \dif ^Dr\, \nabla v \cdot \nabla \Phi + \int _\Omega \dif ^Dr\, \frac{v(\v{r})\rho (\v{r})}{\varepsilon }, \label{eq:weakformhighd} \end{align}
+Testfunktion \(v(\v {r})\) ergibt \begin {align} (v(\v {r}), R(\v {r})) =&amp; \int _\Omega \dif ^Dr\, v(\v {r}) \left ( \nabla ^2 \Phi + \frac {\rho (\v {r})}{\varepsilon } \right ) \\ =&amp; \int _{\partial \Omega } \dif ^{D-1} r\, v(\v {r}) \left (\nabla \Phi \cdot \hat {n}(\v {r})\right ) -\int _\Omega \dif ^Dr\, \nabla v \cdot \nabla \Phi + \int _\Omega \dif ^Dr\, \frac {v(\v {r})\rho (\v {r})}{\varepsilon }, \label {eq:weakformhighd} \end {align}
 </p><!-- l. 34 --><p class='indent'> wobei nun die erste Greensche Formel verwandt wurde, um das Flächen-
 bzw. Volumenintegral über \(\Omega \) umzuschreiben und dabei den Gradienten
 auf die Testfunktion zu überführen. Die Greensche Formel nimmt hier
 die Rolle ein, die in dem eindimensionalen Fall die partielle Integration
-hatte. \(\hat{n}(\v{r})\) ist der Normalenvektor, welcher auf dem Rand \(\partial \Omega \) der Domäne nach
+hatte. \(\hat {n}(\v {r})\) ist der Normalenvektor, welcher auf dem Rand \(\partial \Omega \) der Domäne nach
 außen zeigt (siehe Abb. <a href='#x1-2001r1'>10.1<!-- tex4ht:ref: fig:domainandboundary --></a>. Der erste Term auf der rechten Seite von
 Gl. \eqref{eq:weakformhighd} wird wieder wichtig werden, wenn wir
 Neumann-Randbedingungen auf den Rand \(\partial \Omega \) der Domäne vorgeben möchten. Im
@@ -50,22 +50,22 @@ Dirichlet-Fall verschwindet dieser Term.
 
 <!-- l. 36 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Die <span class='cmti-12'>Greenschen Formeln </span>sind ein weiteres wichtiges Ergebnis der
 Vektoranalysis. Sie gehen aus dem Gausschen Satz hervor. Der Gausssche Satz
-lautet \begin{equation} \int _\Omega \dif ^D r\, \nabla \cdot \v{f}(\v{r}) = \int _{\partial \Omega } \dif ^{D-1} r\, \v{f}(\v{r}) \cdot \hat{n}(\v{r}) \end{equation}
+lautet \begin {equation} \int _\Omega \dif ^D r\, \nabla \cdot \v {f}(\v {r}) = \int _{\partial \Omega } \dif ^{D-1} r\, \v {f}(\v {r}) \cdot \hat {n}(\v {r}) \end {equation}
 wobei \(\partial \Omega \) den \(D-1\) dimensionalen Rand des \(D\)-dimensionalen Integrationsgebiets \(\Omega \)
-bezeichnet. Weiterhin ist \(\hat{n}(\v{r})\) der Normalenvektor, der senkrecht auf den Rand steht
+bezeichnet. Weiterhin ist \(\hat {n}(\v {r})\) der Normalenvektor, der senkrecht auf den Rand steht
 und aus dem Integrationsgebiet hinaus zeigt (siehe auch Abb. <a href='#x1-2001r1'>10.1<!-- tex4ht:ref: fig:domainandboundary --></a>). Wir wenden
-den Gausschen Satz jetzt auf ein Vektorfeld \(\v{f}(\v{r})=\phi (\v{r})\v{v}(\v{r})\) an, wobei \(\phi (\v{r})\) ein skalares Feld und \(\v{v}(\v{r})\)
-wiederum ein Vektorfeld ist. Man erhält \begin{equation} \int _\Omega \dif ^D r\, \nabla \cdot \left (\phi \v{v}\right ) = \int _{\partial \Omega } \dif ^{D-1} r\, \left (\phi \v{v}\right ) \cdot \hat{n}. \end{equation}
-Auf Grund der Kettenregel der Ableitung gilt \begin{equation} \nabla \cdot \left (\phi \v{v}\right ) = \left (\nabla \phi \right )\cdot \v{v} + \phi \left (\nabla \cdot \v{v}\right ). \label{eq:chainrulevec} \end{equation}
+den Gausschen Satz jetzt auf ein Vektorfeld \(\v {f}(\v {r})=\phi (\v {r})\v {v}(\v {r})\) an, wobei \(\phi (\v {r})\) ein skalares Feld und \(\v {v}(\v {r})\)
+wiederum ein Vektorfeld ist. Man erhält \begin {equation} \int _\Omega \dif ^D r\, \nabla \cdot \left (\phi \v {v}\right ) = \int _{\partial \Omega } \dif ^{D-1} r\, \left (\phi \v {v}\right ) \cdot \hat {n}. \end {equation}
+Auf Grund der Kettenregel der Ableitung gilt \begin {equation} \nabla \cdot \left (\phi \v {v}\right ) = \left (\nabla \phi \right )\cdot \v {v} + \phi \left (\nabla \cdot \v {v}\right ). \label {eq:chainrulevec} \end {equation}
 (Das Gl. \eqref{eq:chainrulevec} gilt sieht man am einfachsten, wenn man sie
-komponentenweise hinschreibt.) Dies führt zu \begin{equation} \int _\Omega \dif ^D r\, \left (\nabla \phi \cdot \v{v} + \phi \nabla \cdot \v{v}\right ) = \int _{\partial \Omega } \dif ^{D-1} r\, \left (\phi \v{v}\right ) \cdot \hat{n}. \end{equation}
-Mit \(\v{v}(\v{r})=\nabla \psi \) erhält man die übliche Darstellung der <span class='cmti-12'>ersten Greenschen Formel</span>,
-\begin{equation} \int _\Omega \dif ^D r\, \left (\nabla \phi \cdot \nabla \psi + \phi (\v{r}) \nabla ^2\psi \right ) = \int _{\partial \Omega } \dif ^{D-1} r\, \left (\phi \nabla \psi \right ) \cdot \hat{n}. \end{equation}
+komponentenweise hinschreibt.) Dies führt zu \begin {equation} \int _\Omega \dif ^D r\, \left (\nabla \phi \cdot \v {v} + \phi \nabla \cdot \v {v}\right ) = \int _{\partial \Omega } \dif ^{D-1} r\, \left (\phi \v {v}\right ) \cdot \hat {n}. \end {equation}
+Mit \(\v {v}(\v {r})=\nabla \psi \) erhält man die übliche Darstellung der <span class='cmti-12'>ersten Greenschen Formel</span>,
+\begin {equation} \int _\Omega \dif ^D r\, \left (\nabla \phi \cdot \nabla \psi + \phi (\v {r}) \nabla ^2\psi \right ) = \int _{\partial \Omega } \dif ^{D-1} r\, \left (\phi \nabla \psi \right ) \cdot \hat {n}. \end {equation}
 </p></div>
 <!-- l. 70 --><p class='indent'> In Gl. \eqref{eq:weakformhighd} ist nun die Anforderung an die
 Differenzierbarkeit reduziert. Der Laplace-Operator, also die zweite Ableitung,
 taucht nicht mehr in dieser Gleichung auf. Wir müssen lediglich Gradienten der
-Testfunktion \(v(\v{r})\) und des Potentials \(\Phi (\v{r})\) berechnen können.
+Testfunktion \(v(\v {r})\) und des Potentials \(\Phi (\v {r})\) berechnen können.
 </p>
 <figure class='figure'>
 
@@ -75,15 +75,21 @@ Testfunktion \(v(\v{r})\) und des Potentials \(\Phi (\v{r})\) berechnen können.
 
 
 
-<!-- l. 76 --><p class='noindent'> <img height='233' alt='PIC' width='312' src='Figures/Integration_Domain-.png' /> <a id='x1-2001r1'></a>
+<!-- l. 76 --><p class='noindent'> <img src='Figures/Integration_Domain-.png' alt='PIC' width='312' height='233' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
+</p><!-- l. 78 --><p class='noindent'>figureDer Rand \(\partial \Omega \) begrenzt das Integrations- bzw. Simulationsgebiet \(\Omega \). Der
+Normalenvektor \(\hat {n}\) ist auf dem Rand \(\partial \Omega \) definiert und zeigt dort senkrecht zum
+Rand nach außen. In dieser Skizze ist der zweidimensionale Fall dargestellt.
+Im dreidimensionalen Fall ist \(\Omega \) ein Volumen und \(\partial \Omega \) die Fläche, welche das
+Volumen begrenzt. Auch in diesem Fall kann man einen Normalenvektor \(\hat {n}\) auf
+diese begrenzende Fläche definieren.
 </p>
-<figcaption class='caption'><span class='id'>Abbildung 10.1:: </span><span class='content'>Der Rand \(\partial \Omega \) begrenzt
-das Integrations- bzw. Simulationsgebiet \(\Omega \). Der Normalenvektor \(\hat{n}\) ist auf dem
+<figcaption class='caption'><span class='id'>Abbildung 10.1: </span><span class='content'>Der Rand \(\partial \Omega \) begrenzt
+das Integrations- bzw. Simulationsgebiet \(\Omega \). Der Normalenvektor \(\hat {n}\) ist auf dem
 Rand \(\partial \Omega \) definiert und zeigt dort senkrecht zum Rand nach außen. In dieser
 Skizze ist der zweidimensionale Fall dargestellt. Im dreidimensionalen Fall
 ist \(\Omega \) ein Volumen und \(\partial \Omega \) die Fläche, welche das Volumen begrenzt. Auch in
-diesem Fall kann man einen Normalenvektor \(\hat{n}\) auf diese begrenzende Fläche
+diesem Fall kann man einen Normalenvektor \(\hat {n}\) auf diese begrenzende Fläche
 definieren.
 </span></figcaption><!-- tex4ht:label?: x1-2001r10.1 -->
 
@@ -122,21 +128,23 @@ gezeigt.
 
 
 
-<!-- l. 96 --><p class='noindent'> <img height='276' alt='PIC' width='585' src='Figures/mesh-.png' /> <a id='x1-4001r2'></a>
+<!-- l. 96 --><p class='noindent'> <img src='Figures/mesh-.png' alt='PIC' width='585' height='276' /> <a id='x1-4001r2'></a>
 <a id='x1-4002'></a>
+</p><!-- l. 98 --><p class='noindent'>figureTriangulierung eines rechteckigen Gebiets \(\Omega \) in ein (a) strukturiertes
+Gitter und ein (b) unstrukturiertes Gitter.
 </p>
-<figcaption class='caption'><span class='id'>Abbildung 10.2:: </span><span class='content'>Triangulierung eines rechteckigen Gebiets \(\Omega \) in ein (a)
+<figcaption class='caption'><span class='id'>Abbildung 10.2: </span><span class='content'>Triangulierung eines rechteckigen Gebiets \(\Omega \) in ein (a)
 strukturiertes Gitter und ein (b) unstrukturiertes Gitter.
 </span></figcaption><!-- tex4ht:label?: x1-4001r10.2 -->
 
 
 
 </figure>
-<!-- l. 102 --><p class='indent'> Auch für diese Art der Zerlegung kann man die Zielfunktion \(\Phi (\v{r})\) durch eine
-Summe approximieren. Wir schreiben \begin{equation} \Phi (x,y) \approx \Phi _N(x,y) = \sum _n a_n \varphi _n(x, y), \end{equation}
+<!-- l. 102 --><p class='indent'> Auch für diese Art der Zerlegung kann man die Zielfunktion \(\Phi (\v {r})\) durch eine
+Summe approximieren. Wir schreiben \begin {equation} \Phi (x,y) \approx \Phi _N(x,y) = \sum _n a_n \varphi _n(x, y), \end {equation}
 wobei \(n\) ein eindeutiger Knotenindex ist. D.h. die Freiheitsgrade bzw.
-Expansionskoeffizienten \(a_n\) leben auf den Knoten (mit den Positionen \(\v{r}_n\)) des
-Simulationsgebietes, und für eine Finite-Elemente Basis wird wieder gelten \(\Phi (\v{r}_n)=a_n\), d.h. \(a_n\)
+Expansionskoeffizienten \(a_n\) leben auf den Knoten (mit den Positionen \(\v {r}_n\)) des
+Simulationsgebietes, und für eine Finite-Elemente Basis wird wieder gelten \(\Phi (\v {r}_n)=a_n\), d.h. \(a_n\)
 ist der Funktionswert auf dem entsprechenden Knoten. Die Formfunktion ist dann
 eine Vorschrift, wie zwischen den Knoten (also über die Dreiecke) dieser
 Funktionswert interpoliert wird.
@@ -163,10 +171,19 @@ Knoten.
 
 
 
-<!-- l. 120 --><p class='noindent'><img height='426' alt='PIC' width='780' src='Figures/structured_grid.svg' /> <a id='x1-5001r3'></a>
+<!-- l. 120 --><p class='noindent'><img src='Figures/structured_grid.svg' alt='PIC' width='780' height='426' /> <a id='x1-5001r3'></a>
 <a id='x1-5002'></a>
+</p><!-- l. 122 --><p class='noindent'>figureZerlegung eines rechteckigen Gebiets in ein strukturiertes Gitter.
+(a) Die strukturierte Zerlegung erfolgt zuerst in kleinere Kästen, deren
+eindeutiger <span class='cmti-12'>globaler </span>Index in eckigen Klammern \([\cdot ]\) und blau gezeigt ist.
+Diese Kästen werden dann in zwei Dreiecke, die Elemente, geteilt. Der
+eindeutige <span class='cmti-12'>globale </span>Elementindex ist in runden Klammern \((\cdot )\) und rot gezeigt.
+Weiterhin sind die Knoten mit ihrem einem eindeutigen <span class='cmti-12'>globalen </span>Index
+(schwarz) bezeichnet. (b) Die Kästen werden in zwei Dreicke mit <span class='cmti-12'>lokalen</span>
+Elementindices \((0)\) und \((1)\) zerlegt. Innerhalb eines Elements, werden die Knoten
+mit einem entsprechenden <span class='cmti-12'>lokalen </span>Knotenindex identifiziert.
 </p>
-<figcaption class='caption'><span class='id'>Abbildung 10.3:: </span><span class='content'>Zerlegung eines rechteckigen Gebiets in ein strukturiertes
+<figcaption class='caption'><span class='id'>Abbildung 10.3: </span><span class='content'>Zerlegung eines rechteckigen Gebiets in ein strukturiertes
 Gitter. (a) Die strukturierte Zerlegung erfolgt zuerst in kleinere Kästen,
 deren eindeutiger <span class='cmti-12'>globaler </span>Index in eckigen Klammern \([\cdot ]\) und blau gezeigt
 ist. Diese Kästen werden dann in zwei Dreiecke, die Elemente, geteilt. Der
@@ -181,13 +198,13 @@ mit einem entsprechenden <span class='cmti-12'>lokalen </span>Knotenindex identi
 
 </figure>
 <!-- l. 126 --><p class='indent'> In diesem strukturierten Gitter können wir von <span class='cmti-12'>Koordinaten </span>der Knoten auf
-deren <span class='cmti-12'>globalen </span>Index \(n_{\text{K}}\) schließen. Da die Freiheitsgrade auf den Knoten leben,
-identifiziert der globale Knotenindex \(n_{\text{K}}\) später eine Spalte oder Zeile aus der
+deren <span class='cmti-12'>globalen </span>Index \(n_{\text {K}}\) schließen. Da die Freiheitsgrade auf den Knoten leben,
+identifiziert der globale Knotenindex \(n_{\text {K}}\) später eine Spalte oder Zeile aus der
 Systemmatrix. Sei \(i,j\) die (ganzzahlige) Koordinate des Knotens, dann ist
-\begin{equation} n_{\text{K}} = i + N_x j \label{eq:linindex} \end{equation}
+\begin {equation} n_{\text {K}} = i + N_x j \label {eq:linindex} \end {equation}
 der entsprechende globale Knotenindex. Hierbei laufen die Knotenkoordinaten bei
 Null los, d.h. \(i\in \{0,1,\ldots ,N_x-1\}\) und \(j\in \{0,1,\ldots ,N_y-1\}\). Genauso können wir von Elementkoordinaten \(k,l,m\) auf den
-Elementindex \(n_{\text{E}}\) schließen, \begin{equation} n_{\text{E}} = k + 2(l + M_x m), \label{eq:linindexel} \end{equation}
+Elementindex \(n_{\text {E}}\) schließen, \begin {equation} n_{\text {E}} = k + 2(l + M_x m), \label {eq:linindexel} \end {equation}
 wobei nun \(l,m\) mit \(l\in \{0,1,\ldots ,M_x-1\}\) und \(m\in \{0,1,\ldots ,M_y-1\}\) die Koordinate des Kastens ist und \(k\in \{0, 1\}\) das Element innerhalb
 eines Kastens indiziert. Der Faktor \(2\) taucht in Gl. \eqref{eq:linindexel} auf, weil
 es zwei Elemente pro Kasten gibt.
@@ -218,10 +235,10 @@ linken unteren Ecke des Kastens \(\xi =0\) und \(\eta =0\) und in der rechten ob
 
 
 
-Abb. <a href='#x1-5001r3'>10.3<!-- tex4ht:ref: fig:structured-grid --></a>b) lauten \begin{align} N^{(0)}_0(\xi , \eta ) &amp;= 1-\xi -\eta \\ \label{eq:formfunc1} N^{(0)}_1(\xi , \eta ) &amp;= \xi \\ N^{(0)}_2(\xi , \eta ) &amp;= \eta , \end{align}
+Abb. <a href='#x1-5001r3'>10.3<!-- tex4ht:ref: fig:structured-grid --></a>b) lauten \begin {align} N^{(0)}_0(\xi , \eta ) &amp;= 1-\xi -\eta \\ \label {eq:formfunc1} N^{(0)}_1(\xi , \eta ) &amp;= \xi \\ N^{(0)}_2(\xi , \eta ) &amp;= \eta , \end {align}
 </p><!-- l. 155 --><p class='indent'> wobei der Index \(i\) in \(N^{(0)}_i\) den lokalen Knotenindex bezeichnet, bei dem die
 Formfunktion \(1\) wird. Diese Formfunktionen sind in Abb. <a href='#x1-6001r4'>10.4<!-- tex4ht:ref: fig:febasis2d --></a> gezeigt. Auf
-Element \((1)\) lauten die Formfunktionen \begin{align} N^{(1)}_0(\xi , \eta ) &amp;= \xi +\eta -1 \\ N^{(1)}_1(\xi , \eta ) &amp;= 1-\xi \\ \label{eq:formfunc6} N^{(1)}_2(\xi , \eta ) &amp;= 1-\eta . \end{align}
+Element \((1)\) lauten die Formfunktionen \begin {align} N^{(1)}_0(\xi , \eta ) &amp;= \xi +\eta -1 \\ N^{(1)}_1(\xi , \eta ) &amp;= 1-\xi \\ \label {eq:formfunc6} N^{(1)}_2(\xi , \eta ) &amp;= 1-\eta . \end {align}
 </p><!-- l. 162 --><p class='indent'> Diese Formfunktionen erfüllen die Eigenschaft \(N^{(n)}_0+N^{(n)}_1+N^{(n)}_2=1\), die sich <span class='cmti-12'>Zerlegung der Eins</span>
 (engl. “partition of unity”) nennt.
 </p>
@@ -233,10 +250,13 @@ Element \((1)\) lauten die Formfunktionen \begin{align} N^{(1)}_0(\xi , \eta ) &
 
 
 
-<!-- l. 168 --><p class='noindent'><img height='280' alt='PIC' width='350' src='Figures/febasis2d.svg' /> <a id='x1-6001r4'></a>
+<!-- l. 168 --><p class='noindent'><img src='Figures/febasis2d.svg' alt='PIC' width='350' height='280' /> <a id='x1-6001r4'></a>
 <a id='x1-6002'></a>
+</p><!-- l. 170 --><p class='noindent'>figureFormfunktionen für lineare Dreieckelemente in zwei Dimensionen.
+Jeweils eine der Formfunktionen ist an einem der Knoten \(1\). An den anderen
+beiden Knoten fallen die Formfunktionen auf \(0\) ab.
 </p>
-<figcaption class='caption'><span class='id'>Abbildung 10.4:: </span><span class='content'>Formfunktionen für lineare Dreieckelemente in zwei
+<figcaption class='caption'><span class='id'>Abbildung 10.4: </span><span class='content'>Formfunktionen für lineare Dreieckelemente in zwei
 Dimensionen. Jeweils eine der Formfunktionen ist an einem der Knoten \(1\). An
 den anderen beiden Knoten fallen die Formfunktionen auf \(0\) ab.
 </span></figcaption><!-- tex4ht:label?: x1-6001r10.3 -->
@@ -245,10 +265,10 @@ den anderen beiden Knoten fallen die Formfunktionen auf \(0\) ab.
 
 </figure>
 <!-- l. 174 --><p class='indent'> Wir brauchen im folgenden die Ableitungen der Formfunktionen respektive der
-Positionen \(x\) und \(y\). Im allgemeinen Fall erhält man \begin{align} \frac{\partial N_i^{(n)}}{\partial x} &amp;= \frac{\partial N_i^{(n)}}{\partial \xi } \frac{\partial \xi }{\partial x} + \frac{\partial N_i^{(n)}}{\partial \eta } \frac{\partial \eta }{\partial x} \\ \frac{\partial N_i^{(n)}}{\partial y} &amp;= \frac{\partial N_i^{(n)}}{\partial \xi } \frac{\partial \xi }{\partial y} + \frac{\partial N_i^{(n)}}{\partial \eta } \frac{\partial \eta }{\partial y}, \end{align}
-</p><!-- l. 179 --><p class='indent'> oder in kompakter Matrix-Vektor Schreibweise \begin{equation} \nabla _{x,y} N_i^{(n)}\cdot \t{J} = \nabla _{\xi ,\eta } N_i^{(n)}, \label{eq:formgrad} \end{equation}
+Positionen \(x\) und \(y\). Im allgemeinen Fall erhält man \begin {align} \frac {\partial N_i^{(n)}}{\partial x} &amp;= \frac {\partial N_i^{(n)}}{\partial \xi } \frac {\partial \xi }{\partial x} + \frac {\partial N_i^{(n)}}{\partial \eta } \frac {\partial \eta }{\partial x} \\ \frac {\partial N_i^{(n)}}{\partial y} &amp;= \frac {\partial N_i^{(n)}}{\partial \xi } \frac {\partial \xi }{\partial y} + \frac {\partial N_i^{(n)}}{\partial \eta } \frac {\partial \eta }{\partial y}, \end {align}
+</p><!-- l. 179 --><p class='indent'> oder in kompakter Matrix-Vektor Schreibweise \begin {equation} \nabla _{x,y} N_i^{(n)}\cdot \t {J} = \nabla _{\xi ,\eta } N_i^{(n)}, \label {eq:formgrad} \end {equation}
 wobei \(\nabla _{x,y}\) den Gradienten respektive der angezeigten Koordinaten meint. Die Matrix
-\begin{equation} \t{J} = \begin{pmatrix} \partial x/\partial \xi &amp; \partial x/\partial \eta \\ \partial y/\partial \xi &amp; \partial y/\partial \eta \end{pmatrix} = \begin{pmatrix} \Delta x &amp; 0 \\ 0 &amp; \Delta y \end{pmatrix} \label{eq:jacobi} \end{equation}
+\begin {equation} \t {J} = \begin {pmatrix} \partial x/\partial \xi &amp; \partial x/\partial \eta \\ \partial y/\partial \xi &amp; \partial y/\partial \eta \end {pmatrix} = \begin {pmatrix} \Delta x &amp; 0 \\ 0 &amp; \Delta y \end {pmatrix} \label {eq:jacobi} \end {equation}
 nennt sich <span class='cmti-12'>Jacobi-Matrix</span>. In unserem Beispiel ergibt sich die explizite Matrix auf
 der rechten Seite von Gl. \eqref{eq:jacobi}, die unabhängig vom Kasten ist, den
 wir betrachten. Für komplexere Gitter (z.B. Abb. <a href='#x1-4001r2'>10.2<!-- tex4ht:ref: fig:triangulation --></a>b) beschreibt die
@@ -257,7 +277,7 @@ Die Darstellung mit Hilfe der reskalierten Koordinaten \(\xi \) und \(\eta \), u
 Gl. \eqref{eq:formgrad} als Gradienten, entkoppelt die Interpolationsvorschrift
 Gl. \eqref{eq:formfunc1}-\eqref{eq:formfunc6} von der Struktur des Gitters und
 ist daher besonders für unstrukturierte Gitter nützlich.
-</p><!-- l. 201 --><p class='indent'> Für unser Gitter finden wir also \begin{align} \frac{\partial N_0^{(0)}}{\partial x} &amp;= -1/\Delta x,\quad \frac{\partial N_0^{(0)}}{\partial y} = -1/\Delta y, \\ \frac{\partial N_1^{(0)}}{\partial x} &amp;= 1/\Delta x,\quad \frac{\partial N_1^{(0)}}{\partial y} = 0, \\ \frac{\partial N_2^{(0)}}{\partial x} &amp;= 0,\quad \frac{\partial N_2^{(0)}}{\partial y} = 1/\Delta y, \\ \frac{\partial N_0^{(1)}}{\partial x} &amp;= 1/\Delta x,\quad \frac{\partial N_0^{(1)}}{\partial y} = 1/\Delta y, \label{eq:N10der} \\ \frac{\partial N_1^{(1)}}{\partial x} &amp;= -1/\Delta x,\quad \frac{\partial N_1^{(1)}}{\partial y} = 0, \\ \frac{\partial N_2^{(1)}}{\partial x} &amp;= 0,\quad \frac{\partial N_2^{(1)}}{\partial y} = -1/\Delta y \label{eq:N12der} \end{align}
+</p><!-- l. 201 --><p class='indent'> Für unser Gitter finden wir also \begin {align} \frac {\partial N_0^{(0)}}{\partial x} &amp;= -1/\Delta x,\quad \frac {\partial N_0^{(0)}}{\partial y} = -1/\Delta y, \\ \frac {\partial N_1^{(0)}}{\partial x} &amp;= 1/\Delta x,\quad \frac {\partial N_1^{(0)}}{\partial y} = 0, \\ \frac {\partial N_2^{(0)}}{\partial x} &amp;= 0,\quad \frac {\partial N_2^{(0)}}{\partial y} = 1/\Delta y, \\ \frac {\partial N_0^{(1)}}{\partial x} &amp;= 1/\Delta x,\quad \frac {\partial N_0^{(1)}}{\partial y} = 1/\Delta y, \label {eq:N10der} \\ \frac {\partial N_1^{(1)}}{\partial x} &amp;= -1/\Delta x,\quad \frac {\partial N_1^{(1)}}{\partial y} = 0, \\ \frac {\partial N_2^{(1)}}{\partial x} &amp;= 0,\quad \frac {\partial N_2^{(1)}}{\partial y} = -1/\Delta y \label {eq:N12der} \end {align}
 </p><!-- l. 219 --><p class='indent'> für die Ableitungen der Formfunktionen. Da wir lediglich lineare Elemente
 verwandt haben, sind diese Ableitungen alle Konstanten.
 </p>
@@ -267,17 +287,17 @@ verwandt haben, sind diese Ableitungen alle Konstanten.
 Gleichungssystem, welches die diskretisierte Differentialgleichung beschreibt, zu
 bestimmen. Wir unterscheiden hier wieder zwischen Elementmatrizen und der
 Systemmatrix. Für die Elementmatrix schreiben wir den Beitrag der
-Formfunktion zur Galerkin-Bedingung auf. Man erhält \begin{equation} \begin{split} (N_I^{(n)}, R) &amp;= \left (N_I^{(n)}, \nabla ^2 \Phi + \frac{\rho (\v{r})}{\varepsilon }\right ) \\ &amp;= \int _{\partial \Omega } \dif ^2r\, N_I^{(n)}(\v{r})\nabla \Phi \cdot \hat{n}(\v{r}) - \sum _J a_J (\nabla N_I^{(n)}, \nabla N_J^{(n)}) + \frac{1}{\varepsilon } (N_I^{(n)}, \rho ), \\ &amp;= - \sum _J K_{IJ}^{(n)} a_J + f_I^{(n)}, \end{split} \end{equation}
+Formfunktion zur Galerkin-Bedingung auf. Man erhält \begin {equation} \begin {split} (N_I^{(n)}, R) &amp;= \left (N_I^{(n)}, \nabla ^2 \Phi + \frac {\rho (\v {r})}{\varepsilon }\right ) \\ &amp;= \int _{\partial \Omega } \dif ^2r\, N_I^{(n)}(\v {r})\nabla \Phi \cdot \hat {n}(\v {r}) - \sum _J a_J (\nabla N_I^{(n)}, \nabla N_J^{(n)}) + \frac {1}{\varepsilon } (N_I^{(n)}, \rho ), \\ &amp;= - \sum _J K_{IJ}^{(n)} a_J + f_I^{(n)}, \end {split} \end {equation}
 wobei \(K_{IJ}^{(n)}\) nun die Elementmatrix ist und \(f_I^{(n)}\) der Beitrag des Elements zur rechten Seite.
-Man erhält \begin{equation} K_{IJ}^{(n)} = (\nabla N_I^{(n)}, \nabla N_J^{(n)}). \end{equation}
-wobei für zwei Vektorfelder \(\v{f}(\v{r})\) und \(\v{g}(\v{r})\) das Skalarprodukt als \begin{equation} (\v{f}, \v{g}) = \int _\Omega \dif ^3r\, \v{f}^*(\v{r})\cdot \v{g}(\v{r}), \end{equation}
+Man erhält \begin {equation} K_{IJ}^{(n)} = (\nabla N_I^{(n)}, \nabla N_J^{(n)}). \end {equation}
+wobei für zwei Vektorfelder \(\v {f}(\v {r})\) und \(\v {g}(\v {r})\) das Skalarprodukt als \begin {equation} (\v {f}, \v {g}) = \int _\Omega \dif ^3r\, \v {f}^*(\v {r})\cdot \v {g}(\v {r}), \end {equation}
 also als kartesisches Skalarprodukt zwischen den beiden Funktionswerten, zu
-verstehen ist. Der Beitrag des Elements zur rechten Seite lautet \begin{equation} f_I^{(n)} = \frac{1}{\varepsilon }(N_I^{(n)}, \rho ) + \int _{\partial \Omega } \dif ^2r\, N_I^{(n)}(\v{r})\nabla \Phi \cdot \hat{n}(\v{r}). \label{eq:rhs2d} \end{equation}
+verstehen ist. Der Beitrag des Elements zur rechten Seite lautet \begin {equation} f_I^{(n)} = \frac {1}{\varepsilon }(N_I^{(n)}, \rho ) + \int _{\partial \Omega } \dif ^2r\, N_I^{(n)}(\v {r})\nabla \Phi \cdot \hat {n}(\v {r}). \label {eq:rhs2d} \end {equation}
 </p>
 <div id='shaded*-1' class='framedenv'>
 <!-- l. 251 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Beispiel:</span></span> Wir berechnen nun die Elementmatrizen für die beiden Elemente
 unseres strukturierten Beispielgitters. So lautet z.B. die Komponente \(I=0\) und \(J=0\) des
-Elements \((0)\), \begin{equation} \begin{split} K_{00}^{(0)} &amp;= (\nabla N_0^{(0)}, \nabla N_0^{(0)}) \\ &amp;= \int _{\Omega ^{(0)}} \dif ^2r \left ( \frac{1}{\Delta x^2} + \frac{1}{\Delta y^2} \right ) \\ &amp;= \frac{\Delta x\Delta y}{2} \left ( \frac{1}{\Delta x^2} + \frac{1}{\Delta y^2} \right ) \\ &amp;= \frac{1}{2}\left (\frac{\Delta y}{\Delta x} + \frac{\Delta x}{\Delta y}\right ) \end{split} \end{equation}
+Elements \((0)\), \begin {equation} \begin {split} K_{00}^{(0)} &amp;= (\nabla N_0^{(0)}, \nabla N_0^{(0)}) \\ &amp;= \int _{\Omega ^{(0)}} \dif ^2r \left ( \frac {1}{\Delta x^2} + \frac {1}{\Delta y^2} \right ) \\ &amp;= \frac {\Delta x\Delta y}{2} \left ( \frac {1}{\Delta x^2} + \frac {1}{\Delta y^2} \right ) \\ &amp;= \frac {1}{2}\left (\frac {\Delta y}{\Delta x} + \frac {\Delta x}{\Delta y}\right ) \end {split} \end {equation}
 
 
 
@@ -286,7 +306,7 @@ Spezialfall \(\Delta x=\Delta y\), in dem man \(K_{00}^{(0)}=1\) erhält. (Im ei
 stehen. Die Einheiten von \(K\) unterscheiden sich damit im eindimensionalen und
 zweidimensionalen Fall!)
 </p><!-- l. 271 --><p class='indent'> Die andere Skalarprodukte können ähnlich ausgerechnet werden. Man
-erhält \begin{equation} \t{K}^{(0)} = \t{K}^{(1)} = \begin{pmatrix} 1 &amp; -1/2 &amp; -1/2 \\ -1/2 &amp; 1/2 &amp; 0 \\ -1/2 &amp; 0 &amp; 1/2 \end{pmatrix} \label{eq:elmat2d} \end{equation}
+erhält \begin {equation} \t {K}^{(0)} = \t {K}^{(1)} = \begin {pmatrix} 1 &amp; -1/2 &amp; -1/2 \\ -1/2 &amp; 1/2 &amp; 0 \\ -1/2 &amp; 0 &amp; 1/2 \end {pmatrix} \label {eq:elmat2d} \end {equation}
 für beide Elementmatrizen. Diese Matrizen sind identisch, weil die Nummerierung
 der lokalen Elementknoten so gewählt wurde, dass die beiden Dreiecke
 ineinander rotiert werden können (siehe Abb. <a href='#x1-5001r3'>10.3<!-- tex4ht:ref: fig:structured-grid --></a>b).
@@ -298,12 +318,12 @@ müssen wir Beispielsweise für Element \((8)\) in Abb. <a href='#x1-5001r3'>10
 den globalen Knoten \(5\) abbilden, \(0\to 5\). D.h. die erste Zeile der Elementmatrix wird zur
 sechsten Zeile der Systemmatrix. (Es ist die sechste Zeile, und nicht die
 fünfte Zeile, da die Indizierung bei Null beginnt.) Weiterhin müssen wir \(1\to 6\)
-und \(2\to 9\) abbilden. Der Beitrag \(\Delta \t{K}^{(8)}\) von Element \((8)\) zur \(16\times 16\) Systemmatrix ist daher
-\begin{equation} \Delta \t{K}^{(8)} = \left (\begin{array}{*{16}c} \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; 1 &amp; -\frac{1}{2} &amp; \cdot &amp; \cdot &amp; -\frac{1}{2} &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; -\frac{1}{2} &amp; \frac{1}{2} &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; -\frac{1}{2} &amp; \cdot &amp; \cdot &amp; \cdot &amp; \frac{1}{2} &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \end{array}\right ) \label{eq:elmat2dlarge} \end{equation}
+und \(2\to 9\) abbilden. Der Beitrag \(\Delta \t {K}^{(8)}\) von Element \((8)\) zur \(16\times 16\) Systemmatrix ist daher
+\begin {equation} \Delta \t {K}^{(8)} = \left (\begin {array}{*{16}c} \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; 1 &amp; -\frac {1}{2} &amp; \cdot &amp; \cdot &amp; -\frac {1}{2} &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; -\frac {1}{2} &amp; \frac {1}{2} &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; -\frac {1}{2} &amp; \cdot &amp; \cdot &amp; \cdot &amp; \frac {1}{2} &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \end {array}\right ) \label {eq:elmat2dlarge} \end {equation}
 wobei Enträge mit Wert \(0\) zur besseren visuellen Darstellung als Punkt (\(\cdot \)) gezeigt
 sind. Die gesamte Systemmatrix ergibt sich dann als Summe über alle Elemente,
-\(\t{K}=\sum _n \t{K}^{(n)}\). Man erhält \begin{equation} \t{K} = \left (\begin{array}{*{16}c} 1 &amp; \bar{\frac{1}{2}} &amp; \cdot &amp; \cdot &amp; \bar{\frac{1}{2}} &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \bar{\frac{1}{2}} &amp; 2 &amp; \bar{\frac{1}{2}} &amp; \cdot &amp; \cdot &amp; \bar{1} &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \bar{\frac{1}{2}} &amp; 2 &amp; \bar{\frac{1}{2}} &amp; \cdot &amp; \cdot &amp; \bar{1} &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \bar{\frac{1}{2}} &amp; 1 &amp; \cdot &amp; \cdot &amp; \cdot &amp; \bar{\frac{1}{2}} &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \bar{\frac{1}{2}} &amp; \cdot &amp; \cdot &amp; \cdot &amp; 2 &amp; \bar{1} &amp; \cdot &amp; \cdot &amp; \bar{\frac{1}{2}} &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \bar{1} &amp; \cdot &amp; \cdot &amp; \bar{1} &amp; 4 &amp; \bar{1} &amp; \cdot &amp; \cdot &amp; \bar{1} &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \bar{1} &amp; \cdot &amp; \cdot &amp; \bar{1} &amp; 4 &amp; \bar{1} &amp; \cdot &amp; \cdot &amp; \bar{1} &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \bar{\frac{1}{2}} &amp; \cdot &amp; \cdot &amp; \bar{1} &amp; 2 &amp; \cdot &amp; \cdot &amp; \cdot &amp; \bar{\frac{1}{2}} &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \bar{\frac{1}{2}} &amp; \cdot &amp; \cdot &amp; \cdot &amp; 2 &amp; \bar{1} &amp; \cdot &amp; \cdot &amp; \bar{\frac{1}{2}} &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \bar{1} &amp; \cdot &amp; \cdot &amp; \bar{1} &amp; 4 &amp; \bar{1} &amp; \cdot &amp; \cdot &amp; \bar{1} &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \bar{1} &amp; \cdot &amp; \cdot &amp; \bar{1} &amp; 4 &amp; \bar{1} &amp; \cdot &amp; \cdot &amp; \bar{1} &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \bar{\frac{1}{2}} &amp; \cdot &amp; \cdot &amp; \bar{1} &amp; 2 &amp; \cdot &amp; \cdot &amp; \cdot &amp; \bar{\frac{1}{2}} \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \bar{\frac{1}{2}} &amp; \cdot &amp; \cdot &amp; \cdot &amp; 1 &amp; \bar{\frac{1}{2}} &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \bar{1} &amp; \cdot &amp; \cdot &amp; \bar{\frac{1}{2}} &amp; 2 &amp; \bar{\frac{1}{2}} &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \bar{1} &amp; \cdot &amp; \cdot &amp; \bar{\frac{1}{2}} &amp; 2 &amp; \bar{\frac{1}{2}} \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \bar{\frac{1}{2}} &amp; \cdot &amp; \cdot &amp; \bar{\frac{1}{2}} &amp; 1 \end{array}\right ) \label{eq:sysmat2d} \end{equation}
-wobei der Balken über der Zahl ein Minus anzeigt, also z.B. \(\bar{1}=-1\). Diese \(16\times 16\) Matrix ist
+\(\t {K}=\sum _n \t {K}^{(n)}\). Man erhält \begin {equation} \t {K} = \left (\begin {array}{*{16}c} 1 &amp; \bar {\frac {1}{2}} &amp; \cdot &amp; \cdot &amp; \bar {\frac {1}{2}} &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \bar {\frac {1}{2}} &amp; 2 &amp; \bar {\frac {1}{2}} &amp; \cdot &amp; \cdot &amp; \bar {1} &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \bar {\frac {1}{2}} &amp; 2 &amp; \bar {\frac {1}{2}} &amp; \cdot &amp; \cdot &amp; \bar {1} &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \bar {\frac {1}{2}} &amp; 1 &amp; \cdot &amp; \cdot &amp; \cdot &amp; \bar {\frac {1}{2}} &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \bar {\frac {1}{2}} &amp; \cdot &amp; \cdot &amp; \cdot &amp; 2 &amp; \bar {1} &amp; \cdot &amp; \cdot &amp; \bar {\frac {1}{2}} &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \bar {1} &amp; \cdot &amp; \cdot &amp; \bar {1} &amp; 4 &amp; \bar {1} &amp; \cdot &amp; \cdot &amp; \bar {1} &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \bar {1} &amp; \cdot &amp; \cdot &amp; \bar {1} &amp; 4 &amp; \bar {1} &amp; \cdot &amp; \cdot &amp; \bar {1} &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \bar {\frac {1}{2}} &amp; \cdot &amp; \cdot &amp; \bar {1} &amp; 2 &amp; \cdot &amp; \cdot &amp; \cdot &amp; \bar {\frac {1}{2}} &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \bar {\frac {1}{2}} &amp; \cdot &amp; \cdot &amp; \cdot &amp; 2 &amp; \bar {1} &amp; \cdot &amp; \cdot &amp; \bar {\frac {1}{2}} &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \bar {1} &amp; \cdot &amp; \cdot &amp; \bar {1} &amp; 4 &amp; \bar {1} &amp; \cdot &amp; \cdot &amp; \bar {1} &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \bar {1} &amp; \cdot &amp; \cdot &amp; \bar {1} &amp; 4 &amp; \bar {1} &amp; \cdot &amp; \cdot &amp; \bar {1} &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \bar {\frac {1}{2}} &amp; \cdot &amp; \cdot &amp; \bar {1} &amp; 2 &amp; \cdot &amp; \cdot &amp; \cdot &amp; \bar {\frac {1}{2}} \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \bar {\frac {1}{2}} &amp; \cdot &amp; \cdot &amp; \cdot &amp; 1 &amp; \bar {\frac {1}{2}} &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \bar {1} &amp; \cdot &amp; \cdot &amp; \bar {\frac {1}{2}} &amp; 2 &amp; \bar {\frac {1}{2}} &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \bar {1} &amp; \cdot &amp; \cdot &amp; \bar {\frac {1}{2}} &amp; 2 &amp; \bar {\frac {1}{2}} \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \bar {\frac {1}{2}} &amp; \cdot &amp; \cdot &amp; \bar {\frac {1}{2}} &amp; 1 \end {array}\right ) \label {eq:sysmat2d} \end {equation}
+wobei der Balken über der Zahl ein Minus anzeigt, also z.B. \(\bar {1}=-1\). Diese \(16\times 16\) Matrix ist
 wiederum nicht regulär; ihr Rang ist 15. D.h. man braucht mindestens eine
 Dirichlet-Randbedingung, um zu einem lösbaren Problem zu kommen. Anhand
 dieses Beispiels wird auch vermutlich klar, dass die Systemmatrix nur schwer von
@@ -319,7 +339,7 @@ Hand auszurechnen ist und wir einen Computer zu Hilfe ziehen müssen. </p></div>
 <h4 class='subsectionHead'><span class='titlemark'>10.5.1 </span> <a id='x1-900010.5.1'></a>Dirichlet-Randbedingungen</h4>
 <!-- l. 333 --><p class='noindent'>Dirichlet-Randbedingungen funktionieren in höheren Dimensionen analog zum
 eindimensionalen Fall. Wir fixieren den Funktionswert auf einem Knoten.
-Man erhält \(\Phi _N(\v{r}_n)=a_n\equiv \Phi _n\), wobei \(\Phi _n\) der gewählte Funktionswert ist, und ersetzt damit
+Man erhält \(\Phi _N(\v {r}_n)=a_n\equiv \Phi _n\), wobei \(\Phi _n\) der gewählte Funktionswert ist, und ersetzt damit
 eine Galerkin-Bedingung durch diese Fixierung des Potential auf den
 Knoten.
 </p><!-- l. 335 --><p class='noindent'>
@@ -328,11 +348,11 @@ Knoten.
 <!-- l. 337 --><p class='noindent'>Wie im eindimensionalen Fall werden Neumann-Randbedingungen über den
 Oberflächenterm in Gl. \eqref{eq:rhs2d} in die rechte Seite eingebaut. Diese
 Bedingungen werden daher auf den Seiten der Dreiecke definiert. Für eine
-konstanten Richtungsableitung \(\Phi ^\prime = \nabla \Phi \cdot \hat{n}\) erhält man \begin{equation} f_I^{(n)} = \frac{1}{\varepsilon }(N_I^{(n)}, \rho ) + \Phi ^\prime \int _{\partial \Omega } \dif r\, N_I^{(n)}(\v{r}). \label{eq:rhs2d2} \end{equation}
+konstanten Richtungsableitung \(\Phi ^\prime = \nabla \Phi \cdot \hat {n}\) erhält man \begin {equation} f_I^{(n)} = \frac {1}{\varepsilon }(N_I^{(n)}, \rho ) + \Phi ^\prime \int _{\partial \Omega } \dif r\, N_I^{(n)}(\v {r}). \label {eq:rhs2d2} \end {equation}
 Das Integral in Gl. \eqref{eq:rhs2d2} wird über die Seite des Dreiecks
 ausgeführt. Für die Seite zwischen den Knoten \(2\) und \(3\) (siehe Abb. <a href='#x1-5001r3'>10.3<!-- tex4ht:ref: fig:structured-grid --></a>),
 beispielsweise, sind die Formfunktionen \(N_0^{(0)}\) und \(N_1^{(0)}\) (Element \((4)\)) ungleich Null. Man
-erhält \begin{align} f_0^{(4)} &amp;= \frac{1}{\varepsilon }(N_0^{(0)}, \rho ) + \Phi ^\prime \int _0^{\Delta x} \dif x\, (1-x/\Delta x) = \frac{1}{\varepsilon }(N_0^{(0)}, \rho ) + \frac{1}{2}\Phi ^\prime \Delta x \\ f_1^{(4)} &amp;= \frac{1}{\varepsilon }(N_1^{(0)}, \rho ) + \Phi ^\prime \int _0^{\Delta x} \dif x\, x/\Delta x = \frac{1}{\varepsilon }(N_1^{(0)}, \rho ) + \frac{1}{2}\Phi ^\prime \Delta x \end{align}
+erhält \begin {align} f_0^{(4)} &amp;= \frac {1}{\varepsilon }(N_0^{(0)}, \rho ) + \Phi ^\prime \int _0^{\Delta x} \dif x\, (1-x/\Delta x) = \frac {1}{\varepsilon }(N_0^{(0)}, \rho ) + \frac {1}{2}\Phi ^\prime \Delta x \\ f_1^{(4)} &amp;= \frac {1}{\varepsilon }(N_1^{(0)}, \rho ) + \Phi ^\prime \int _0^{\Delta x} \dif x\, x/\Delta x = \frac {1}{\varepsilon }(N_1^{(0)}, \rho ) + \frac {1}{2}\Phi ^\prime \Delta x \end {align}
 </p><!-- l. 347 --><p class='indent'> für die rechte Seite. Die Randbedingungen, welche man ohne weitere
 Modifikation der rechten Seite erhält (siehe Gl. \eqref{eq:sysmat2d}), sind
 daher Neumann-Bedingungen mit verschwindender Ableitung, \(\Phi ^\prime = 0\).
