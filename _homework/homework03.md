@@ -246,13 +246,16 @@ Mit der Galerkin-Methode erhält man ein Gleichungssystem der Form $$\sum_j K_{i
 \begin{equation}
 K_{ij} =\int \limits_{\Omega} dx dy\ \varphi_{i}  \varphi_{j}
 \end{equation}
+
 \begin{equation}
 K_{ij} = 
 \int \limits_{\Omega} dx dy \left( \sum_e \sum_I N^{(e)}_I \delta_{g(I,e)i}\right) \varphi_{j}
 \end{equation}
+
 \begin{equation}
 K_{ij} = \sum_e \sum_I \delta_{g(e,I)i} \delta_{g(e,J)j} \int \limits_{\Omega_e} dx dy N^{(e)}_I N^{(e)}_J 
 \end{equation}
+
 \begin{equation}
 K_{ij} = \sum_e \sum_I \delta_{g(e,I)i} \delta_{g(e,J)j} K^{(e)}_{IJ}
 \end{equation}
