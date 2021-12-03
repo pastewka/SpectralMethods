@@ -248,8 +248,7 @@ K_{ij} =\int \limits_{\Omega} dx dy\ \varphi_{i}  \varphi_{j}
 \end{equation}
 
 \begin{equation}
-K_{ij} = 
-\int \limits_{\Omega} dx dy \left( \sum_e \sum_I N^{(e)}_I \delta_{g(I,e)i}\right) \varphi_{j}
+K_{ij} = \int \limits_{\Omega} dx dy \left( \sum_e \sum_I N^{(e)}_I \delta_{g(I,e)i} \right) \varphi_{j}
 \end{equation}
 
 \begin{equation}
@@ -447,7 +446,8 @@ def make_grid(nb_nodes):
 
     They are sorted in geometric positive order and the first
     is the node with the right angle corner at the bottom
-    left. Elements within the same box are consecutive.
+    
+    . Elements within the same box are consecutive.
 
     This is the first element per box:
 
