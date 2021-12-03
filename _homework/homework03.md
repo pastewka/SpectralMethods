@@ -252,7 +252,7 @@ K_{ij} = \int \limits_{\Omega} dx dy \left( \sum_e \sum_I N^{(e)}_I \delta_{g(I,
 \end{equation}
 
 \begin{equation}
-K_{ij} = \int \limits_{\Omega} dx dy \left( \sum_e \sum_I N^{(e)}_I \right) \varphi_{j}
+K_{ij} = \int \limits_{\Omega} dx dy \left( \sum_e \sum_I \delta_{g(I,e)i} \right) \varphi_{j}
 \end{equation}
 
 \begin{equation}
