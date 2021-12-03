@@ -150,8 +150,8 @@ Die Poisson-Boltzmann-Gleichung lautet
 \end{equation}
 
 Schreiben Sie diese Gleichung mithilfe der entdimensionalisierten Größen 
-\begin{equation*}
-\begin{aligned}
+
+\begin{align}
 \tilde \Phi &= \Phi q_e / k_B T 
 \\
 \tilde x &= x/\lambda
@@ -159,8 +159,7 @@ Schreiben Sie diese Gleichung mithilfe der entdimensionalisierten Größen
 \tilde y &= y/\lambda
 \\
 \tilde q_\alpha &= q_\alpha / q_e
-\end{aligned}
-\end{equation*}
+\end{align}
 
 ### Aufgabe 1.2: Linearisierte Poisson-Boltzmann-Gleichung (1 Punkt)
 
@@ -244,8 +243,7 @@ Geben Sie $$\nabla N^{(e)}_I(x,y)$$ an.
 
 Mit der Galerkin-Methode erhält man ein Gleichungssystem der Form $$\sum_j K_{ij} \Phi_j = b_i $$, wobei $$K_{ij}$$ Integrale der Form $$\int \limits_{\Omega} dx dy \nabla \varphi_i \cdot \nabla \varphi_j$$ und $$\int \limits_{\Omega} dx dy \varphi_i \varphi_j$$ enthält. Die nicht verschwindenden Elemente dieser Systemmatrix lassen sich Elementweise mithilfe der Formfunktionen aufschreiben, z.B. 
 
-\begin{equation}
-\begin{aligned}
+\begin{align}
 K_{ij} 
 &=\int \limits_{\Omega} dx dy\ \varphi_{i}  \varphi_{j}
 \\
@@ -255,8 +253,7 @@ K_{ij}
 &= \sum_e \sum_I \delta_{g(e,I)i} \delta_{g(e,J)j} \int \limits_{\Omega_e} dx dy N^{(e)}_I N^{(e)}_J 
 \\
 &= \sum_e \sum_I \delta_{g(e,I)i} \delta_{g(e,J)j} K^{(e)}_{IJ}
-\end{aligned}
-\end{equation}
+\end{align}
 
 Die globale Matrix $$\underline{K}$$ kann mit Hilfe von $$3\times3$$ Elementmatrizen $$\underline{K}^{(e)}$$ aufgeschrieben werden. Aufgrund des regulären Gitters sind alle Elementmatrizen $$\underline{K}^{(e)}$$ identisch. $$g(e,I)$$ bezeichnet hier den globalen Knoten, welcher zum lokalen Knoten $$I$$ in Element $$e$$ gehört.
 
