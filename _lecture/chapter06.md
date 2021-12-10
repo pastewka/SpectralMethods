@@ -169,7 +169,7 @@ räumliche Abschnitte.
 linearen Funktionen, der “Zelt”-Funktion, \begin {equation} \varphi _n(x) = \left \{ \begin {array}{ll} \frac {x-x_{n-1}}{x_n - x_{n-1}} &amp; \text {für}\; x\in [x_{n-1},x_n]\\ \frac {x_{n+1-x}}{x_{n+1} - x_n} &amp; \text {für}\; x\in [x_n,x_{n+1}] \\ 0 &amp; \text {sonst} \end {array} \right . \label {eq:finite-element-basis} \end {equation}
 Hierbei sind die \(x_n\) die Stützstellen (auch Gitterpunkte oder Knoten - engl.
 “node”), zwischen denen die Zelte aufgespannt sind. Die Funktionen sind so
-konstruiert, dass \(\int \dif x\,\varphi _n(x)=(x_{n+1}-x_{n-1})/2\). Diese Basis ist die einfachste Form der finite Elemente-Basis
+konstruiert, dass \(\int_0^L \dif x\,\varphi _n(x)=(x_{n+1}-x_{n-1})/2\). Diese Basis ist die einfachste Form der finite Elemente-Basis
 und in Abb. <a href='#x1-6001r2'>6.2<!-- tex4ht:ref: fig:febasis --></a> gezeigt. Für höhere Genauigkeit werden auch Polynome
 höherer Ordnung eingesetzt.
 </p>

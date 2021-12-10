@@ -145,14 +145,13 @@ Zeiteinheit: $$\lambda^2 / D$$
 ### Aufgabe  1.1: Nichtlineare Poisson-Boltzmann-Gleichung (2 Punkte)
 
 Die Poisson-Boltzmann-Gleichung lautet 
-
-$$$$
+\begin{equation}
 \nabla^2\Phi = -\frac{1}{\varepsilon}\sum_{\alpha} q_\alpha\, c^\infty\, \exp\left(\frac{-q_\alpha\Phi}{k_B T}\right)\,\text{.}
-$$$$
+\end{equation}
 
 Schreiben Sie diese Gleichung mithilfe der entdimensionalisierten Größen 
 
-\begin{align*}
+\begin{align}
 \tilde \Phi &= \Phi q_e / k_B T 
 \\
 \tilde x &= x/\lambda
@@ -160,7 +159,7 @@ Schreiben Sie diese Gleichung mithilfe der entdimensionalisierten Größen
 \tilde y &= y/\lambda
 \\
 \tilde q_\alpha &= q_\alpha / q_e
-\end{align*}
+\end{align}
 
 ### Aufgabe 1.2: Linearisierte Poisson-Boltzmann-Gleichung (1 Punkt)
 
@@ -170,15 +169,15 @@ Bringen Sie die für ein binäres, symmetrisches Elektrolyt einfacher Ladung lin
 
 Bringen Sie die Poisson-Nernst-Planck-Gleichungen,
 
-$$$$
+\begin{equation}
 \frac{\partial c_\alpha}{\partial t} =  \nabla \cdot D_\alpha \left( \nabla c_\alpha + \frac{q_\alpha c_\alpha}{k_B T} \nabla \Phi \right)
-$$$$
+\end{equation}
 
 und
 
-$$$$
+\begin{equation}
 \nabla^2\Phi = -\frac{1}{\varepsilon}\sum_{\alpha} q_\alpha\, c_\alpha,
-$$$$
+\end{equation}
 
 in entdimensionalisierte Form. Wählen Sie $$\tilde c_\alpha = c_\alpha / c^\infty$$ und nehmen Sie die Diffusinskonstanten $$D_\alpha$$ als konstant im Rechengebiet und equivalent für alle Spezies an, d.h. $$D_\alpha = D$$ für alle $$\alpha$$.
 
@@ -244,17 +243,21 @@ Geben Sie $$\nabla N^{(e)}_I(x,y)$$ an.
 
 Mit der Galerkin-Methode erhält man ein Gleichungssystem der Form $$\sum_j K_{ij} \Phi_j = b_i $$, wobei $$K_{ij}$$ Integrale der Form $$\int \limits_{\Omega} dx dy \nabla \varphi_i \cdot \nabla \varphi_j$$ und $$\int \limits_{\Omega} dx dy \varphi_i \varphi_j$$ enthält. Die nicht verschwindenden Elemente dieser Systemmatrix lassen sich Elementweise mithilfe der Formfunktionen aufschreiben, z.B. 
 
-\begin{align}
-K_{ij} 
-&=\int \limits_{\Omega} dx dy\ \varphi_{i}  \varphi_{j}
-\\
-&= 
-\int \limits_{\Omega} dx dy \left( \sum_e \sum_I N^{(e)}_I \delta_{g(I,e)i}\right) \varphi_{j}
-\\
-&= \sum_e \sum_I \delta_{g(e,I)i} \delta_{g(e,J)j} \int \limits_{\Omega_e} dx dy N^{(e)}_I N^{(e)}_J 
-\\
-&= \sum_e \sum_I \delta_{g(e,I)i} \delta_{g(e,J)j} K^{(e)}_{IJ}
-\end{align}
+\begin{equation}
+K_{ij} =\int \limits_{\Omega} dx dy\ \varphi_{i}  \varphi_{j}
+\end{equation}
+
+\begin{equation}
+K_{ij} = \int \limits_{\Omega} dx dy \left( \sum_e \sum_I N^{(e)}_I \delta_{g(I,e)i} \right) \varphi_{j}
+\end{equation}
+
+\begin{equation}
+K_{ij} = \sum_e \sum_I \delta_{g(e,I)i} \delta_{g(e,J)j} \int \limits_{\Omega_e} dx dy N^{(e)}_I N^{(e)}_J 
+\end{equation}
+
+\begin{equation}
+K_{ij} = \sum_e \sum_I \delta_{g(e,I)i} \delta_{g(e,J)j} K^{(e)}_{IJ}
+\end{equation}
 
 Die globale Matrix $$\underline{K}$$ kann mit Hilfe von $$3\times3$$ Elementmatrizen $$\underline{K}^{(e)}$$ aufgeschrieben werden. Aufgrund des regulären Gitters sind alle Elementmatrizen $$\underline{K}^{(e)}$$ identisch. $$g(e,I)$$ bezeichnet hier den globalen Knoten, welcher zum lokalen Knoten $$I$$ in Element $$e$$ gehört.
 
@@ -443,7 +446,8 @@ def make_grid(nb_nodes):
 
     They are sorted in geometric positive order and the first
     is the node with the right angle corner at the bottom
-    left. Elements within the same box are consecutive.
+    
+    . Elements within the same box are consecutive.
 
     This is the first element per box:
 

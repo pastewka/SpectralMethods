@@ -87,9 +87,9 @@ Berechnen Sie die diskretisierten Gleichungen, d.h. $$\left( \varphi_j, R\right)
 **Hinweise** zu der Berechnung mit Delta-Distributionen als Quellterm: 
 * Um die Berechnung der diskretisierten Terme zu erleichtern, können Sie die Anzahl an Gitterpunkte $$N$$ immer so wählen, dass die dirac Quellterme auf einem Knoten liegen, also  $$N=3N'+1$$ mit $$N' \in \mathbb{N}$$.
 * Die Delta-Distribution ist durch ihre Filter-Eigenschaft definiert:
-$$$$
+\begin{equation}
 \int_0^L dx \; \delta (x-a) f(x) = f(a)
-$$$$
+\end{equation}
 
 # Aufgabe 3 (9 Punkte)
 ## Finite-Element im periodischen Raum
@@ -100,15 +100,15 @@ Dabei wählen wir die gleiche Diskretisierung und die gleichen Basisfunktionen w
 ### 3.1 Mittelwertbedingung (1 Punkt)
 Wie wir auf dem Übungsblatt 1 gesehen haben, ist der Mittelwert der Lösungsfunktion nicht bestimmbar. Anders gesagt, wenn $$c_1(x)$$ eine periodische Lösung der Diffusionsgleichung ist, dann ist $$c_2(x) = c_1(x) + \text{konst.}$$ ebenfalls eine periodische Lösung der Diffusionsgleichung. Diese Unendlichkeit an Lösungen bedeutet, dass das Gleichungssystem, das wir mit den Finiten Elementen aufstellen, nicht eindeutig lösbar ist. 
 
-Damit wir ein lösbares Gleichungssystem bekommen, brauchen wir ein Problem mit einer eindeutigen Lösung. Wir müssen deshalb die Forderung 'periodische Randbedingungen' mit einer weiteren Bedingung ergänzen. Wir wählen dafür einen vorgegebenen Mittelwert von 0, d.h. $$$$\frac{1}{L}\int_0^L dx \; c(x) = 0$$$$
+Damit wir ein lösbares Gleichungssystem bekommen, brauchen wir ein Problem mit einer eindeutigen Lösung. Wir müssen deshalb die Forderung 'periodische Randbedingungen' mit einer weiteren Bedingung ergänzen. Wir wählen dafür einen vorgegebenen Mittelwert von 0, d.h. \begin{equation}\frac{1}{L}\int_0^L dx \; c(x) = 0\end{equation}
 
 Dadurch ergibt sich eine weitere Gleichung für die Koeffizienten $$a_i$$. Stellen Sie diese Gleichung auf.
 
 ### 3.2 Systemmatrix (1 Punkt)
 Das Gleichungssystem aus diskretisierten Gleichungen für die Koeffizienten $$a_i$$ wird üblicherweise in Matrix-Form geschrieben:
-$$$$
+\begin{equation}
 \underline{K} \overrightarrow{a} = \overrightarrow{f}
-$$$$
+\end{equation}
 $$\underline{K}$$ nennt man dann die Systemmatrix. 
 
 Stellen Sie die Systemmatrix für die Lösung der 1D-Diffusionsgleichung mit periodischen Randbedingungen und einem vorgegebenen Mittelwert mithilfe von lineare Finiten Elementen für 4 Gitterpunkte auf.
@@ -283,7 +283,7 @@ def FEM_Poisson_Boltzmann_1D(nb_grid_pts, dx, debye_length, rhs_x):
 ```
 
 Nutzen Sie Ihre Funktion, um einen Plot mit der Lösung der 1D-Poisson-Boltzmann Gleichung zu erstellen. Der Plot sollte enthalten:
-* Analytische Lösung aus Übungsblatt 1, Aufgabe 7: $$$$\Phi(x) = K_1 \exp{\left( \frac{1}{\lambda}x\right)} + K_2\exp{\left( -\frac{1}{\lambda}x\right)}$$$$ mit $$K_1 = \left( \Phi_1 - \Phi_0 \exp{\left( -\frac{L}{\lambda}\right)}\right)\left( \exp{\left( \frac{L}{\lambda}\right)} - \exp{\left( -\frac{L}{\lambda}\right)} \right)^{-1}$$ und $$K_2 = \Phi_0 - K_1$$
+* Analytische Lösung aus Übungsblatt 1, Aufgabe 7: \begin{equation}\Phi(x) = K_1 \exp{\left( \frac{1}{\lambda}x\right)} + K_2\exp{\left( -\frac{1}{\lambda}x\right)}\end{equation} mit $$K_1 = \left( \Phi_1 - \Phi_0 \exp{\left( -\frac{L}{\lambda}\right)}\right)\left( \exp{\left( \frac{L}{\lambda}\right)} - \exp{\left( -\frac{L}{\lambda}\right)} \right)^{-1}$$ und $$K_2 = \Phi_0 - K_1$$
 * FEM Lösung für N=4
 * FEM Lösung für N=8
 * FEM Lösung für N=16
