@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 11 [Jan. 10-16 (2022)]"
 parent: Vorlesung
-date: 2021-11-10
+date: 2021-12-10
 categories: lecture
 author: Lars Pastewka
 nav_order: 11
@@ -36,7 +36,7 @@ verschwindet.
 
 
 
-<!-- l. 21 --><p class='noindent'> <img width='507' alt='PIC' height='323' src='Figures/capacitor-.png' /> <a id='x1-2001r1'></a>
+<!-- l. 21 --><p class='noindent'> <img src='Figures/capacitor-.png' width='507' height='323' alt='PIC' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
 </p><!-- l. 23 --><p class='noindent'>figure(a) Geometrie des in diesem Kapitel betrachteten Plattenkondensators.
 Auf den Elektroden ist das Potential \(\Phi \) konstant. (b) Ausschnitt aus dem
@@ -98,8 +98,7 @@ man durch </p><!-- l. 58 -->
 </div>
 <!-- l. 62 --><p class='indent'> Diese Array hat die <span class='cmti-12'>Dimension</span> \(1\). Der mehrdimensionale Charakter der Arrays
 äußert sich darin, dass die Arrays implizit eine Abbildung von mehreren
-Koordinaten auf einen lineare Index, wie z.B. durch Gl. \eqref{eq:linindex} und
-Gl. \eqref{eq:linindexel} gegeben, implementieren. Einen zweidimensionalen
+Koordinaten auf einen lineare Index implementieren. Einen zweidimensionalen
 Array bekommt man z.B. durch </p><!-- l. 63 -->
 <div class='lstlisting' id='listing-2'><span class='label'><a id='x1-3003r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>b = np.zeros([2, 5])</span>
 </div>
@@ -172,13 +171,13 @@ Elektroden des Kondensators erstrecken sollen: </p><!-- l. 104 -->
 <span class='label'><a id='x1-4018r7'></a><span class='cmr-6'>7</span></span><span class='cmtt-10'>bottom_left = Nx//4 </span><br />
 <span class='label'><a id='x1-4019r8'></a><span class='cmr-6'>8</span></span><span class='cmtt-10'>bottom_right = 3*Nx//4-1 </span><br />
 <span class='label'><a id='x1-4020r9'></a><span class='cmr-6'>9</span></span><span class='cmtt-10'>bottom_potential = -1</span>
-
-
-
 </div>
 <!-- l. 115 --><p class='indent'> Der Bereich wird hier mit Knotenindices angegeben. Weiterhin benötigen
-wir noch die Elementmatrix, Gl. \eqref{eq:elmat2d}, die wir in einem
-<span class='obeylines-h'><span class='verb'><span class='cmtt-12'>numpy.ndarray</span></span></span> speichern: </p><!-- l. 116 -->
+wir noch die Elementmatrix die wir in einem <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>numpy.ndarray</span></span></span> speichern:
+</p><!-- l. 116 -->
+
+
+
 <div class='lstlisting' id='listing-7'><span class='label'><a id='x1-4021r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'># Element matrix, index l indicates element-local node </span><br />
 <span class='label'><a id='x1-4022r2'></a><span class='cmr-6'>2</span></span><span class='cmtt-10'>element_matrix_ll = np.array([[1, -1/2, -1/2], </span><br />
 <span class='label'><a id='x1-4023r3'></a><span class='cmr-6'>3</span></span><span class='cmtt-10'>                              [-1/2, 1/2, 0], </span><br />
@@ -201,7 +200,7 @@ Knotenindices.
 </p><!-- l. 132 --><p class='noindent'>
 </p>
 <h3 class='sectionHead'><span class='titlemark'>11.4 </span> <a id='x1-500011.4'></a>Systemmatrix</h3>
-<!-- l. 134 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a6057226-fa98-45ed-a69f-acc000e9f3e7' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a6057226-fa98-45ed-a69f-acc000e9f3e7</span></a>
+<!-- l. 134 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a6057226-fa98-45ed-a69f-acc000e9f3e7'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a6057226-fa98-45ed-a69f-acc000e9f3e7</span></a>
 </p><!-- l. 136 --><p class='indent'> Kern des Simulationsprogramms ist der Aufbau der Systemmatrix. In diesem
 Abschnitt wird dies durch explizite Schleifen realisiert. Im nächsten Abschnitt
 wird gezeigt, wie dies mit speziellen <span class='cmtt-12'>numpy</span>-Befehlen kompakter (und effizienter),
@@ -258,12 +257,12 @@ Systemmatrix aufgespannt werden. Die Funktion sieht folgendermaßen aus:
 <span class='label'><a id='x1-5043r23'></a><span class='cmr-6'>23</span></span><span class='cmtt-10'>            system_matrix_gg[global_node_indices[i], </span><br />
 <span class='label'><a id='x1-5044r24'></a><span class='cmr-6'>24</span></span><span class='cmtt-10'>                             global_node_indices[j]] += \ </span><br />
 <span class='label'><a id='x1-5045r25'></a><span class='cmr-6'>25</span></span><span class='cmtt-10'>                element_matrix_ll[i, j]</span>
-
-
-
 </div>
 <!-- l. 189 --><p class='indent'> Die <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>assert</span></span></span>-Anweisung ist hier ein Wächter, der darauf achtet, dass die lokale
 Elementmatrix und der Array <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>global_node_indices</span></span></span> die gleiche Länge haben.
+
+
+
 Die beiden <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>for</span></span></span>-Schleifen laufen dann über alle Einträge der Elementmatrix.
 Der Ausdruck <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>global_node_indices[i]</span></span></span> liefert dann den globalen Knotenindex,
 der zu dem lokalen Knotenindex der Elementmatrix gehört. Der Zusammenbau
@@ -318,7 +317,7 @@ Die Schleife über die beiden Elemente pro Kasten ist explizit als zwei
 Aufrufe zu <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>add_element_matrix</span></span></span> geschrieben. Die Variablen <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>n0</span></span></span>, <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>n1</span></span></span> und <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>n2</span></span></span>
 enthalten die globalen Knotenindices, die die Ecken des jeweiligen Elements
 beschreiben.
-</p><!-- l. 237 --><p class='indent'> <a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=de8eb963-78bb-4fd1-8387-acc000eee353' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=de8eb963-78bb-4fd1-8387-acc000eee353</span></a>
+</p><!-- l. 237 --><p class='indent'> <a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=de8eb963-78bb-4fd1-8387-acc000eee353'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=de8eb963-78bb-4fd1-8387-acc000eee353</span></a>
 </p><!-- l. 239 --><p class='indent'> Die nun aufgebaute Systemmatrix hat (implizit) Neumann-Randbedingungen
 mit \(\nabla \Phi \cdot \hat {n}(\v {r})=0\) auf dem Rand. Wir müssen nun noch die Dirichlet-Bedingungen für die
 Elektroden hinzufügen. Hierzu ersetzen wir Zeilen der Systemmatrix und die
@@ -370,7 +369,7 @@ entsprechenden Einträge des Lastvektors: </p><!-- l. 240 -->
 <span class='label'><a id='x1-5133r45'></a><span class='cmr-6'>45</span></span><span class='cmtt-10'>        system_matrix_gg[n] = mat_g </span><br />
 <span class='label'><a id='x1-5134r46'></a><span class='cmr-6'>46</span></span><span class='cmtt-10'>        rhs_g[n] = bottom_potential</span>
 </div>
-<!-- l. 289 --><p class='indent'> <a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=cac3d182-6a34-4c9c-9b6c-acc000f19238' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=cac3d182-6a34-4c9c-9b6c-acc000f19238</span></a>
+<!-- l. 289 --><p class='indent'> <a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=cac3d182-6a34-4c9c-9b6c-acc000f19238'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=cac3d182-6a34-4c9c-9b6c-acc000f19238</span></a>
 </p><!-- l. 291 --><p class='indent'> Der gesamte Simulationscode enthält nun Aufrufe dieser Funktionen,
 gefolgt von der numerischen Lösung des linearen Gleichungssystems:
 </p><!-- l. 292 -->
@@ -392,13 +391,13 @@ Potentials auf den Knoten.
 </p><!-- l. 308 --><p class='noindent'>
 </p>
 <h3 class='sectionHead'><span class='titlemark'>11.5 </span> <a id='x1-600011.5'></a>Visualisierung</h3>
-<!-- l. 310 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=61f0f7d8-e311-4dcf-9f01-acc000f4b8d4' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=61f0f7d8-e311-4dcf-9f01-acc000f4b8d4</span></a>
-
-
-
+<!-- l. 310 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=61f0f7d8-e311-4dcf-9f01-acc000f4b8d4'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=61f0f7d8-e311-4dcf-9f01-acc000f4b8d4</span></a>
 </p><!-- l. 312 --><p class='indent'> Das Ergebnis der Rechnung kann mit Hilfe der <a href='https://matplotlib.org/'><span class='cmtt-12'>matplotlib</span></a>-Bibliothek
 visualisiert werden. Die Funktion <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>matplotlib.pyplot.tripcolor</span></span></span> kann Daten auf
 einem triangulierten 2D-Gitter darstellen. Der folgende Codeblock visualisiert das
+
+
+
 Ergebnis der Simulation mit Hilfe dieser Funktion. </p><!-- l. 313 -->
 <div class='lstlisting' id='listing-14'><span class='label'><a id='x1-6001r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>import matplotlib.pyplot as plt </span><br />
 <span class='label'><a id='x1-6002r2'></a><span class='cmr-6'>2</span></span><span class='cmtt-10'>import matplotlib.tri </span><br />
@@ -525,12 +524,11 @@ Ergebnis der Simulation mit Hilfe dieser Funktion. </p><!-- l. 313 -->
 </div>
 <!-- l. 437 --><p class='indent'> Die Funktion <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>make_grid</span></span></span> erzeugt hier eine Liste der globalen Knotenindices
 pro Element. Der erste Index ist der Index des Elements (Suffix <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>e</span></span></span>), der zweite
-Index ist der lokale Knotenindex innerhalb des Elements (Suffix <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>l</span></span></span>). Die
-Reihenfolge der Dreiecke entspricht Abb. <span class='cmbx-12'>??</span>a. Die Knoten des jeweiligen
-Elements sind gegen den Uhrzeigersinn nummeriert. Für die Visualisierung wird
-“Gouraud”-Schattierung genutzt. Diese Art der Färbung interpoliert
-den Wert der Knoten linear auf den Dreiecken und entspricht exakt der
-Interpolationsvorschrift unserer Formfunktionen. Wir können damit die volle
+Index ist der lokale Knotenindex innerhalb des Elements (Suffix <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>l</span></span></span>). Die Knoten
+des jeweiligen Elements sind gegen den Uhrzeigersinn nummeriert. Für die
+Visualisierung wird “Gouraud”-Schattierung genutzt. Diese Art der Färbung
+interpoliert den Wert der Knoten linear auf den Dreiecken und entspricht exakt
+der Interpolationsvorschrift unserer Formfunktionen. Wir können damit die volle
 interpolierte Funktion \(\Phi _N(\v {r})\) darstellen.
 </p><!-- l. 439 --><p class='noindent'>
 </p>
@@ -549,7 +547,7 @@ Simulation systematisch verbessert werden.
 
 
 
-<!-- l. 447 --><p class='noindent'><img width='702' alt='PIC' height='280' src='Figures/capacitor_potential.svg' /> <a id='x1-7001r2'></a>
+<!-- l. 447 --><p class='noindent'><img src='Figures/capacitor_potential.svg' width='702' height='280' alt='PIC' /> <a id='x1-7001r2'></a>
 <a id='x1-7002'></a>
 </p><!-- l. 449 --><p class='noindent'>figureElektrostatisches Potential
 innerhalb des Plattenkondensators, gerechnet mit (a) \(4\times 4\) Knoten (\(18\) Elemente)
@@ -575,8 +573,7 @@ Ladung. Wir können nun wieder die Reihenentwicklung einsetzen. Zum Integral
 trägt nur Elementtyp \((1)\) bei, und hier nur die Formfunktionen, bei denen die
 Ableitung in \(y\)-Richtung nicht verschwindet, da \(\nabla \Phi _N\cdot \hat {n}(\v {r})=\pm \partial \Phi _N/\partial y\). Das Vorzeichnen ist bei oberer
 und unterer Kondensatorplatte umgedreht. Nicht-verschwindende Beiträge
-kommen von den Formfunktionen \(N_0^{(1)}\) und \(N_2^{(1)}\) (siehe Gl. \eqref{eq:N10der} und
-\eqref{eq:N12der}). Man erhält \begin {align} \int _0^{\Delta x} \dif x \frac {\partial N_0^{(1)}}{\partial y} &amp;= \int _0^{\Delta x} \dif x \frac {1}{\Delta y} = \frac {\Delta x}{\Delta y} \\ \int _0^{\Delta x} \dif x \frac {\partial N_2^{(1)}}{\partial y} &amp;= \int _0^{\Delta x} \dif x \left (-\frac {1}{\Delta y}\right ) = -\frac {\Delta x}{\Delta y} \end {align}
+kommen von den Formfunktionen \(N_0^{(1)}\) und \(N_2^{(1)}\). Man erhält \begin {align} \int _0^{\Delta x} \dif x \frac {\partial N_0^{(1)}}{\partial y} &amp;= \int _0^{\Delta x} \dif x \frac {1}{\Delta y} = \frac {\Delta x}{\Delta y} \\ \int _0^{\Delta x} \dif x \frac {\partial N_2^{(1)}}{\partial y} &amp;= \int _0^{\Delta x} \dif x \left (-\frac {1}{\Delta y}\right ) = -\frac {\Delta x}{\Delta y} \end {align}
 </p><!-- l. 466 --><p class='indent'> und damit für \(\Delta x=\Delta y\) \begin {equation} Q^{(n)} = \varepsilon t(a_0 - a_2) \end {equation}
 als Beitrag des Elements \((n)\) zur Ladung auf der Elektrode. Hierbei bezeichnen die
 Indices der Koeffizienten \(a_0\) und \(a_2\) die jeweiligen lokalen Knotenindices. Die Größe \(t\)
@@ -645,10 +642,10 @@ der Rechnung mit finiten Elementen ist in Abb. <a href='#x1-7047r3'>11.3<!-- te
 analytischen Ausdruck gezeigt. Man sieht, dass der analytische Ausdruck nur bei
 kleinen Aspektverhältnissen \(d/L&lt;1\) gilt. Die Herleitung dieses Ausdrucks nimmt an,
 dass die Feldlinien überall parallel und senkrecht zu den Kondensatorplatten
-
-
-
 verlaufen. Für große Abstände der Kondensatorplatten ist dies nicht mehr der
+
+
+
 Fall und Streufelder am Rand der Platten fangen an, eine Rolle für die
 Kapazität zu spielen. Diese sind nicht von Gl. \eqref{eq:anacapacity} erfasst,
 werden aber in der Simulation abgebildet.
@@ -661,7 +658,7 @@ werden aber in der Simulation abgebildet.
 
 
 
-<!-- l. 536 --><p class='noindent'><img width='585' alt='PIC' height='438' src='Figures/capacity.svg' /> <a id='x1-7047r3'></a>
+<!-- l. 536 --><p class='noindent'><img src='Figures/capacity.svg' width='585' height='438' alt='PIC' /> <a id='x1-7047r3'></a>
 <a id='x1-7048'></a>
 </p><!-- l. 538 --><p class='noindent'>figureKapazität \(C\) eines Plattenkondensators gegen den Abstand der Platten
 \(d\). Beide Achsen sind entdimensionalisiert und zeigen Größen ohne Einheit.

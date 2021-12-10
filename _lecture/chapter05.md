@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 05 [Nov. 15-21]"
 parent: Vorlesung
-date: 2021-11-10
+date: 2021-12-10
 categories: lecture
 author: Lars Pastewka
 nav_order: 5
@@ -10,7 +10,7 @@ nav_order: 5
 
 
 <h2 class='chapterHead'><span class='titlemark'>Kapitel 5</span><br /><a id='x1-10005'></a>Numerische Lösungsstrategien</h2>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 6 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Wir legen jetzt das Transportproblem für eine Weile zur Seite
 und wollen uns der <span class='cmti-12'>numerischen </span>Lösung von Differentialgleichungen
 widmen. Dieses Kapitel zeigt die Grundzüge der numerischen Analyse von
@@ -18,7 +18,7 @@ Differentialgleichungen und führt ein paar wichtige Konzepte ein, insbesondere
 die Reihenentwicklung und das Residuum. Die Darstellung hier folgt Kapitel 1 aus
 <a href='#Xboyd_chebyshev_2000'>Boyd</a> (<a href='#Xboyd_chebyshev_2000'>2000</a>). </p></div>
 <h3 class='sectionHead'><span class='titlemark'>5.1 </span> <a id='x1-20005.1'></a>Reihenentwicklung</h3>
-<!-- l. 12 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=2c5c9440-a3de-442a-9d84-ac840105f558'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=2c5c9440-a3de-442a-9d84-ac840105f558</span></a>
+<!-- l. 12 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=2c5c9440-a3de-442a-9d84-ac840105f558' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=2c5c9440-a3de-442a-9d84-ac840105f558</span></a>
 </p><!-- l. 14 --><p class='indent'> In abstrakter Schreibweise suchen wir nach unbekannten Funktionen \(u(x,y,z,...)\) die einen
 Satz von Differentialgleichungen \begin {equation} \mathcal {L} u(x,y,z,\ldots ) = f(x,y,z,\ldots ) \label {eq:gendgl} \end {equation}
 erfüllen. Hierbei ist \(\mathcal {L}\) ein (nicht zwingend linearer) Operator, der die
@@ -69,7 +69,7 @@ Optimierungsproblem abgebildet. Die unterschiedlichen numerischen Verfahren,
 die wir in den nächsten Kapiteln diskutieren werden, entscheiden sich hier
 hauptsächlich in der spezifischen Optimierungsstrategie.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 52 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Numerische Verfahren für die <span class='cmti-12'>Optimierung </span>sind ein zentraler
 Kern der numerischen Lösung von Differentialgleichungen und damit der
 Simulationstechniken. Es gibt unzählige Optimierungsverfahren, die in
@@ -86,7 +86,7 @@ von <a href='#Xnocedal_numerical_2006'>Nocedal and Wright</a> (<a href='#Xnoced
 
 
 <h3 class='sectionHead'><span class='titlemark'>5.3 </span> <a id='x1-40005.3'></a>Ein erstes Beispiel</h3>
-<!-- l. 59 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=025ad4dc-b395-4980-8fdc-ac84016870c8'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=025ad4dc-b395-4980-8fdc-ac84016870c8</span></a>
+<!-- l. 59 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=025ad4dc-b395-4980-8fdc-ac84016870c8' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=025ad4dc-b395-4980-8fdc-ac84016870c8</span></a>
 </p><!-- l. 61 --><p class='indent'> Wir wollen nun diese abstrakten Ideen an einem Beispiel konkretisieren und
 ein paar wichtige Begriffe einführen. Wir schauen uns das eindimensionale
 Randwertproblem, \begin {equation} \frac {\dif ^2 u}{\dif x^2} - (x^6 + 3x^2)u = 0, \label {eq:odeexample} \end {equation}
@@ -108,7 +108,7 @@ minimieren. Hierfür wählen wir eine Strategie, die als <span class='cmti-12'>K
 wird: Wir verlangen, dass an drei ausgewählten Punkten das Residuum exakt
 verschwindet: \begin {equation} R(x_i; a_0, a_1, a_2)=0 \quad \text {für}\quad x_0=-1/2, x_1=0\;\text {und}\;x_2=1/2. \end {equation}
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 98 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Das Verschwinden des Residuums bei \(x_i\) bedeutet nicht, dass auch \(u_2(x_i)\equiv u(x_i)\),
 also dass bei \(x_i\) unsere approximative Lösung der exakten Lösung entspricht. Wir
 sind immer noch auf einen begrenzten Satz von Funktionen, nämlich die
@@ -127,7 +127,7 @@ Lösung \(u(x)\).
 
 
 
-<!-- l. 118 --><p class='noindent'> <img height='250' alt='PIC' src='Figures/numerical_example-.png' width='585' /> <a id='x1-4001r1'></a>
+<!-- l. 118 --><p class='noindent'> <img height='250' width='585' alt='PIC' src='Figures/numerical_example-.png' /> <a id='x1-4001r1'></a>
 <a id='x1-4002'></a>
 </p><!-- l. 120 --><p class='noindent'>figureAnalytische Lösung \(u(x)\) und “numerische” approximative Lösung \(u_2(x)\) der
 GDGL \eqref{eq:odeexample}.
@@ -146,7 +146,7 @@ finiten Elemente etablieren und als Minimierungsstrategie die Galerkin-Methode
 nutzen. Hierzu müssen wir zunächst Eigenschaften möglicher Basisfunktionen
 diskutieren.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 126 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Das hier dargestellte Beispiel ist ein einfacher Fall einer
 <span class='cmti-12'>Diskretisierung</span>. Wir sind von einer kontinuierlichen Funktion auf die diskreten
 Koeffizienten \(a_0\), \(a_1\), \(a_2\) übergegangen. </p></div>

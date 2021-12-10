@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 08 [Dec. 6-12]"
 parent: Vorlesung
-date: 2021-11-10
+date: 2021-12-10
 categories: lecture
 author: Lars Pastewka
 nav_order: 8
@@ -170,7 +170,7 @@ oder <span class='cmti-12'>Greensche Funktion </span>der (dreidimensionalen) Poi
 
 
 
-<!-- l. 255 --><p class='noindent'><img width='390' alt='PIC' src='Figures/illustr_angles_1.svg' height='390' /> <a id='x1-5001r1'></a>
+<!-- l. 255 --><p class='noindent'><img alt='PIC' height='390' width='390' src='Figures/illustr_angles_1.svg' /> <a id='x1-5001r1'></a>
 <a id='x1-5002'></a>
 </p><!-- l. 257 --><p class='noindent'>figureVolumenelement für die Integration in Kugelkoordination
 </p>

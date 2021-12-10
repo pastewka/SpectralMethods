@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 09 [Dec. 13-19]"
 parent: Vorlesung
-date: 2021-11-10
+date: 2021-12-10
 categories: lecture
 author: Lars Pastewka
 nav_order: 9
@@ -32,10 +32,10 @@ können diese Basisfunktionen doch für PDGLs zweiter Ordnung verwendet
 werden.
 </p><!-- l. 14 --><p class='indent'> Wir betrachten als Beispiel hier weiterhin die eindimensionale Poisson-Gleichung
 mit dem Residuum \begin {equation} R(x) = \frac {\dif ^2 \Phi }{\dif x^2} + \frac {\rho (x)}{\varepsilon }. \label {eq:strongresidual} \end {equation}
-In der Methode der gewichteten Residuen (siehe Kap. <span class='cmbx-12'>??</span>) wird verlangt, dass das
-Skalarprodukt des Residuums mit einer Testfunktion \(v(x)\) verschwindet, \((v,R)=0\). In dieser
-integralen Formulierung kann man nun die Regeln der partiellen Integration
-nutzen, um eine Ableitung auf die Testfunktion zu übertragen. Man bekommt \begin {align} (v(x), R(x)) =&amp; \int _a^b \dif x\, v(x) \left ( \frac {\dif ^2 \Phi }{\dif x^2} + \frac {\rho (x)}{\varepsilon }\right ) \label {eq:beforepartialint} \\ =&amp; \int _a^b \dif x\, \left [ \frac {\dif }{\dif x} \left ( v(x) \frac {\dif \Phi }{\dif x} \right ) - \frac {\dif v}{\dif x} \frac {\dif \Phi }{\dif x} \right ] + \int _a^b \dif x\, v(x) \frac {\rho (x)}{\varepsilon } \\ =&amp; \left . v(x) \frac {\dif \Phi }{\dif x} \right |_a^b - \int _a^b \dif x\, \frac {\dif v}{\dif x} \frac {\dif \Phi }{\dif x} + \int _a^b \dif x\, v(x) \frac {\rho (x)}{\varepsilon }. \label {eq:afterpartialint} \end {align}
+In der Methode der gewichteten Residuen wird verlangt, dass das Skalarprodukt
+des Residuums mit einer Testfunktion \(v(x)\) verschwindet, \((v,R)=0\). In dieser integralen
+Formulierung kann man nun die Regeln der partiellen Integration nutzen,
+um eine Ableitung auf die Testfunktion zu übertragen. Man bekommt \begin {align} (v(x), R(x)) =&amp; \int _a^b \dif x\, v(x) \left ( \frac {\dif ^2 \Phi }{\dif x^2} + \frac {\rho (x)}{\varepsilon }\right ) \label {eq:beforepartialint} \\ =&amp; \int _a^b \dif x\, \left [ \frac {\dif }{\dif x} \left ( v(x) \frac {\dif \Phi }{\dif x} \right ) - \frac {\dif v}{\dif x} \frac {\dif \Phi }{\dif x} \right ] + \int _a^b \dif x\, v(x) \frac {\rho (x)}{\varepsilon } \\ =&amp; \left . v(x) \frac {\dif \Phi }{\dif x} \right |_a^b - \int _a^b \dif x\, \frac {\dif v}{\dif x} \frac {\dif \Phi }{\dif x} + \int _a^b \dif x\, v(x) \frac {\rho (x)}{\varepsilon }. \label {eq:afterpartialint} \end {align}
 </p><!-- l. 56 --><p class='indent'> Gleichung \eqref{eq:afterpartialint} enthält nun <span class='cmti-12'>keine </span>zweite Ableitung
 mehr. D.h. sowohl die Testfunktion \(v(x)\) als auch die Lösung \(\Phi (x)\) müssen für alle \(x\)
 lediglich einmal differenzierbar sein. Wir können daher lineare Basisfunktion
@@ -80,9 +80,9 @@ sein.
 </p>
 <div class='framedenv' id='shaded*-1'>
 <!-- l. 71 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> In der Kollokationsmethode wird die “starke” Anforderung der
-zweimaligen Differenzierbarkeit nicht aufgehoben. Das sieht man z.B. daran, dass
-die Testfunktion für die Kollokationsmethode, Gl. \eqref{eq:colloctest}, noch
-nicht einmal im schwachen Sinne differenzierbar ist. D.h. die Testfunktionen der
+zweimaligen Differenzierbarkeit nicht aufgehoben. Das sieht man z.B. daran,
+dass der Dirac-\(\delta \) als Testfunktion für die Kollokationsmethode noch nicht
+einmal im schwachen Sinne differenzierbar ist. D.h. die Testfunktionen der
 Kollokationsmethode sind nicht in der Menge der Testfunktionen, für welche \((v,R)\equiv 0\) im
 Sinne der schwachen Lösung verlangt wird. Dies ist der Grund, warum die
 
@@ -130,8 +130,8 @@ das Gebiet, auf dem die konstituierenden Gleichungen diskretisiert wurden, durch
 die Verformung selbst verändert. Dies führt automatisch zu nicht-linearen
 Gleichungen, sogenannten geometrischen Nichtlinearitäten. In diesem Fall
 hängt dann \(\t {K}\) selbst von \(\v {a}\) ab. </p></div>
-<!-- l. 130 --><p class='indent'> Wir können nun die Elemente der Matrix \(\t {K}\) direkt ausrechnen. Aus
-Gl. \eqref{eq:finite-element-basis} folgt \begin {equation} \frac {\dif \varphi _n(x)}{\dif x} = \left \{ \begin {array}{ll} \frac {1}{x_n - x_{n-1}} &amp; \text {für}\; x\in [x_{n-1},x_n]\\ -\frac {1}{x_{n+1} - x_n} &amp; \text {für}\; x\in [x_n,x_{n+1}] \\ 0 &amp; \text {sonst} \end {array} \right . \label {eq:finite-element-basis-derivative} \end {equation}
+<!-- l. 130 --><p class='indent'> Wir können nun die Elemente der Matrix \(\t {K}\) direkt ausrechnen. Für die Basis
+der finiten Elemente folgt \begin {equation} \frac {\dif \varphi _n(x)}{\dif x} = \left \{ \begin {array}{ll} \frac {1}{x_n - x_{n-1}} &amp; \text {für}\; x\in [x_{n-1},x_n]\\ -\frac {1}{x_{n+1} - x_n} &amp; \text {für}\; x\in [x_n,x_{n+1}] \\ 0 &amp; \text {sonst} \end {array} \right . \label {eq:finite-element-basis-derivative} \end {equation}
 und damit \begin {align} K_{nn} &amp;= \frac {1}{x_n - x_{n-1}} + \frac {1}{x_{n+1} - x_n} \\ K_{n,n+1} &amp;= -\frac {1}{x_{n+1} - x_n} \end {align}
 </p><!-- l. 146 --><p class='indent'> und \(K_{kn} = 0\) für \(|n-k|&gt;1\). Die Matrix \(\t {K}\) ist also dünnbesetzt, symmetrisch und nahezu
 tridiagonal.
@@ -143,12 +143,10 @@ Man beachte, dass die \(-1\) in der rechten oberen und linken unteren Ecke (\(K_
 und \(K_{N0}\)) auf Grund der Periodizität erscheinen. Die Matrix ist daher nicht
 rein tridiagonal. Die rechte Seite \(f_k\) hängt von der spezifischen Wahl des
 Quellterms, also der Ladungsdichte \(\rho (x)\) ab und sieht folgendermaßen aus: \begin {equation} \v {f} = \begin {pmatrix} (\varphi _0(x), \rho (x))/\varepsilon \\ (\varphi _1(x), \rho (x))/\varepsilon \\ (\varphi _2(x), \rho (x))/\varepsilon \\ (\varphi _3(x), \rho (x))/\varepsilon \\ (\varphi _4(x), \rho (x))/\varepsilon \\ (\varphi _5(x), \rho (x))/\varepsilon \end {pmatrix} \label {eq:rhs1d-periodic-not-regular} \end {equation}
-</p><!-- l. 176 --><p class='indent'> Im Verlauf dieses Lernmaterials ist bislang vollkommen unter den Tisch gefallen,
-dass man für die Lösung von DGLs auch immer <span class='cmti-12'>Randbedingungen </span>braucht.
-Selbst dieser periodische Fall, welcher auch in Kap. <span class='cmbx-12'>??</span> diskutiert wird, ist so nicht
-vollständig. Dies sieht man am besten an Gl. \eqref{eq:discrpoissonfouriersol}:
-Der Term \(n=0\) der Summe enthält eine Division durch \(0\) und ist nicht wohldefiniert.
-In der Fourier-Darstellung repräsentiert \(n=0\) (mit Wellenvektor \(q_0=0\)) den Mittelwert
+</p><!-- l. 176 --><p class='indent'> Im Verlauf dieses Lernmaterials ist bislang vollkommen unter den Tisch
+gefallen, dass man für die Lösung von DGLs auch immer <span class='cmti-12'>Randbedingungen</span>
+braucht. Selbst dieser periodische Fall ist so nicht vollständig. In der
+Fourier-Darstellung repräsentiert \(n=0\) (mit Wellenvektor \(q_0=0\)) den Mittelwert
 der Fourier-Reihe. Die Lösung der Poisson-Gleichung spezifiziert diesen
 Mittelwert nicht und dieser muss damit als zusätzliche Bedingung angegeben
 werden.
@@ -163,11 +161,11 @@ Zeilen, genau eins kleiner als deren Dimension. Wir können daher eine
 dieser Gleichungen (bzw. Zeilen) entfernen und dafür die entsprechende
 Mittelwertbedingung einführen. Für den periodischen Fall lautet diese
 \begin {equation} \int _\Omega \dif x\, \Phi _N(x) = \sum _n a_n \int _\Omega \dif x\, \varphi _n(x) = \sum _n a_n \Delta x = 0. \label {eq:feaverage} \end {equation}
-
-
-
 Die reguläre Systemmatrix sieht dann folgendermaßen aus, \begin {equation} \t {K} = \frac {1}{\Delta x} \begin {pmatrix} 2 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; -1 \\ -1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 \\ 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\ \end {pmatrix} \label {eq:systemmatrix1d-periodic-regular} \end {equation}
 wobei nun auch \(f_N=0\) gelten muss. Die rechte Seite wird also zu \begin {equation} \v {f} = \begin {pmatrix} (\varphi _0(x), \rho (x))/\varepsilon \\ (\varphi _1(x), \rho (x))/\varepsilon \\ (\varphi _2(x), \rho (x))/\varepsilon \\ (\varphi _3(x), \rho (x))/\varepsilon \\ (\varphi _4(x), \rho (x))/\varepsilon \\ 0 \end {pmatrix}. \label {eq:rhs1d-periodic-regular} \end {equation}
+
+
+
 Die letzte Zeile entspricht der Mittelwertbedingung Gl. \eqref{eq:feaverage}, man
 hätte aber jede beliebige Zeile durch diese Bedingung ersetzen können. </p></div>
 <!-- l. 210 --><p class='noindent'>
@@ -198,11 +196,11 @@ Reihenentwicklung \(\Phi _N(x)\) auf.
 <div class='framedenv' id='shaded*-1'>
 <!-- l. 225 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Beispiel:</span></span> In unserem Beispiel wird die Systemmatrix mit Dirichlet-Randbedingungen
 dann zu \begin {equation} \t {K} = \frac {1}{\Delta x} \begin {pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ -1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\ \end {pmatrix} \label {eq:systemmatrix1d-dirichlet} \end {equation}
-
-
-
 und \(f_0=\Phi _a/\Delta x\) und \(f_N=\Phi _b/\Delta x\): \begin {equation} \v {f} = \begin {pmatrix} \Phi _a/\Delta x \\ (\varphi _1(x), \rho (x))/\varepsilon \\ (\varphi _2(x), \rho (x))/\varepsilon \\ (\varphi _3(x), \rho (x))/\varepsilon \\ (\varphi _4(x), \rho (x))/\varepsilon \\ \Phi _b/\Delta x \end {pmatrix} \label {eq:rhs1d-dirichlet} \end {equation}
 Diese Matrix \(\t {K}\) ist regulär.
+
+
+
 </p><!-- l. 252 --><p class='indent'> Das \(\Delta x\) taucht auf der rechten Seite \(f_0\) und \(f_N\) nur auf, weil es als Vorfaktor in der
 Systemmatrix steht. In einer Implementierung würde man \(\Delta x\) komplett auf die
 rechte Seite schieben und es verschwindet damit komplett aus der ersten und
@@ -237,11 +235,11 @@ Man beachte, dass diese Systemmatrix sich leicht von der für
 Dirichlet-Randbedingungen, Gl. \eqref{eq:systemmatrix1d-dirichlet},
 unterscheidet. Diese Matrix ist nicht regulär und damit ist das Problem mit zwei
 Neumann-Randbedingungen unbestimmt. Der Grund hierfür ist der gleiche wie
-
-
-
 im periodischen Fall: Die Neumann-Randbedingungen legen den Absolutwert
 (Mittelwert) des Potentials \(\Phi \) nicht fest. Man braucht also entweder eine
+
+
+
 Dirichlet-Randbedingung (links oder rechts) oder wieder die Fixierung des
 Mittelwertes.
 </p><!-- l. 325 --><p class='indent'> Die rechte Seite wird zu: \begin {equation} \v {f} = \begin {pmatrix} (\varphi _0(x), \rho (x))/\varepsilon - \Phi ^\prime _a \\ (\varphi _1(x), \rho (x))/\varepsilon \\ (\varphi _2(x), \rho (x))/\varepsilon \\ (\varphi _3(x), \rho (x))/\varepsilon \\ (\varphi _4(x), \rho (x))/\varepsilon \\ (\varphi _5(x), \rho (x))/\varepsilon + \Phi ^\prime _b \end {pmatrix}. \label {eq:rhs1d-neumann} \end {equation}
@@ -272,16 +270,15 @@ wir auch verlangen, dass innerhalb eines Elements die Funktionswerte auf den
 Knoten in gegebener Form, hier zunächst linear, interpoliert werden. Für das
 \(n\)-te Element zwischen den Knoten \(n\) und \(n+1\), also \(x\in \Omega ^{(n)}=[x_n,x_{n+1}]\), tragen nur die Basisfunktionen \(\varphi _n\)
 und \(\varphi _{n+1}\) bei, da alle weiteren Basisfunktionen auf diesem Interval verschwinden. Hier
-bezeichnet \(\Omega ^{(n)}\) das Gebiet des \(n\)-ten Elements. Damit hat die Funktion \(\Phi _N(x)\) in
-diesem Element den Verlauf (siehe Gl. \eqref{eq:finite-element-basis})
-\begin {equation} \begin {split} \phi ^{(n)}(x) =&amp; a_n \varphi _n(x) + a_{n+1}\varphi _{n+1}(x) \\ =&amp; a_n \frac {x_{n+1}-x}{x_{n+1} - x_n} + a_{n+1}\frac {x-x_n}{x_{n+1} - x_n} \\ =&amp; a_n N^{(n)}_{0}(\xi ^{(n)}(x)) + a_{n+1} N^{(n)}_{1}(\xi ^{(n)}(x)), \label {eq:basistoform} \end {split} \end {equation}
+bezeichnet \(\Omega ^{(n)}\) das Gebiet des \(n\)-ten Elements. Damit hat die Funktion \(\Phi _N(x)\) in diesem
+Element den Verlauf \begin {equation} \begin {split} \phi ^{(n)}(x) =&amp; a_n \varphi _n(x) + a_{n+1}\varphi _{n+1}(x) \\ =&amp; a_n \frac {x_{n+1}-x}{x_{n+1} - x_n} + a_{n+1}\frac {x-x_n}{x_{n+1} - x_n} \\ =&amp; a_n N^{(n)}_{0}(\xi ^{(n)}(x)) + a_{n+1} N^{(n)}_{1}(\xi ^{(n)}(x)), \label {eq:basistoform} \end {split} \end {equation}
 mit \(\xi ^{(n)}(x)=(x-x_n)/(x_{n+1}-x_n)\) und \(x\in \Omega ^{(n)}\). Hier und im Folgenden bezeichnen hochgestellte Indices \(x^{(n)}\) Elemente und
-
-
-
 tiefgestellte Indices \(x_n\) Knoten. Die Funktionen \begin {equation} N_{0}^{(n)}(\xi ) = 1-\xi \quad \text {und}\quad N_{1}^{(n)}(\xi ) = \xi \label {eq:linel1d} \end {equation}
 mit \(\xi \in [0,1]\) heißen <span class='cmti-12'>Formfunktionen </span>(auch <span class='cmti-12'>Ansatzfunktionen</span>) und \(\xi ^{(n)}(x)\) ist eine
 Reskalierungsfunktion, die am linken Rand des \(n\)-ten Elements \(\xi ^{(n)}=0\) und am rechten
+
+
+
 Rand des Elements \(\xi ^{(n)}=1\) wird. Hiermit wird die Größe des Elements von der
 Interpolationsvorschrift (der “Form”) entkoppelt.
 </p>
@@ -318,10 +315,10 @@ im Element liegt, also für \(x\not \in \Omega ^{(n)}\). In zwei oder drei Dimen
 einfacher mit den Formfunktionen als mit den Basisfunktionen zu arbeiten.
 Umgekehrt sind die Formfunktionen letztendlich der Teil der Basisfunktionen, der
 auf den Elementen lebt, siehe auch Gl. \eqref{eq:basistoform}. </p></div>
-
-
-
 <!-- l. 395 --><p class='indent'> Formfunktionen sind nützlich, weil man mit ihrer Hilfe die approximierte
+
+
+
 Lösung als Summe über Elemente schreiben kann, also im eindimensionalen Fall
 \begin {equation} \Phi _N(x) = \sum _{n=0}^{N-1} \phi ^{(n)}(x) = \sum _{n=0}^{N-1} \left ( a_n N^{(n)}_{0}(x) + a_{n+1} N^{(n)}_{1}(x) \right ). \end {equation}
 Für eine allgemeine PDGL, \(R=\mathcal {L} u_N - f\), wird die Galerkin-Bedingung zu \begin {equation} (\varphi _k, R) = (N^{(k)}_{0} + N^{(k-1)}_{1}, R) = 0 \label {eq:galerkinform} \end {equation}
@@ -357,12 +354,12 @@ Differenzierbarkeitsbedingung zu reduzieren. Man erhält den Ausdruck
 der nur noch erste Ableitungen der Formfunktionen enthält. Diese
 Ableitungen sind Konstanten, da die Formfunktionen linear sind,
 Gl. \eqref{eq:linel1d}: \begin {align} \frac {\dif N^{(n)}_{0}}{\dif x} &amp;= -\frac {1}{\Delta x} \\ \frac {\dif N^{(n)}_{1}}{\dif x} &amp;= \frac {1}{\Delta x} \end {align}
-
-
-
 <!-- l. 485 --><p class='noindent'>Damit erhält man die Elementsteifigkeitsmatrix \begin {equation} \t {K}^{(n)} = \frac {1}{\Delta x} \begin {pmatrix} 1 &amp; -1 \\ -1 &amp; 1 \end {pmatrix}, \label {eq:elmat1d} \end {equation}
 die für alle Elemente identisch ist. Die rechte Seite für die Elemente wird
 zu \begin {equation} \t {f}^{(n)} = \begin {pmatrix} (N^{(n)}_{0}, \rho )/\varepsilon \\ (N^{(n)}_{1}, \rho )/\varepsilon \end {pmatrix}. \end {equation}
+
+
+
 Diese rechte Seite kann für die unterschiedlichen Elemente anders sein,
 wenn \(\rho \) räumlich variiert.
 </p></li>

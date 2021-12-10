@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 10 [Dec. 20-Jan. 9]"
 parent: Vorlesung
-date: 2021-11-10
+date: 2021-12-10
 categories: lecture
 author: Lars Pastewka
 nav_order: 10
@@ -20,7 +20,7 @@ diese komplexere Geometrie der Elemente wird eine saubere Buchhaltung der
 Indices, also die Unterscheidung von globalen Knoten, Elementknoten und
 Elementen wichtig. </p></div>
 <h3 class='sectionHead'><span class='titlemark'>10.1 </span> <a id='x1-200010.1'></a>Differenzierbarkeit</h3>
-<!-- l. 10 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5a9f99ea-5864-42a4-8920-acba010f39db' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5a9f99ea-5864-42a4-8920-acba010f39db</span></a>
+<!-- l. 10 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5a9f99ea-5864-42a4-8920-acba010f39db'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5a9f99ea-5864-42a4-8920-acba010f39db</span></a>
 </p><!-- l. 12 --><p class='indent'> Zur Illustration, wie die Anforderung an die Differenzierbarkeit in
 höherdimensionalen Problemen reduziert werden kann, und wir damit
 wieder lineare Basisfunktionen verwenden können, wird hier weiter die
@@ -75,7 +75,7 @@ Testfunktion \(v(\v {r})\) und des Potentials \(\Phi (\v {r})\) berechnen könne
 
 
 
-<!-- l. 76 --><p class='noindent'> <img src='Figures/Integration_Domain-.png' alt='PIC' width='312' height='233' /> <a id='x1-2001r1'></a>
+<!-- l. 76 --><p class='noindent'> <img width='312' alt='PIC' src='Figures/Integration_Domain-.png' height='233' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
 </p><!-- l. 78 --><p class='noindent'>figureDer Rand \(\partial \Omega \) begrenzt das Integrations- bzw. Simulationsgebiet \(\Omega \). Der
 Normalenvektor \(\hat {n}\) ist auf dem Rand \(\partial \Omega \) definiert und zeigt dort senkrecht zum
@@ -97,7 +97,7 @@ definieren.
 
 </figure>
 <h3 class='sectionHead'><span class='titlemark'>10.2 </span> <a id='x1-300010.2'></a>Gitter</h3>
-<!-- l. 84 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1f20826b-88c9-44cf-9b09-acba01318cd7' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1f20826b-88c9-44cf-9b09-acba01318cd7</span></a>
+<!-- l. 84 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1f20826b-88c9-44cf-9b09-acba01318cd7'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1f20826b-88c9-44cf-9b09-acba01318cd7</span></a>
 </p><!-- l. 86 --><p class='indent'> Wir müssen nun geeignete Basisfunktionen wählen, um mit Hilfe
 der Galerkin-Bedingungen ein lineares Gleichungssystem zu erhalten.
 Hierbei ist es nützlich, die Formulierung im Sinne von Formfunktionen
@@ -128,7 +128,7 @@ gezeigt.
 
 
 
-<!-- l. 96 --><p class='noindent'> <img src='Figures/mesh-.png' alt='PIC' width='585' height='276' /> <a id='x1-4001r2'></a>
+<!-- l. 96 --><p class='noindent'> <img width='585' alt='PIC' src='Figures/mesh-.png' height='276' /> <a id='x1-4001r2'></a>
 <a id='x1-4002'></a>
 </p><!-- l. 98 --><p class='noindent'>figureTriangulierung eines rechteckigen Gebiets \(\Omega \) in ein (a) strukturiertes
 Gitter und ein (b) unstrukturiertes Gitter.
@@ -155,7 +155,7 @@ Funktionswert interpoliert wird.
 Gebiets ist höchst nicht-trivial. Alle kommerziellen Finite-Elemente Pakete
 haben Vernetzer eingebaut, die diesen Prozess übernehmen oder zumindest
 unterstützen. Eine freie Softwarelösung für die Vernetzung von komplexen
-Geometrien ist <span class='cmcsc-10x-x-120'>G<span class='small-caps'>msh</span> </span>(<a href='https://gmsh.info/' class='url'><span class='cmtt-12'>https://gmsh.info/</span></a>). </p></div>
+Geometrien ist <span class='cmcsc-10x-x-120'>G<span class='small-caps'>msh</span> </span>(<a class='url' href='https://gmsh.info/'><span class='cmtt-12'>https://gmsh.info/</span></a>). </p></div>
 <h4 class='subsectionHead'><span class='titlemark'>10.2.2 </span> <a id='x1-500010.2.2'></a>Strukturierung</h4>
 <!-- l. 114 --><p class='noindent'>Die Nutzung eines strukturierten Gitters vereinfacht die Zuweisung eines
 Knotenindices \(n\) bzw. eines Elementindices \((n)\) zu entsprechenden räumlichen
@@ -171,7 +171,7 @@ Knoten.
 
 
 
-<!-- l. 120 --><p class='noindent'><img src='Figures/structured_grid.svg' alt='PIC' width='780' height='426' /> <a id='x1-5001r3'></a>
+<!-- l. 120 --><p class='noindent'><img width='780' alt='PIC' src='Figures/structured_grid.svg' height='426' /> <a id='x1-5001r3'></a>
 <a id='x1-5002'></a>
 </p><!-- l. 122 --><p class='noindent'>figureZerlegung eines rechteckigen Gebiets in ein strukturiertes Gitter.
 (a) Die strukturierte Zerlegung erfolgt zuerst in kleinere Kästen, deren
@@ -224,7 +224,7 @@ und <span class='cmti-12'>Caches </span>nutzt. Eine Optimierung von Algorithmen 
 Hardwarearchitekturen ist höcht nicht-trivial und benötigt detailliertes Wissen
 über die Rechnerarchitektur. </p></div>
 <h3 class='sectionHead'><span class='titlemark'>10.3 </span> <a id='x1-600010.3'></a>Formfunktionen</h3>
-<!-- l. 144 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e070f7d8-2d2d-468d-9589-acba013b471a' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e070f7d8-2d2d-468d-9589-acba013b471a</span></a>
+<!-- l. 144 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e070f7d8-2d2d-468d-9589-acba013b471a'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e070f7d8-2d2d-468d-9589-acba013b471a</span></a>
 </p><!-- l. 146 --><p class='indent'> Unsere Formfunktionen leben auf den einzelnen Dreiecken der Triangulierung
 und müssen auf den jeweiligen Knoten entweder \(1\) sein oder verschwinden. Wir
 drücken die Formfunktionen hier mit Hilfe der skalierten Koordinaten \(\xi =(x-x_0)/\Delta x\) und \(\eta =(y-y_0)/\Delta y\) aus,
@@ -250,7 +250,7 @@ Element \((1)\) lauten die Formfunktionen \begin {align} N^{(1)}_0(\xi , \eta ) 
 
 
 
-<!-- l. 168 --><p class='noindent'><img src='Figures/febasis2d.svg' alt='PIC' width='350' height='280' /> <a id='x1-6001r4'></a>
+<!-- l. 168 --><p class='noindent'><img width='350' alt='PIC' src='Figures/febasis2d.svg' height='280' /> <a id='x1-6001r4'></a>
 <a id='x1-6002'></a>
 </p><!-- l. 170 --><p class='noindent'>figureFormfunktionen für lineare Dreieckelemente in zwei Dimensionen.
 Jeweils eine der Formfunktionen ist an einem der Knoten \(1\). An den anderen
@@ -282,7 +282,7 @@ ist daher besonders für unstrukturierte Gitter nützlich.
 verwandt haben, sind diese Ableitungen alle Konstanten.
 </p>
 <h3 class='sectionHead'><span class='titlemark'>10.4 </span> <a id='x1-700010.4'></a>Galerkin-Methode</h3>
-<!-- l. 223 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=0f06cd8a-1931-4d51-9572-acba0129bf64' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=0f06cd8a-1931-4d51-9572-acba0129bf64</span></a>
+<!-- l. 223 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=0f06cd8a-1931-4d51-9572-acba0129bf64'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=0f06cd8a-1931-4d51-9572-acba0129bf64</span></a>
 </p><!-- l. 225 --><p class='indent'> Wir können nun die Galerkin-Methode anwenden, um das lineare
 Gleichungssystem, welches die diskretisierte Differentialgleichung beschreibt, zu
 bestimmen. Wir unterscheiden hier wieder zwischen Elementmatrizen und der

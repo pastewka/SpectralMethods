@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 03 [Nov. 1-7]"
 parent: Vorlesung
-date: 2021-11-10
+date: 2021-12-10
 categories: lecture
 author: Lars Pastewka
 nav_order: 3
@@ -48,7 +48,7 @@ gebrochen.
 
 
 
-<!-- l. 22 --><p class='noindent'> <img width='585' height='222' src='Figures/Brownian_Motion-.png' alt='PIC' /> <a id='x1-2001r1'></a>
+<!-- l. 22 --><p class='noindent'> <img width='585' height='222' alt='PIC' src='Figures/Brownian_Motion-.png' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
 </p><!-- l. 24 --><p class='noindent'>figureIllustration eines Diffusionsprozesses. Die “Pollen” in (a) bewegen sich
 zufällig in der gezeigten Domäne. Nach einer gewissen Zeit (b) ist der
@@ -193,7 +193,7 @@ Stromdichte \(j\) hat die Einheit Anzahl Partikel/Zeit/Fläche.)
 
 
 
-<!-- l. 211 --><p class='noindent'><img width='272' height='282' src='Figures/continuity.png' alt='PIC' /> <a id='x1-5001r3'></a>
+<!-- l. 211 --><p class='noindent'><img width='272' height='282' alt='PIC' src='Figures/continuity.png' /> <a id='x1-5001r3'></a>
 <a id='x1-5002'></a>
 </p><!-- l. 213 --><p class='noindent'>figureTeilchen können das Volumen \(V\) nur durch die Seitenwände verlassen.
 Die Änderung der Teilchenzahl \(N\) über ein Zeitintervall \(\tau \) ist daher durch

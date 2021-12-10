@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 15 [Feb. 7-13]"
 parent: Vorlesung
-date: 2021-11-10
+date: 2021-12-10
 categories: lecture
 author: Lars Pastewka
 nav_order: 15

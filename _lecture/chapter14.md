@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 14 [Jan. 31-Feb. 6]"
 parent: Vorlesung
-date: 2021-11-10
+date: 2021-12-10
 categories: lecture
 author: Lars Pastewka
 nav_order: 14
@@ -40,7 +40,7 @@ wobei das Dreieck durch die Vektoren \(\v {R}_1=\v {r}_1-\v {r}_0\) und \(\v {R}
 
 
 
-<!-- l. 23 --><p class='noindent'><img alt='PIC' src='Figures/coordinate_transformation.svg' width='312' height='240' /> <a id='x1-2001r1'></a>
+<!-- l. 23 --><p class='noindent'><img height='240' width='312' src='Figures/coordinate_transformation.svg' alt='PIC' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
 </p><!-- l. 25 --><p class='noindent'>figureIllustration eines Dreiecks mit den normierten Koordinaten \(\xi \) und \(\eta \). Die
 Ecken des Dreiecks sind durch die Vektoren \(\v {r}_0\), \(\v {r}_1\) und \(\v {r}_2\) gegeben.

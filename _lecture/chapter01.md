@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 01 [18.-24. Okt. (2021)]"
 parent: Vorlesung
-date: 2021-11-10
+date: 2021-12-10
 categories: lecture
 author: Lars Pastewka
 nav_order: 1
@@ -67,7 +67,7 @@ Ortsvariablen zu tun haben, nämlich \(\Psi (\v {r}_1,\v {r}_2,\dots ,\v {r}_n;t
 
 <div class='center'>
 <!-- l. 41 --><p class='noindent'>
-</p><!-- l. 45 --><p class='noindent'> <img src='Figures/ExtendedSchemeD-.png' alt='PIC' height='585' width='774' /> <a id='x1-2001r1'></a>
+</p><!-- l. 45 --><p class='noindent'> <img alt='PIC' width='774' height='585' src='Figures/ExtendedSchemeD-.png' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
 </p><!-- l. 47 --><p class='noindent'>figureDie vertikale Anordnung der Kisten repräsentiert die Längenskale,
 welche auf der rechten Seite gezeigt ist. In den Kästen selbst stehen

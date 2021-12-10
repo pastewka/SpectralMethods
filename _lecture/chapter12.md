@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 12 [Jan. 17-23]"
 parent: Vorlesung
-date: 2021-11-10
+date: 2021-12-10
 categories: lecture
 author: Lars Pastewka
 nav_order: 12
@@ -67,20 +67,19 @@ Multiplikation mit \(\t {M}^{-1}\) \(\sim N^2\) Operationen, während das Lösen
 nur \(\sim N\) Operationen benötigt. Die Anzahl der benötigten Operationen nennt man
 die <span class='cmti-12'>Komplexität </span>eines Algorithmus. </p></div>
 <div id='shaded*-1' class='framedenv'>
-<!-- l. 72 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Beispiel:</span></span> Für die Basis der finite Elemente, die in Kapitel <span class='cmbx-12'>??</span> eingeführt wurde,
-kann die Massematrix wieder als Summe über entsprechende Elementmatrizen \(\t {M}^{(n)}\)
-ausgedrückt werden. Die Komponenten dieser Elementmassematrizen sind durch
-\begin {equation} M^{(n)}_{IJ} = (N_I^{(n)}, N_J^{(n)}) \end {equation}
+<!-- l. 72 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Beispiel:</span></span> Für die Basis der finite Elemente kann die Massematrix wieder als
+Summe über entsprechende Elementmatrizen \(\t {M}^{(n)}\) ausgedrückt werden. Die
+Komponenten dieser Elementmassematrizen sind durch \begin {equation} M^{(n)}_{IJ} = (N_I^{(n)}, N_J^{(n)}) \end {equation}
 gegeben. Man erhält beispielsweise \begin {equation} \begin {split} M_{11}^{(0)} = M_{22}^{(0)} &amp;= \Delta x\Delta y \int _0^1 \dif \xi \int _0^{1-\xi } \dif \eta \, \xi ^2 \\ &amp;= \Delta x\Delta y \int _0^1 \dif \xi \, \xi ^2 (1-\xi ) \\ &amp;= \Delta x\Delta y/12, \end {split} \end {equation}
 wobei die Integrationsgrenzen für das Integral über das Dreieck gewählt sind.
 Die weiteren Integrale können entsprechend ausgeführt werden. Hiermit
 bekommt man \begin {equation} \t {M}^{(n)} = \frac {\Delta x\Delta y}{24} \begin {pmatrix} 2 &amp; 1 &amp; 1 \\ 1 &amp; 2 &amp; 1 \\ 1 &amp; 1 &amp; 2 \end {pmatrix}. \end {equation}
 Der Ausdruck ist für beide Elementmassematrizen identisch. Die globale
 Systemmassematrix erhält man auf dem gleichen Weg wie die Systemmatrix. </p></div>
-
-
-
 <!-- l. 111 --><p class='noindent'>
+
+
+
 </p>
 <h3 class='sectionHead'><span class='titlemark'>12.3 </span> <a id='x1-400012.3'></a>Runge-Kutta Methoden</h3>
 <!-- l. 113 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=13ac878b-710a-4f49-9653-acc1012a83f0' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=13ac878b-710a-4f49-9653-acc1012a83f0</span></a>
@@ -113,10 +112,10 @@ zunächst Funktionswerte schätzen und dann korrigieren nennt man auch
 </p><!-- l. 140 --><p class='noindent'>
 </p>
 <h4 class='subsectionHead'><span class='titlemark'>12.3.3 </span> <a id='x1-700012.3.3'></a>Automatische Schrittweitenkontrolle</h4>
-
-
-
 <!-- l. 142 --><p class='noindent'>Mit Hilfe zweier Integrationsverfahren mit unterschiedlicher Konvergenzordnung
+
+
+
 lässt sich eine automatische Schrittweitenkontrolle realisieren, in der der
 Zeitschritt \(\Delta t\) so angepasst wird, dass ein bestimmer Fehler nicht überschritten
 wird. Die Verfahren sind insbesondere dann interessant, wenn die Berechnungen
@@ -151,10 +150,10 @@ führt zu \begin {equation} \frac {\partial c}{\partial t} = \frac {D}{\Delta x^
 </p>
 <div id='shaded*-1' class='framedenv'>
 <!-- l. 166 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Eigenlich müsste auf der linken Seite von Gl. \eqref{eq:fediff} die
-
-
-
 Massematrix auftauchen. Wir vernachlässigen diese hier und approximieren \(\t {M}=\t {1}\).
+
+
+
 Diese Art diskretisierter Gleichung erhält man durch eine Diskretisierung mit der
 Methode der finiten Differenzen. </p></div>
 <!-- l. 170 --><p class='indent'> Wir schreiben nun die Funktion \(c(x)\) als Entwicklung in eine Fourier-Basis, also

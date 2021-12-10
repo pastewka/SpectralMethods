@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 07 [Nov. 29-Dec. 5]"
 parent: Vorlesung
-date: 2021-11-10
+date: 2021-12-10
 categories: lecture
 author: Lars Pastewka
 nav_order: 7
@@ -10,7 +10,7 @@ nav_order: 7
 
 
 <h2 class='chapterHead'><span class='titlemark'>Kapitel 7</span><br /><a id='x1-10007'></a>Approximation und Interpolation</h2>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 6 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Wir wenden nun die Idee der Basisfunktionen an, um Funktionen zu
 approximieren. Hierfür kommen wir zu dem Konzept des Residuums zurück.
 Ziel der Funktionsapproximation ist es, dass die approximierte Funktion das
@@ -82,9 +82,9 @@ Kollokationspunkten.
 
 
 <div class='subfigure'>
-<!-- l. 110 --><p class='noindent'></p><!-- l. 111 --><p class='noindent'><img width='585' alt='PIC' src='Figures/coll5.svg' height='249' />
+<!-- l. 110 --><p class='noindent'></p><!-- l. 111 --><p class='noindent'><img src='Figures/coll5.svg' width='585' height='249' alt='PIC' />
 </p></div> <div class='subfigure'>
-<!-- l. 113 --><p class='noindent'></p><!-- l. 114 --><p class='noindent'><img width='585' alt='PIC' src='Figures/coll11.svg' height='256' />
+<!-- l. 113 --><p class='noindent'></p><!-- l. 114 --><p class='noindent'><img src='Figures/coll11.svg' width='585' height='256' alt='PIC' />
 </p></div> <a id='x1-3001r1'></a>
 <a id='x1-3002'></a>
 <!-- l. 117 --><p class='noindent'>figureApproximation der auf dem Interval \([0,1]\) periodischen Funktion \(f(x)=\sin (2\pi x)^3 + \cos (6\pi (x^2-1/2))\)
@@ -137,7 +137,7 @@ Wir wählen den Satz von \(N\) Testfunktionen \begin {equation} v_n(x) = \delta 
 wobei \(\delta (x)\) die Diracsche \(\delta \)-Funktion ist und \(y_n\) die Kollokationspunkte. Die Bedingung \((v_n,R)=0\)
 für alle \(n\in [0,N-1]\) führt direkt zur Kollokationsbedingung \(R(y_x)=0\).
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 140 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Die Diracsche \(\delta \)-Funktion sollte aus Vorlesungen zur Signalverarbeitung
 bekannt sein. Die wichtigste Eigenschaft dieser Funktion ist die Filtereigenschaft,
 \begin {equation} \int _{-\infty }^{\infty } \dif x\, f(x) \delta (x-x_0) = f(x_0), \end {equation}
@@ -178,9 +178,9 @@ auch nicht an den Stützstellen exakt mit der zu approximierenden Funktion
 
 
 <div class='subfigure'>
-<!-- l. 190 --><p class='noindent'></p><!-- l. 191 --><p class='noindent'><img width='585' alt='PIC' src='Figures/gal5.svg' height='249' />
+<!-- l. 190 --><p class='noindent'></p><!-- l. 191 --><p class='noindent'><img src='Figures/gal5.svg' width='585' height='249' alt='PIC' />
 </p></div> <div class='subfigure'>
-<!-- l. 193 --><p class='noindent'></p><!-- l. 194 --><p class='noindent'><img width='585' alt='PIC' src='Figures/gal11.svg' height='247' />
+<!-- l. 193 --><p class='noindent'></p><!-- l. 194 --><p class='noindent'><img src='Figures/gal11.svg' width='585' height='247' alt='PIC' />
 </p></div> <a id='x1-5001r2'></a>
 <a id='x1-5002'></a>
 <!-- l. 197 --><p class='noindent'>figureApproximation der auf dem Interval \([0,1]\) periodischen Funktion \(f(x)=\sin (2\pi x)^3 + \cos (6\pi (x^2-1/2))\) mit
@@ -201,7 +201,7 @@ abbilden.
 
 
 </figure>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 201 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Die Galerkin-Bedingung (siehe auch Gl. \eqref{eq:galerkinortho})
 \begin {equation} (\varphi _n, R) = 0, \end {equation}
 bedeutet, dass das Residuum <span class='cmti-12'>orthogonal </span>zu allen Basisfunktionen ist. Anders
@@ -213,8 +213,8 @@ systematisch verbessern können. </p></div>
 <!-- l. 211 --><p class='noindent'>Ein alternativer Ansatz zur Approximation ist es, das Fehlerquadrat des
 Residuums, \((R, R)\), zu minimieren. Für eine allgemeine Reihenentwicklung mit \(N\)
 Basisfunktionen erhält man \begin {equation} \begin {split} (R, R) &amp;= (f, f) + (f_N, f_N) - (f_N, f) - (f, f_N) \\ &amp;= (f, f) + \sum _{n=0}^N \sum _{m=0}^N a_n^* a_m (\varphi _n, \varphi _m) - \sum _{n=0}^N a_n^* (\varphi _n, f) - \sum _{n=0}^N a_n (f, \varphi _n). \end {split} \end {equation}
-Diese Fehlerquadrat ist dann minimiert, wenn \begin {equation} \frac {\partial (R,R)}{\partial a_k} = \sum _{n=0}^N a_n^* (\varphi _n, \varphi _k) = (f, \varphi _k). \end {equation}
-und \begin {equation} \frac {\partial (R,R)}{\partial a^*_k} = \sum _{n=0}^N a_n (\varphi _k, \varphi _n) = (\varphi _k, f). \end {equation}
+Diese Fehlerquadrat ist dann minimiert, wenn \begin {equation} \frac {\partial (R,R)}{\partial a_k} = \sum _{n=0}^N a_n^* (\varphi _n, \varphi _k) - (f, \varphi _k) = 0 \end {equation}
+und \begin {equation} \frac {\partial (R,R)}{\partial a^*_k} = \sum _{n=0}^N a_n (\varphi _k, \varphi _n) - (\varphi _k, f) = 0. \end {equation}
 Dieser Ausdruck ist identisch zu Gl. \eqref{eq:galerkin-coefficients} der
 Galerkin-Methode.
 
