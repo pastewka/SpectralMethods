@@ -34,16 +34,16 @@ Die Abgabe von Arbeitsblatt 1 bis 4 ist verpflichtend und konstituiert die Studi
 
 ### 1.1 Orthogonalität der 1D-Fourier-Basisfunktionen (3 Punkte)
 Auf Übungsblatt 1 haben Sie eine analytische Lösung der Diffusionsgleichung mithilfe der eindimensionalen Fourier-Reihe bestimmt. Weisen Sie nach, dass die Basisfunktionen dieser Fourier-Reihe eine orthogonale Basis bilden. Das Skalarprodukt zweier $$L$$-periodischen Funktion sei dabei definiert als:
-$$
-\left( f, g \right) = \frac{1}{L} \int_0^L dx \; f^*(x) g(x)
-$$
+\begin{equation}
+\left( f, g \right) = \frac{1}{L} \int_0^L dx \; \left( f^*(x) g(x) \right)
+\end{equation}
 wobei $$f^*(x)$$ für das komplex-konjugierte von $$f(x)$$ steht.
 
 ### 1.2 Orthogonalität der 2D-Fourier-Basisfunktionen (3 Punkte)
 Zeigen Sie, dass auch die Basisfunktionen der zweidimensionalen Fourier-Reihe eine orthogonale Basis bilden. Das Skalarprodukt zweier Funktionen, die in x-Richtung $$L_x$$-periodisch und in y-Richtung $$L_y$$-periodisch sind, sei dabei gegeben als
-$$
+\begin{equation}
 \left(f, g \right) = \frac{1}{L_x L_y} \int_0^{L_y} \int_0^{L_x} dx\,dy \, \left( f^*(x,y) g(x,y) \right)
-$$
+\end{equation}
 
 ### 1.3 Fourier-Koeffizienten (2 Punkte)
 Leiten Sie die Formel für die Koeffizienten der zweidimensionalen Fourierreihe her, indem Sie die Funktion $$f(x,y)$$ auf die Fourierreihen-Basis projizieren.
@@ -87,9 +87,9 @@ Berechnen Sie die diskretisierten Gleichungen, d.h. $$\left( \varphi_j, R\right)
 **Hinweise** zu der Berechnung mit Delta-Distributionen als Quellterm: 
 * Um die Berechnung der diskretisierten Terme zu erleichtern, können Sie die Anzahl an Gitterpunkte $$N$$ immer so wählen, dass die dirac Quellterme auf einem Knoten liegen, also  $$N=3N'+1$$ mit $$N' \in \mathbb{N}$$.
 * Die Delta-Distribution ist durch ihre Filter-Eigenschaft definiert:
-\begin{equation}
+$$
 \int_0^L dx \; \delta (x-a) f(x) = f(a)
-\end{equation}
+$$
 
 # Aufgabe 3 (9 Punkte)
 ## Finite-Element im periodischen Raum
@@ -107,7 +107,7 @@ Dadurch ergibt sich eine weitere Gleichung für die Koeffizienten $$a_i$$. Stell
 ### 3.2 Systemmatrix (1 Punkt)
 Das Gleichungssystem aus diskretisierten Gleichungen für die Koeffizienten $$a_i$$ wird üblicherweise in Matrix-Form geschrieben:
 \begin{equation}
-\underline{K} \overrightarrow{a} = \overrightarrow{f}
+\underline{K} \cdot \overrightarrow{a} = \overrightarrow{f}
 \end{equation}
 $$\underline{K}$$ nennt man dann die Systemmatrix. 
 
@@ -143,9 +143,7 @@ def fem_laplace_linear_1d_periodic(nb_grid_pts, dx, rhs_x)
 Nutzen Sie Ihre Funktion, um einen Plot, zu erstellen, auf dem die FEM-Lösung mit der analytischen Lösung verglichen wird.
 Auf dem Plot muss zu sehen sein:
 * Analytische Lösung aus Übungsblatt 1, Aufgabe 4:
-$$
-c(x) = \frac{1}{D}(-\max(0, x-L/3)+\max(0, x-2L/3) + \frac{1}{3D} x
-$$
+$$c(x) = \frac{1}{D}(-\max(0, x-L/3)+\max(0, x-2L/3) + \frac{1}{3D} x$$
 * Lösung mit FEM für N=4
 * Lösung mit FEM für N=7
 
