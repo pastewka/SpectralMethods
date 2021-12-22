@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  "Übungsblatt 2 [9. Jan.]"
+title:  "Übungsblatt 2 [16. Jan.]"
 parent: Übungsaufgaben
 categories: homework
 author : Lars Pastewka
