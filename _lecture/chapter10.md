@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 10 [Dec. 20-Jan. 9]"
 parent: Vorlesung
-date: 2021-12-10
+date: 2022-01-23
 categories: lecture
 author: Lars Pastewka
 nav_order: 10
@@ -10,7 +10,7 @@ nav_order: 10
 
 
 <h2 class='chapterHead'><span class='titlemark'>Kapitel 10</span><br /><a id='x1-100010'></a>Finite Elemente in mehreren Dimensionen</h2>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 4 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Wir verallgemeinern nun die Ergebnisse des vorhergehenden Kapitels
 auf mehrere Dimensionen. Dies hat mehrere technische Hürden: Für die
 partielle Integration müssen wir nun Ergebnisse der Vektoranalysis, insbesondere
@@ -44,7 +44,7 @@ Gl. \eqref{eq:weakformhighd} wird wieder wichtig werden, wenn wir
 Neumann-Randbedingungen auf den Rand \(\partial \Omega \) der Domäne vorgeben möchten. Im
 Dirichlet-Fall verschwindet dieser Term.
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 
 
 
@@ -75,7 +75,7 @@ Testfunktion \(v(\v {r})\) und des Potentials \(\Phi (\v {r})\) berechnen könne
 
 
 
-<!-- l. 76 --><p class='noindent'> <img width='312' alt='PIC' src='Figures/Integration_Domain-.png' height='233' /> <a id='x1-2001r1'></a>
+<!-- l. 76 --><p class='noindent'> <img width='312' alt='PIC' height='233' src='Figures/Integration_Domain-.png' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
 </p><!-- l. 78 --><p class='noindent'>figureDer Rand \(\partial \Omega \) begrenzt das Integrations- bzw. Simulationsgebiet \(\Omega \). Der
 Normalenvektor \(\hat {n}\) ist auf dem Rand \(\partial \Omega \) definiert und zeigt dort senkrecht zum
@@ -128,7 +128,7 @@ gezeigt.
 
 
 
-<!-- l. 96 --><p class='noindent'> <img width='585' alt='PIC' src='Figures/mesh-.png' height='276' /> <a id='x1-4001r2'></a>
+<!-- l. 96 --><p class='noindent'> <img width='585' alt='PIC' height='276' src='Figures/mesh-.png' /> <a id='x1-4001r2'></a>
 <a id='x1-4002'></a>
 </p><!-- l. 98 --><p class='noindent'>figureTriangulierung eines rechteckigen Gebiets \(\Omega \) in ein (a) strukturiertes
 Gitter und ein (b) unstrukturiertes Gitter.
@@ -149,7 +149,7 @@ ist der Funktionswert auf dem entsprechenden Knoten. Die Formfunktion ist dann
 eine Vorschrift, wie zwischen den Knoten (also über die Dreiecke) dieser
 Funktionswert interpoliert wird.
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 108 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> In drei Dimensionen erfolgt die Zerlegung des Raumes
 üblicherweise in Tetraeder. Die Vernetzung eines solchen dreidimensionalen
 Gebiets ist höchst nicht-trivial. Alle kommerziellen Finite-Elemente Pakete
@@ -171,7 +171,7 @@ Knoten.
 
 
 
-<!-- l. 120 --><p class='noindent'><img width='780' alt='PIC' src='Figures/structured_grid.svg' height='426' /> <a id='x1-5001r3'></a>
+<!-- l. 120 --><p class='noindent'><img width='780' alt='PIC' height='426' src='Figures/structured_grid.svg' /> <a id='x1-5001r3'></a>
 <a id='x1-5002'></a>
 </p><!-- l. 122 --><p class='noindent'>figureZerlegung eines rechteckigen Gebiets in ein strukturiertes Gitter.
 (a) Die strukturierte Zerlegung erfolgt zuerst in kleinere Kästen, deren
@@ -209,7 +209,7 @@ wobei nun \(l,m\) mit \(l\in \{0,1,\ldots ,M_x-1\}\) und \(m\in \{0,1,\ldots ,M_
 eines Kastens indiziert. Der Faktor \(2\) taucht in Gl. \eqref{eq:linindexel} auf, weil
 es zwei Elemente pro Kasten gibt.
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 138 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Gleichungen \eqref{eq:linindex} und \eqref{eq:linindexel} sind die
 vermutlich einfachste Abbildung von Koordinaten auf einen linearen, konsekutiven
 Index. Andere Möglichkeiten, die auch in der Numerik eingesetzt werden,
@@ -250,7 +250,7 @@ Element \((1)\) lauten die Formfunktionen \begin {align} N^{(1)}_0(\xi , \eta ) 
 
 
 
-<!-- l. 168 --><p class='noindent'><img width='350' alt='PIC' src='Figures/febasis2d.svg' height='280' /> <a id='x1-6001r4'></a>
+<!-- l. 168 --><p class='noindent'><img width='350' alt='PIC' height='280' src='Figures/febasis2d.svg' /> <a id='x1-6001r4'></a>
 <a id='x1-6002'></a>
 </p><!-- l. 170 --><p class='noindent'>figureFormfunktionen für lineare Dreieckelemente in zwei Dimensionen.
 Jeweils eine der Formfunktionen ist an einem der Knoten \(1\). An den anderen
@@ -294,7 +294,7 @@ wobei für zwei Vektorfelder \(\v {f}(\v {r})\) und \(\v {g}(\v {r})\) das Skala
 also als kartesisches Skalarprodukt zwischen den beiden Funktionswerten, zu
 verstehen ist. Der Beitrag des Elements zur rechten Seite lautet \begin {equation} f_I^{(n)} = \frac {1}{\varepsilon }(N_I^{(n)}, \rho ) + \int _{\partial \Omega } \dif ^2r\, N_I^{(n)}(\v {r})\nabla \Phi \cdot \hat {n}(\v {r}). \label {eq:rhs2d} \end {equation}
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 251 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Beispiel:</span></span> Wir berechnen nun die Elementmatrizen für die beiden Elemente
 unseres strukturierten Beispielgitters. So lautet z.B. die Komponente \(I=0\) und \(J=0\) des
 Elements \((0)\), \begin {equation} \begin {split} K_{00}^{(0)} &amp;= (\nabla N_0^{(0)}, \nabla N_0^{(0)}) \\ &amp;= \int _{\Omega ^{(0)}} \dif ^2r \left ( \frac {1}{\Delta x^2} + \frac {1}{\Delta y^2} \right ) \\ &amp;= \frac {\Delta x\Delta y}{2} \left ( \frac {1}{\Delta x^2} + \frac {1}{\Delta y^2} \right ) \\ &amp;= \frac {1}{2}\left (\frac {\Delta y}{\Delta x} + \frac {\Delta x}{\Delta y}\right ) \end {split} \end {equation}

@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 11 [Jan. 10-16 (2022)]"
 parent: Vorlesung
-date: 2021-12-10
+date: 2022-01-23
 categories: lecture
 author: Lars Pastewka
 nav_order: 11
@@ -10,7 +10,7 @@ nav_order: 11
 
 
 <h2 class='chapterHead'><span class='titlemark'>Kapitel 11</span><br /><a id='x1-100011'></a>Datenstrukturen &amp; Implementierung</h2>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 5 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> In diesem Kapitel wird Anhand unseres Beispiels, der Lösung der
 Poisson-Gleichung, gezeigt, wie nun ein einfacher Finite-Elemente-Löser in der
 Programmiersprache <span class='cmcsc-10x-x-120'>P<span class='small-caps'>ython</span> </span>implementiert werden kann. Wir nehmen hier an, dass
@@ -36,7 +36,7 @@ verschwindet.
 
 
 
-<!-- l. 21 --><p class='noindent'> <img src='Figures/capacitor-.png' width='507' height='323' alt='PIC' /> <a id='x1-2001r1'></a>
+<!-- l. 21 --><p class='noindent'> <img height='323' alt='PIC' src='Figures/capacitor-.png' width='507' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
 </p><!-- l. 23 --><p class='noindent'>figure(a) Geometrie des in diesem Kapitel betrachteten Plattenkondensators.
 Auf den Elektroden ist das Potential \(\Phi \) konstant. (b) Ausschnitt aus dem
@@ -93,17 +93,17 @@ genannt.) Ein mit Nullen gefülltes Array der Länge \(10\) (also \(10\) Einträ
 
 
 man durch </p><!-- l. 58 -->
-<div class='lstlisting' id='listing-1'><span class='label'><a id='x1-3001r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>import numpy as np </span><br />
+<div id='listing-1' class='lstlisting'><span class='label'><a id='x1-3001r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>import numpy as np </span><br />
 <span class='label'><a id='x1-3002r2'></a><span class='cmr-6'>2</span></span><span class='cmtt-10'>a = np.zeros(10)</span>
 </div>
 <!-- l. 62 --><p class='indent'> Diese Array hat die <span class='cmti-12'>Dimension</span> \(1\). Der mehrdimensionale Charakter der Arrays
 äußert sich darin, dass die Arrays implizit eine Abbildung von mehreren
 Koordinaten auf einen lineare Index implementieren. Einen zweidimensionalen
 Array bekommt man z.B. durch </p><!-- l. 63 -->
-<div class='lstlisting' id='listing-2'><span class='label'><a id='x1-3003r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>b = np.zeros([2, 5])</span>
+<div id='listing-2' class='lstlisting'><span class='label'><a id='x1-3003r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>b = np.zeros([2, 5])</span>
 </div>
 <!-- l. 66 --><p class='indent'> Man kann nun jeweils auf die Array-Einträge zugreifen, z.B. </p><!-- l. 67 -->
-<div class='lstlisting' id='listing-3'><span class='label'><a id='x1-3004r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>a[6] </span><br />
+<div id='listing-3' class='lstlisting'><span class='label'><a id='x1-3004r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>a[6] </span><br />
 <span class='label'><a id='x1-3005r2'></a><span class='cmr-6'>2</span></span><span class='cmtt-10'>b[1, 1]</span>
 </div>
 <!-- l. 71 --><p class='indent'> Beide Befehle greifen auf Eintrag \(6\) des zu Grunde liegenden Speicherbereichs
@@ -111,9 +111,9 @@ zu. Ein natürlicher Einsatz der multidimensionalen Arrays ist die
 Repräsentation von Vektoren (\(1\)-dimensionale Arrays) oder Martrizen
 (\(2\)-dimensionale Arrays).
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 75 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Die Aussage, dass </p><!-- l. 77 -->
-<div class='lstlisting' id='listing-4'><span class='label'><a id='x1-3006r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>a[6] </span><br />
+<div id='listing-4' class='lstlisting'><span class='label'><a id='x1-3006r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>a[6] </span><br />
 <span class='label'><a id='x1-3007r2'></a><span class='cmr-6'>2</span></span><span class='cmtt-10'>b[1, 1]</span>
 </div>
 <!-- l. 81 --><p class='indent'> in dem o.g. Beispiel auf den gleichen Eintrag des zu Grunde liegenden
@@ -138,17 +138,17 @@ kommen auch vor. </p></div>
 Dieser sollte immer so geschrieben sein, dass eine dritte Person diesen lesen und
 wiederverwenden kann. Wir werden daher...
 </p><ol class='enumerate1'>
-<li class='enumerate' id='x1-4002x1'>...ausschließlich englische Sprache verwenden.
+<li id='x1-4002x1' class='enumerate'>...ausschließlich englische Sprache verwenden.
 </li>
-<li class='enumerate' id='x1-4004x2'>...Variablennamen ausschreiben und keine Symbole als Variablennamen
+<li id='x1-4004x2' class='enumerate'>...Variablennamen ausschreiben und keine Symbole als Variablennamen
 verwenden (also z.B. <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>potential</span></span></span> und nicht das ausgeschriebene Symbol
 <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>phi</span></span></span> als Name).
 </li>
-<li class='enumerate' id='x1-4006x3'>...Array-Variablen mit einem Suffix versehen, der den Typ der Indices
+<li id='x1-4006x3' class='enumerate'>...Array-Variablen mit einem Suffix versehen, der den Typ der Indices
 anzeigt (z.B. <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>potential_xy</span></span></span> um anzuzeigen, dass es zwei Indices gibt
 die den Positionen \(x\) und \(y\) entsprechen).
 </li>
-<li class='enumerate' id='x1-4008x4'>...den Code
+<li id='x1-4008x4' class='enumerate'>...den Code
 mit Kommentarblöcken und <span class='cmtt-12'>Python </span><a href='https://www.python.org/dev/peps/pep-0257/'>Docstrings</a> dokumentieren. Wir
 empfehlen den <a href='https://numpydoc.readthedocs.io/en/latest/format.html'>numpydoc</a>-Standard für Docstrings.</li></ol>
 <!-- l. 93 --><p class='noindent'>In dieser Implementierung verwenden wir explizite Schleifen, um die Lesbarkeit des
@@ -156,13 +156,13 @@ Codes zu verbessern. Der Code kann durch Verwenden von <span class='cmcsc-10x-x-
 noch vektorisiert werden.
 </p><!-- l. 97 --><p class='indent'> Zunächst müssen wir den Code initialisieren und festlegen, wieviele
 Gitterpunkte wir verwenden wollen. Wir definieren die Variablen </p><!-- l. 98 -->
-<div class='lstlisting' id='listing-5'><span class='label'><a id='x1-4009r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'># Grid size, number of nodes </span><br />
+<div id='listing-5' class='lstlisting'><span class='label'><a id='x1-4009r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'># Grid size, number of nodes </span><br />
 <span class='label'><a id='x1-4010r2'></a><span class='cmr-6'>2</span></span><span class='cmtt-10'>nb_nodes = 32, 32 </span><br />
 <span class='label'><a id='x1-4011r3'></a><span class='cmr-6'>3</span></span><span class='cmtt-10'>Nx, Ny = nb_nodes</span>
 </div>
 <!-- l. 103 --><p class='indent'> Wir legen nun auch noch fest, über welchen Bereich sich die beiden
 Elektroden des Kondensators erstrecken sollen: </p><!-- l. 104 -->
-<div class='lstlisting' id='listing-6'><span class='label'><a id='x1-4012r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'># Top capacitor plate </span><br />
+<div id='listing-6' class='lstlisting'><span class='label'><a id='x1-4012r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'># Top capacitor plate </span><br />
 <span class='label'><a id='x1-4013r2'></a><span class='cmr-6'>2</span></span><span class='cmtt-10'>top_left = Nx//4 </span><br />
 <span class='label'><a id='x1-4014r3'></a><span class='cmr-6'>3</span></span><span class='cmtt-10'>top_right = 3*Nx//4-1 </span><br />
 <span class='label'><a id='x1-4015r4'></a><span class='cmr-6'>4</span></span><span class='cmtt-10'>top_potential = 1 </span><br />
@@ -178,7 +178,7 @@ wir noch die Elementmatrix die wir in einem <span class='obeylines-h'><span clas
 
 
 
-<div class='lstlisting' id='listing-7'><span class='label'><a id='x1-4021r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'># Element matrix, index l indicates element-local node </span><br />
+<div id='listing-7' class='lstlisting'><span class='label'><a id='x1-4021r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'># Element matrix, index l indicates element-local node </span><br />
 <span class='label'><a id='x1-4022r2'></a><span class='cmr-6'>2</span></span><span class='cmtt-10'>element_matrix_ll = np.array([[1, -1/2, -1/2], </span><br />
 <span class='label'><a id='x1-4023r3'></a><span class='cmr-6'>3</span></span><span class='cmtt-10'>                              [-1/2, 1/2, 0], </span><br />
 <span class='label'><a id='x1-4024r4'></a><span class='cmr-6'>4</span></span><span class='cmtt-10'>                              [-1/2, 0, 1/2]])</span>
@@ -187,7 +187,7 @@ wir noch die Elementmatrix die wir in einem <span class='obeylines-h'><span clas
 zweidimensional), die beide einen lokalen Elementknoten bezeichnen. Wir
 initialisieren weiterhin die Systemmatrix und die rechte Seite, zunächst mit
 Nullen: </p><!-- l. 123 -->
-<div class='lstlisting' id='listing-8'><span class='label'><a id='x1-4025r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'># System matrix, index g indicates global node </span><br />
+<div id='listing-8' class='lstlisting'><span class='label'><a id='x1-4025r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'># System matrix, index g indicates global node </span><br />
 <span class='label'><a id='x1-4026r2'></a><span class='cmr-6'>2</span></span><span class='cmtt-10'>system_matrix_gg = np.zeros([Nx*Ny, Nx*Ny]) </span><br />
 <span class='label'><a id='x1-4027r3'></a><span class='cmr-6'>3</span></span><span class='cmtt-10'> </span><br />
 <span class='label'><a id='x1-4028r4'></a><span class='cmr-6'>4</span></span><span class='cmtt-10'># Right hand side </span><br />
@@ -200,14 +200,14 @@ Knotenindices.
 </p><!-- l. 132 --><p class='noindent'>
 </p>
 <h3 class='sectionHead'><span class='titlemark'>11.4 </span> <a id='x1-500011.4'></a>Systemmatrix</h3>
-<!-- l. 134 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a6057226-fa98-45ed-a69f-acc000e9f3e7'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a6057226-fa98-45ed-a69f-acc000e9f3e7</span></a>
+<!-- l. 134 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a6057226-fa98-45ed-a69f-acc000e9f3e7' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a6057226-fa98-45ed-a69f-acc000e9f3e7</span></a>
 </p><!-- l. 136 --><p class='indent'> Kern des Simulationsprogramms ist der Aufbau der Systemmatrix. In diesem
 Abschnitt wird dies durch explizite Schleifen realisiert. Im nächsten Abschnitt
 wird gezeigt, wie dies mit speziellen <span class='cmtt-12'>numpy</span>-Befehlen kompakter (und effizienter),
 aber weniger transparent gestaltet werden kann.
 </p><!-- l. 138 --><p class='indent'> Zunächst definieren wir eine Funktion, die aus Knotenkoordinaten den
 globalen Knotenindex macht: </p><!-- l. 139 -->
-<div class='lstlisting' id='listing-9'><span class='label'><a id='x1-5001r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>def node_index(i, j, nb_nodes): </span><br />
+<div id='listing-9' class='lstlisting'><span class='label'><a id='x1-5001r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>def node_index(i, j, nb_nodes): </span><br />
 <span class='label'><a id='x1-5002r2'></a><span class='cmr-6'>2</span></span><span class='cmtt-10'>    """ </span><br />
 <span class='label'><a id='x1-5003r3'></a><span class='cmr-6'>3</span></span><span class='cmtt-10'>    Turn node coordinates (i, j) into their global node index. </span><br />
 <span class='label'><a id='x1-5004r4'></a><span class='cmr-6'>4</span></span><span class='cmtt-10'> </span><br />
@@ -232,7 +232,7 @@ globalen Knotenindex macht: </p><!-- l. 139 -->
 Systemmatrix addiert. Hierzu muss zunächst die Elementmatrix auf die
 Systemmatrix aufgespannt werden. Die Funktion sieht folgendermaßen aus:
 </p><!-- l. 162 -->
-<div class='lstlisting' id='listing-10'><span class='label'><a id='x1-5021r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>def add_element_matrix(system_matrix_gg, element_matrix_ll, </span><br />
+<div id='listing-10' class='lstlisting'><span class='label'><a id='x1-5021r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>def add_element_matrix(system_matrix_gg, element_matrix_ll, </span><br />
 <span class='label'><a id='x1-5022r2'></a><span class='cmr-6'>2</span></span><span class='cmtt-10'>                       global_node_indices): </span><br />
 <span class='label'><a id='x1-5023r3'></a><span class='cmr-6'>3</span></span><span class='cmtt-10'>    """ </span><br />
 <span class='label'><a id='x1-5024r4'></a><span class='cmr-6'>4</span></span><span class='cmtt-10'>    Add element matrix to global system matrix. </span><br />
@@ -268,7 +268,7 @@ Der Ausdruck <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>
 der zu dem lokalen Knotenindex der Elementmatrix gehört. Der Zusammenbau
 der Systemmatrix erfolgt dann über einen Aufruf dieser Hilfsmethode pro
 Element: </p><!-- l. 190 -->
-<div class='lstlisting' id='listing-11'><span class='label'><a id='x1-5046r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>def assemble_system_matrix(element_matrix_ll, nb_nodes): </span><br />
+<div id='listing-11' class='lstlisting'><span class='label'><a id='x1-5046r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>def assemble_system_matrix(element_matrix_ll, nb_nodes): </span><br />
 <span class='label'><a id='x1-5047r2'></a><span class='cmr-6'>2</span></span><span class='cmtt-10'>    """ </span><br />
 <span class='label'><a id='x1-5048r3'></a><span class='cmr-6'>3</span></span><span class='cmtt-10'>    Assemble system matrix from the element matrix </span><br />
 <span class='label'><a id='x1-5049r4'></a><span class='cmr-6'>4</span></span><span class='cmtt-10'> </span><br />
@@ -317,12 +317,12 @@ Die Schleife über die beiden Elemente pro Kasten ist explizit als zwei
 Aufrufe zu <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>add_element_matrix</span></span></span> geschrieben. Die Variablen <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>n0</span></span></span>, <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>n1</span></span></span> und <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>n2</span></span></span>
 enthalten die globalen Knotenindices, die die Ecken des jeweiligen Elements
 beschreiben.
-</p><!-- l. 237 --><p class='indent'> <a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=de8eb963-78bb-4fd1-8387-acc000eee353'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=de8eb963-78bb-4fd1-8387-acc000eee353</span></a>
+</p><!-- l. 237 --><p class='indent'> <a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=de8eb963-78bb-4fd1-8387-acc000eee353' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=de8eb963-78bb-4fd1-8387-acc000eee353</span></a>
 </p><!-- l. 239 --><p class='indent'> Die nun aufgebaute Systemmatrix hat (implizit) Neumann-Randbedingungen
 mit \(\nabla \Phi \cdot \hat {n}(\v {r})=0\) auf dem Rand. Wir müssen nun noch die Dirichlet-Bedingungen für die
 Elektroden hinzufügen. Hierzu ersetzen wir Zeilen der Systemmatrix und die
 entsprechenden Einträge des Lastvektors: </p><!-- l. 240 -->
-<div class='lstlisting' id='listing-12'><span class='label'><a id='x1-5089r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>def capacitor_bc(system_matrix_gg, rhs_g, </span><br />
+<div id='listing-12' class='lstlisting'><span class='label'><a id='x1-5089r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>def capacitor_bc(system_matrix_gg, rhs_g, </span><br />
 <span class='label'><a id='x1-5090r2'></a><span class='cmr-6'>2</span></span><span class='cmtt-10'>                 top_left, top_right, top_potential, </span><br />
 <span class='label'><a id='x1-5091r3'></a><span class='cmr-6'>3</span></span><span class='cmtt-10'>                 bottom_left, bottom_right, bottom_potential, </span><br />
 <span class='label'><a id='x1-5092r4'></a><span class='cmr-6'>4</span></span><span class='cmtt-10'>                 nb_nodes): </span><br />
@@ -369,11 +369,11 @@ entsprechenden Einträge des Lastvektors: </p><!-- l. 240 -->
 <span class='label'><a id='x1-5133r45'></a><span class='cmr-6'>45</span></span><span class='cmtt-10'>        system_matrix_gg[n] = mat_g </span><br />
 <span class='label'><a id='x1-5134r46'></a><span class='cmr-6'>46</span></span><span class='cmtt-10'>        rhs_g[n] = bottom_potential</span>
 </div>
-<!-- l. 289 --><p class='indent'> <a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=cac3d182-6a34-4c9c-9b6c-acc000f19238'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=cac3d182-6a34-4c9c-9b6c-acc000f19238</span></a>
+<!-- l. 289 --><p class='indent'> <a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=cac3d182-6a34-4c9c-9b6c-acc000f19238' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=cac3d182-6a34-4c9c-9b6c-acc000f19238</span></a>
 </p><!-- l. 291 --><p class='indent'> Der gesamte Simulationscode enthält nun Aufrufe dieser Funktionen,
 gefolgt von der numerischen Lösung des linearen Gleichungssystems:
 </p><!-- l. 292 -->
-<div class='lstlisting' id='listing-13'><span class='label'><a id='x1-5135r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'># Construct system matrix </span><br />
+<div id='listing-13' class='lstlisting'><span class='label'><a id='x1-5135r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'># Construct system matrix </span><br />
 <span class='label'><a id='x1-5136r2'></a><span class='cmr-6'>2</span></span><span class='cmtt-10'>system_matrix_gg = assemble_system_matrix(element_matrix_ll, </span><br />
 <span class='label'><a id='x1-5137r3'></a><span class='cmr-6'>3</span></span><span class='cmtt-10'>                                          nb_nodes) </span><br />
 <span class='label'><a id='x1-5138r4'></a><span class='cmr-6'>4</span></span><span class='cmtt-10'> </span><br />
@@ -391,7 +391,7 @@ Potentials auf den Knoten.
 </p><!-- l. 308 --><p class='noindent'>
 </p>
 <h3 class='sectionHead'><span class='titlemark'>11.5 </span> <a id='x1-600011.5'></a>Visualisierung</h3>
-<!-- l. 310 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=61f0f7d8-e311-4dcf-9f01-acc000f4b8d4'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=61f0f7d8-e311-4dcf-9f01-acc000f4b8d4</span></a>
+<!-- l. 310 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=61f0f7d8-e311-4dcf-9f01-acc000f4b8d4' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=61f0f7d8-e311-4dcf-9f01-acc000f4b8d4</span></a>
 </p><!-- l. 312 --><p class='indent'> Das Ergebnis der Rechnung kann mit Hilfe der <a href='https://matplotlib.org/'><span class='cmtt-12'>matplotlib</span></a>-Bibliothek
 visualisiert werden. Die Funktion <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>matplotlib.pyplot.tripcolor</span></span></span> kann Daten auf
 einem triangulierten 2D-Gitter darstellen. Der folgende Codeblock visualisiert das
@@ -399,7 +399,7 @@ einem triangulierten 2D-Gitter darstellen. Der folgende Codeblock visualisiert d
 
 
 Ergebnis der Simulation mit Hilfe dieser Funktion. </p><!-- l. 313 -->
-<div class='lstlisting' id='listing-14'><span class='label'><a id='x1-6001r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>import matplotlib.pyplot as plt </span><br />
+<div id='listing-14' class='lstlisting'><span class='label'><a id='x1-6001r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>import matplotlib.pyplot as plt </span><br />
 <span class='label'><a id='x1-6002r2'></a><span class='cmr-6'>2</span></span><span class='cmtt-10'>import matplotlib.tri </span><br />
 <span class='label'><a id='x1-6003r3'></a><span class='cmr-6'>3</span></span><span class='cmtt-10'> </span><br />
 <span class='label'><a id='x1-6004r4'></a><span class='cmr-6'>4</span></span><span class='cmtt-10'>def make_grid(nb_nodes): </span><br />
@@ -547,7 +547,7 @@ Simulation systematisch verbessert werden.
 
 
 
-<!-- l. 447 --><p class='noindent'><img src='Figures/capacitor_potential.svg' width='702' height='280' alt='PIC' /> <a id='x1-7001r2'></a>
+<!-- l. 447 --><p class='noindent'><img height='280' alt='PIC' src='Figures/capacitor_potential.svg' width='702' /> <a id='x1-7001r2'></a>
 <a id='x1-7002'></a>
 </p><!-- l. 449 --><p class='noindent'>figureElektrostatisches Potential
 innerhalb des Plattenkondensators, gerechnet mit (a) \(4\times 4\) Knoten (\(18\) Elemente)
@@ -587,7 +587,7 @@ auf einer Kondensatorplatte ist und \(\Delta \Phi \) der (vorgegebene) Potential
 zweite Kondensatorplatte muss die Ladung \(Q_1=-Q_0\) tragen. Der Code für die Berechnung
 der Ladung auf den Kondensatorplatten sieht daher folgendermaßen aus:
 </p><!-- l. 473 -->
-<div class='lstlisting' id='listing-15'><span class='label'><a id='x1-7003r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>def get_charge(potential_g, nb_nodes, </span><br />
+<div id='listing-15' class='lstlisting'><span class='label'><a id='x1-7003r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>def get_charge(potential_g, nb_nodes, </span><br />
 <span class='label'><a id='x1-7004r2'></a><span class='cmr-6'>2</span></span><span class='cmtt-10'>               top_left, top_right, </span><br />
 <span class='label'><a id='x1-7005r3'></a><span class='cmr-6'>3</span></span><span class='cmtt-10'>               bottom_left, bottom_right): </span><br />
 <span class='label'><a id='x1-7006r4'></a><span class='cmr-6'>4</span></span><span class='cmtt-10'>    """ </span><br />
@@ -658,7 +658,7 @@ werden aber in der Simulation abgebildet.
 
 
 
-<!-- l. 536 --><p class='noindent'><img src='Figures/capacity.svg' width='585' height='438' alt='PIC' /> <a id='x1-7047r3'></a>
+<!-- l. 536 --><p class='noindent'><img height='438' alt='PIC' src='Figures/capacity.svg' width='585' /> <a id='x1-7047r3'></a>
 <a id='x1-7048'></a>
 </p><!-- l. 538 --><p class='noindent'>figureKapazität \(C\) eines Plattenkondensators gegen den Abstand der Platten
 \(d\). Beide Achsen sind entdimensionalisiert und zeigen Größen ohne Einheit.
@@ -679,13 +679,13 @@ Plattenlänge \(L\) oder dem Abstand der Platten \(d\) gewählt. Die Plattenlän
 
 
 </figure>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 542 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Die Systemmatrix der finite-Elemente Methode ist dünnbesetzt
 (engl. “sparse”). Für dünnbesetzte Matrizen gibt es spezielle Datenstrukturen,
 die den Umgang mit diesen Matrizen vereinfachen. Diese sind in dem Paket
 <a href='https://docs.scipy.org/doc/scipy/reference/sparse.html'><span class='cmtt-12'>scipy.sparse</span></a> implementiert. Wir können diese Routinen nutzen, um eine
 dünnbesetzte Systemmatrix zu konstruieren: </p><!-- l. 544 -->
-<div class='lstlisting' id='listing-16'><span class='label'><a id='x1-7049r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>from scipy.sparse import coo_matrix </span><br />
+<div id='listing-16' class='lstlisting'><span class='label'><a id='x1-7049r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>from scipy.sparse import coo_matrix </span><br />
 <span class='label'><a id='x1-7050r2'></a><span class='cmr-6'>2</span></span><span class='cmtt-10'> </span><br />
 <span class='label'><a id='x1-7051r3'></a><span class='cmr-6'>3</span></span><span class='cmtt-10'>def assemble_system_matrix(element_matrix_ll, nb_nodes): </span><br />
 <span class='label'><a id='x1-7052r4'></a><span class='cmr-6'>4</span></span><span class='cmtt-10'>    """ </span><br />

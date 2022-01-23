@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 05 [Nov. 15-21]"
 parent: Vorlesung
-date: 2021-12-10
+date: 2022-01-23
 categories: lecture
 author: Lars Pastewka
 nav_order: 5
@@ -10,7 +10,7 @@ nav_order: 5
 
 
 <h2 class='chapterHead'><span class='titlemark'>Kapitel 5</span><br /><a id='x1-10005'></a>Numerische Lösungsstrategien</h2>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 6 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Wir legen jetzt das Transportproblem für eine Weile zur Seite
 und wollen uns der <span class='cmti-12'>numerischen </span>Lösung von Differentialgleichungen
 widmen. Dieses Kapitel zeigt die Grundzüge der numerischen Analyse von
@@ -69,7 +69,7 @@ Optimierungsproblem abgebildet. Die unterschiedlichen numerischen Verfahren,
 die wir in den nächsten Kapiteln diskutieren werden, entscheiden sich hier
 hauptsächlich in der spezifischen Optimierungsstrategie.
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 52 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Numerische Verfahren für die <span class='cmti-12'>Optimierung </span>sind ein zentraler
 Kern der numerischen Lösung von Differentialgleichungen und damit der
 Simulationstechniken. Es gibt unzählige Optimierungsverfahren, die in
@@ -108,7 +108,7 @@ minimieren. Hierfür wählen wir eine Strategie, die als <span class='cmti-12'>K
 wird: Wir verlangen, dass an drei ausgewählten Punkten das Residuum exakt
 verschwindet: \begin {equation} R(x_i; a_0, a_1, a_2)=0 \quad \text {für}\quad x_0=-1/2, x_1=0\;\text {und}\;x_2=1/2. \end {equation}
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 98 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Das Verschwinden des Residuums bei \(x_i\) bedeutet nicht, dass auch \(u_2(x_i)\equiv u(x_i)\),
 also dass bei \(x_i\) unsere approximative Lösung der exakten Lösung entspricht. Wir
 sind immer noch auf einen begrenzten Satz von Funktionen, nämlich die
@@ -127,7 +127,7 @@ Lösung \(u(x)\).
 
 
 
-<!-- l. 118 --><p class='noindent'> <img height='250' width='585' alt='PIC' src='Figures/numerical_example-.png' /> <a id='x1-4001r1'></a>
+<!-- l. 118 --><p class='noindent'> <img width='585' alt='PIC' src='Figures/numerical_example-.png' height='250' /> <a id='x1-4001r1'></a>
 <a id='x1-4002'></a>
 </p><!-- l. 120 --><p class='noindent'>figureAnalytische Lösung \(u(x)\) und “numerische” approximative Lösung \(u_2(x)\) der
 GDGL \eqref{eq:odeexample}.
@@ -146,7 +146,7 @@ finiten Elemente etablieren und als Minimierungsstrategie die Galerkin-Methode
 nutzen. Hierzu müssen wir zunächst Eigenschaften möglicher Basisfunktionen
 diskutieren.
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 126 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Das hier dargestellte Beispiel ist ein einfacher Fall einer
 <span class='cmti-12'>Diskretisierung</span>. Wir sind von einer kontinuierlichen Funktion auf die diskreten
 Koeffizienten \(a_0\), \(a_1\), \(a_2\) übergegangen. </p></div>

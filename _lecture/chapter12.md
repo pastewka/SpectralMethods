@@ -1,191 +1,151 @@
 ---
 layout: default
-title: "Kapitel 12 [Jan. 17-23]"
+title: "Kapitel 12 [Jan. 17-Feb. 11]"
 parent: Vorlesung
-date: 2021-12-10
+date: 2022-01-23
 categories: lecture
 author: Lars Pastewka
 nav_order: 12
 ---
 
 
-<h2 class='chapterHead'><span class='titlemark'>Kapitel 12</span><br /><a id='x1-100012'></a>Zeitabhängige Probleme</h2>
-<div id='shaded*-1' class='framedenv'>
-<!-- l. 3 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Viele Probleme denen wir begegnen, wie z.B. der bereits diskutierte
-Diffusionsprozess, sind zeitabhängig. Wir haben bislang nur die stationäre Lösung
-von linearen Problemen behandelt. Eine Behandlung des Anfangswertproblems,
-welches die Zeitabhängigkeit <span class='cmti-12'>explizit </span>beinhaltet, benötigt entsprechende
-Integrationsalgorithmen. </p></div>
-<h3 class='sectionHead'><span class='titlemark'>12.1 </span> <a id='x1-200012.1'></a>Anfangswertprobleme</h3>
-<!-- l. 9 --><p class='noindent'>Typische zeitabhängige PDGLs haben die Form, \begin {equation} \frac {\partial u}{\partial t} + \mathcal {L} u(\v {r}, t) = f(\v {r}, t), \label {eq:boundary-value-problem} \end {equation}
-wobei \(\mathcal {L}\) ein irgendwie gearteter Operator ist, z.b. \(\mathcal {L}=-\nabla \cdot D\nabla \) für Diffusionsprozesse. Die
-dazugehörige stationäre Lösung, die üblicherweise für \(t\to \infty \) erreicht wird, ist
-durch \(\mathcal {L} u=0\) gegeben. Wir haben in den letzten Kapiteln gelernt, wie man eine
-solche stationäre Lösung für lineare Probleme numerisch berechnen
-kann.
-</p><!-- l. 20 --><p class='indent'> Gleichung \eqref{eq:boundary-value-problem} ist ein <span class='cmti-12'>Anfangswertproblem </span>(engl.
-“initial value problem”), weil man das Feld \(u(\v {r},t)\) zu einem Zeitpunkt (üblicherweise \(t=0\))
-festlegen muss. Man integriert dann diese Anfangswertprobleme von diesem
-Zeitpunkt in die Zukunft. Eine Auswahl solcher Zeitintegrationsalgorithmen (engl.
-“time marching”) werden in diesem Kapitel besprochen. Bevor wir dazu kommen,
-müssen wir jedoch zunächst noch einmal zur Diskretisierung der räumlichen
-Ableitungen kommen.
-</p><!-- l. 22 --><p class='noindent'>
+<h2 class='chapterHead'><span class='titlemark'>Kapitel 12</span><br /><a id='x1-100012'></a>Nichtlineare Probleme</h2>
+<div class='framedenv' id='shaded*-1'>
+<!-- l. 3 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Bislang haben wir nur lineare Probleme betrachtet. Als Beispiel für
+eine nichtlineare partielle Differentialgleichung ist uns allerdings bereits die
+Poisson-Boltzmann-Gleichung begegnet. Die Lösung nichtlinearer partieller
+Differentialgleichungen führt zu zwei zusätzlichen Schwierigkeitsgraden: Zum
+einen müssen wir nichtlineare Gleichungssysteme lösen können, zum
+anderen müssen wir Integrale über Funktionen mit Polynomordnung
+höher als Zwei in den Basisfunktion ausrechnen. Hierzu werden in diesem
+Kapitel das Newton-Raphson-Verfahren und Quadraturregeln eingeführt. </p></div>
+<h3 class='sectionHead'><span class='titlemark'>12.1 </span> <a id='x1-200012.1'></a>Newton-Raphson-Verfahren</h3>
+<!-- l. 9 --><p class='noindent'>Das <span class='cmti-12'>Newton-Raphson-Verfahren</span>, oder auch kurz nur <span class='cmti-12'>Newton-Verfahren</span>, ist
+ein Verfahren für die iterative Lösung einer nichtlinearen Gleichung.
+Zur Illustration beschreiben wir dieses hier zunächst für skalarwertige
+Funktionen und werden dann das Verfahren für vektorwertige Funktionen
+verallgemeinern.
+</p><!-- l. 11 --><p class='indent'> Wir suchen die allgemeine Lösung für die Gleichung \(f(x)=0\) mit beliebiger
+Funktion \(f(x)\). Die Idee des Newton-Verfahrens ist es nun, die Gleichung an einem
+Punkt zu linearisieren, also eine Taylorentwicklung bis zur ersten Ordnung
+hinzuschreiben, und dann dieses linearisierte System zu Lösen. Die um den
+Punkt \(x_i\) taylorentwickelte Gleichung \begin {equation} f(x) \approx f(x_i) + (x - x_i) f'(x_i) = 0 \label {eq:newtonapprox} \end {equation}
+hat die Lösung \begin {equation} x_{i+1} = x_i - f(x_i) / f'(x_i), \end {equation}
+wobei \(f'(x)=\dif f/\dif x\) die erste Ableitung der Funktion \(f\) ist. Der Wert \(x_{i+1}\) ist nun näher an der
+Nullstelle \(x_0\) (mit \(f(x_0)=0\)) als der Wert \(x_i\). Die Idee des Newton-Verfahrens ist es nun, eine
+Folge \(x_i\) von linearen Approximationen der Funktion \(f\) zu konstruieren, die auf die
+Nullstelle konvergiert. Wir nutzen also die Nullstelle der linearisierten Form der
+Gleichung als Startpunkt für die nächste Iteration. Ein Beispiel einer solchen
+Iteration ist in Abb. <a href='#x1-2001r1'>12.1<!-- tex4ht:ref: fig:newton --></a> gezeigt.
 </p>
-<h3 class='sectionHead'><span class='titlemark'>12.2 </span> <a id='x1-300012.2'></a>Räumliche Ableitungen</h3>
-<!-- l. 24 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=f7743809-a4c4-47ee-aa5b-acc1012a8425' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=f7743809-a4c4-47ee-aa5b-acc1012a8425</span></a>
-</p><!-- l. 26 --><p class='indent'> Wir approximieren nun wiederum die (nun zeitabhängige) Funktion \(u(\v {r}, t)\) durch
-eine Reihenentwicklung \(u_N(\v {r})\). Im Unterschied zu den vorhergehenden Kapiteln nehmen
-wir nun an, dass die Koeffizienten nicht mehr konstant sondern zeitabhängig
-sind. D.h. wir schreiben \begin {equation} u_N(\v {r}, t) = \sum _n a_n(t) \varphi _n(\v {r}). \end {equation}
-Nun multiplizieren wir die gesamte zeitabhängige PDGL
-Gl. \eqref{eq:boundary-value-problem} mit den Basisfunktionen \(\varphi _n(\v {r})\) der
-Reihenentwicklung, \begin {equation} \frac {\partial }{\partial t} (\varphi _n, u_N) + (\varphi _n, \mathcal {L} u_N) = (\varphi _n, f), \end {equation}
-In den vorhergehenden Kapiteln, haben wir bereits gelernt, wie wir die beiden
-rechten Terme dieser Gleichung ausrechnen müssen, \begin {align} (\varphi _n, \mathcal {L} u_N) &amp;= \sum _k K_{nk} a_k(t),\\ (\varphi _n, f) &amp;= f_n(t) \end {align}
+<figure class='figure'>
 
 
 
-</p><!-- l. 45 --><p class='indent'> wobei \(\t {K}\) die bekannte Systemmatrix ist und \(\v {f}(t)\) der (nun potentiell zeitabhängige)
-Lastvektor. Nun ziehen wir die Zeitableitung in das Skalarprodukt hinein. Man
-erhält damit \begin {equation} \sum _k M_{nk} \frac {\dif a_k}{\dif t} + \sum _k K_{nk} a_k(t) = f_n(t), \label {eq:discrete-time-dependent} \end {equation}
-mit \(M_{nk}=(\varphi _n, \varphi _k)\), der <span class='cmti-12'>Massenmatrix</span>. Dies ist ein System gekoppelter <span class='cmti-12'>gewöhnlicher</span>
-Differentialgleichungen. Wir haben also die PDGL durch die räumliche
-Diskretisierung in ein <span class='cmti-12'>System </span>von GDGLs umgewandelt. Für eine
-Fourier-Basis ist die Massenmatrix diagonal, für eine finite-Elemente
-Basis ist diese dünnbesetzt aber nicht mehr diagonal. Wir können aber
-Gl. \eqref{eq:discrete-time-dependent} formal von links mit \(\t {M}^{-1}\) multiplizieren und
-erhalten, \begin {equation} \frac {\dif \v {a}}{\dif t} = - \t {M}^{-1} \cdot \t {K} \cdot \v {a}(t) + \t {M}^{-1} \cdot \v {f}(t) \equiv \v {g}(\v {a}(t), t). \label {eq:discrete-time-dependent-invmass} \end {equation}
+
+
+
+
+<!-- l. 26 --><p class='noindent'> <img height='350' alt='PIC' width='467' src='Figures/NewtonMethod/newton-.png' /> <a id='x1-2001r1'></a>
+<a id='x1-2002'></a>
+</p><!-- l. 28 --><p class='noindent'>figureIllustration des Newton-Verfahrens zur Lösung der Gleichung \(f(x)=0\), hier
+für die Funktion \(f(x)=10 \sin (x) - \exp 2x + 2\). Die gestrichelten Linien sind jeweils die linearisierte Form,
+Gl. \eqref{eq:newtonapprox}. Das Verfahren started bei \(x=0.5\) (blauer Punkt) und
+liefert die Nullstelle der um diesen Punkt linearisierten Form (blaues Kreuz).
+Die zweite Iteration ist die orangene Linie, die dritte die grüne Linie. Hier
+sind nur die ersten drei Schritte dieser Newton-Iteration gezeigt, nach denen
+bereits eine gute Lösung der Nullstelle gefunden wurde.
 </p>
-<div id='shaded*-1' class='framedenv'>
-<!-- l. 68 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Da sich die Massematrix in der Zeitentwicklung nicht ändert,
-kann \(\t {M}^{-1}\) hier einmal vorberechnet werden. Da \(\t {M}\) üblicherweise dünnbesetzt
-ist, kann es aber auch numerisch effizienter sein, in jedem Schritt das
-entsprechende Gleichungssystem zu lösen. Dies liegt daran, dass die Inverse einer
-dünnbesetzten Matrix nicht mehr dünnbesetzt ist. Damit braucht die
-Multiplikation mit \(\t {M}^{-1}\) \(\sim N^2\) Operationen, während das Lösen des Gleichungssystems
-nur \(\sim N\) Operationen benötigt. Die Anzahl der benötigten Operationen nennt man
-die <span class='cmti-12'>Komplexität </span>eines Algorithmus. </p></div>
-<div id='shaded*-1' class='framedenv'>
-<!-- l. 72 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Beispiel:</span></span> Für die Basis der finite Elemente kann die Massematrix wieder als
-Summe über entsprechende Elementmatrizen \(\t {M}^{(n)}\) ausgedrückt werden. Die
-Komponenten dieser Elementmassematrizen sind durch \begin {equation} M^{(n)}_{IJ} = (N_I^{(n)}, N_J^{(n)}) \end {equation}
-gegeben. Man erhält beispielsweise \begin {equation} \begin {split} M_{11}^{(0)} = M_{22}^{(0)} &amp;= \Delta x\Delta y \int _0^1 \dif \xi \int _0^{1-\xi } \dif \eta \, \xi ^2 \\ &amp;= \Delta x\Delta y \int _0^1 \dif \xi \, \xi ^2 (1-\xi ) \\ &amp;= \Delta x\Delta y/12, \end {split} \end {equation}
-wobei die Integrationsgrenzen für das Integral über das Dreieck gewählt sind.
-Die weiteren Integrale können entsprechend ausgeführt werden. Hiermit
-bekommt man \begin {equation} \t {M}^{(n)} = \frac {\Delta x\Delta y}{24} \begin {pmatrix} 2 &amp; 1 &amp; 1 \\ 1 &amp; 2 &amp; 1 \\ 1 &amp; 1 &amp; 2 \end {pmatrix}. \end {equation}
-Der Ausdruck ist für beide Elementmassematrizen identisch. Die globale
-Systemmassematrix erhält man auf dem gleichen Weg wie die Systemmatrix. </p></div>
-<!-- l. 111 --><p class='noindent'>
+<figcaption class='caption'><span class='id'>Abbildung 12.1: </span><span class='content'>Illustration des Newton-Verfahrens zur Lösung der
+Gleichung \(f(x)=0\), hier für die Funktion \(f(x)=10 \sin (x) - \exp 2x + 2\). Die gestrichelten Linien sind jeweils die
+linearisierte Form, Gl. \eqref{eq:newtonapprox}. Das Verfahren started bei
+\(x=0.5\) (blauer Punkt) und liefert die Nullstelle der um diesen Punkt linearisierten
+Form (blaues Kreuz). Die zweite Iteration ist die orangene Linie, die dritte die
+grüne Linie. Hier sind nur die ersten drei Schritte dieser Newton-Iteration
+gezeigt, nach denen bereits eine gute Lösung der Nullstelle gefunden wurde.
+</span></figcaption><!-- tex4ht:label?: x1-2001r12.1 -->
+
+
+
+</figure>
+<!-- l. 32 --><p class='indent'> Die Diskretisierung unserer PDGLs führte uns auf ein lineares Gleichungssystem,
+welches wir Abstrakt als \(\v {f}(\v {x})=\v {0}\) schreiben können. Wir werden in diesem Kapitel
+nichtlineare Gleichungssysteme dieser Form kennen lernen. Das Newton-Verfahren
+für die Lösung solcher gekoppelter nichtlinearer Gleichungen funktioniert analog
+zu dem skalaren Fall. Wir schreiben zunächst die Taylor-Entwicklung
+\begin {equation} \v {f}(\v {x}) \approx \v {f}(\v {x}_i) + \t {K}(\v {x}_i)\cdot (\v {x} - \v {x}_i) = 0 \end {equation}
+mit der <span class='cmti-12'>Jacobi-Matrix </span>\begin {equation} K_{mn}(\v {x})=\frac {\dif f_m(\v {x})}{\dif x_n}. \end {equation}
+Im Kontext der finiten Element wird \(\t {K}(\v {x}_i)\) auch häufig die <span class='cmti-12'>Tangentenmatrix</span>
+(engl. “tangent matrix” oder “tangent stiffness matrix”) genannt. Das
+Newton-Verfahren lässt sich dann als \begin {equation} \v {x}_{i+1} = \v {x}_i - \t {K}^{-1}(\v {x}_i)\cdot \v {f}(\v {x}_i) \label {eq:newtonmultidim} \end {equation}
+schreiben. In der numerischen Lösung von Gl. \eqref{eq:newtonmultidim} wird
+der Schritt \(\Delta \v {x}_i = \v {x}_{i+1} - \v {x}_i\) meist über die Lösung des linearen Gleichungssystems \(\t {K}_i\cdot \Delta \v {x}_i = -\v {f}(\v {x}_i)\) und nicht
+mit Hilfe einer expliziten Matrixinversion von \(\t {K}_i\) implementiert.
+</p>
+<h3 class='sectionHead'><span class='titlemark'>12.2 </span> <a id='x1-300012.2'></a>Numerische Integration</h3>
+<!-- l. 49 --><p class='noindent'>Alle Integrale aus den vorhergehenden Kapiteln, insbesondere die Integrale der
+Laplace- und Massematrizen, konnten vollständig analytisch gelöst werden.
+Dies ist bei nichtlinearen PDGLs in vielen Fällen nicht mehr möglich. Wir
+müssen daher über numerische, approximative Integration reden. Dies wird oft
+synonym auch <span class='cmti-12'>numerische Quadratur </span>genannt. Wir werden hier die Terme
+Integration und Quadratur austauschbar verwenden.
+</p><!-- l. 51 --><p class='indent'> Wir betrachten zunächst eine Funktion \(f(x)\) und möchten das Integral \(\int _{-1}^1 \dif x\, f(x)\) über
+ein gewisses Gebiet \([-1,1]\) auswerten. (Wie beschränken uns hier auf dieses
+Gebiet. Eine Integration über ein allgemeines Interval \([a,b]\) kann immer auf
+dieses Gebiet abgebildet werden.) Eine naheliegende Lösung wäre die
+Approximation des Integrals mit einer Summe von Rechtecken. Wir schreiben
+\begin {equation} \int _{-1}^1 \dif x\, f(x) \approx \sum _{n=0}^{N-1} w^Q_n f(x^Q_n), \label {eq:quadrature} \end {equation}
+wobei \(\sum _n w_n = b-a\). Der Quadraturpunkt \(x_n^Q\) muss im \(n\)-ten Interval liegen, \(\sum _{i=1}^{n-1} w_i^Q - 1 &lt; x_n^Q &lt; \sum _{i=1}^n w_i^Q-1\).
+Gleichung \eqref{eq:quadrature} ist eine <span class='cmti-12'>Quadraturregel </span>(engl. “quadrature
+rule”). Die Punkte \(x_n^Q\) heißen Quadraturpunkte (engl. “quadrature points”) und die \(w_n^Q\)
+sind die Quadraturgewichte (engl. “quadrature weights”). Für die Rechteckregel
+sind diese Gewichte genau die Breite der Rechtecke, andere Formen einer
+Quadraturregel werden im folgenden Besprochen.
+</p><!-- l. 58 --><p class='indent'> Wir stellen nun die Frage, welche Wahl von \(x_n^Q\) und \(w_n^Q\) für eine gegebene Zahl and
+Quadraturpunkten \(N\) ideal wäre. Eine gute Wahl für \(N=1\) ist sicherlich \(x_1^Q=0\) und \(w_1^Q=2\). Diese
+Regel führt für lineare Funktionen zu der exakten Lösung. Verschieben wir den
+Quadraturpunkt \(x_1^Q\) an einen anderen Ort, so werden nur noch konstante Funktionen
+
+
+
+exakt approximiert.
+</p><!-- l. 60 --><p class='indent'> Mit zwei Quadraturpunkten sollten wir daher ein Polynom dritter Ordnung
+exakt integrieren können. Wir können diese Punkte bestimmen, in dem wir
+genau die exakte Integration von Polynomen bis zu dritter Ordnung explizit
+verlangen: \begin {align} \int _{-1}^1 \dif x\, 1 &amp;= 2 = w_1^Q + w_2^Q \\ \int _{-1}^1 \dif x\, x &amp;= 0 = w_1^Q x_1^Q + w_2^Q x_2^Q \\ \int _{-1}^1 \dif x\, x^2 &amp;= 2/3 = w_1^Q (x_1^Q)^2 + w_2^Q (x_2^Q)^2 \\ \int _{-1}^1 \dif x\, x^3 &amp;= 0 = w_1^Q (x_1^Q)^3 + w_2^Q (x_2^Q)^3 \end {align}
+</p><!-- l. 67 --><p class='indent'> Die Lösung dieser vier Gleichungen führt direkt zu \(w_1^Q=w_2^Q=1\), \(x_1^Q=1/\sqrt {3}\) und \(x_2^Q=-1/\sqrt {3}\). Für drei
+Quadraturpunkte erhält man mit einer identischen Konstruktion \(w_1^Q=w_3^Q=5/9\), \(w_2^Q=8/9\), \(x_1^Q=-\sqrt {3/5}\), \(x_2^Q=0\) und
+\(x_3^Q=\sqrt {3/5}\).
+</p><!-- l. 69 --><p class='noindent'>
+</p>
+<h3 class='sectionHead'><span class='titlemark'>12.3 </span> <a id='x1-400012.3'></a>Poisson-Boltzmann-Gleichung</h3>
+<!-- l. 71 --><p class='noindent'>Wir diskutieren nun die numerische Lösung der nichtlinearen
+Poisson-Boltzmann-(PB-)Gleichung für zwei Spezies, \begin {equation} \begin {split} \nabla ^2 \Phi &amp;= - \frac {c_0}{\varepsilon } \left [ q_+ \exp \left (-\frac {q_+ \Phi }{k_B T}\right ) + q_- \exp \left (-\frac {q_- \Phi }{k_B T}\right ) \right ] \\ &amp;= \frac {2\rho _0}{\varepsilon } \sinh \left ( \frac {|e| \Phi }{k_B T} \right ) \end {split} \end {equation}
+wobei \(\rho _0=|e|c_0\) die Referenzladungsdichte und \(q_+=|e|\) and \(q_-=-|e|\) die ionischen Ladungen sind. Da
+für kleine \(x\) gilt \(\sinh x\approx x\), ist die linearisierte Variante der PB-Gleichung \(\nabla ^2\Phi =\Phi /\lambda ^2\) mit der
+Debye-Länge \(\lambda =\sqrt {\varepsilon k_B T/(2|e|\rho _0)}\). Wir können die Debye-Länge nutzen um die Gleichung zu
+\begin {equation} \tilde {\nabla }^2 \tilde {\Phi } = \sinh \tilde \Phi \label {eq:nondimensionalpb} \end {equation}
+mit dem entdimensionalisierten Potential \(\tilde {\Phi } = \varepsilon \tilde {\Phi }/(2\rho _0 \lambda ^2)\) und der entdimensionalisierten Länge \(\tilde {x}=x/\lambda \)
+(und \(\dif /\dif \tilde {x}=\lambda \dif /\dif x\)) umzuschreiben. In folgenden werden wir mit Gl. \eqref{eq:nondimensionalpb}
+arbeiten aber der Einfachheit halber die Tilde nicht weiter explizit schreiben.
+</p><!-- l. 88 --><p class='indent'> Wir betrachten im Folgenden die eindimensionale Variante der PB-Gleichung
+in Interval \([0,L]\). Das Residuum ist \begin {equation} R(x) = \frac {\dif ^2 \Phi }{\dif x^2} - \sinh \Phi . \end {equation}
+Multiplikation mit einer Testfunktion \(v(x)\) liefert das gewichtete Residuum
+\begin {equation} \begin {split} (v, R) &amp;= (v, \dif ^2 \Phi /\dif x^2) - (v, \sinh \Phi ) \\ &amp;= \left . v\frac {\dif \Phi }{\dif x}\right |_0^L - (\dif v/\dif x, \dif \Phi /\dif x) - (v, \sinh \Phi ). \end {split} \end {equation}
+Der rechte Term ist nichtlinear in \(\Phi \) und benötigt zur Lösung numerische
+Quadratur. Im Folgenden vernachlässigen wir weiterhin den Oberflächenterm.
+</p><!-- l. 101 --><p class='indent'> Der nächste Schritt ist der Galerkin-Ansatz, \(\Phi (x)\approx \Phi _N(x) = \sum _{n=0}^N a_n \varphi _n(x)\) und \(v(x)=\varphi _k(x)\). Der Laplace-Operator
+wird zu \begin {equation} (\dif \varphi _k/\dif x, \dif \Phi _N/\dif x) = L_{kn} a_n \end {equation}
+mit der bekannten (konstanten) Laplace-Matrix \(L_{kn}\). Den nichtlinearen Term rechnen
+wir mit einer Quadraturregel aus, die wir <span class='cmti-12'>pro Element anwenden</span>. Man erhält
+\begin {equation} (N_I^{(k)}, \sinh \Phi _N) = \sum _i w_i^Q N_I^{(k)}(x_i^{(k)}) \sinh \Phi _N(x_i^{(k)}), \end {equation}
+wobei \(x_i^{(k)}\) der \(i\)-te Quadraturpunkt auf Element \((k)\) ist.
+</p><!-- l. 111 --><p class='indent'> Für die Lösung des Gleichungssystems \((\varphi _k, R_N)=0\) mit dem Newton-Raphson-Verfahren
+brauchen wir die Tangentenmatrix \(\t {K}\). Es gilt, \begin {equation} K_{kn} = \frac {\partial (\varphi _k, \Phi _N)}{\partial a_n} = L_{kn} + \frac {\partial (N_1^{(k-1)}, \sinh \Phi _N)}{\partial a_n} + \frac {\partial (N_0^{(k)}, \sinh \Phi _N)}{\partial a_n} \end {equation}
+mit \begin {equation} \frac {\partial (N_I^{(k)}, \sinh \Phi _N)}{\partial a_n} = \sum _i w_i^Q N_I^{(k)}(x_i^{(k)}) \varphi _n(x_i^{(k)}) \cosh \Phi _N(x_i^{(k)}). \end {equation}
 
 
 
 </p>
-<h3 class='sectionHead'><span class='titlemark'>12.3 </span> <a id='x1-400012.3'></a>Runge-Kutta Methoden</h3>
-<!-- l. 113 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=13ac878b-710a-4f49-9653-acc1012a83f0' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=13ac878b-710a-4f49-9653-acc1012a83f0</span></a>
-</p><!-- l. 115 --><p class='noindent'>
-</p>
-<h4 class='subsectionHead'><span class='titlemark'>12.3.1 </span> <a id='x1-500012.3.1'></a>Euler-Verfahren</h4>
-<!-- l. 117 --><p class='noindent'>Gleichung \eqref{eq:discrete-time-dependent-invmass} kann in der Zeit
-propagiert werden. Wir nehmen an \(a_n(t)\) sei bekannt, dann können wir \(a_n(t+\Delta t)\) um \(t\) in eine
-Taylorreihe entwickeln. Dies ergibt \begin {equation} \v {a}(t+\Delta t) = \v {a}(t)+\Delta t \v {g}(\v {a}(t),t)+\mathcal {O}(\Delta t^2), \label {eq:Euler} \end {equation}
-wobei \(\mathcal {O}(\Delta t^2)\) für quadratische und höhere Terme steht, die hier vernachlässigt werden.
-Gleichung \eqref{eq:Euler} kann direkt eingesetzt werden, um die Koeffizienten \(\v {a}\)
-einen Schritt \(\Delta t\) in die Zukunft zu propagieren. Der Euler-Algorithmus ist
-allerdings nicht sonderlich stabil und verlangt sehr kleine Zeitschritte
-\(\Delta t\).
-</p><!-- l. 126 --><p class='noindent'>
-</p>
-<h4 class='subsectionHead'><span class='titlemark'>12.3.2 </span> <a id='x1-600012.3.2'></a>Heun-Verfahren</h4>
-<!-- l. 128 --><p class='noindent'>Basierend auf der Euler Integration kann ein einfaches Verfahren mit höherer
-Konvergenzordnung konstruiert werden. Die Konvergenzordnung besagt, wie sich
-der Fehler verringert wenn die Schrittweite reduziert wird. Bei einem Verfahren
-erster Ordnung reduziert sich der Fehler linear mit der Schrittweite, bei einem
-Verfahren zweiter Ordnung quadratisch.
-</p><!-- l. 130 --><p class='indent'> Im Heun-Verfahren schätzt man zunächst den Funktionswert zum Zeitpunkt
-\(t+\Delta t\) mit dem Euler-Verfahren ab. Man berechnet also \begin {equation} \tilde {\v {a}}(t+\Delta t) = \v {a}(t)+\Delta t \v {g}(\v {a}(t),t), \end {equation}
-und benutzt dann die Trapezregel mit diesem abgeschätzten Funktionswert um
-die Funktion einen Zeitschritt \(\Delta t\) zu integrieren: \begin {equation} \v {a}(t+\Delta t) = \v {a}(t)+\frac {\Delta t}{2} \left (\v {g}(\v {a}(t),t) + \v {g}(\tilde {\v {a}}(t+\Delta t),t)\right ) \end {equation}
-Das Heun-Verfahren hat quadratische Konvergenzordnung. Verfahren die
-zunächst Funktionswerte schätzen und dann korrigieren nennt man auch
-<span class='cmti-12'>Predictor-Corrector </span>Verfahren.
-</p><!-- l. 140 --><p class='noindent'>
-</p>
-<h4 class='subsectionHead'><span class='titlemark'>12.3.3 </span> <a id='x1-700012.3.3'></a>Automatische Schrittweitenkontrolle</h4>
-<!-- l. 142 --><p class='noindent'>Mit Hilfe zweier Integrationsverfahren mit unterschiedlicher Konvergenzordnung
-
-
-
-lässt sich eine automatische Schrittweitenkontrolle realisieren, in der der
-Zeitschritt \(\Delta t\) so angepasst wird, dass ein bestimmer Fehler nicht überschritten
-wird. Die Verfahren sind insbesondere dann interessant, wenn die Berechnungen
-der niedrigen Fehlerordnung in der Berechnung der höheren Fehlerordnung
-wiederverwendet werden kann, wie dies z.B. bei dem Heun-Verfahren der Fall
-ist.
-</p><!-- l. 144 --><p class='indent'> Für eine Kombination zweier Verfahren (z.B. Euler und Heun), ergibt sich
-eine Abschätzung des Fehlers aus der Differenz der beiden Integrationen.
-Unter Vorgabe einer globalen Fehlerschranke, kann dann der Zeitschritt
-so angepasst werden, dass der Fehler immer unterhalb dieser Schranke
-bleibt.
-</p>
-<div id='shaded*-1' class='framedenv'>
-<!-- l. 146 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Sowohl die Euler-Integration als auch das Heun-Verfahren
-gehören zur Klasse der <span class='cmti-12'>Runge-Kutta Methoden</span>. Es gibt eine ganze Reihe von
-Runge-Kutta Methoden mit unterschiedlichen Konvergenzordnungen. Interessant
-sind insbesondere Methoden mit automatische Schrittweitenkontrolle wie hier
-beispielhaft beschrieben. In <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>scipy</span></span></span> sind insbesondere Verfahren mit den
-Konvergenzordnungen \(2\)/\(3\) und \(4\)/\(5\) implementiert. Diese können über die Funktion
-<a href='https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html'><span class='cmtt-12'>scipy.integrate.solve_ivp</span></a> genutzt werden. </p></div>
-<!-- l. 150 --><p class='noindent'>
-</p>
-<h3 class='sectionHead'><span class='titlemark'>12.4 </span> <a id='x1-800012.4'></a>Stabilitätsanalyse</h3>
-<!-- l. 152 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=90f02a91-a31d-47f8-b085-acc101358727' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=90f02a91-a31d-47f8-b085-acc101358727</span></a>
-</p><!-- l. 154 --><p class='indent'> Zeitpropagationsverfahren werden bei zu hohen Zeitschritten instabil. Eine
-Schrittweitenkontrolle ist eine automatisierte Methode solche Instabilitäten zu
-verhindern.
-</p><!-- l. 156 --><p class='indent'> Um zu verstehen, warum solche Instabilitäten auftreten analysieren wir nun
-beispielhaft die eindimensionale Diffusionsgleichung, \begin {equation} \frac {\partial c}{\partial t} = D \frac {\partial ^2 c}{\partial x^2}. \end {equation}
-Eine Diskretisierung der räumlichen Ableitung mit linearen finiten Elementen
-führt zu \begin {equation} \frac {\partial c}{\partial t} = \frac {D}{\Delta x^2} \left (c(x-\Delta x) - 2c(x) + c(x+\Delta x)\right ). \label {eq:fediff} \end {equation}
-</p>
-<div id='shaded*-1' class='framedenv'>
-<!-- l. 166 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Eigenlich müsste auf der linken Seite von Gl. \eqref{eq:fediff} die
-Massematrix auftauchen. Wir vernachlässigen diese hier und approximieren \(\t {M}=\t {1}\).
-
-
-
-Diese Art diskretisierter Gleichung erhält man durch eine Diskretisierung mit der
-Methode der finiten Differenzen. </p></div>
-<!-- l. 170 --><p class='indent'> Wir schreiben nun die Funktion \(c(x)\) als Entwicklung in eine Fourier-Basis, also
-\begin {equation} c(x) = \sum _n c_n \exp (ik_nx). \end {equation}
-Damit werden Term der Form \(c(x+\Delta x)\) zu \begin {equation} c(x+\Delta x,t) = \sum _n c_n(t) \exp \left [ik_n (x+\Delta x)\right ] = \sum _n \exp (ik_n \Delta x) c_n(t) \exp (ik_n x). \end {equation}
-Wir schreiben nun Gl. \eqref{eq:fediff} als \begin {equation} \begin {split} \frac {\partial c_n}{\partial t} &amp;= \frac {D}{\Delta x^2} \left (\exp (-ik_n\Delta x) - 2 + \exp (ik_n\Delta x)\right ) c_n(t) \\ &amp;= \frac {2D}{\Delta x^2} \left (\cos (k_n\Delta x) - 1\right ) c_n(t), \end {split} \end {equation}
-Diese Gleichung können wir aber analytisch für ein Zeitinterval \(\Delta t\) lösen,
-\begin {equation} c_n(t+\Delta t) = c_n(t) \exp \left [\frac {2D}{\Delta x^2} \left (\cos (k_n\Delta x) - 1\right ) \Delta t \right ], \label {eq:cfl-exact} \end {equation}
-wohingegen Euler Integration \begin {equation} c_n(t+\Delta t) \approx \left [1 + \frac {2D}{\Delta x^2} \left (\cos (k_n\Delta x) - 1\right ) \Delta t\right ] c_n(t) \label {eq:cfl-euler} \end {equation}
-liefert. Der Wert des Terms \(\cos (k_n \Delta x)-1\) liegt zwischen \(-2\) und \(0\). D.h. wir können
-Gl. \eqref{eq:cfl-exact} für beliebige \(\Delta t\) propagieren, ohne dass die Konzentration \(c_n(t)\)
-zeitlich divergiert. Außer für \(k_n=0\) werden die Koeffizienten \(c_n(t)\) zeitlich kleiner.
-</p><!-- l. 200 --><p class='indent'> Für das Euler-Verfahren, Gl. \eqref{eq:cfl-euler}, ist dies aber nur den Fall,
-wenn \begin {equation} \mu = \frac {D \Delta t}{\Delta x^2} &lt; \frac {1}{2}. \label {eq:diff-cfl} \end {equation}
-Für \(\mu &gt;1/2\) wachsen einige der Koeffizienten \(c_n(t)\) mit \(t\) an, der Algorithmus wird instabil.
-Die dimensionslose Zahl \(\mu \) nennt sich eine Courant-Friedrich-Lewy-(CFL)-Zahl und
-die Bedingung Gl. \eqref{eq:diff-cfl} eine <span class='cmti-12'>CFL-Bedingung</span>. Die exakte
-Form der CFL-Bedingung hängt von der PDGL und dem Algorithmus
-ab.
-</p>
-<div id='shaded*-1' class='framedenv'>
-<!-- l. 208 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Die CFL-Bedingung sagt, dass der maximale Zeitschritt
-\begin {equation} \Delta t &lt; \frac {1}{2D} \Delta x^2 \end {equation}
-von der räumlichen Diskretisierung \(\Delta x\) abhängt. D.h. wenn wir die räumliche
-Diskretisierung feiner machen, müssen wir auch einen kleineren Zeitschritt
-wählen. Eine Halbierung der räumlichen Diskretierung braucht einen Zeitschritt
-der um ein viertel kleiner ist. Dies erhöht die Kosten einer Simulation der
-gleichen Simulationsdauer um einen Faktor \(8\). Fein aufgelöste Simulationen
-werden also schnell numerisch aufwändig. Für Verfahren mit automatischer
-Schrittkontrolle passiert diese Anpassung des Zeitschritts natürlich automatisch. </p></div>
-
-
-
-<h2 class='likechapterHead'><a id='x1-900012.4'></a>Literaturverzeichnis</h2>
+<h2 class='likechapterHead'><a id='x1-500012.3'></a>Literaturverzeichnis</h2>
 
