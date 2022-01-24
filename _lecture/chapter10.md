@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 10 [Dec. 20-Jan. 9]"
 parent: Vorlesung
-date: 2022-01-23
+date: 2022-01-24
 categories: lecture
 author: Lars Pastewka
 nav_order: 10
@@ -75,7 +75,7 @@ Testfunktion \(v(\v {r})\) und des Potentials \(\Phi (\v {r})\) berechnen könne
 
 
 
-<!-- l. 76 --><p class='noindent'> <img width='312' alt='PIC' height='233' src='Figures/Integration_Domain-.png' /> <a id='x1-2001r1'></a>
+<!-- l. 76 --><p class='noindent'> <img src='Figures/Integration_Domain-.png' width='312' height='233' alt='PIC' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
 </p><!-- l. 78 --><p class='noindent'>figureDer Rand \(\partial \Omega \) begrenzt das Integrations- bzw. Simulationsgebiet \(\Omega \). Der
 Normalenvektor \(\hat {n}\) ist auf dem Rand \(\partial \Omega \) definiert und zeigt dort senkrecht zum
@@ -128,7 +128,7 @@ gezeigt.
 
 
 
-<!-- l. 96 --><p class='noindent'> <img width='585' alt='PIC' height='276' src='Figures/mesh-.png' /> <a id='x1-4001r2'></a>
+<!-- l. 96 --><p class='noindent'> <img src='Figures/mesh-.png' width='585' height='276' alt='PIC' /> <a id='x1-4001r2'></a>
 <a id='x1-4002'></a>
 </p><!-- l. 98 --><p class='noindent'>figureTriangulierung eines rechteckigen Gebiets \(\Omega \) in ein (a) strukturiertes
 Gitter und ein (b) unstrukturiertes Gitter.
@@ -171,7 +171,7 @@ Knoten.
 
 
 
-<!-- l. 120 --><p class='noindent'><img width='780' alt='PIC' height='426' src='Figures/structured_grid.svg' /> <a id='x1-5001r3'></a>
+<!-- l. 120 --><p class='noindent'><img src='Figures/structured_grid.svg' width='780' height='426' alt='PIC' /> <a id='x1-5001r3'></a>
 <a id='x1-5002'></a>
 </p><!-- l. 122 --><p class='noindent'>figureZerlegung eines rechteckigen Gebiets in ein strukturiertes Gitter.
 (a) Die strukturierte Zerlegung erfolgt zuerst in kleinere Kästen, deren
@@ -250,7 +250,7 @@ Element \((1)\) lauten die Formfunktionen \begin {align} N^{(1)}_0(\xi , \eta ) 
 
 
 
-<!-- l. 168 --><p class='noindent'><img width='350' alt='PIC' height='280' src='Figures/febasis2d.svg' /> <a id='x1-6001r4'></a>
+<!-- l. 168 --><p class='noindent'><img src='Figures/febasis2d.svg' width='350' height='280' alt='PIC' /> <a id='x1-6001r4'></a>
 <a id='x1-6002'></a>
 </p><!-- l. 170 --><p class='noindent'>figureFormfunktionen für lineare Dreieckelemente in zwei Dimensionen.
 Jeweils eine der Formfunktionen ist an einem der Knoten \(1\). An den anderen

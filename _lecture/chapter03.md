@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 03 [Nov. 1-7]"
 parent: Vorlesung
-date: 2022-01-23
+date: 2022-01-24
 categories: lecture
 author: Lars Pastewka
 nav_order: 3
@@ -48,7 +48,7 @@ gebrochen.
 
 
 
-<!-- l. 22 --><p class='noindent'> <img src='Figures/Brownian_Motion-.png' height='222' alt='PIC' width='585' /> <a id='x1-2001r1'></a>
+<!-- l. 22 --><p class='noindent'> <img src='Figures/Brownian_Motion-.png' width='585' alt='PIC' height='222' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
 </p><!-- l. 24 --><p class='noindent'>figureIllustration eines Diffusionsprozesses. Die “Pollen” in (a) bewegen sich
 zufällig in der gezeigten Domäne. Nach einer gewissen Zeit (b) ist der
@@ -80,7 +80,7 @@ Abb. <a href='#x1-2003r2'>3.2<!-- tex4ht:ref: fig:Brown --></a>).
 
 
 
-<!-- l. 36 --><p class='center'><img src='ch030x.svg' alt='PICT' />
+<!-- l. 36 --><p class='center'><img alt='PICT' src='ch030x.svg' />
 <a id='x1-2003r2'></a>
 <a id='x1-2004'></a>
 </p><!-- l. 57 --><p class='noindent'>figureZufallsbewegung in einer Dimension ist gegeben durch
@@ -193,7 +193,7 @@ Stromdichte \(j\) hat die Einheit Anzahl Partikel/Zeit/Fläche.)
 
 
 
-<!-- l. 211 --><p class='noindent'><img src='Figures/continuity.png' height='282' alt='PIC' width='272' /> <a id='x1-5001r3'></a>
+<!-- l. 211 --><p class='noindent'><img src='Figures/continuity.png' width='272' alt='PIC' height='282' /> <a id='x1-5001r3'></a>
 <a id='x1-5002'></a>
 </p><!-- l. 213 --><p class='noindent'>figureTeilchen können das Volumen \(V\) nur durch die Seitenwände verlassen.
 Die Änderung der Teilchenzahl \(N\) über ein Zeitintervall \(\tau \) ist daher durch

@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 01 [18.-24. Okt. (2021)]"
 parent: Vorlesung
-date: 2022-01-23
+date: 2022-01-24
 categories: lecture
 author: Lars Pastewka
 nav_order: 1
@@ -20,7 +20,7 @@ nicht immer) die numerische Lösung von gewöhnlichen oder partiellen
 Differentialgleichungen. In dieser Lehrveranstaltung werden wir vornehmlich die
 Lösung von partiellen Differentialgleichungen mit Hilfe der <span class='cmti-12'>Methode der finiten
 </span><span class='cmti-12'>Elemente </span>besprechen. </p></div>
-<!-- l. 10 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e484ec5a-a280-479d-8144-ac7201129f9f' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e484ec5a-a280-479d-8144-ac7201129f9f</span></a>
+<!-- l. 10 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e484ec5a-a280-479d-8144-ac7201129f9f'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e484ec5a-a280-479d-8144-ac7201129f9f</span></a>
 </p>
 <h3 class='sectionHead'><span class='titlemark'>1.1 </span> <a id='x1-20001.1'></a>Modelle</h3>
 <!-- l. 14 --><p class='noindent'>Modelle sind üblicherweise für bestimmte Längenskalen angemessen. So kann

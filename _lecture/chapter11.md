@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 11 [Jan. 10-16 (2022)]"
 parent: Vorlesung
-date: 2022-01-23
+date: 2022-01-24
 categories: lecture
 author: Lars Pastewka
 nav_order: 11
@@ -36,7 +36,7 @@ verschwindet.
 
 
 
-<!-- l. 21 --><p class='noindent'> <img height='323' alt='PIC' src='Figures/capacitor-.png' width='507' /> <a id='x1-2001r1'></a>
+<!-- l. 21 --><p class='noindent'> <img src='Figures/capacitor-.png' alt='PIC' height='323' width='507' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
 </p><!-- l. 23 --><p class='noindent'>figure(a) Geometrie des in diesem Kapitel betrachteten Plattenkondensators.
 Auf den Elektroden ist das Potential \(\Phi \) konstant. (b) Ausschnitt aus dem
@@ -200,7 +200,7 @@ Knotenindices.
 </p><!-- l. 132 --><p class='noindent'>
 </p>
 <h3 class='sectionHead'><span class='titlemark'>11.4 </span> <a id='x1-500011.4'></a>Systemmatrix</h3>
-<!-- l. 134 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a6057226-fa98-45ed-a69f-acc000e9f3e7' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a6057226-fa98-45ed-a69f-acc000e9f3e7</span></a>
+<!-- l. 134 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a6057226-fa98-45ed-a69f-acc000e9f3e7'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a6057226-fa98-45ed-a69f-acc000e9f3e7</span></a>
 </p><!-- l. 136 --><p class='indent'> Kern des Simulationsprogramms ist der Aufbau der Systemmatrix. In diesem
 Abschnitt wird dies durch explizite Schleifen realisiert. Im nächsten Abschnitt
 wird gezeigt, wie dies mit speziellen <span class='cmtt-12'>numpy</span>-Befehlen kompakter (und effizienter),
@@ -317,7 +317,7 @@ Die Schleife über die beiden Elemente pro Kasten ist explizit als zwei
 Aufrufe zu <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>add_element_matrix</span></span></span> geschrieben. Die Variablen <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>n0</span></span></span>, <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>n1</span></span></span> und <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>n2</span></span></span>
 enthalten die globalen Knotenindices, die die Ecken des jeweiligen Elements
 beschreiben.
-</p><!-- l. 237 --><p class='indent'> <a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=de8eb963-78bb-4fd1-8387-acc000eee353' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=de8eb963-78bb-4fd1-8387-acc000eee353</span></a>
+</p><!-- l. 237 --><p class='indent'> <a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=de8eb963-78bb-4fd1-8387-acc000eee353'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=de8eb963-78bb-4fd1-8387-acc000eee353</span></a>
 </p><!-- l. 239 --><p class='indent'> Die nun aufgebaute Systemmatrix hat (implizit) Neumann-Randbedingungen
 mit \(\nabla \Phi \cdot \hat {n}(\v {r})=0\) auf dem Rand. Wir müssen nun noch die Dirichlet-Bedingungen für die
 Elektroden hinzufügen. Hierzu ersetzen wir Zeilen der Systemmatrix und die
@@ -369,7 +369,7 @@ entsprechenden Einträge des Lastvektors: </p><!-- l. 240 -->
 <span class='label'><a id='x1-5133r45'></a><span class='cmr-6'>45</span></span><span class='cmtt-10'>        system_matrix_gg[n] = mat_g </span><br />
 <span class='label'><a id='x1-5134r46'></a><span class='cmr-6'>46</span></span><span class='cmtt-10'>        rhs_g[n] = bottom_potential</span>
 </div>
-<!-- l. 289 --><p class='indent'> <a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=cac3d182-6a34-4c9c-9b6c-acc000f19238' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=cac3d182-6a34-4c9c-9b6c-acc000f19238</span></a>
+<!-- l. 289 --><p class='indent'> <a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=cac3d182-6a34-4c9c-9b6c-acc000f19238'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=cac3d182-6a34-4c9c-9b6c-acc000f19238</span></a>
 </p><!-- l. 291 --><p class='indent'> Der gesamte Simulationscode enthält nun Aufrufe dieser Funktionen,
 gefolgt von der numerischen Lösung des linearen Gleichungssystems:
 </p><!-- l. 292 -->
@@ -391,7 +391,7 @@ Potentials auf den Knoten.
 </p><!-- l. 308 --><p class='noindent'>
 </p>
 <h3 class='sectionHead'><span class='titlemark'>11.5 </span> <a id='x1-600011.5'></a>Visualisierung</h3>
-<!-- l. 310 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=61f0f7d8-e311-4dcf-9f01-acc000f4b8d4' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=61f0f7d8-e311-4dcf-9f01-acc000f4b8d4</span></a>
+<!-- l. 310 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=61f0f7d8-e311-4dcf-9f01-acc000f4b8d4'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=61f0f7d8-e311-4dcf-9f01-acc000f4b8d4</span></a>
 </p><!-- l. 312 --><p class='indent'> Das Ergebnis der Rechnung kann mit Hilfe der <a href='https://matplotlib.org/'><span class='cmtt-12'>matplotlib</span></a>-Bibliothek
 visualisiert werden. Die Funktion <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>matplotlib.pyplot.tripcolor</span></span></span> kann Daten auf
 einem triangulierten 2D-Gitter darstellen. Der folgende Codeblock visualisiert das
@@ -547,7 +547,7 @@ Simulation systematisch verbessert werden.
 
 
 
-<!-- l. 447 --><p class='noindent'><img height='280' alt='PIC' src='Figures/capacitor_potential.svg' width='702' /> <a id='x1-7001r2'></a>
+<!-- l. 447 --><p class='noindent'><img src='Figures/capacitor_potential.svg' alt='PIC' height='280' width='702' /> <a id='x1-7001r2'></a>
 <a id='x1-7002'></a>
 </p><!-- l. 449 --><p class='noindent'>figureElektrostatisches Potential
 innerhalb des Plattenkondensators, gerechnet mit (a) \(4\times 4\) Knoten (\(18\) Elemente)
@@ -658,7 +658,7 @@ werden aber in der Simulation abgebildet.
 
 
 
-<!-- l. 536 --><p class='noindent'><img height='438' alt='PIC' src='Figures/capacity.svg' width='585' /> <a id='x1-7047r3'></a>
+<!-- l. 536 --><p class='noindent'><img src='Figures/capacity.svg' alt='PIC' height='438' width='585' /> <a id='x1-7047r3'></a>
 <a id='x1-7048'></a>
 </p><!-- l. 538 --><p class='noindent'>figureKapazität \(C\) eines Plattenkondensators gegen den Abstand der Platten
 \(d\). Beide Achsen sind entdimensionalisiert und zeigen Größen ohne Einheit.

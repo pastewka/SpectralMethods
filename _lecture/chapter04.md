@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 04 [Nov. 8-14]"
 parent: Vorlesung
-date: 2022-01-23
+date: 2022-01-24
 categories: lecture
 author: Lars Pastewka
 nav_order: 4
@@ -77,7 +77,7 @@ beispielsweise für die Elektronenleitung in Metallen.
 
 
 
-<!-- l. 64 --><p class='noindent'> <img src='Figures/Drag_Force-.png' height='273' alt='PIC' width='585' /> <a id='x1-3001r1'></a>
+<!-- l. 64 --><p class='noindent'> <img width='585' height='273' alt='PIC' src='Figures/Drag_Force-.png' /> <a id='x1-3001r1'></a>
 <a id='x1-3002'></a>
 </p><!-- l. 66 --><p class='noindent'>figureEin Teilchen (z.B. ein Ion), welches sich in einer Flüsiggkeit bewegt,
 erfährt einen Strömungswiderstand. Bei geringen Geschwindigkeiten

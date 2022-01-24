@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 06 [Nov. 22-28]"
 parent: Vorlesung
-date: 2022-01-23
+date: 2022-01-24
 categories: lecture
 author: Lars Pastewka
 nav_order: 6
@@ -139,7 +139,7 @@ bis \(N\) läuft und man \(2N+1\) Koeffizienten erhält.
 
 
 
-<!-- l. 131 --><p class='noindent'><img src='Figures/fourierbasis.svg' alt='PIC' width='390' height='229' /> <a id='x1-5001r1'></a>
+<!-- l. 131 --><p class='noindent'><img src='Figures/fourierbasis.svg' width='390' alt='PIC' height='229' /> <a id='x1-5001r1'></a>
 <a id='x1-5002'></a>
 </p><!-- l. 133 --><p class='noindent'>figureRealteil der Fourier-Basisfunktionen, Gl. \eqref{eq:fourier-basis}, für
 \(n=1,2,3,4\). Die Basisfunktionen höherer Ordnung oszillieren mit einer kleineren
@@ -181,7 +181,7 @@ höherer Ordnung eingesetzt.
 
 
 
-<!-- l. 165 --><p class='noindent'><img src='Figures/febasis.svg' alt='PIC' width='390' height='115' /> <a id='x1-6001r2'></a>
+<!-- l. 165 --><p class='noindent'><img src='Figures/febasis.svg' width='390' alt='PIC' height='115' /> <a id='x1-6001r2'></a>
 <a id='x1-6002'></a>
 </p><!-- l. 167 --><p class='noindent'>figureDie Basis der finiten Elemente in ihrer einfachsten, linearen
 Inkarnation. Jede Basisfunktion ist ein “Zelt”, dass über ein gewisses

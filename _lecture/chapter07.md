@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 07 [Nov. 29-Dec. 5]"
 parent: Vorlesung
-date: 2022-01-23
+date: 2022-01-24
 categories: lecture
 author: Lars Pastewka
 nav_order: 7
@@ -82,9 +82,9 @@ Kollokationspunkten.
 
 
 <div class='subfigure'>
-<!-- l. 110 --><p class='noindent'></p><!-- l. 111 --><p class='noindent'><img alt='PIC' width='585' height='249' src='Figures/coll5.svg' />
+<!-- l. 110 --><p class='noindent'></p><!-- l. 111 --><p class='noindent'><img src='Figures/coll5.svg' width='585' alt='PIC' height='249' />
 </p></div> <div class='subfigure'>
-<!-- l. 113 --><p class='noindent'></p><!-- l. 114 --><p class='noindent'><img alt='PIC' width='585' height='256' src='Figures/coll11.svg' />
+<!-- l. 113 --><p class='noindent'></p><!-- l. 114 --><p class='noindent'><img src='Figures/coll11.svg' width='585' alt='PIC' height='256' />
 </p></div> <a id='x1-3001r1'></a>
 <a id='x1-3002'></a>
 <!-- l. 117 --><p class='noindent'>figureApproximation der auf dem Interval \([0,1]\) periodischen Funktion \(f(x)=\sin (2\pi x)^3 + \cos (6\pi (x^2-1/2))\)
@@ -178,9 +178,9 @@ auch nicht an den Stützstellen exakt mit der zu approximierenden Funktion
 
 
 <div class='subfigure'>
-<!-- l. 190 --><p class='noindent'></p><!-- l. 191 --><p class='noindent'><img alt='PIC' width='585' height='249' src='Figures/gal5.svg' />
+<!-- l. 190 --><p class='noindent'></p><!-- l. 191 --><p class='noindent'><img src='Figures/gal5.svg' width='585' alt='PIC' height='249' />
 </p></div> <div class='subfigure'>
-<!-- l. 193 --><p class='noindent'></p><!-- l. 194 --><p class='noindent'><img alt='PIC' width='585' height='247' src='Figures/gal11.svg' />
+<!-- l. 193 --><p class='noindent'></p><!-- l. 194 --><p class='noindent'><img src='Figures/gal11.svg' width='585' alt='PIC' height='247' />
 </p></div> <a id='x1-5001r2'></a>
 <a id='x1-5002'></a>
 <!-- l. 197 --><p class='noindent'>figureApproximation der auf dem Interval \([0,1]\) periodischen Funktion \(f(x)=\sin (2\pi x)^3 + \cos (6\pi (x^2-1/2))\) mit
