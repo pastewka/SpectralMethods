@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 06 [Nov. 22-28]"
 parent: Vorlesung
-date: 2022-01-24
+date: 2022-01-30
 categories: lecture
 author: Lars Pastewka
 nav_order: 6
@@ -10,7 +10,7 @@ nav_order: 6
 
 
 <h2 class='chapterHead'><span class='titlemark'>Kapitel 6</span><br /><a id='x1-10006'></a>Funktionenräume</h2>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 6 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Bevor wir tiefer in die numerische Lösung von partiellen
 Differentialgleichungen einsteigen, müssen wir hier ein leicht abstraktes Konzept
 einführen: Das Konzept der <span class='cmti-12'>Funktionenräume</span>, bzw. konkreter des <span class='cmti-12'>Hilbertraums</span>.
@@ -59,7 +59,7 @@ Skalarprodukt ist eine Abbildung mit den Eigenschaften </p>
 <!-- l. 47 --><p class='noindent'>Die Skalarprodukte Gl. \eqref{eq:vecscalar} und \eqref{eq:funcscalar} erfüllen
 beide diese Eigenschaften.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 49 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Das Skalarprodukt zwischen zwei Funktionen wird oft allgemeiner
 mit einer Gewichtsfunktion \(w(x)\) definiert, \begin {equation} (f,g) = \int _a^b \dif x\, f^*(x) g(x) w(x). \end {equation}
 Die Frage nach Orthogonalität zwischen Funktionen kann damit nur respektive
@@ -89,7 +89,7 @@ dieser Lehrveranstaltung.) Die Koeffizienten \(a_n\) heißen Koordinaten oder
 Koeffizienten. Die Anzahl der Basisfunktionen bzw. der Koordinaten \(N\) nennt man
 die <span class='cmti-12'>Dimension </span>des Vektorraums.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 75 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Ein <span class='cmti-12'>Vektorraum </span>ist eine Menge, auf der die Operationen der
 Addition und Skalarmultiplikation mit den üblichen Eigenschaften, wie der
 Existenz von neutralen und inversen Elementen und Assoziativ-, Kommutativ-
@@ -139,11 +139,8 @@ bis \(N\) läuft und man \(2N+1\) Koeffizienten erhält.
 
 
 
-<!-- l. 131 --><p class='noindent'><img src='Figures/fourierbasis.svg' width='390' alt='PIC' height='229' /> <a id='x1-5001r1'></a>
+<!-- l. 131 --><p class='noindent'><img height='229' src='Figures/fourierbasis.svg' width='390' alt='PIC' /> <a id='x1-5001r1'></a>
 <a id='x1-5002'></a>
-</p><!-- l. 133 --><p class='noindent'>figureRealteil der Fourier-Basisfunktionen, Gl. \eqref{eq:fourier-basis}, für
-\(n=1,2,3,4\). Die Basisfunktionen höherer Ordnung oszillieren mit einer kleineren
-Periode und repräsentieren höhere Frequenzen.
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 6.1:
 </span><span class='content'>Realteil der Fourier-Basisfunktionen, Gl. \eqref{eq:fourier-basis}, für \(n=1,2,3,4\). Die
@@ -154,7 +151,7 @@ und repräsentieren höhere Frequenzen.
 
 
 </figure>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 137 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Konzeptuell beschreibt die Fourier-Basis unterschiedliche
 Frequenzkomponenten, während die Basis der im nächsten Abschnitt
 beschriebenen finiten Elemente unterschiedliche Raumbereiche beschreibt. </p></div>
@@ -181,12 +178,8 @@ höherer Ordnung eingesetzt.
 
 
 
-<!-- l. 165 --><p class='noindent'><img src='Figures/febasis.svg' width='390' alt='PIC' height='115' /> <a id='x1-6001r2'></a>
+<!-- l. 165 --><p class='noindent'><img height='115' src='Figures/febasis.svg' width='390' alt='PIC' /> <a id='x1-6001r2'></a>
 <a id='x1-6002'></a>
-</p><!-- l. 167 --><p class='noindent'>figureDie Basis der finiten Elemente in ihrer einfachsten, linearen
-Inkarnation. Jede Basisfunktion ist ein “Zelt”, dass über ein gewisses
-Interval zwischen \(0\) und \(1\) und wieder zurück verläuft, siehe auch
-Gl. \eqref{eq:finite-element-basis}.
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 6.2: </span><span class='content'>Die Basis der finiten Elemente in ihrer einfachsten, linearen
 Inkarnation. Jede Basisfunktion ist ein “Zelt”, dass über ein gewisses
@@ -216,7 +209,7 @@ Um die Koeffizienten \(a_n\) zu finden, muss also ein (dünnbesetztes) lineares
 Gleichungssystem gelöst werden. Wir werden \(\t {M}\) später unter dem Namen
 <span class='cmti-12'>Massematrix </span>wieder treffen.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 207 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Basissätze, die nur an individuellen Punkten von Null verschieden
 sind, nennt man <span class='cmti-12'>spektrale </span>Basissätze. Insbesondere ist die Fourier-Basis ein
 spektraler Basissatz für periodische Funktionen. Grundsätzlich bilden die

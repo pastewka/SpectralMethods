@@ -2,159 +2,162 @@
 layout: default
 title: "Kapitel 12 [Jan. 17-Feb. 11]"
 parent: Vorlesung
-date: 2022-01-24
+date: 2022-01-30
 categories: lecture
 author: Lars Pastewka
 nav_order: 12
 ---
 
 
-<h2 class='chapterHead'><span class='titlemark'>Kapitel 12</span><br /><a id='x1-100012'></a>Nichtlineare Probleme</h2>
+<h2 class='chapterHead'><span class='titlemark'>Kapitel 12</span><br /><a id='x1-100012'></a>Festkörpermechanik</h2>
 <div id='shaded*-1' class='framedenv'>
-<!-- l. 3 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Bislang haben wir nur lineare Probleme betrachtet. Als Beispiel für
-eine nichtlineare partielle Differentialgleichung ist uns allerdings bereits die
-Poisson-Boltzmann-Gleichung begegnet. Die Lösung nichtlinearer partieller
-Differentialgleichungen führt zu zwei zusätzlichen Schwierigkeitsgraden: Zum
-einen müssen wir nichtlineare Gleichungssysteme lösen können, zum
-anderen müssen wir Integrale über Funktionen mit Polynomordnung
-höher als Zwei in den Basisfunktion ausrechnen. Hierzu werden in diesem
-Kapitel das Newton-Raphson-Verfahren und Quadraturregeln eingeführt. </p></div>
-<h3 class='sectionHead'><span class='titlemark'>12.1 </span> <a id='x1-200012.1'></a>Newton-Raphson-Verfahren</h3>
-<!-- l. 9 --><p class='noindent'>Das <span class='cmti-12'>Newton-Raphson-Verfahren</span>, oder auch kurz nur <span class='cmti-12'>Newton-Verfahren</span>, ist
-ein Verfahren für die iterative Lösung einer nichtlinearen Gleichung.
-Zur Illustration beschreiben wir dieses hier zunächst für skalarwertige
-Funktionen und werden dann das Verfahren für vektorwertige Funktionen
-verallgemeinern.
-</p><!-- l. 11 --><p class='indent'> Wir suchen die allgemeine Lösung für die Gleichung \(f(x)=0\) mit beliebiger
-Funktion \(f(x)\). Die Idee des Newton-Verfahrens ist es nun, die Gleichung an einem
-Punkt zu linearisieren, also eine Taylorentwicklung bis zur ersten Ordnung
-hinzuschreiben, und dann dieses linearisierte System zu Lösen. Die um den
-Punkt \(x_i\) taylorentwickelte Gleichung \begin {equation} f(x) \approx f(x_i) + (x - x_i) f'(x_i) = 0 \label {eq:newtonapprox} \end {equation}
-hat die Lösung \begin {equation} x_{i+1} = x_i - f(x_i) / f'(x_i), \end {equation}
-wobei \(f'(x)=\dif f/\dif x\) die erste Ableitung der Funktion \(f\) ist. Der Wert \(x_{i+1}\) ist nun (unter gewissen
-Bedingungen) näher an der Nullstelle \(x_0\) (mit \(f(x_0)=0\)) als der Wert \(x_i\). Die Idee des
-Newton-Verfahrens ist es nun, eine Folge \(x_i\) von linearen Approximationen der
-Funktion \(f\) zu konstruieren, die auf die Nullstelle konvergiert. Wir nutzen also die
-Nullstelle der linearisierten Form der Gleichung als Startpunkt für die
-nächste Iteration. Ein Beispiel einer solchen Iteration ist in Abb. <a href='#x1-2001r1'>12.1<!-- tex4ht:ref: fig:newton --></a>
-gezeigt.
+<!-- l. 3 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Die Methode der finiten Elementen hat ihren Ursprung in der
+Festkörpermechanik (auch <span class='cmti-12'>Strukturmechanik</span>). So gut wie alle Simulationen in
+diesem Bereich werden weiterhin mit Hilfe diese Methode durchgeführt. In
+diesem Kapitel werden wir die Grundgleichungen des elastostatischen
+Gleichgewichts diskretisieren, die eine Form haben die dem in den vorherigen
+Kapiteln diskutierten Transportproblem ähnlich sind. </p></div>
+<h3 class='sectionHead'><span class='titlemark'>12.1 </span> <a id='x1-200012.1'></a>Elastostatisches Gleichgewicht</h3>
+<!-- l. 9 --><p class='noindent'>Die Grundgleichung der Festkörpermechanik beschreibt das elastostatische
+Gleichgewicht. Gegeben ein Tensorfeld \(\t {\sigma }(\v {r})\), dass die <span class='cmti-12'>mechanische Spannung </span>im
+System beschreibt, lauten diese \begin {equation} \nabla \cdot \t {\sigma } = \v {0} \label {eq:elastostaticeq} \end {equation}
+Wir berechnen nun die Divergenz eines <span class='cmti-12'>Tensors zweiter Ordnung </span>(bzw. einen
+Tensor<span class='cmti-12'>feldes </span>zweiter Ordnung) und müssen kurz klarstellen, was wir mit der
+Operation \(\nabla \cdot =\text {div}\) meinen. In Komponentenschreibweise wird Gl. \eqref{eq:elastostaticeq}
+zu \begin {equation} \partial _i \sigma _{ij} = 0, \end {equation}
+wobei \(\partial _i\equiv \partial /\partial r_i\) die Ableitung respektive der Komponente der Position \(r_i\) ist und
+wir hier die <span class='cmti-12'>Einsteinsche Summenkonvention </span>eingeführt haben. Diese
+Gleichgewichtsbedingung hat ihren Ursprung in der Erhaltung des Impulses; \(\t {\sigma }\)
+beschreibt drei unabhängige Impulsströme und Gl. \eqref{eq:elastostaticeq} ist
+die stationäre Kontinuitätsgleichung, \(\nabla \cdot \v {j}=0\), für diese drei Impulsströme die durch
+die Spaltenvektoren des Tensors \(\t {\sigma }\) gegeben sind.
+</p><!-- l. 20 --><p class='indent'> Die mechanische Spannung beschreibt eine Kraft pro Fläche und wird der
+SI-Einheit <span class='cmti-12'>Pascal </span>gemessen. Wenn wir Gl. \eqref{eq:elastostaticeq}über eine
+(beliebiges) Volumenelement \(\omega \in \Omega \) integrieren, so erhalten wir \begin {equation} \int _\omega \dif ^3 r\, \nabla \cdot \t {\sigma } = \int _{\partial \omega } \dif ^2 r\, \t {\sigma }\cdot \hat {n} = 0 \end {equation}
+nach Anwendung des Gaussschen Satzes, wobei \(\partial \omega \) wieder die Oberfläche des
+Volumenelements \(\omega \) ist. Der Ausdruck \(\t {\sigma }\cdot \hat {n}\) ist die Projektion der Spannung auf die
+Oberflächennormale \(\hat {n}\) – die sogenannten Flächenlasten (engl. “traction” oder
+“surface traction”). Der Ausdruck \(\dif \v {F}=\t {\sigma }\cdot \hat {n}\dif ^2 r\) ist damit die (infinitesimale) Kraft \(\dif \v {F}\) auf
+ein Oberflächenelement und das Integral damit die Summe über alle
+Oberflächenkräfte. Diese Summe muss verschwinden; dies ist ein Ausdruck
+für das <span class='cmti-12'>Kräftegleichgewicht </span>und damit statisches Gleichgewicht in dem
+Volumenelement. Weiterhin gilt noch <span class='cmti-12'>Gleichgewicht der Drehmomente </span>in allen
+Volumenelementen \(\omega \). Diese Bedingung führt dazu, dass der Spannungstensor \(\t {\sigma }\)
+symmetrisch ist, also \(\t {\sigma }^T=\t {\sigma }\).
 </p>
-<figure class='figure'>
+<div id='shaded*-1' class='framedenv'>
 
 
 
-
-
-
-
-<!-- l. 26 --><p class='noindent'> <img width='467' height='350' src='Figures/NewtonMethod/newton-.png' alt='PIC' /> <a id='x1-2001r1'></a>
-<a id='x1-2002'></a>
-</p><!-- l. 28 --><p class='noindent'>figureIllustration des Newton-Verfahrens zur Lösung der Gleichung \(f(x)=0\), hier
-für die Funktion \(f(x)=10 \sin (x) - \exp 2x + 2\). Die gestrichelten Linien sind jeweils die linearisierte Form,
-Gl. \eqref{eq:newtonapprox}. Das Verfahren started bei \(x=0.5\) (blauer Punkt) und
-liefert die Nullstelle der um diesen Punkt linearisierten Form (blaues Kreuz).
-Die zweite Iteration ist die orangene Linie, die dritte die grüne Linie. Hier
-sind nur die ersten drei Schritte dieser Newton-Iteration gezeigt, nach denen
-bereits eine gute Lösung der Nullstelle gefunden wurde.
+<!-- l. 26 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> In der Einsteinschen Summenkonvention lässt man
+Summationssymbole weg und impliziert Summation über wiederholte Indices. Im
+obigen Beispiel, \begin {equation} \partial _i \sigma _{ij} \equiv \sum _i \partial _i \sigma _{ij}. \end {equation}
+Ein Skalarprodukt zwischen den Vektoren \(\v {a}\) und \(\v {b}\) wird in dieser Konvention
+geschrieben als \begin {equation} \v {a}\cdot \v {b} = a_i b_i. \end {equation}
+Diese Indexschreibweise ist nützlich, weil sie eindeutig ist. In der dyadischen
+Notation müssen wir meistens dazu sagen, was wir mit einer Operation
+meinen. So ist z.B. bei der Divergenz eines Tensors nicht klar, ob die
+Divergenz auf den ersten oder den zweiten Index wirken soll. (Wir nutzen
+hier eine Konvention, in der die Divergenz auf den ersten Index wirkt.) </p></div>
+<!-- l. 38 --><p class='noindent'>
 </p>
-<figcaption class='caption'><span class='id'>Abbildung 12.1: </span><span class='content'>Illustration des Newton-Verfahrens zur Lösung der
-Gleichung \(f(x)=0\), hier für die Funktion \(f(x)=10 \sin (x) - \exp 2x + 2\). Die gestrichelten Linien sind jeweils die
-linearisierte Form, Gl. \eqref{eq:newtonapprox}. Das Verfahren started bei
-\(x=0.5\) (blauer Punkt) und liefert die Nullstelle der um diesen Punkt linearisierten
-Form (blaues Kreuz). Die zweite Iteration ist die orangene Linie, die dritte die
-grüne Linie. Hier sind nur die ersten drei Schritte dieser Newton-Iteration
-gezeigt, nach denen bereits eine gute Lösung der Nullstelle gefunden wurde.
-</span></figcaption><!-- tex4ht:label?: x1-2001r12.1 -->
-
-
-
-</figure>
-<!-- l. 32 --><p class='indent'> Die Diskretisierung unserer PDGLs führte uns auf ein lineares Gleichungssystem,
-welches wir Abstrakt als \(\v {f}(\v {x})=\v {0}\) schreiben können. Wir werden in diesem Kapitel
-nichtlineare Gleichungssysteme dieser Form kennen lernen. Das Newton-Verfahren
-für die Lösung solcher gekoppelter nichtlinearer Gleichungen funktioniert analog
-zu dem skalaren Fall. Wir schreiben zunächst die Taylor-Entwicklung
-\begin {equation} \v {f}(\v {x}) \approx \v {f}(\v {x}_i) + \t {K}(\v {x}_i)\cdot (\v {x} - \v {x}_i) = 0 \end {equation}
-mit der <span class='cmti-12'>Jacobi-Matrix </span>\begin {equation} K_{mn}(\v {x})=\frac {\dif f_m(\v {x})}{\dif x_n}. \end {equation}
-Im Kontext der finiten Element wird \(\t {K}(\v {x}_i)\) auch häufig die <span class='cmti-12'>Tangentenmatrix</span>
-(engl. “tangent matrix” oder “tangent stiffness matrix”) genannt. Das
-Newton-Verfahren lässt sich dann als \begin {equation} \v {x}_{i+1} = \v {x}_i - \t {K}^{-1}(\v {x}_i)\cdot \v {f}(\v {x}_i) \label {eq:newtonmultidim} \end {equation}
-schreiben. In der numerischen Lösung von Gl. \eqref{eq:newtonmultidim} wird
-der Schritt \(\Delta \v {x}_i = \v {x}_{i+1} - \v {x}_i\) meist über die Lösung des linearen Gleichungssystems \(\t {K}_i\cdot \Delta \v {x}_i = -\v {f}(\v {x}_i)\) und nicht
-mit Hilfe einer expliziten Matrixinversion von \(\t {K}_i\) implementiert.
-</p><!-- l. 47 --><p class='indent'> Für ein rein lineares Problem, wie wir sie ausschließlich in den vorhergehenden
-Kapiteln besprochen haben, ist die Tangentenmatrix \(\t {K}\) konstant und nimmt die
-Rolle der Systemmatrix ein. In diesem Fall konvergiert die Newton-Iteration in
-einem Schritt.
+<h3 class='sectionHead'><span class='titlemark'>12.2 </span> <a id='x1-300012.2'></a>Hooksche Gesetz</h3>
+<!-- l. 40 --><p class='noindent'>Neben dem physikalischen Grundprinzip, dass die Erhaltung des Impulsstromes
+und damit das elastostatische Gleichgewicht beschreibt, brauchen wir noch ein
+Konstitutivgesetz, dass uns sagt wie der Spannungstensor (also der Impulsstrom)
+auszusehen hat. Hierzu führen wir zunächst die Verschiebungen \(\v {u}(\v {r})\) ein, die die
+Verformung eines Raumpunktes auf Grund der mechanischen Belastung
+beschrieben. Aus diesen Verschiebungen berechnen wir den Dehnungstensor
+\begin {equation} \t {\varepsilon } = \frac {1}{2}\left [ \nabla \v {u} + \left (\nabla \v {u}\right )^T \right ], \label {eq:strain} \end {equation}
+bzw. in Komponentenschreibweise \begin {equation} \varepsilon _{ij} = \frac {1}{2} \left ( \partial _i u_j + \partial _j u_i \right ). \end {equation}
 </p>
-<h3 class='sectionHead'><span class='titlemark'>12.2 </span> <a id='x1-300012.2'></a>Numerische Integration</h3>
-<!-- l. 51 --><p class='noindent'>Alle Integrale aus den vorhergehenden Kapiteln, insbesondere die Integrale der
-Laplace- und Massematrizen, konnten vollständig analytisch gelöst werden.
-Dies ist bei nichtlinearen PDGLs in vielen Fällen nicht mehr möglich. Wir
-müssen daher über numerische, approximative Integration reden. Dies wird oft
-synonym auch <span class='cmti-12'>numerische Quadratur </span>genannt. Wir werden hier die Terme
-Integration und Quadratur austauschbar verwenden.
-</p><!-- l. 53 --><p class='indent'> Wir betrachten zunächst eine Funktion \(f(x)\) und möchten das Integral \(\int _{-1}^1 \dif x\, f(x)\) über
-ein gewisses Gebiet \([-1,1]\) auswerten. (Wie beschränken uns hier auf dieses
-Gebiet. Eine Integration über ein allgemeines Interval \([a,b]\) kann immer auf
-dieses Gebiet abgebildet werden.) Eine naheliegende Lösung wäre die
-Approximation des Integrals mit einer Summe von Rechtecken. Wir schreiben
-\begin {equation} \int _{-1}^1 \dif x\, f(x) \approx \sum _{n=0}^{N-1} w^Q_n f(x^Q_n), \label {eq:quadrature} \end {equation}
-wobei \(\sum _n w_n = 2\). Der Quadraturpunkt \(x_n^Q\) muss im \(n\)-ten Interval liegen, \(\sum _{i=0}^{n-2} w_i^Q - 1 &lt; x_n^Q &lt; \sum _{i=0}^{n-1} w_i^Q-1\).
-Gleichung \eqref{eq:quadrature} ist eine <span class='cmti-12'>Quadraturregel </span>(engl. “quadrature
-rule”). Die Punkte \(x_n^Q\) heißen Quadraturpunkte (engl. “quadrature points”) und die \(w_n^Q\)
-sind die Quadraturgewichte (engl. “quadrature weights”). Für die Rechteckregel
-sind diese Gewichte genau die Breite der Rechtecke, andere Formen einer
-Quadraturregel werden im folgenden Besprochen.
+<div id='shaded*-1' class='framedenv'>
+<!-- l. 50 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Der Ausdruck \(\nabla \v {u}\) ist <span class='cmti-12'>nicht </span>die Divergenz von \(\v {u}\). Diese ist gegeben
+durch \(\nabla \cdot \v {u}\) – der Punkt ist entscheidend. \(\nabla \v {u}\) ist der Gradient des Vektorfeldes \(\v {u}(\v {r})\) und damit
+ein Tensorfeld zweiter Ordnung. Die Komponenten sind gegeben durch
+\begin {equation} \left [\nabla \v {u}\right ]_{ij} = \partial _i u_j. \end {equation}
+Die Komponenten des transponierten Tensors sind daher \begin {equation} \left [\nabla \v {u}\right ]^T_{ij} = \left [\nabla \v {u}\right ]_{ji} = \partial _j u_i. \end {equation}
+Expliziter könnte man den Gradienten eines Vektorfeldes mit Hilfe des äußeren
+Produkts schreiben, es gilt \begin {equation} \nabla \v {u} = \nabla \otimes \v {u} \end {equation}
+mit äußerem Produkt \([\v {a}\otimes \v {b}]_{ij}=a_ib_j\). In der Literatur findet sich allerdings meistens die Form \(\nabla \v {u}\).
+</p></div>
 
 
 
-</p><!-- l. 60 --><p class='indent'> Wir stellen nun die Frage, welche Wahl von \(x_n^Q\) und \(w_n^Q\) für eine gegebene Zahl and
-Quadraturpunkten \(N\) ideal wäre. Eine gute Wahl für \(N=1\) ist sicherlich \(x_1^Q=0\) und \(w_1^Q=2\). Diese
-Regel führt für lineare Funktionen zu der exakten Lösung. Verschieben wir den
-Quadraturpunkt \(x_1^Q\) an einen anderen Ort, so werden nur noch konstante Funktionen
-exakt approximiert.
-</p><!-- l. 62 --><p class='indent'> Mit zwei Quadraturpunkten sollten wir daher ein Polynom dritter
-Ordnung exakt integrieren können. Wir können diese Punkte bestimmen,
-in dem wir genau die exakte Integration von Polynomen bis zu dritter
-Ordnung mit einer aus zwei Termen bestehenden Summe explizit verlangen: \begin {align} \int _{-1}^1 \dif x\, 1 &amp;= 2 = w_1^Q + w_2^Q \\ \int _{-1}^1 \dif x\, x &amp;= 0 = w_1^Q x_1^Q + w_2^Q x_2^Q \\ \int _{-1}^1 \dif x\, x^2 &amp;= 2/3 = w_1^Q (x_1^Q)^2 + w_2^Q (x_2^Q)^2 \\ \int _{-1}^1 \dif x\, x^3 &amp;= 0 = w_1^Q (x_1^Q)^3 + w_2^Q (x_2^Q)^3 \end {align}
-</p><!-- l. 69 --><p class='indent'> Die Lösung dieser vier Gleichungen führt direkt zu \(w_1^Q=w_2^Q=1\), \(x_1^Q=1/\sqrt {3}\) und \(x_2^Q=-1/\sqrt {3}\). Für drei
-Quadraturpunkte erhält man mit einer identischen Konstruktion \(w_1^Q=w_3^Q=5/9\), \(w_2^Q=8/9\), \(x_1^Q=-\sqrt {3/5}\), \(x_2^Q=0\) und \(x_3^Q=\sqrt {3/5}\).
-Diese Art der numerischen Integration nennt sich <span class='cmti-12'>Gauß-Quadratur</span>.
-</p><!-- l. 71 --><p class='noindent'>
+<!-- l. 66 --><p class='indent'> Das Hooksche Gesetz beschreibt nun welche Dehnung zu welcher Spannung
+führt. Für isotrope Festkörper lautet es \begin {equation} \t {\sigma } = \left (\lambda \, \text {tr}\,\t {\varepsilon }'\right ) \t {1} + 2\mu \t {\varepsilon }' \quad \text {bzw.}\quad \sigma _{ij} = \lambda \delta _{ij} \varepsilon '_{kk} + 2\mu \varepsilon '_{ij}. \label {eq:Hookes-law} \end {equation}
+mit \(\varepsilon _{ij}'=\varepsilon _{ij}-\varepsilon _{0,ij}\). Hierbei heißen \(\lambda \) und \(\mu \) <span class='cmti-12'>Lamé-Konstanten</span>. Die Konstante \(\mu \) wird auch das
+Schermodul genannt. Der Ausdruck \(\varepsilon _{kk}'\equiv \sum _k\varepsilon _{kk}'=\text {tr}\,\t {\varepsilon }'\) (Einstein-Konvention!) ist die Spur des
+Dehnungstensors. Wir haben hier den Dehnungstensor \(\t {\varepsilon }'=\t {\varepsilon }-\t {\varepsilon }_0\) eingeführt, der eine
+Eigendehnung \(\t {\varepsilon }_0\) (engl. “eigenstrain”) berücksichtig, die z.B. durch eine thermische
+Expansion gegeben sein kann.
+</p><!-- l. 90 --><p class='noindent'>
 </p>
-<h3 class='sectionHead'><span class='titlemark'>12.3 </span> <a id='x1-400012.3'></a>Poisson-Boltzmann-Gleichung</h3>
-<!-- l. 73 --><p class='noindent'>Wir diskutieren nun die numerische Lösung der nichtlinearen
-Poisson-Boltzmann-(PB-)Gleichung für zwei Spezies, \begin {equation} \begin {split} \nabla ^2 \Phi &amp;= - \frac {c_0}{\varepsilon } \left [ q_+ \exp \left (-\frac {q_+ \Phi }{k_B T}\right ) + q_- \exp \left (-\frac {q_- \Phi }{k_B T}\right ) \right ] \\ &amp;= \frac {2\rho _0}{\varepsilon } \sinh \left ( \frac {|e| \Phi }{k_B T} \right ) \end {split} \end {equation}
-wobei \(\rho _0=|e|c_0\) die Referenzladungsdichte und \(q_+=|e|\) and \(q_-=-|e|\) die ionischen Ladungen sind. Da
-für kleine \(x\) gilt \(\sinh x\approx x\), ist die linearisierte Variante der PB-Gleichung \(\nabla ^2\Phi =\Phi /\lambda ^2\) mit der
-Debye-Länge \(\lambda =\sqrt {\varepsilon k_B T/(2|e|\rho _0)}\). Wir können die Debye-Länge nutzen um die Gleichung zu
-\begin {equation} \tilde {\nabla }^2 \tilde {\Phi } = \sinh \tilde \Phi \label {eq:nondimensionalpb} \end {equation}
-mit dem entdimensionalisierten Potential \(\tilde {\Phi } = \varepsilon \tilde {\Phi }/(2\rho _0 \lambda ^2)\) und der entdimensionalisierten Länge \(\tilde {x}=x/\lambda \)
-(und \(\dif /\dif \tilde {x}=\lambda \dif /\dif x\)) umzuschreiben. In folgenden werden wir mit Gl. \eqref{eq:nondimensionalpb}
-arbeiten aber der Einfachheit halber die Tilde nicht weiter explizit schreiben.
-</p><!-- l. 90 --><p class='indent'> Wir betrachten im Folgenden die eindimensionale Variante der PB-Gleichung
-in Interval \([0,L]\). Das Residuum ist \begin {equation} R(x) = \frac {\dif ^2 \Phi }{\dif x^2} - \sinh \Phi . \end {equation}
-Multiplikation mit einer Testfunktion \(v(x)\) liefert das gewichtete Residuum
-\begin {equation} \begin {split} (v, R) &amp;= (v, \dif ^2 \Phi /\dif x^2) - (v, \sinh \Phi ) \\ &amp;= \left . v\frac {\dif \Phi }{\dif x}\right |_0^L - (\dif v/\dif x, \dif \Phi /\dif x) - (v, \sinh \Phi ). \end {split} \end {equation}
-Der rechte Term ist nichtlinear in \(\Phi \) und benötigt zur Lösung numerische
-Quadratur. Im Folgenden vernachlässigen wir weiterhin den Oberflächenterm.
-</p><!-- l. 103 --><p class='indent'> Der nächste Schritt ist der Galerkin-Ansatz, \(\Phi (x)\approx \Phi _N(x) = \sum _{n=0}^N a_n \varphi _n(x)\) und \(v(x)=\varphi _k(x)\). Der Laplace-Operator
-wird zu \begin {equation} (\dif \varphi _k/\dif x, \dif \Phi _N/\dif x) = L_{kn} a_n \end {equation}
-mit der bekannten (konstanten) Laplace-Matrix \(L_{kn}\). (Die Laplace-Matrix ist
-konstant, da der Laplace-Operator linear ist.) Den nichtlinearen Term rechnen wir
-mit einer Quadraturregel aus, die wir <span class='cmti-12'>pro Element anwenden</span>. Man erhält für
-Element \((k)\) \begin {equation} (N_I^{(k)}, \sinh \Phi _N) = \sum _i w_i^Q N_I^{(k)}(x_i^{(k)}) \sinh \Phi _N(x_i^{(k)}), \end {equation}
-
-
-
-wobei \(x_i^{(k)}\) der \(i\)-te Quadraturpunkt auf Element \((k)\) ist.
-</p><!-- l. 113 --><p class='indent'> Für die Lösung des Gleichungssystems \((\varphi _k, R_N)=0\) mit dem Newton-Raphson-Verfahren
-brauchen wir die Tangentenmatrix \(\t {K}\). Es gilt, \begin {equation} K_{kn} = \frac {\partial (\varphi _k, R_N)}{\partial a_n} = - L_{kn} - \frac {\partial (N_1^{(k-1)}, \sinh \Phi _N)}{\partial a_n} - \frac {\partial (N_0^{(k)}, \sinh \Phi _N)}{\partial a_n} \end {equation}
-mit \begin {equation} \frac {\partial (N_I^{(k)}, \sinh \Phi _N)}{\partial a_n} = \sum _i w_i^Q N_I^{(k)}(x_i^{(k)}) \varphi _n(x_i^{(k)}) \cosh \Phi _N(x_i^{(k)}). \end {equation}
-
-
-
+<h3 class='sectionHead'><span class='titlemark'>12.3 </span> <a id='x1-400012.3'></a>Schwache Form</h3>
+<!-- l. 92 --><p class='noindent'>Wir haben ein gekoppeltes lineares Gleichungssystem zweiter Ordnung, welches
+wir nun mit Hilfe der Methode der finiten Elemente diskretisieren werden. Wir
+formulieren zunächst die schwache Form von Gl. \eqref{eq:elastostaticeq},
+\begin {equation} \int _\Omega \dif ^3 r\, \v {v}(\v {r})\cdot \left ( \nabla \cdot \t {\sigma } \right ) = 0 \quad \text {bzw.}\quad \int _\Omega \dif ^3 r\, v_j(\v {r}) \partial _i\sigma _{ij} = 0, \end {equation}
+wobei \(\v {v}(\v {r})\) nun ein Testvektor ist. Wir nutzen nun wieder eine Variante der
+Produktregel, \begin {equation} \partial _i\left ( \sigma _{ij} v_j \right ) = \left (\partial _i \sigma _{ij}\right ) v_j + \sigma _{ij} \left (\partial _i v_j\right ), \end {equation}
+um die Ableitung auf die Testfunktion zu überführen. Man erhält
+\begin {equation} \int _\Omega \dif ^3 r\, \left [\nabla \cdot \left (\t {\sigma }\cdot \v {v}\right ) - \left (\nabla \v {v}\right ):\t {\sigma } \right ] = 0, \label {eq:weakmech1} \end {equation}
+wobei der Doppelpunkt ein doppeltes Skalarprodukt (oder <span class='cmti-12'>Kontraktion</span>) bezeichnet, \(\t {A}:\t {B}=A_{ij}B_{ij}\).
+Wir können nun wieder den ersten Term in Gl. \eqref{eq:weakmech1} mit Hilfe
+des Gaussschen Satzes in ein Oberflächenintegral, \begin {equation} \int _\Omega \dif ^2 r\, \v {v}\cdot \left (\t {\sigma }\cdot \hat {n}\right ) - \int _\Omega \dif ^3 r\, \left (\nabla \v {v}\right ):\t {\sigma } = 0, \label {eq:weakmech2} \end {equation}
+überführen, wobei die Tatsache genutzt wurde, dass \(\t {\sigma }\) symmetrisch ist. Dies ist
+die schwache Form mit verringerter Differenzierbarkeitsanforderung des
+mechanischen Gleichgewichts. Der Ausdruck \(\t {\sigma }\cdot \hat {n}\) sind wiederum die Flächenlasten
+auf der Oberfläche.
+</p><!-- l. 116 --><p class='noindent'>
 </p>
-<h2 class='likechapterHead'><a id='x1-500012.3'></a>Literaturverzeichnis</h2>
+<h3 class='sectionHead'><span class='titlemark'>12.4 </span> <a id='x1-500012.4'></a>Diskretisierung</h3>
+<!-- l. 118 --><p class='noindent'>Wir diskretisieren diese Gleichung nun mit Hilfe der Galerkin-Methode und setzen
+gleich lineare finite Elemente als Basisfunktionen an. Dies erlaubt es uns,
+die Diskretisierung direkt mit Hilfe der Formfunktionen und nicht der
+Basisfunktionen zu schreiben. Wir setzen also innerhalb Element \((n)\) an, dass
+\begin {equation} u_j(\v {r}) = a_{j,Jn} N_J^{(n)}(\v {r}), \end {equation}
+wobei \(Jn\) für den globalen Knotenindex steht, der dem lokalen Index des Knotens \(J\)
+auf Element \((n)\) entspricht und Summation über \(J\) auf Grund des wiederholten
+
+
+
+Indices impliziert ist.
+</p><!-- l. 124 --><p class='indent'> Unsere Testfunktion \(\v {v}(\v {r})\) ist nun vektorwertig. Wir benötigen damit
+einen Satz von \(DN\) Testvektoren, wobei \(D\) die Dimension des Raumes und \(N\) die
+Anzahl der Elemente bezeichnet. Wir setzen daher innerhalb des Elements \((n)\)
+\begin {equation} \v {v}_{i,I}(\v {r}) = N_I^{(n)}(\v {r}) \hat {e}_i \end {equation}
+mit \(i\in [1,\ldots ,D]\) als Testvektor an. Hier bezeichnet \(\hat {e}_i\) den Vektor, bei dem die \(i\)-te Komponente \(1\)
+und alle anderen Komponenten \(0\) sind, also den kanonischen Einheitsvektor in
+Richtung \(i\).
+</p><!-- l. 130 --><p class='indent'> Mit diesen Ansatzfunktionen erhält man für die Dehnung auf Element \((n)\)
+\begin {equation} \varepsilon ^{(n)}_{ij} = \frac {1}{2} \left (a_{i,Jn} \partial _j N_J^{(n)} + a_{j,Jn} \partial _i N_J^{(n)}\right ). \end {equation}
+Das Hooksche Gesetz wird damit zu \begin {equation} \sigma ^{(n)}_{ij}(\v {r}) = \lambda (\v {r}) \delta _{ij} a_{k,Jn} \partial _k N_J^{(n)} + \mu (\v {r}) \left (a_{i,Jn} \partial _j N_J^{(n)} + a_{j,Jn} \partial _i N_J^{(n)}\right ) - \sigma _{0,ij}(\v {r}) \end {equation}
+mit \begin {equation} \sigma _{0,ij}(\v {r}) = \lambda (\v {r}) \delta _{ij} \varepsilon _{0,kk}(\v {r}) + 2\mu (\v {r}) \varepsilon _{0,ij}(\v {r}). \end {equation}
+Die diskretisierte Form des Volumenterms der Gleichgewichtsbedingung lautet
+\begin {equation} \begin {split} \int \dif ^3 r\, \left (\nabla \v {v}\right ):\t {\sigma } =&amp; \int \dif ^3 r\, \left (\nabla N_I^{(n)}\otimes \hat {e}_i\right ):\t {\sigma } \\ =&amp; \int \dif ^3 r\, \left (\partial _j N_I^{(n)}\right )\sigma _{ji} \\ =&amp; \int \dif ^3 r\, \left \{ \lambda (\v {r}) a_{k,Jn} \partial _i N_I^{(n)} \partial _k N_J^{(n)}\right . \\ &amp; + \mu (\v {r}) \left (a_{i,Jn} \partial _j N_I^{(n)}\partial _j N_J^{(n)} + a_{j,Jn} \partial _j N_I^{(n)}\partial _i N_J^{(n)}\right ) \\ &amp;\left . - \sigma _{0,ji}(\v {r}) \partial _j N_I^{(n)} \right \}.\\ \end {split} \label {eq:voleq} \end {equation}
+Für lineare Elemente sind bis auf die Materialkonstanten alle Terme in
+dieser Gleichung konstant. Das Integral führt damit effektiv zu einer
+Mittelung der Materialkonstanten auf den Element. Wir führen die mittleren
+Materialkonstanten \begin {equation} \lambda ^{(n)} = \frac {1}{V^{(n)}} \int \dif ^3 r\, \lambda (\v {r}) \end {equation}
+und eine äquivalent Gleichung für \(\mu \) und \(\t {\sigma }_0\) ein. Hierbei ist nun \(V^{(n)}\) das Volumen des
+Elements \((n)\). Wir können Gl. \eqref{eq:voleq} schreiben als \begin {equation} \begin {split} \int \dif ^3 r\, \left (\nabla \v {v}\right ):\t {\sigma } =&amp; \lambda ^{(n)} a_{j,Jn}V^{(n)}\partial _i N_I^{(n)} \partial _j N_J^{(n)} + \mu ^{(n)} a_{j,Jn} \delta _{ij} V^{(n)}\partial _k N_I^{(n)}\partial _k N_J^{(n)} \\ &amp; + \mu ^{(n)} a_{j,Jn} V^{(n)}\partial _j N_I^{(n)}\partial _i N_J^{(n)} - V^{(n)}\sigma _{0,ij}^{(n)} \partial _j N_I^{(n)}. \end {split} \end {equation}
+Die Elementmatrix hat daher die Komponenten \begin {equation} K^{(n)}_{IiJj} = \lambda ^{(n)} k_{IiJj}^{(n)} + \mu ^{(n)} \delta _{ij} k_{IkJk}^{(n)} + \mu ^{(n)} k_{IjJi}^{(n)} \end {equation}
+mit \(k_{IiJj}^{(n)}=V^{(n)}\partial _i N_I^{(n)} \partial _j N_J^{(n)}\) und der Beitrag des Elements zum Lastvektor lautet \(f_{Ii}^{(n)}=V^{(n)}\sigma _{0,ij}^{(n)} \partial _j N_I^{(n)}\).
+</p>
+<div id='shaded*-1' class='framedenv'>
+<!-- l. 214 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Für unser strukturiertes zweidimensionales Gitter erhalten wir \(V^{(n)}=\Delta x\Delta y/2\)
+und \begin {equation} \t {k} = \frac {1}{2} \begin {pmatrix} \Delta y/\Delta x &amp; 1 &amp; -\Delta y/\Delta x &amp; \cdot &amp; \cdot &amp; -1 \\ 1 &amp; \Delta x/\Delta y &amp; -1 &amp; \cdot &amp; \cdot &amp; -\Delta x/\Delta y \\ -\Delta y/\Delta x &amp; -1 &amp; \Delta y/\Delta x &amp; \cdot &amp; \cdot &amp; 1 \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ -1 &amp; -\Delta x/\Delta y &amp; 1 &amp; \cdot &amp; \cdot &amp; \Delta x/\Delta y \end {pmatrix} \end {equation}
+sowohl für das untere linke als auch das obere rechte Dreieck. Der Lastvektor
+wird zu \begin {equation} \v {f} = \frac {1}{2}\begin {pmatrix} -\sigma _{0,xx}\Delta y -\sigma _{0,xy}\Delta x \\ -\sigma _{0,xy}\Delta y -\sigma _{0,yy}\Delta x \\ \sigma _{0,xx}\Delta y \\ \sigma _{0,xy}\Delta y \\ \sigma _{0,xy}\Delta x \\ \sigma _{0,yy}\Delta x \end {pmatrix} \end {equation}
+für das untere linke Dreieck. Der Lastvektor für das obere rechte Dreieck ist \(-\v {f}\).
+Für \(\Delta x=\Delta y\) wird die Elementsteifigkeitsmatrix zu \begin {equation} \t {k} = \frac {1}{2} \begin {pmatrix} 1 &amp; 1 &amp; -1 &amp; \cdot &amp; \cdot &amp; -1 \\ 1 &amp; 1 &amp; -1 &amp; \cdot &amp; \cdot &amp; -1 \\ -1 &amp; -1 &amp; 1 &amp; \cdot &amp; \cdot &amp; 1 \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ -1 &amp; -1 &amp; 1 &amp; \cdot &amp; \cdot &amp; 1 \end {pmatrix}. \end {equation}
+Wenn wir hier die Spur von Untermatrizen der Größe \(2\times 2\) berechnen, erhalten wir
+die Matrix des Laplace-Operators, Gl. \eqref{eq:elmat2d}.
+</p><!-- l. 251 --><p class='indent'> Die Dehnung auf Element \((n)\) wird zu \begin {align} \varepsilon ^{(n)}_{xx} &amp;= a_{x,Jn} \partial _x N_J^{(n)} = -a_{x,0n}/\Delta x + a_{x,1n}/\Delta x \\ \varepsilon ^{(n)}_{yy} &amp;= a_{y,Jn} \partial _y N_J^{(n)} = -a_{y,0n}/\Delta _y + a_{y,2n}/\Delta y \\ \varepsilon ^{(n)}_{xy} &amp;= \frac {1}{2} \left (a_{x,Jn} \partial _y N_J^{(n)} + a_{y,Jn} \partial _x N_J^{(n)}\right ) \nonumber \\ &amp;= \frac {1}{2}\left (-a_{x,0n}/\Delta y + a_{x,2n}/\Delta y - a_{y,0n}/\Delta x + a_{y,1n}/\Delta x\right ) \end {align}
+</p><!-- l. 258 --><p class='indent'> für das linke untere Dreieck. </p></div>
+
+
+
+<h2 class='likechapterHead'><a id='x1-600012.4'></a>Literaturverzeichnis</h2>
 

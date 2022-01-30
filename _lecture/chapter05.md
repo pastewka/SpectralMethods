@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 05 [Nov. 15-21]"
 parent: Vorlesung
-date: 2022-01-24
+date: 2022-01-30
 categories: lecture
 author: Lars Pastewka
 nav_order: 5
@@ -127,10 +127,8 @@ Lösung \(u(x)\).
 
 
 
-<!-- l. 118 --><p class='noindent'> <img width='585' alt='PIC' src='Figures/numerical_example-.png' height='250' /> <a id='x1-4001r1'></a>
+<!-- l. 118 --><p class='noindent'> <img src='Figures/numerical_example-.png' height='250' alt='PIC' width='585' /> <a id='x1-4001r1'></a>
 <a id='x1-4002'></a>
-</p><!-- l. 120 --><p class='noindent'>figureAnalytische Lösung \(u(x)\) und “numerische” approximative Lösung \(u_2(x)\) der
-GDGL \eqref{eq:odeexample}.
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 5.1: </span><span class='content'>Analytische Lösung \(u(x)\) und “numerische” approximative
 Lösung \(u_2(x)\) der GDGL \eqref{eq:odeexample}.

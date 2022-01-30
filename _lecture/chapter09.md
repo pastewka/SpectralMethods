@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 09 [Dec. 13-19]"
 parent: Vorlesung
-date: 2022-01-24
+date: 2022-01-30
 categories: lecture
 author: Lars Pastewka
 nav_order: 9

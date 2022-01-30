@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 01 [18.-24. Okt. (2021)]"
 parent: Vorlesung
-date: 2022-01-24
+date: 2022-01-30
 categories: lecture
 author: Lars Pastewka
 nav_order: 1
@@ -67,14 +67,8 @@ Ortsvariablen zu tun haben, nämlich \(\Psi (\v {r}_1,\v {r}_2,\dots ,\v {r}_n;t
 
 <div class='center'>
 <!-- l. 41 --><p class='noindent'>
-</p><!-- l. 45 --><p class='noindent'> <img src='Figures/ExtendedSchemeD-.png' width='774' alt='PIC' height='585' /> <a id='x1-2001r1'></a>
+</p><!-- l. 45 --><p class='noindent'> <img alt='PIC' width='774' src='Figures/ExtendedSchemeD-.png' height='585' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
-</p><!-- l. 47 --><p class='noindent'>figureDie vertikale Anordnung der Kisten repräsentiert die Längenskale,
-welche auf der rechten Seite gezeigt ist. In den Kästen selbst stehen
-Simulationsmethode welche auf diesen Skalen Anwendung finden. In dieser
-Lehrveranstaltung beschäftigen wir uns mit der Diskretisierung von Feldern
-und wählen einen spezifischen Anwendungsfall, der in die <span class='cmti-12'>lokale Bilanz</span>
-hineinfällt.
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 1.1: </span><span class='content'>Die vertikale Anordnung der Kisten repräsentiert die
 Längenskale, welche auf der rechten Seite gezeigt ist. In den Kästen selbst

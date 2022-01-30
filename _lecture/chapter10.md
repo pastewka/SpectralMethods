@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 10 [Dec. 20-Jan. 9]"
 parent: Vorlesung
-date: 2022-01-24
+date: 2022-01-30
 categories: lecture
 author: Lars Pastewka
 nav_order: 10
@@ -75,14 +75,8 @@ Testfunktion \(v(\v {r})\) und des Potentials \(\Phi (\v {r})\) berechnen könne
 
 
 
-<!-- l. 76 --><p class='noindent'> <img src='Figures/Integration_Domain-.png' width='312' height='233' alt='PIC' /> <a id='x1-2001r1'></a>
+<!-- l. 76 --><p class='noindent'> <img alt='PIC' src='Figures/Integration_Domain-.png' width='312' height='233' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
-</p><!-- l. 78 --><p class='noindent'>figureDer Rand \(\partial \Omega \) begrenzt das Integrations- bzw. Simulationsgebiet \(\Omega \). Der
-Normalenvektor \(\hat {n}\) ist auf dem Rand \(\partial \Omega \) definiert und zeigt dort senkrecht zum
-Rand nach außen. In dieser Skizze ist der zweidimensionale Fall dargestellt.
-Im dreidimensionalen Fall ist \(\Omega \) ein Volumen und \(\partial \Omega \) die Fläche, welche das
-Volumen begrenzt. Auch in diesem Fall kann man einen Normalenvektor \(\hat {n}\) auf
-diese begrenzende Fläche definieren.
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 10.1: </span><span class='content'>Der Rand \(\partial \Omega \) begrenzt
 das Integrations- bzw. Simulationsgebiet \(\Omega \). Der Normalenvektor \(\hat {n}\) ist auf dem
@@ -128,10 +122,8 @@ gezeigt.
 
 
 
-<!-- l. 96 --><p class='noindent'> <img src='Figures/mesh-.png' width='585' height='276' alt='PIC' /> <a id='x1-4001r2'></a>
+<!-- l. 96 --><p class='noindent'> <img alt='PIC' src='Figures/mesh-.png' width='585' height='276' /> <a id='x1-4001r2'></a>
 <a id='x1-4002'></a>
-</p><!-- l. 98 --><p class='noindent'>figureTriangulierung eines rechteckigen Gebiets \(\Omega \) in ein (a) strukturiertes
-Gitter und ein (b) unstrukturiertes Gitter.
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 10.2: </span><span class='content'>Triangulierung eines rechteckigen Gebiets \(\Omega \) in ein (a)
 strukturiertes Gitter und ein (b) unstrukturiertes Gitter.
@@ -171,17 +163,8 @@ Knoten.
 
 
 
-<!-- l. 120 --><p class='noindent'><img src='Figures/structured_grid.svg' width='780' height='426' alt='PIC' /> <a id='x1-5001r3'></a>
+<!-- l. 120 --><p class='noindent'><img alt='PIC' src='Figures/structured_grid.svg' width='780' height='426' /> <a id='x1-5001r3'></a>
 <a id='x1-5002'></a>
-</p><!-- l. 122 --><p class='noindent'>figureZerlegung eines rechteckigen Gebiets in ein strukturiertes Gitter.
-(a) Die strukturierte Zerlegung erfolgt zuerst in kleinere Kästen, deren
-eindeutiger <span class='cmti-12'>globaler </span>Index in eckigen Klammern \([\cdot ]\) und blau gezeigt ist.
-Diese Kästen werden dann in zwei Dreiecke, die Elemente, geteilt. Der
-eindeutige <span class='cmti-12'>globale </span>Elementindex ist in runden Klammern \((\cdot )\) und rot gezeigt.
-Weiterhin sind die Knoten mit ihrem einem eindeutigen <span class='cmti-12'>globalen </span>Index
-(schwarz) bezeichnet. (b) Die Kästen werden in zwei Dreicke mit <span class='cmti-12'>lokalen</span>
-Elementindices \((0)\) und \((1)\) zerlegt. Innerhalb eines Elements, werden die Knoten
-mit einem entsprechenden <span class='cmti-12'>lokalen </span>Knotenindex identifiziert.
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 10.3: </span><span class='content'>Zerlegung eines rechteckigen Gebiets in ein strukturiertes
 Gitter. (a) Die strukturierte Zerlegung erfolgt zuerst in kleinere Kästen,
@@ -250,11 +233,8 @@ Element \((1)\) lauten die Formfunktionen \begin {align} N^{(1)}_0(\xi , \eta ) 
 
 
 
-<!-- l. 168 --><p class='noindent'><img src='Figures/febasis2d.svg' width='350' height='280' alt='PIC' /> <a id='x1-6001r4'></a>
+<!-- l. 168 --><p class='noindent'><img alt='PIC' src='Figures/febasis2d.svg' width='350' height='280' /> <a id='x1-6001r4'></a>
 <a id='x1-6002'></a>
-</p><!-- l. 170 --><p class='noindent'>figureFormfunktionen für lineare Dreieckelemente in zwei Dimensionen.
-Jeweils eine der Formfunktionen ist an einem der Knoten \(1\). An den anderen
-beiden Knoten fallen die Formfunktionen auf \(0\) ab.
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 10.4: </span><span class='content'>Formfunktionen für lineare Dreieckelemente in zwei
 Dimensionen. Jeweils eine der Formfunktionen ist an einem der Knoten \(1\). An
