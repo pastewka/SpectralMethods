@@ -9,7 +9,11 @@ has_children: true
 
 ## Abgabe der Übungsaufgaben
 
-Im folgenden finden Sie die Übungsblätter für die Lehrveranstaltung. Die Abgabe der Übungsblätter muss vor Mitternacht des in ILIAS genannten Datums geschehen. Zum Bestehen der Veranstaltung benötigen Sie 50% der Punkte auf **jedem** Übungsblatt. Für MST und SSE Studierende ist diese Veranstaltung eine unbenotete Prüfungsleistung. Falls Sie ESE studieren und diese Veranstaltung als Wahlpflicht belegt haben, so werden wir das letzte Übungsblatt benoten. Bitte beachten Sie die [Regeln für Abbildungen](../_notes/abbildungen) und unsere [Hinweise zu mathematischen Formeln](../_notes/formeln). Wir ziehen für formale Fehler auch Punkte ab.
+Im folgenden finden Sie die Übungsblätter für die Lehrveranstaltung. Die Abgabe der Übungsblätter muss vor Mitternacht des in ILIAS genannten Datums geschehen. Zum Bestehen der Veranstaltung benötigen Sie 50% der Punkte auf **jedem** Übungsblatt. Für MST und SSE Studierende ist diese Veranstaltung eine unbenotete Prüfungsleistung. Falls Sie ESE studieren und diese Veranstaltung als Wahlpflicht belegt haben, so werden wir Übungsblatt 4 benoten. (Dies ist das letzte Übungsblatt.) Bitte beachten Sie die [Regeln für Abbildungen](../_notes/abbildungen) und unsere [Hinweise zu mathematischen Formeln](../_notes/formeln). Wir ziehen für formale Fehler auch Punkte ab.
+
+## Übungsblatt 4
+
+Für das letzte Übungsblatt stellen wir Ihnen zwei Varianten zur Verfügung. Diese Übungsblätter sind jeweils an einem der vertiefenden Themen aus dem Vorlesungsmaterial ausgerichtet. Die Themen können sein: Zeitabhängige Probleme, Mechanik, nichtlineare Probleme, unstrukturierte Gitter und Elemente höherer Ordnung. **Sie müssen selbstverständlich nicht beide Übungsblätter 4 lösen, sondern dürfen sich eines der angebotenen aussuchen.**
 
 ## Technische Hinweise
 
