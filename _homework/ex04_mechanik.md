@@ -2,7 +2,7 @@
 layout: default
 title: "Übungsblatt 4 - Mechanik [31. März]"
 parent: Übungsaufgaben
-date: 2022-01-30
+date: 2022-01-31
 categories: homework
 author: Lars Pastewka
 nav_order: 4
@@ -234,7 +234,7 @@ darstellt.
 <h4 class='subsectionHead'><span class='titlemark'>4.3.3 </span> <a id='x1-120004.3.3'></a>1D - Zugversuch mit vorgegebener Flächenlast</h4>
 <!-- l. 444 --><p class='noindent'><span class='cmbx-12'>2 Punkte</span><br class='newline' />Um die Implementierung der Neumann - Randbedingungen zu testen wollen wir
 den 1D-Zugversuch (d.h. \(\lambda = 0\)MPa) jetzt mit einer vorgegebenen Flächenlast rechts
-berechnen (vgl. Abb. <span class='cmbx-12'>??</span>). Zeigen Sie, dass für \(\v {t}_{rechts}(y) = \left ( 2\mu u_0 / L_x; 0 \right )^T\) und den Parametern
+berechnen (vgl. Abb. <a href='#x1-4009r3'>4.3<!-- tex4ht:ref: fig:tensile_1D_trac --></a>). Zeigen Sie, dass für \(\v {t}_{rechts}(y) = \left ( 2\mu u_0 / L_x; 0 \right )^T\) und den Parametern
 aus Aufgabe 3.1 die Verschiebung mit der Verschiebung aus Aufgabe 3.1
 übereinstimmt.
 </p><!-- l. 455 --><p class='noindent'>

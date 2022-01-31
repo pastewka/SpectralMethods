@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="75.71772mm"
+   height="40.983952mm"
+   viewBox="0 0 75.71772 40.983952"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
@@ -20,10 +20,10 @@
      id="defs2">
     <inkscape:perspective
        sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 148.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="210 : 148.5 : 1"
-       inkscape:persp3d-origin="105 : 99 : 1"
+       inkscape:vp_x="0 : 148.49999 : 1"
+       inkscape:vp_y="0 : 999.99996 : 0"
+       inkscape:vp_z="210 : 148.49999 : 1"
+       inkscape:persp3d-origin="105 : 98.999996 : 1"
        id="perspective4616" />
   </defs>
   <sodipodi:namedview
@@ -34,8 +34,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="139.46338"
-     inkscape:cy="1102.9428"
+     inkscape:cx="-49.11026"
+     inkscape:cy="167.39818"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -48,7 +48,11 @@
      inkscape:window-height="986"
      inkscape:window-x="-11"
      inkscape:window-y="-11"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     fit-margin-top="2"
+     fit-margin-left="2"
+     fit-margin-right="2"
+     fit-margin-bottom="2" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -64,14 +68,15 @@
   <g
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-49.893442,-8.4865323)">
     <rect
        id="rect3713"
        width="45.970356"
        height="10.958051"
        x="58.665661"
        y="19.440596"
-       style="stroke-width:0.26458332;fill:none;stroke:#000000;stroke-opacity:1;opacity:1" />
+       style="opacity:1;fill:none;stroke:#000000;stroke-width:0.26458332;stroke-opacity:1" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.21321814px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 58.57761,10.48684 0.08678,30.068274"
@@ -127,14 +132,14 @@
     <flowRoot
        xml:space="preserve"
        id="flowRoot4596"
-       style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;letter-spacing:0px;word-spacing:0px"><flowRegion
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"><flowRegion
          id="flowRegion4598"><rect
            id="rect4600"
            width="487.90369"
            height="162.63457"
            x="461.63971"
            y="73.981346" /></flowRegion><flowPara
-         id="flowPara4602"></flowPara></flowRoot>    <flowRoot
+         id="flowPara4602" /></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot4604"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
