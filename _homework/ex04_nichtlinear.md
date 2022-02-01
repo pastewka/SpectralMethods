@@ -2,7 +2,7 @@
 layout: default
 title: "Übungsblatt 4 - Nichtlinear [31. März]"
 parent: Übungsaufgaben
-date: 2022-01-31
+date: 2022-02-01
 categories: homework
 author: Lars Pastewka
 nav_order: 4
@@ -110,7 +110,7 @@ Funktionen \(\v {f}(\v {x})\). Die Funktion <span class='obeylines-h'><span clas
 Vektor (also einen <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>numpy</span></span></span> Array) zurückliefern. Die Funktion <span class='obeylines-h'><span class='verb'><span class='cmtt-12'>jac</span></span></span> liefert eine
 Matrix. Es kann Sinn machen, für die vektorwertige Implementierung eine
 separate Funktion zu implementieren. Nutzen Sie Ihren Solver um das Minimum
-der Funktion \(f(x,y)=2\exp (-10(x^2+y^2)+x^2+y^2+x\) zu finden.
+der Funktion \(f(x,y)=2\exp (-10(x^2+y^2))+x^2+y^2+x\) zu finden.
 </p><!-- l. 141 --><p class='indent'> Bitte beantworten Sie im Rahmen der Lösung dieser Aufgabe folgende
 Fragen: </p>
 <ul class='itemize1'>
@@ -177,74 +177,77 @@ Tangentenmatrix mit der Systemmatrix des linearen Problems.
 </p><!-- l. 208 --><p class='noindent'>
 </p>
 <h4 class='subsectionHead'><span class='titlemark'>4.2.4 </span> <a id='x1-130004.2.4'></a>Implementation des Residuumvektors und der Tangentenmatrix</h4>
-<!-- l. 209 --><p class='noindent'><span class='cmbx-12'>4 Punkte</span><br class='newline' />Implementieren Sie den Residuumsvektor und die Tangentenmatrix. Wir
+<!-- l. 209 --><p class='noindent'><span class='cmbx-12'>4 Punkte</span><br class='newline' /> </p><div id='shaded*-1' class='framedenv'>
+<!-- l. 210 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Die linearisierte Gleichung haben Sie im Rahmen von Übungsblatt
+2 numerisch gelöst. Evtl. können Sie auf der Implementierung dieser Lösung
+
+
+
+hier aufbauen. </p></div>
+<!-- l. 214 --><p class='indent'> Implementieren Sie den Residuumsvektor und die Tangentenmatrix. Wir
 schlagen folgende Signaturen für die Funktionen vor, welche die Berechnung
-implementieren: </p><!-- l. 211 -->
-
-
-
+implementieren: </p><!-- l. 215 -->
 <div id='listing-3' class='lstlisting'><span class='label'><a id='x1-13001r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>def residual(potential_g, </span><br /><span class='label'><a id='x1-13002r2'></a><span class='cmr-6'>2</span></span><span class='cmtt-10'>             potential_left=0, potential_right=0, </span><br /><span class='label'><a id='x1-13003r3'></a><span class='cmr-6'>3</span></span><span class='cmtt-10'>             dx=1, nb_quad=2, linear=False): </span><br /><span class='label'><a id='x1-13004r4'></a><span class='cmr-6'>4</span></span><span class='cmtt-10'>    """ </span><br /><span class='label'><a id='x1-13005r5'></a><span class='cmr-6'>5</span></span><span class='cmtt-10'>    Assemble global residual vector for a specific potential. </span><br /><span class='label'><a id='x1-13006r6'></a><span class='cmr-6'>6</span></span><span class='cmtt-10'> </span><br /><span class='label'><a id='x1-13007r7'></a><span class='cmr-6'>7</span></span><span class='cmtt-10'>    Parameters </span><br /><span class='label'><a id='x1-13008r8'></a><span class='cmr-6'>8</span></span><span class='cmtt-10'>    ---------- </span><br /><span class='label'><a id='x1-13009r9'></a><span class='cmr-6'>9</span></span><span class='cmtt-10'>    potential_g : np.ndarray </span><br /><span class='label'><a id='x1-13010r10'></a><span class='cmr-6'>10</span></span><span class='cmtt-10'>        Current potential on the nodes (the expansion </span><br /><span class='label'><a id='x1-13011r11'></a><span class='cmr-6'>11</span></span><span class='cmtt-10'>        coefficients); the length of the array is the number </span><br /><span class='label'><a id='x1-13012r12'></a><span class='cmr-6'>12</span></span><span class='cmtt-10'>        of nodes. </span><br /><span class='label'><a id='x1-13013r13'></a><span class='cmr-6'>13</span></span><span class='cmtt-10'>    potential_left : float </span><br /><span class='label'><a id='x1-13014r14'></a><span class='cmr-6'>14</span></span><span class='cmtt-10'>        Left Dirichlet boundary condition. </span><br /><span class='label'><a id='x1-13015r15'></a><span class='cmr-6'>15</span></span><span class='cmtt-10'>    potential_right : float </span><br /><span class='label'><a id='x1-13016r16'></a><span class='cmr-6'>16</span></span><span class='cmtt-10'>        Right Dirichlet boundary condition. </span><br /><span class='label'><a id='x1-13017r17'></a><span class='cmr-6'>17</span></span><span class='cmtt-10'>    dx : float, optional </span><br /><span class='label'><a id='x1-13018r18'></a><span class='cmr-6'>18</span></span><span class='cmtt-10'>        Grid spacing. (Default: 1) </span><br /><span class='label'><a id='x1-13019r19'></a><span class='cmr-6'>19</span></span><span class='cmtt-10'>    nb_quad : int, optional </span><br /><span class='label'><a id='x1-13020r20'></a><span class='cmr-6'>20</span></span><span class='cmtt-10'>        Number of quadrature points. (Default: 2) </span><br /><span class='label'><a id='x1-13021r21'></a><span class='cmr-6'>21</span></span><span class='cmtt-10'>    linear : bool, optional </span><br /><span class='label'><a id='x1-13022r22'></a><span class='cmr-6'>22</span></span><span class='cmtt-10'>        Linearize mass matrix. (Default: False) </span><br /><span class='label'><a id='x1-13023r23'></a><span class='cmr-6'>23</span></span><span class='cmtt-10'> </span><br /><span class='label'><a id='x1-13024r24'></a><span class='cmr-6'>24</span></span><span class='cmtt-10'>    Returns </span><br /><span class='label'><a id='x1-13025r25'></a><span class='cmr-6'>25</span></span><span class='cmtt-10'>    ------- </span><br /><span class='label'><a id='x1-13026r26'></a><span class='cmr-6'>26</span></span><span class='cmtt-10'>    residual_g : np.ndarray </span><br /><span class='label'><a id='x1-13027r27'></a><span class='cmr-6'>27</span></span><span class='cmtt-10'>        Residual vector (same shape as ‘potential_g‘) </span><br /><span class='label'><a id='x1-13028r28'></a><span class='cmr-6'>28</span></span><span class='cmtt-10'>    """ </span><br /><span class='label'><a id='x1-13029r29'></a><span class='cmr-6'>29</span></span><span class='cmtt-10'>    ... </span><br /><span class='label'><a id='x1-13030r30'></a><span class='cmr-6'>30</span></span><span class='cmtt-10'> </span><br /><span class='label'><a id='x1-13031r31'></a><span class='cmr-6'>31</span></span><span class='cmtt-10'>def tangent(potential_g, </span><br /><span class='label'><a id='x1-13032r32'></a><span class='cmr-6'>32</span></span><span class='cmtt-10'>            potential_left=0, potential_right=0, </span><br /><span class='label'><a id='x1-13033r33'></a><span class='cmr-6'>33</span></span><span class='cmtt-10'>            dx=1, nb_quad=2, linear=False): </span><br /><span class='label'><a id='x1-13034r34'></a><span class='cmr-6'>34</span></span><span class='cmtt-10'>    """ </span><br /><span class='label'><a id='x1-13035r35'></a><span class='cmr-6'>35</span></span><span class='cmtt-10'>    Assemble global tangent matrix for a specific potential. </span><br /><span class='label'><a id='x1-13036r36'></a><span class='cmr-6'>36</span></span><span class='cmtt-10'> </span><br /><span class='label'><a id='x1-13037r37'></a><span class='cmr-6'>37</span></span><span class='cmtt-10'>    Parameters </span><br /><span class='label'><a id='x1-13038r38'></a><span class='cmr-6'>38</span></span><span class='cmtt-10'>    ---------- </span><br /><span class='label'><a id='x1-13039r39'></a><span class='cmr-6'>39</span></span><span class='cmtt-10'>    potential_g : np.ndarray </span><br /><span class='label'><a id='x1-13040r40'></a><span class='cmr-6'>40</span></span><span class='cmtt-10'>        Current potential on the nodes (the expansion </span><br /><span class='label'><a id='x1-13041r41'></a><span class='cmr-6'>41</span></span><span class='cmtt-10'>        coefficients); the length of the array is the number </span><br /><span class='label'><a id='x1-13042r42'></a><span class='cmr-6'>42</span></span><span class='cmtt-10'>        of nodes </span><br /><span class='label'><a id='x1-13043r43'></a><span class='cmr-6'>43</span></span><span class='cmtt-10'>    potential_left : float </span><br /><span class='label'><a id='x1-13044r44'></a><span class='cmr-6'>44</span></span><span class='cmtt-10'>        Left Dirichlet boundary condition. </span><br /><span class='label'><a id='x1-13045r45'></a><span class='cmr-6'>45</span></span><span class='cmtt-10'>    potential_right : float </span><br /><span class='label'><a id='x1-13046r46'></a><span class='cmr-6'>46</span></span><span class='cmtt-10'>        Right Dirichlet boundary condition. </span><br /><span class='label'><a id='x1-13047r47'></a><span class='cmr-6'>47</span></span><span class='cmtt-10'>    dx : float, optional </span><br /><span class='label'><a id='x1-13048r48'></a><span class='cmr-6'>48</span></span><span class='cmtt-10'>        Grid spacing. (Default: 1) </span><br /><span class='label'><a id='x1-13049r49'></a><span class='cmr-6'>49</span></span><span class='cmtt-10'>    nb_quad : int, optional </span><br /><span class='label'><a id='x1-13050r50'></a><span class='cmr-6'>50</span></span><span class='cmtt-10'>        Number of quadrature points. (Default: 2) </span><br /><span class='label'><a id='x1-13051r51'></a><span class='cmr-6'>51</span></span><span class='cmtt-10'>    linear : bool, optional </span><br /><span class='label'><a id='x1-13052r52'></a><span class='cmr-6'>52</span></span><span class='cmtt-10'>        Linearize mass matrix. (Default: False) </span><br /><span class='label'><a id='x1-13053r53'></a><span class='cmr-6'>53</span></span><span class='cmtt-10'> </span><br /><span class='label'><a id='x1-13054r54'></a><span class='cmr-6'>54</span></span><span class='cmtt-10'>    Returns </span><br /><span class='label'><a id='x1-13055r55'></a><span class='cmr-6'>55</span></span><span class='cmtt-10'>    ------- </span><br /><span class='label'><a id='x1-13056r56'></a><span class='cmr-6'>56</span></span><span class='cmtt-10'>    tangent_gg : np.ndarray </span><br /><span class='label'><a id='x1-13057r57'></a><span class='cmr-6'>57</span></span><span class='cmtt-10'>        Tangent matrix (quadratic, number of rows and columns </span><br /><span class='label'><a id='x1-13058r58'></a><span class='cmr-6'>58</span></span><span class='cmtt-10'>        equal number of nodes) </span><br /><span class='label'><a id='x1-13059r59'></a><span class='cmr-6'>59</span></span><span class='cmtt-10'>    """ </span><br /><span class='label'><a id='x1-13060r60'></a><span class='cmr-6'>60</span></span><span class='cmtt-10'>    ...</span>
 </div>
-<!-- l. 273 --><p class='indent'> Bei der Implementierung sollten Sie schrittweise vorgehen: Ignorieren Sie
+<!-- l. 277 --><p class='indent'> Bei der Implementierung sollten Sie schrittweise vorgehen: Ignorieren Sie
 zunächst die Dirichlet-Bedingungen und implementieren Sie lediglich den
 Laplace-Operator. Schreiben Sie den Code für die Massematrix (der Term \(\sinh \Phi \) der
 Differentialgleichung) erst dann, wenn der Laplace-Operator funktioniert. Die
-Option <span class='cmbx-12'>linear </span>ist nützlich, um mit der linearisierten Lösung vergleichen zu
+Option <span class='cmtt-12'>linear </span>ist nützlich, um mit der linearisierten Lösung vergleichen zu
 können.
 </p>
 <div id='shaded*-1' class='framedenv'>
-<!-- l. 275 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Es ist wichtig, dass die Funktion <span class='cmtt-12'>tangent </span>die korrekte(n)
+<!-- l. 279 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Es ist wichtig, dass die Funktion <span class='cmtt-12'>tangent </span>die korrekte(n)
 Ableitung(en) von <span class='cmtt-12'>residual </span>liefert. Dies kann numerisch getestet werden. So
 können Sie z.B. numerisch über den Differenzenquotienten die Ableitung aus
 der Funktion <span class='cmtt-12'>residual </span>berechnen und mit der analytischen Berechnung von
 <span class='cmtt-12'>tangent </span>überprüfen. Im folgenden finden Sie einen Codeblock, der diese
-numerische Berechnung der Ableitung für Sie macht: </p><!-- l. 277 -->
+numerische Berechnung der Ableitung für Sie macht: </p><!-- l. 281 -->
 <div id='listing-4' class='lstlisting'><span class='label'><a id='x1-13061r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>def check_tangent(value_g, residual_fun, tangent_fun, </span><br /><span class='label'><a id='x1-13062r2'></a><span class='cmr-6'>2</span></span><span class='cmtt-10'>                  eps=1e-6): </span><br /><span class='label'><a id='x1-13063r3'></a><span class='cmr-6'>3</span></span><span class='cmtt-10'>    """ </span><br /><span class='label'><a id='x1-13064r4'></a><span class='cmr-6'>4</span></span><span class='cmtt-10'>    Check that tangent_fun is gives the derivative_fun </span><br /><span class='label'><a id='x1-13065r5'></a><span class='cmr-6'>5</span></span><span class='cmtt-10'>    using finite differences. </span><br /><span class='label'><a id='x1-13066r6'></a><span class='cmr-6'>6</span></span><span class='cmtt-10'> </span><br /><span class='label'><a id='x1-13067r7'></a><span class='cmr-6'>7</span></span><span class='cmtt-10'>    Parameters </span><br /><span class='label'><a id='x1-13068r8'></a><span class='cmr-6'>8</span></span><span class='cmtt-10'>    ---------- </span><br /><span class='label'><a id='x1-13069r9'></a><span class='cmr-6'>9</span></span><span class='cmtt-10'>    value_g : numpy.nd_array </span><br /><span class='label'><a id='x1-13070r10'></a><span class='cmr-6'>10</span></span><span class='cmtt-10'>        Nodal value for which to check the derivative </span><br /><span class='label'><a id='x1-13071r11'></a><span class='cmr-6'>11</span></span><span class='cmtt-10'>    residual_fun : callable </span><br /><span class='label'><a id='x1-13072r12'></a><span class='cmr-6'>12</span></span><span class='cmtt-10'>        Function that takes the values and returns an array </span><br /><span class='label'><a id='x1-13073r13'></a><span class='cmr-6'>13</span></span><span class='cmtt-10'>        of residual values </span><br /><span class='label'><a id='x1-13074r14'></a><span class='cmr-6'>14</span></span><span class='cmtt-10'>    tangent_fun : callable </span><br /><span class='label'><a id='x1-13075r15'></a><span class='cmr-6'>15</span></span><span class='cmtt-10'>        Function that takes the values and return the </span><br /><span class='label'><a id='x1-13076r16'></a><span class='cmr-6'>16</span></span><span class='cmtt-10'>        tangent/jacobian matrix </span><br /><span class='label'><a id='x1-13077r17'></a><span class='cmr-6'>17</span></span><span class='cmtt-10'>    eps : float, optional </span><br /><span class='label'><a id='x1-13078r18'></a><span class='cmr-6'>18</span></span><span class='cmtt-10'>        Finite difference used for numeric computation of </span><br /><span class='label'><a id='x1-13079r19'></a><span class='cmr-6'>19</span></span><span class='cmtt-10'>        the derivative (Default: 1e-6) </span><br /><span class='label'><a id='x1-13080r20'></a><span class='cmr-6'>20</span></span><span class='cmtt-10'>    """ </span><br /><span class='label'><a id='x1-13081r21'></a><span class='cmr-6'>21</span></span><span class='cmtt-10'>    nb_nodes = len(value_g) </span><br /><span class='label'><a id='x1-13082r22'></a><span class='cmr-6'>22</span></span><span class='cmtt-10'>    tangent_gg = tangent_fun(value_g) </span><br /><span class='label'><a id='x1-13083r23'></a><span class='cmr-6'>23</span></span><span class='cmtt-10'>    numeric_tangent_gg = np.zeros_like(tangent_gg) </span><br /><span class='label'><a id='x1-13084r24'></a><span class='cmr-6'>24</span></span><span class='cmtt-10'>    for i in range(nb_nodes): </span><br /><span class='label'><a id='x1-13085r25'></a><span class='cmr-6'>25</span></span><span class='cmtt-10'>        _value_g = value_g.copy() </span><br /><span class='label'><a id='x1-13086r26'></a><span class='cmr-6'>26</span></span><span class='cmtt-10'>        _value_g[i] += eps </span><br /><span class='label'><a id='x1-13087r27'></a><span class='cmr-6'>27</span></span><span class='cmtt-10'>        residual_plus_g = residual_fun(_value_g) </span><br /><span class='label'><a id='x1-13088r28'></a><span class='cmr-6'>28</span></span><span class='cmtt-10'>        _value_g[i] -= 2 * eps </span><br /><span class='label'><a id='x1-13089r29'></a><span class='cmr-6'>29</span></span><span class='cmtt-10'>        residual_minus_g = residual_fun(_value_g) </span><br /><span class='label'><a id='x1-13090r30'></a><span class='cmr-6'>30</span></span><span class='cmtt-10'>        numeric_tangent_gg[:, i] = ( </span><br /><span class='label'><a id='x1-13091r31'></a><span class='cmr-6'>31</span></span><span class='cmtt-10'>            residual_plus_g - residual_minus_g </span><br /><span class='label'><a id='x1-13092r32'></a><span class='cmr-6'>32</span></span><span class='cmtt-10'>            ) / (2 * eps) </span><br /><span class='label'><a id='x1-13093r33'></a><span class='cmr-6'>33</span></span><span class='cmtt-10'>    np.testing.assert_array_almost_equal( </span><br /><span class='label'><a id='x1-13094r34'></a><span class='cmr-6'>34</span></span><span class='cmtt-10'>        tangent_gg, numeric_tangent_gg) </span><br /><span class='label'><a id='x1-13095r35'></a><span class='cmr-6'>35</span></span><span class='cmtt-10'> </span><br /><span class='label'><a id='x1-13096r36'></a><span class='cmr-6'>36</span></span><span class='cmtt-10'> </span><br /><span class='label'><a id='x1-13097r37'></a><span class='cmr-6'>37</span></span><span class='cmtt-10'># Check if tangent is implemented correctly </span><br /><span class='label'><a id='x1-13098r38'></a><span class='cmr-6'>38</span></span><span class='cmtt-10'>for i in range(10): </span><br /><span class='label'><a id='x1-13099r39'></a><span class='cmr-6'>39</span></span><span class='cmtt-10'>    check_tangent(np.random.random(21)-0.5, residual, tangent)</span>
 </div>
 </div>
-<!-- l. 328 --><p class='noindent'>
+<!-- l. 332 --><p class='noindent'>
 </p>
 <h4 class='subsectionHead'><span class='titlemark'>4.2.5 </span> <a id='x1-140004.2.5'></a>Anwendung des Newton-Lösers</h4>
-<!-- l. 329 --><p class='noindent'><span class='cmbx-12'>7 Punkte</span><br class='newline' /> </p><div id='shaded*-1' class='framedenv'>
-<!-- l. 330 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Falls ihr Newton-Löser für multidimensionale Probleme
+<!-- l. 333 --><p class='noindent'><span class='cmbx-12'>7 Punkte</span><br class='newline' /> </p><div id='shaded*-1' class='framedenv'>
+<!-- l. 334 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Falls ihr Newton-Löser für multidimensionale Probleme
 nicht funktioniert, dürfen Sie hier auch auf den Newton-Löser im Paket
+
+
+
 <span class='cmtt-12'>scipy </span>zurückgreifen. Diesen finden Sie unter <a href='https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.newton.html'><span class='cmtt-12'>scipy.optimize.newton</span></a>. </p></div>
-<!-- l. 334 --><p class='indent'> Implementierung Sie die Lösung der nichtlinearen Poisson-Boltzmann-Gleichung
+<!-- l. 338 --><p class='indent'> Implementierung Sie die Lösung der nichtlinearen Poisson-Boltzmann-Gleichung
 mit zwei Dirichlet Randbedingungen, jeweils am linken und rechten Rand. Zeigen
 Sie die Lösungen der Gleichung für \(1\), \(2\) und \(3\) Gaußsche Quadraturpunkte für ein
-
-
-
 System der Länge \(L=5\lambda \) und einem Potential von \(-1 k_B T/|e|\) auf der linken Elektrode und \(5 k_B T/|e|\) auf
 der rechten Elektrode, wobei \(\lambda \) die Debye-Länge ist. Zeigen Sie eine Lösung mit \(\approx 10\)
 und \(\approx 100\) Knoten. Vergleichen Sie diese Lösung der Lösung der linearisierten
 Gleichung.
 </p>
 <div id='shaded*-1' class='framedenv'>
-<!-- l. 336 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> </p>
+<!-- l. 340 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> </p>
 <ul class='itemize1'>
-<li class='itemize'>Die linearisierte Gleichung haben Sie im Rahmen von Übungsblatt 2
-numerisch gelöst. Evtl. können Sie auf der Implementierung dieser
-Lösung hier aufbauen.
-</li>
 <li class='itemize'>Sie müssen die Newton-Iteration von einem bestimmten Potential \(\Phi \)
 starten. Was ist hier ein guter Startpunkt?
 </li>
 <li class='itemize'>Wenn Sie obige Funktionssignaturen verwandt haben, sollte der Aufruf des
-Newton-Lösers ungefähr so aussehen: <!-- l. 341 -->
+Newton-Lösers ungefähr so aussehen: <!-- l. 344 -->
 <div id='listing-5' class='lstlisting'><span class='label'><a id='x1-14001r1'></a><span class='cmr-6'>1</span></span><span class='cmtt-10'>nb_nodes = 21  # Number of notes </span><br /><span class='label'><a id='x1-14002r2'></a><span class='cmr-6'>2</span></span><span class='cmtt-10'>potential0_g = ...  # Initial condition </span><br /><span class='label'><a id='x1-14003r3'></a><span class='cmr-6'>3</span></span><span class='cmtt-10'>potential_g = newton(residual, potential0_g, tangent)</span>
 
 </div>
-<!-- l. 346 --><p class='noindent'>Unter Umständen wollen Sie noch eine Callback-Funktion übergeben, um
+<!-- l. 349 --><p class='noindent'>Unter Umständen wollen Sie noch eine Callback-Funktion übergeben, um
 die Konvergenz des Lösers zu verfolgen.
-</p><!-- l. 348 --><p class='noindent'>Zusätzlich sollten Sie noch die Potentialrandbedingungen und zusätzliche
+</p><!-- l. 351 --><p class='noindent'>Zusätzlich sollten Sie noch die Potentialrandbedingungen und zusätzliche
 Parameter, wie z.B. die Anzahl der Quadraturpunkte, an die Funktionen
 <span class='cmtt-12'>residual </span>und <span class='cmtt-12'>tangent </span>übergeben. Dies können Sie z.B. mit
 <a href='https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions'>lambda-Ausdrücken</a> realisieren.</p></li></ul>
 </div>
-<!-- l. 361 --><p class='noindent'>
+<!-- l. 364 --><p class='noindent'>
 </p>
 <h4 class='likesubsectionHead'><a id='x1-150004.2.5'></a>Punkte</h4>
-<!-- l. 361 --><p class='noindent'>Sie können auf diesem Übungsblatt insgesamt 32 Punkte erzielen.
+
+
+
+<!-- l. 364 --><p class='noindent'>Sie können auf diesem Übungsblatt insgesamt 32 Punkte erzielen.
 </p>
 
