@@ -10,7 +10,7 @@ nav_order: 7
 
 
 <h2 class='chapterHead'><span class='titlemark'>Kapitel 7</span><br /><a id='x1-10007'></a>Approximation und Interpolation</h2>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 6 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Wir wenden nun die Idee der Basisfunktionen an, um Funktionen zu
 approximieren. Hierfür kommen wir zu dem Konzept des Residuums zurück.
 Ziel der Funktionsapproximation ist es, dass die approximierte Funktion das
@@ -81,8 +81,8 @@ Kollokationspunkten.
 
 
 
-<!-- l. 110 --><p class='noindent'></p><!-- l. 111 --><p class='noindent'><img src='Figures/coll5.svg' height='249' width='585' alt='PIC' />
-</p><!-- l. 114 --><p class='noindent'><img src='Figures/coll11.svg' height='256' width='585' alt='PIC' />
+<!-- l. 110 --><p class='noindent'></p><!-- l. 111 --><p class='noindent'><img height='249' alt='PIC' src='Figures/coll5.svg' width='585' />
+</p><!-- l. 114 --><p class='noindent'><img height='256' alt='PIC' src='Figures/coll11.svg' width='585' />
 <a id='x1-3001r1'></a>
 <a id='x1-3002'></a>
 </p>
@@ -126,7 +126,7 @@ Wir wählen den Satz von \(N\) Testfunktionen \begin {equation} v_n(x) = \delta 
 wobei \(\delta (x)\) die Diracsche \(\delta \)-Funktion ist und \(y_n\) die Kollokationspunkte. Die Bedingung \((v_n,R)=0\)
 für alle \(n\in [0,N-1]\) führt direkt zur Kollokationsbedingung \(R(y_x)=0\).
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 140 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Die Diracsche \(\delta \)-Funktion sollte aus Vorlesungen zur Signalverarbeitung
 bekannt sein. Die wichtigste Eigenschaft dieser Funktion ist die Filtereigenschaft,
 \begin {equation} \int _{-\infty }^{\infty } \dif x\, f(x) \delta (x-x_0) = f(x_0), \end {equation}
@@ -166,8 +166,8 @@ auch nicht an den Stützstellen exakt mit der zu approximierenden Funktion
 
 
 
-<!-- l. 190 --><p class='noindent'></p><!-- l. 191 --><p class='noindent'><img src='Figures/gal5.svg' height='249' width='585' alt='PIC' />
-</p><!-- l. 194 --><p class='noindent'><img src='Figures/gal11.svg' height='247' width='585' alt='PIC' />
+<!-- l. 190 --><p class='noindent'></p><!-- l. 191 --><p class='noindent'><img height='249' alt='PIC' src='Figures/gal5.svg' width='585' />
+</p><!-- l. 194 --><p class='noindent'><img height='247' alt='PIC' src='Figures/gal11.svg' width='585' />
 <a id='x1-5001r2'></a>
 <a id='x1-5002'></a>
 </p>
@@ -182,7 +182,7 @@ abbilden.
 
 
 </figure>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 201 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Die Galerkin-Bedingung (siehe auch Gl. \eqref{eq:galerkinortho})
 \begin {equation} (\varphi _n, R) = 0, \end {equation}
 bedeutet, dass das Residuum <span class='cmti-12'>orthogonal </span>zu allen Basisfunktionen ist. Anders

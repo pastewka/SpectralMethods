@@ -10,7 +10,7 @@ nav_order: 14
 
 
 <h2 class='chapterHead'><span class='titlemark'>Kapitel 14</span><br /><a id='x1-100014'></a>Nichtlineare Probleme</h2>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 3 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Bislang haben wir nur lineare Probleme betrachtet. Als Beispiel für
 eine nichtlineare partielle Differentialgleichung ist uns allerdings bereits die
 Poisson-Boltzmann-Gleichung begegnet. Die Lösung nichtlinearer partieller
@@ -47,7 +47,7 @@ gezeigt.
 
 
 
-<!-- l. 26 --><p class='noindent'> <img alt='PIC' height='350' width='467' src='Figures/NewtonMethod/newton-.png' /> <a id='x1-2001r1'></a>
+<!-- l. 26 --><p class='noindent'> <img src='Figures/NewtonMethod/newton-.png' height='350' alt='PIC' width='467' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 14.1: </span><span class='content'>Illustration des Newton-Verfahrens zur Lösung der
@@ -120,7 +120,7 @@ wobei die Gewichte \(w_n^\text {Q}\) und die Quadraturpunkte \(x_n^\text {Q}\) f
 Quadraturpunkte und Gewichte findet man oft in tabellierter Form, z.B. auf
 <a href='https://en.wikipedia.org/wiki/Gaussian_quadrature'>Wikipedia</a>.
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 79 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Gauß-Quadratur wird auch oft Gauß-Legendre-Quadratur genannt,
 da es einen Zusammenhang zwischen den Quadraturpunkten und den
 Nullstellen der (auf dem Interval \([-1,1]\) orthogonalen) Legendre-Polynome gibt. </p></div>

@@ -10,7 +10,7 @@ nav_order: 12
 
 
 <h2 class='chapterHead'><span class='titlemark'>Kapitel 12</span><br /><a id='x1-100012'></a>Festkörpermechanik</h2>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 3 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Die Methode der finiten Elementen hat ihren Ursprung in der
 Festkörpermechanik (auch <span class='cmti-12'>Strukturmechanik</span>). So gut wie alle Simulationen in
 diesem Bereich werden weiterhin mit Hilfe diese Methode durchgeführt. In
@@ -45,7 +45,7 @@ Volumenelement. Weiterhin gilt noch <span class='cmti-12'>Gleichgewicht der Dreh
 Volumenelementen \(\omega \). Diese Bedingung führt dazu, dass der Spannungstensor \(\t {\sigma }\)
 symmetrisch ist, also \(\t {\sigma }^T=\t {\sigma }\).
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 
 
 
@@ -71,7 +71,7 @@ beschrieben. Aus diesen Verschiebungen berechnen wir den Dehnungstensor
 \begin {equation} \t {\varepsilon } = \frac {1}{2}\left [ \nabla \v {u} + \left (\nabla \v {u}\right )^T \right ], \label {eq:strain} \end {equation}
 bzw. in Komponentenschreibweise \begin {equation} \varepsilon _{ij} = \frac {1}{2} \left ( \partial _i u_j + \partial _j u_i \right ). \end {equation}
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 50 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Der Ausdruck \(\nabla \v {u}\) ist <span class='cmti-12'>nicht </span>die Divergenz von \(\v {u}\). Diese ist gegeben
 durch \(\nabla \cdot \v {u}\) – der Punkt ist entscheidend. \(\nabla \v {u}\) ist der Gradient des Vektorfeldes \(\v {u}(\v {r})\) und damit
 ein Tensorfeld zweiter Ordnung. Die Komponenten sind gegeben durch
@@ -135,17 +135,17 @@ Richtung \(i\).
 Das Hooksche Gesetz wird damit zu \begin {equation} \sigma ^{(n)}_{ij}(\v {r}) = \lambda (\v {r}) \delta _{ij} a_{k,Jn} \partial _k N_J^{(n)} + \mu (\v {r}) \left (a_{i,Jn} \partial _j N_J^{(n)} + a_{j,Jn} \partial _i N_J^{(n)}\right ) - \sigma _{0,ij}(\v {r}) \end {equation}
 mit \begin {equation} \sigma _{0,ij}(\v {r}) = \lambda (\v {r}) \delta _{ij} \varepsilon _{0,kk}(\v {r}) + 2\mu (\v {r}) \varepsilon _{0,ij}(\v {r}). \end {equation}
 Die diskretisierte Form des Volumenterms der Gleichgewichtsbedingung lautet
-\begin {equation} \begin {split} \int \dif ^3 r\, \left (\nabla \v {v}\right ):\t {\sigma } =&amp; \int \dif ^3 r\, \left (\nabla N_I^{(n)}\otimes \hat {e}_i\right ):\t {\sigma } \\ =&amp; \int \dif ^3 r\, \left (\partial _j N_I^{(n)}\right )\sigma _{ji} \\ =&amp; \int \dif ^3 r\, \left \{ \lambda (\v {r}) a_{k,Jn} \partial _i N_I^{(n)} \partial _k N_J^{(n)}\right . \\ &amp; + \mu (\v {r}) \left (a_{i,Jn} \partial _j N_I^{(n)}\partial _j N_J^{(n)} + a_{j,Jn} \partial _j N_I^{(n)}\partial _i N_J^{(n)}\right ) \\ &amp;\left . - \sigma _{0,ji}(\v {r}) \partial _j N_I^{(n)} \right \}.\\ \end {split} \label {eq:voleq} \end {equation}
+\begin {equation} \begin {split} \int \dif ^3 r\, \left (\nabla \v {v}\right ):\t {\sigma } =&amp; \int \dif ^3 r\, \left (\nabla N_I^{(n)}\otimes \hat {e}_i\right ):\t {\sigma } \\ =&amp; \int \dif ^3 r\, \left (\partial _j N_I^{(n)}\right )\sigma _{ji} \\ =&amp; \int \dif ^3 r\, \left \{ \lambda (\v {r}) a_{k,Jn} \delta _{ij} \partial _i N_I^{(n)} \partial _k N_J^{(n)}\right . \\ &amp; + \mu (\v {r}) \left (a_{i,Jn} \partial _j N_I^{(n)}\partial _j N_J^{(n)} + a_{j,Jn} \partial _j N_I^{(n)}\partial _i N_J^{(n)}\right ) \\ &amp;\left . - \sigma _{0,ji}(\v {r}) \partial _j N_I^{(n)} \right \}.\\ \end {split} \label {eq:voleq} \end {equation}
 Für lineare Elemente sind bis auf die Materialkonstanten alle Terme in
 dieser Gleichung konstant. Das Integral führt damit effektiv zu einer
 Mittelung der Materialkonstanten auf den Element. Wir führen die mittleren
 Materialkonstanten \begin {equation} \lambda ^{(n)} = \frac {1}{V^{(n)}} \int \dif ^3 r\, \lambda (\v {r}) \end {equation}
 und eine äquivalent Gleichung für \(\mu \) und \(\t {\sigma }_0\) ein. Hierbei ist nun \(V^{(n)}\) das Volumen des
-Elements \((n)\). Wir können Gl. \eqref{eq:voleq} schreiben als \begin {equation} \begin {split} \int \dif ^3 r\, \left (\nabla \v {v}\right ):\t {\sigma } =&amp; \lambda ^{(n)} a_{j,Jn}V^{(n)}\partial _i N_I^{(n)} \partial _j N_J^{(n)} + \mu ^{(n)} a_{j,Jn} \delta _{ij} V^{(n)}\partial _k N_I^{(n)}\partial _k N_J^{(n)} \\ &amp; + \mu ^{(n)} a_{j,Jn} V^{(n)}\partial _j N_I^{(n)}\partial _i N_J^{(n)} - V^{(n)}\sigma _{0,ij}^{(n)} \partial _j N_I^{(n)}. \end {split} \end {equation}
+Elements \((n)\). Wir können Gl. \eqref{eq:voleq} schreiben als \begin {equation} \begin {split} \int \dif ^3 r\, \left (\nabla \v {v}\right ):\t {\sigma } =&amp; \lambda ^{(n)} a_{j,Jn}V^{(n)} \delta _{ij} \partial _i N_I^{(n)} \partial _j N_J^{(n)} + \mu ^{(n)} a_{j,Jn} V^{(n)}\partial _k N_I^{(n)}\partial _k N_J^{(n)} \\ &amp; + \mu ^{(n)} a_{j,Jn} V^{(n)}\partial _j N_I^{(n)}\partial _i N_J^{(n)} - V^{(n)}\sigma _{0,ij}^{(n)} \partial _j N_I^{(n)}. \end {split} \end {equation}
 Die Elementmatrix hat daher die Komponenten \begin {equation} K^{(n)}_{IiJj} = \lambda ^{(n)} \delta _{ij} k_{IiJj}^{(n)} + \mu ^{(n)} k_{IkJk}^{(n)} + \mu ^{(n)} k_{IjJi}^{(n)} \end {equation}
 mit \(k_{IiJj}^{(n)}=V^{(n)}\partial _i N_I^{(n)} \partial _j N_J^{(n)}\) und der Beitrag des Elements zum Lastvektor lautet \(f_{Ii}^{(n)}=V^{(n)}\sigma _{0,ij}^{(n)} \partial _j N_I^{(n)}\).
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 214 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Für unser strukturiertes zweidimensionales Gitter erhalten wir \(V^{(n)}=\Delta x\Delta y/2\)
 und \begin {equation} \t {k} = \frac {1}{2} \begin {pmatrix} \Delta y/\Delta x &amp; 1 &amp; -\Delta y/\Delta x &amp; \cdot &amp; \cdot &amp; -1 \\ 1 &amp; \Delta x/\Delta y &amp; -1 &amp; \cdot &amp; \cdot &amp; -\Delta x/\Delta y \\ -\Delta y/\Delta x &amp; -1 &amp; \Delta y/\Delta x &amp; \cdot &amp; \cdot &amp; 1 \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot \\ -1 &amp; -\Delta x/\Delta y &amp; 1 &amp; \cdot &amp; \cdot &amp; \Delta x/\Delta y \end {pmatrix} \end {equation}
 sowohl für das untere linke als auch das obere rechte Dreieck. Der Lastvektor

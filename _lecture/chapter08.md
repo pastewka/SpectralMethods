@@ -10,7 +10,7 @@ nav_order: 8
 
 
 <h2 class='chapterHead'><span class='titlemark'>Kapitel 8</span><br /><a id='x1-10008'></a>Spektrale Lösungsansätze</h2>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 6 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Wir entwickeln nun die in den vorherigen Kapiteln skizzierten
 Ideen für die Lösung partieller Differentialgleichungen weiter. In diesem
 Kapitel beschäftigen wir uns mit der Fourier-Basis. Dies führt zu einem
@@ -46,7 +46,7 @@ bestimmen können.
 
 </p>
 <h3 class='sectionHead'><span class='titlemark'>8.2 </span> <a id='x1-30008.2'></a>Poisson-Gleichung in einer Dimension</h3>
-<!-- l. 41 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=88c55914-ce6f-4a02-96b5-aca8010e6886' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=88c55914-ce6f-4a02-96b5-aca8010e6886</span></a>
+<!-- l. 41 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=88c55914-ce6f-4a02-96b5-aca8010e6886'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=88c55914-ce6f-4a02-96b5-aca8010e6886</span></a>
 </p><!-- l. 43 --><p class='indent'> Als Demonstrator für diese Verhalten nutzen wir die (eindimensionale)
 Poisson-Gleichung, \begin {equation} \nabla ^2 \Phi \equiv \frac {\dif ^2 \Phi }{\dif x^2} = - \frac {\rho }{\varepsilon }. \label {eq:poisson-1d} \end {equation}
 Hier ist \(\rho \) eine Ladungsdichte und \(\Phi \) das elektrostatische Potential. Das Residuum ist
@@ -68,7 +68,7 @@ Dies ist die Fourier-Reihe der Lösung.
 </p><!-- l. 85 --><p class='noindent'>
 </p>
 <h3 class='sectionHead'><span class='titlemark'>8.3 </span> <a id='x1-40008.3'></a>Übergang zur Fourier-Transformation</h3>
-<!-- l. 87 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=bd5cfab2-323e-48dc-b7b9-aca9011cf271' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=bd5cfab2-323e-48dc-b7b9-aca9011cf271</span></a>
+<!-- l. 87 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=bd5cfab2-323e-48dc-b7b9-aca9011cf271'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=bd5cfab2-323e-48dc-b7b9-aca9011cf271</span></a>
 </p><!-- l. 89 --><p class='indent'> Die Fourier-Basis Gl. \eqref{eq:fourierbasis2} ist auf einem finiten Gebiet der
 Länge \(L\) periodisch. Wenn wir die Länge \(L\) gegen unendlich gehen lassen,
 bekommen wir eine Formulierung für nicht-periodische Funktionen. Dies führt
@@ -89,7 +89,7 @@ der Fourier-Transformation. Die Fourier-Transformation ist nützlich, um
 analytische Lösungen für partielle Differentialgleichungen auf unendlichen
 Gebieten zu erhalten.
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 124 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Eine Tilde \(\tilde {f}(q)\) bezeichnet die Fourier-Transformierte einer Funktion \(f(x)\).
 Die Fourier-Transformierte ist eine Funktion des Wellenvektors \(q\). Im Gegensatz
 dazu erhalten wir bei der Fourier-Reihe abzählbare Koeffizienten \(a_n\). Der Grund
@@ -129,7 +129,7 @@ Gl. \eqref{eq:poisson-3d} einsetzen und erhalten \begin {equation} R(\v {r}) = 
 mit \(\v {r}=(x,y,z)\) und \(\v {q}=(q_x,q_y,q_z)\). Diese Gleichung muss für jedes \(x,y,z\) erfüllt sein und damit muss das
 Argument der Integration verschwinden, also \begin {equation} -q^2 \tilde {\Phi }(\v {q}) + \frac {\tilde {\rho }(\v {q})}{\varepsilon } = 0. \label {eq:fourierpoisson2d} \end {equation}
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 179 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Ein alternatives Argument erhält man, wenn man die
 Fourier-Transformation von \(R(x,y,z)\) hinschreibt: \begin {equation} R(q_x', q_y', q_z') = \int \dif ^3 r \, R(\v {r}) \exp \left ( -i q_x x - i q_y y - i q_z z \right ). \end {equation}
 Diese enthält Terme der Form \begin {equation} \int _{-\infty }^\infty \dif x\, \exp \left (i (q_x - q_x') x\right ) = 2\pi \delta (q_x - q_x'), \end {equation}
@@ -144,7 +144,7 @@ die Poisson-Gleichung auf einem periodischen Gebiet. Die Schwierigkeit
 besteht nun da drin, für ein gegebenes \(\rho (x,y,z)\) die Hin- und Rücktransformation
 auszuwerten.
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 202 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Beispiel:</span></span> Als Beispiel betrachten wir nun die Lösung für eine Punktladung \(Q\) am
 Ursprung, \begin {equation} \rho (x,y,z) = Q \delta (x) \delta (y) \delta (z). \end {equation}
 Die Fourier-Transformierte der Ladungsdichte \(\rho \) erhält man aus
@@ -170,7 +170,7 @@ oder <span class='cmti-12'>Greensche Funktion </span>der (dreidimensionalen) Poi
 
 
 
-<!-- l. 255 --><p class='noindent'><img width='390' height='390' src='Figures/illustr_angles_1.svg' alt='PIC' /> <a id='x1-5001r1'></a>
+<!-- l. 255 --><p class='noindent'><img width='390' alt='PIC' height='390' src='Figures/illustr_angles_1.svg' /> <a id='x1-5001r1'></a>
 <a id='x1-5002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 8.1: </span><span class='content'>Volumenelement für die Integration in Kugelkoordination

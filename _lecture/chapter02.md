@@ -10,7 +10,7 @@ nav_order: 2
 
 
 <h2 class='chapterHead'><span class='titlemark'>Kapitel 2</span><br /><a id='x1-10002'></a>Gleichungstypen</h2>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 7 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Die meisten Phänomene denen wir in den Ingenieurwissenschaften
 begegnen, werden sehr gut durch Differentialgleichungen beschrieben. Wir
 erinnern uns an die diskreten Netzwerkmodelle aus Elektrotechnik und
@@ -41,7 +41,7 @@ eine nichtlineare Bewegungsgleichung für \(x\) ist. Sie beschreibt den so genan
 Van-der-Pol Oszillator. Die Nichtlinearität ist hier dadurch zu erkennen, dass \(x^2\)
 die Ableitung \(\dif x/\dif t\) multipliziert.
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 40 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Die Ableitung erster oder höherer Ordnung ist eine lineare
 
 
@@ -88,7 +88,7 @@ wobei \(\kappa \) den Wärmeleitungskoeffizienten bezeichnet. Diese Gleichung wu
 Joseph Fourier (*1768, \(\dagger \)1830) entwickelt, dem wir im Laufe dieser Veranstaltung
 wieder begegnen werden.
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 99 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> In Gl. \eqref{eq:heateq} bezeichnet \(\partial /\partial t\) die <span class='cmti-12'>partielle Ableitung</span>. Dies
 ist die Ableitung nach einem der Argumente (hier \(t\)), also die Variation der
 Funktion, wenn alle anderen Argumente konstant gehalten werden. Bei
@@ -101,7 +101,7 @@ werden. </p></div>
 <!-- l. 104 --><p class='noindent'>Quasilineare PDGLs erster Ordnung, also Gleichungen der Form \begin {equation} P(x,t;u)\frac {\partial u(x,t)}{\partial x}+ Q(x,t;u)\frac {\partial u(x,t)}{\partial t}= R(x,t;u), \label {eq:PDE1Oquasi} \end {equation}
 für eine (unbekannte) Funktion \(u(x,t)\) und der Anfangsbedingung \(u(x,t=0)=u_0(x)\) können
 systematisch auf ein System gekoppelter GDGLs erster Ordnung zurückgeführt
-werden. Diese wichtige Eigenschaft wollen wir untersuchen. </p><div id='shaded*-1' class='framedenv'>
+werden. Diese wichtige Eigenschaft wollen wir untersuchen. </p><div class='framedenv' id='shaded*-1'>
 <!-- l. 111 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> In Gl. \eqref{eq:PDE1Oquasi} wurde zur Illustration eine
 Darstellung mit zwei Variablen \(x\) und \(t\) gewählt. Allgemein können wir schreiben:
 \begin {equation} \sum \limits _i P_i(\{x_i\};u)\frac {\partial u(\{x_i\})}{\partial x_i}= R(\{x_i\};u) \end {equation}
@@ -117,12 +117,12 @@ GDGLs anwenden, die wir in der Vorlesung “Differentialgleichungen”
 kennengelernt haben.
 </p><!-- l. 122 --><p class='indent'> Wir gehen folgendermaßen vor:
 </p><ol class='enumerate1'>
-<li id='x1-7002x1' class='enumerate'>Zunächst parametrisieren wir die unabhängigen Veränderlichen in
+<li class='enumerate' id='x1-7002x1'>Zunächst parametrisieren wir die unabhängigen Veränderlichen in
 Gl. \eqref{eq:PDE1Oquasi} mit einem Parameter \(s\) gemäß \(x(s)\) und \(t(s)\).
 </li>
-<li id='x1-7004x2' class='enumerate'>Wir bilden dann die <span class='cmti-12'>totale Ableitung </span>von \(u(x(s),t(s))\) nach \(s\) \begin {equation} \frac {\dif u(x(s),t(s))}{\dif s}= \frac {\partial u(x(s),t(s))}{\partial x}\frac {\dif x(s)}{\dif s}+ \frac {\partial u(x(s),t(s))}{\partial t}\frac {\dif t(s)}{\dif s}. \label {eq:totalderiv} \end {equation}
+<li class='enumerate' id='x1-7004x2'>Wir bilden dann die <span class='cmti-12'>totale Ableitung </span>von \(u(x(s),t(s))\) nach \(s\) \begin {equation} \frac {\dif u(x(s),t(s))}{\dif s}= \frac {\partial u(x(s),t(s))}{\partial x}\frac {\dif x(s)}{\dif s}+ \frac {\partial u(x(s),t(s))}{\partial t}\frac {\dif t(s)}{\dif s}. \label {eq:totalderiv} \end {equation}
 </li>
-<li id='x1-7006x3' class='enumerate'>Durch den Vergleich der Koeffizienten der totalen Ableitung \eqref{eq:totalderiv}
+<li class='enumerate' id='x1-7006x3'>Durch den Vergleich der Koeffizienten der totalen Ableitung \eqref{eq:totalderiv}
 mit der PDGL \eqref{eq:PDE1Oquasi} sieht man, dass diese DGL genau
 denn gelöst wird, wenn \begin {align} \frac {dx(s)}{ds}&amp;=P(x,t,u),\label {eq:transode1}\\ \frac {dt(s)}{ds}&amp;=Q(x,t,u)\quad \text {und}\\ \frac {du(s)}{ds} &amp;= R(u(s)).\label {eq:transode3} \end {align}
 <!-- l. 138 --><p class='noindent'>erfüllt ist. Dies beschreibt die Lösung entlang bestimmter Kurven in der
@@ -130,31 +130,31 @@ denn gelöst wird, wenn \begin {align} \frac {dx(s)}{ds}&amp;=P(x,t,u),\label {e
 <!-- l. 140 --><p class='noindent'>Wir haben damit die PDGL in einen Satz gekoppelter GDGLs erster Ordnung,
 Gl. \eqref{eq:transex1}-\eqref{eq:transex3} umgewandelt.
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 142 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Beispiel:</span></span> Die Transportgleichung \begin {equation} \frac {\partial u(x,t)}{\partial t}+c\frac {\partial u(x,t)}{\partial x}=0 \label {eq:transportexample} \end {equation}
 mit der Anfangsbedingung \(u(x,t=0)=u_0(x)\) soll gelöst werden. Wir gehen nach obigem Rezept
 vor:
 </p><ol class='enumerate1'>
-<li id='x1-7008x1' class='enumerate'>Wir parameterisieren die Variablen \(x\) und \(t\) mit Hilfe einer neuen Variable
+<li class='enumerate' id='x1-7008x1'>Wir parameterisieren die Variablen \(x\) und \(t\) mit Hilfe einer neuen Variable
 \(s\), also \(x(s)\) und \(t(s)\). Wir suchen nun nach einem Ausdruck, mit dem wir \(x(s)\) und \(t(s)\)
 bestimmen können.
 </li>
-<li id='x1-7010x2' class='enumerate'>Wir stellen nun die Frage, wie sich die Funktion \(u(x(s),t(s))\) verhält. Diese Funktion
+<li class='enumerate' id='x1-7010x2'>Wir stellen nun die Frage, wie sich die Funktion \(u(x(s),t(s))\) verhält. Diese Funktion
 beschreibt die Änderung eines Anfangswertes \(u(x(0),t(0))\) mit der Variable \(s\). Die totale
 Ableitung wird zu \begin {equation} \frac {\dif u(x(s),t(s))}{\dif s}=\frac {\partial u}{\partial t}\frac {\dif t(s)}{\dif s}+\frac {\partial u}{\partial x}\frac {\dif x(s)}{\dif s}. \end {equation}
 </li>
-<li id='x1-7012x3' class='enumerate'>Die totale Ableitung ist genau dann identisch zu der partiellen
+<li class='enumerate' id='x1-7012x3'>Die totale Ableitung ist genau dann identisch zu der partiellen
 Differentialgleichung, die wir lösen wollen, wenn \begin {align} \frac {\dif x(s)}{\dif s} &amp;=c\quad \text {und} \label {eq:transex1}\\ \frac {\dif t(s)}{\dif s} &amp;=1. \end {align}
 
 
 
 <!-- l. 160 --><p class='noindent'>In diesem Fall gilt \begin {equation} \frac {\dif u(s)}{\dif s} = 0.\label {eq:transex3} \end {equation}
 </p></li>
-<li id='x1-7014x4' class='enumerate'>Die allgemeinen Lösungen für die drei gewöhnlichen
+<li class='enumerate' id='x1-7014x4'>Die allgemeinen Lösungen für die drei gewöhnlichen
 Differentialgleichungen \eqref{eq:transex1}-\eqref{eq:transex3} sind
 gegeben durch \begin {align} x(s) &amp;= cs + \text {const.},\\ t(s) &amp;= s + \text {const.}\quad \text {und}\\ u(s) &amp;= \text {const.} \end {align}
 </li>
-<li id='x1-7016x5' class='enumerate'>Mit den Anfangsbedingungen \(t(0)=0\), \(x(0)=\xi \) und \(u(x,t=0)=f(\xi )\) erhält man \(t=s\), \(x=ct+\xi \) und \(u=f(\xi )=f(x-ct)\),</li></ol>
+<li class='enumerate' id='x1-7016x5'>Mit den Anfangsbedingungen \(t(0)=0\), \(x(0)=\xi \) und \(u(x,t=0)=f(\xi )\) erhält man \(t=s\), \(x=ct+\xi \) und \(u=f(\xi )=f(x-ct)\),</li></ol>
 <!-- l. 172 --><p class='noindent'>Die Anfangsbedingung \(f(\xi )\) wird mit der Geschwindigkeit \(c\) in die positive x-Richtung
 transportiert. Die Lösung für \(u\) bleibt konstant, da die Ableitung von \(u\)
 Null ist, also behält \(u\) den durch die Anfangsbedingung gegebenen Wert.
@@ -255,7 +255,7 @@ wurden.
 Problemstellungen auch analytisch lösen. Wir geben im Folgenden ein Beispiel
 hierzu.
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 329 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Beispiel:</span></span> Wir lösen die eindimensionale Wellengleichung. \begin {equation} \frac {\partial ^2 u}{\partial x^2}-\frac {1}{c^2}\frac {\partial ^2 u}{\partial t^2}=0 \label {eqn1Dwaveeqn} \end {equation}
 durch Separation der Variablen. Dafür machen wir den Ansatz \(u(x,t)=X(x)T(t)\), was zu
 \begin {equation} \frac {1}{X}\frac {\partial ^2 X}{\partial x^2}=\frac {1}{c^2}\frac {1}{T}\frac {\partial ^2 T}{\partial t^2} \label {eqnseparate} \end {equation}
