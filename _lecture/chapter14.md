@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 14 [Jan. 17-Feb. 11]"
 parent: Vorlesung
-date: 2022-01-30
+date: 2022-02-21
 categories: lecture
 author: Lars Pastewka
 nav_order: 14
@@ -10,7 +10,7 @@ nav_order: 14
 
 
 <h2 class='chapterHead'><span class='titlemark'>Kapitel 14</span><br /><a id='x1-100014'></a>Nichtlineare Probleme</h2>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 3 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Bislang haben wir nur lineare Probleme betrachtet. Als Beispiel für
 eine nichtlineare partielle Differentialgleichung ist uns allerdings bereits die
 Poisson-Boltzmann-Gleichung begegnet. Die Lösung nichtlinearer partieller
@@ -120,13 +120,13 @@ wobei die Gewichte \(w_n^\text {Q}\) und die Quadraturpunkte \(x_n^\text {Q}\) f
 Quadraturpunkte und Gewichte findet man oft in tabellierter Form, z.B. auf
 <a href='https://en.wikipedia.org/wiki/Gaussian_quadrature'>Wikipedia</a>.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 79 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Gauß-Quadratur wird auch oft Gauß-Legendre-Quadratur genannt,
 da es einen Zusammenhang zwischen den Quadraturpunkten und den
 Nullstellen der (auf dem Interval \([-1,1]\) orthogonalen) Legendre-Polynome gibt. </p></div>
 <!-- l. 83 --><p class='noindent'>
 </p>
-<h3 class='sectionHead'><span class='titlemark'>14.3 </span> <a id='x1-400014.3'></a>Poisson-Boltzmann-Gleichung</h3>
+<h3 class='sectionHead'><span class='titlemark'>14.3 </span> <a id='x1-400014.3'></a>Beispiel: Poisson-Boltzmann-Gleichung</h3>
 <!-- l. 85 --><p class='noindent'>Wir diskutieren nun die numerische Lösung der nichtlinearen
 Poisson-Boltzmann-(PB-)Gleichung für zwei Spezies, \begin {equation} \begin {split} \nabla ^2 \Phi &amp;= - \frac {c^\infty }{\varepsilon } \left [ q_+ \exp \left (-\frac {q_+ \Phi }{k_B T}\right ) + q_- \exp \left (-\frac {q_- \Phi }{k_B T}\right ) \right ] \\ &amp;= \frac {2\rho _0}{\varepsilon } \sinh \left ( \frac {|e| \Phi }{k_B T} \right ) \end {split} \end {equation}
 wobei \(\rho _0=|e|c^\infty \) die Referenzladungsdichte und \(q_+=|e|\) and \(q_-=-|e|\) die ionischen Ladungen sind. Da

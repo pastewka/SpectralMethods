@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 12 [Jan. 17-Feb. 11]"
 parent: Vorlesung
-date: 2022-01-30
+date: 2022-02-21
 categories: lecture
 author: Lars Pastewka
 nav_order: 12
@@ -142,7 +142,7 @@ Mittelung der Materialkonstanten auf den Element. Wir führen die mittleren
 Materialkonstanten \begin {equation} \lambda ^{(n)} = \frac {1}{V^{(n)}} \int \dif ^3 r\, \lambda (\v {r}) \end {equation}
 und eine äquivalent Gleichung für \(\mu \) und \(\t {\sigma }_0\) ein. Hierbei ist nun \(V^{(n)}\) das Volumen des
 Elements \((n)\). Wir können Gl. \eqref{eq:voleq} schreiben als \begin {equation} \begin {split} \int \dif ^3 r\, \left (\nabla \v {v}\right ):\t {\sigma } =&amp; \lambda ^{(n)} a_{j,Jn}V^{(n)}\partial _i N_I^{(n)} \partial _j N_J^{(n)} + \mu ^{(n)} a_{j,Jn} \delta _{ij} V^{(n)}\partial _k N_I^{(n)}\partial _k N_J^{(n)} \\ &amp; + \mu ^{(n)} a_{j,Jn} V^{(n)}\partial _j N_I^{(n)}\partial _i N_J^{(n)} - V^{(n)}\sigma _{0,ij}^{(n)} \partial _j N_I^{(n)}. \end {split} \end {equation}
-Die Elementmatrix hat daher die Komponenten \begin {equation} K^{(n)}_{IiJj} = \lambda ^{(n)} k_{IiJj}^{(n)} + \mu ^{(n)} \delta _{ij} k_{IkJk}^{(n)} + \mu ^{(n)} k_{IjJi}^{(n)} \end {equation}
+Die Elementmatrix hat daher die Komponenten \begin {equation} K^{(n)}_{IiJj} = \lambda ^{(n)} \delta _{ij} k_{IiJj}^{(n)} + \mu ^{(n)} k_{IkJk}^{(n)} + \mu ^{(n)} k_{IjJi}^{(n)} \end {equation}
 mit \(k_{IiJj}^{(n)}=V^{(n)}\partial _i N_I^{(n)} \partial _j N_J^{(n)}\) und der Beitrag des Elements zum Lastvektor lautet \(f_{Ii}^{(n)}=V^{(n)}\sigma _{0,ij}^{(n)} \partial _j N_I^{(n)}\).
 </p>
 <div id='shaded*-1' class='framedenv'>

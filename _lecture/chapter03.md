@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 03 [Nov. 1-7]"
 parent: Vorlesung
-date: 2022-01-30
+date: 2022-02-21
 categories: lecture
 author: Lars Pastewka
 nav_order: 3
@@ -48,7 +48,7 @@ gebrochen.
 
 
 
-<!-- l. 22 --><p class='noindent'> <img src='Figures/Brownian_Motion-.png' width='585' height='222' alt='PIC' /> <a id='x1-2001r1'></a>
+<!-- l. 22 --><p class='noindent'> <img width='585' alt='PIC' src='Figures/Brownian_Motion-.png' height='222' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 3.1: </span><span class='content'>Illustration eines Diffusionsprozesses. Die “Pollen” in (a)
@@ -76,7 +76,7 @@ Abb. <a href='#x1-2003r2'>3.2<!-- tex4ht:ref: fig:Brown --></a>).
 
 
 
-<!-- l. 36 --><p class='center'><img src='ch030x.png' alt='PICT' />
+<!-- l. 36 --><p class='center'><img alt='PICT' src='ch030x.png' />
 <a id='x1-2003r2'></a>
 <a id='x1-2004'></a>
 </p>
@@ -94,7 +94,7 @@ Wahrscheinlichkeit \(q\) nach rechts. Darüberhinaus haben wir die Wahrscheinlic
 Gitter durch die Funktion \(P(x,t)\) gegeben.
 </p>
 <h4 class='subsectionHead'><span class='titlemark'>3.1.1 </span> <a id='x1-30003.1.1'></a>Diffusion</h4>
-<!-- l. 66 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e45b44b6-d450-4025-ac9d-ac750109f647'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e45b44b6-d450-4025-ac9d-ac750109f647</span></a>
+<!-- l. 66 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e45b44b6-d450-4025-ac9d-ac750109f647' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e45b44b6-d450-4025-ac9d-ac750109f647</span></a>
 </p><!-- l. 68 --><p class='indent'> Wir betrachten zunächst den Fall \(p=q=1/2\), also dass die Wahrscheinlichkeiten für
 die Sprünge nach links und rechts identisch sind. Wir nehmen an, das Teilchen
 springe von einem Platz zum benachbarten in einem diskreten, endlichen und
@@ -114,7 +114,7 @@ konstant ist und nicht räumlich variiert.
 </p><!-- l. 100 --><p class='noindent'>
 </p>
 <h4 class='subsectionHead'><span class='titlemark'>3.1.2 </span> <a id='x1-40003.1.2'></a>Drift</h4>
-<!-- l. 102 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=3443491b-853e-4a3b-b627-ac750109f67d'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=3443491b-853e-4a3b-b627-ac750109f67d</span></a>
+<!-- l. 102 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=3443491b-853e-4a3b-b627-ac750109f67d' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=3443491b-853e-4a3b-b627-ac750109f67d</span></a>
 </p><!-- l. 104 --><p class='indent'> Wie sieht es aus, wenn die Wahrscheinlichkeiten für die Sprünge nach rechts
 oder links nicht gleich sind, \(p\ne q\) (aber natürlich \(p+q=1\))? Wir gehen nach wie vor von
 diskreten, gleichförmigen Zeitschritten und äquidistanten Stützstellen
@@ -155,7 +155,7 @@ wobei der Mittelwert \begin {equation} \langle f(x) \rangle (x, t) = f(x) P(x, t
 <!-- l. 161 --><p class='noindent'>
 </p>
 <h3 class='sectionHead'><span class='titlemark'>3.2 </span> <a id='x1-50003.2'></a>Kontinuität</h3>
-<!-- l. 163 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a68a4595-c00c-46ad-bc29-ac75011ef1b2'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a68a4595-c00c-46ad-bc29-ac75011ef1b2</span></a>
+<!-- l. 163 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a68a4595-c00c-46ad-bc29-ac75011ef1b2' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a68a4595-c00c-46ad-bc29-ac75011ef1b2</span></a>
 </p><!-- l. 165 --><p class='indent'> Die Gleichungen \eqref{eq:diffusion} und \eqref{eq:driftdiffusion} vermischen
 zwei Konzepte, die wir hier jetzt getrennt behandeln wollen: Die Erhaltung der
 Anzahl der Teilchen (Kontinuität) und der Prozess, welcher zu einem
@@ -186,7 +186,7 @@ Stromdichte \(j\) hat die Einheit Anzahl Partikel/Zeit/Fläche.)
 
 
 
-<!-- l. 211 --><p class='noindent'><img src='Figures/continuity.png' width='272' height='282' alt='PIC' /> <a id='x1-5001r3'></a>
+<!-- l. 211 --><p class='noindent'><img width='272' alt='PIC' src='Figures/continuity.png' height='282' /> <a id='x1-5001r3'></a>
 <a id='x1-5002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 3.3: </span><span class='content'>Teilchen können das Volumen \(V\) nur durch die Seitenwände

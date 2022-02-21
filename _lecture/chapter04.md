@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 04 [Nov. 8-14]"
 parent: Vorlesung
-date: 2022-01-30
+date: 2022-02-21
 categories: lecture
 author: Lars Pastewka
 nav_order: 4
@@ -77,7 +77,7 @@ beispielsweise für die Elektronenleitung in Metallen.
 
 
 
-<!-- l. 64 --><p class='noindent'> <img alt='PIC' height='273' src='Figures/Drag_Force-.png' width='585' /> <a id='x1-3001r1'></a>
+<!-- l. 64 --><p class='noindent'> <img width='585' height='273' src='Figures/Drag_Force-.png' alt='PIC' /> <a id='x1-3001r1'></a>
 <a id='x1-3002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 4.1: </span><span class='content'>Ein Teilchen (z.B. ein Ion), welches sich in einer
@@ -150,7 +150,7 @@ mit einer Konstanten \(c_0\). Diese Gleichung in Verbindung mit der Poisson-Glei
 zur Bestimmung von \(\Phi \) heißt auch die <span class='cmti-12'>Poisson-Boltzmann-Gleichung</span>.
 </p><!-- l. 162 --><p class='noindent'>
 </p>
-<h3 class='sectionHead'><span class='titlemark'>4.6 </span> <a id='x1-70004.6'></a>Anwendungsbeispiel</h3>
+<h3 class='sectionHead'><span class='titlemark'>4.6 </span> <a id='x1-70004.6'></a>Beispiel: Superkondensator</h3>
 <!-- l. 164 --><p class='noindent'>Im folgende Video diskutieren wir die Anwendung der Poisson-Nernst-Planck-Gleichung
 für die Modellierung von Ladungstransport in Superkondensatoren mit porösen
 Elektroden.

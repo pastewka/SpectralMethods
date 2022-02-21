@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 10 [Dec. 20-Jan. 9]"
 parent: Vorlesung
-date: 2022-01-30
+date: 2022-02-21
 categories: lecture
 author: Lars Pastewka
 nav_order: 10
@@ -10,7 +10,7 @@ nav_order: 10
 
 
 <h2 class='chapterHead'><span class='titlemark'>Kapitel 10</span><br /><a id='x1-100010'></a>Finite Elemente in mehreren Dimensionen</h2>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 4 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Wir verallgemeinern nun die Ergebnisse des vorhergehenden Kapitels
 auf mehrere Dimensionen. Dies hat mehrere technische Hürden: Für die
 partielle Integration müssen wir nun Ergebnisse der Vektoranalysis, insbesondere
@@ -20,7 +20,7 @@ diese komplexere Geometrie der Elemente wird eine saubere Buchhaltung der
 Indices, also die Unterscheidung von globalen Knoten, Elementknoten und
 Elementen wichtig. </p></div>
 <h3 class='sectionHead'><span class='titlemark'>10.1 </span> <a id='x1-200010.1'></a>Differenzierbarkeit</h3>
-<!-- l. 10 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5a9f99ea-5864-42a4-8920-acba010f39db'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5a9f99ea-5864-42a4-8920-acba010f39db</span></a>
+<!-- l. 10 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5a9f99ea-5864-42a4-8920-acba010f39db' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5a9f99ea-5864-42a4-8920-acba010f39db</span></a>
 </p><!-- l. 12 --><p class='indent'> Zur Illustration, wie die Anforderung an die Differenzierbarkeit in
 höherdimensionalen Problemen reduziert werden kann, und wir damit
 wieder lineare Basisfunktionen verwenden können, wird hier weiter die
@@ -44,7 +44,7 @@ Gl. \eqref{eq:weakformhighd} wird wieder wichtig werden, wenn wir
 Neumann-Randbedingungen auf den Rand \(\partial \Omega \) der Domäne vorgeben möchten. Im
 Dirichlet-Fall verschwindet dieser Term.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 
 
 
@@ -75,7 +75,7 @@ Testfunktion \(v(\v {r})\) und des Potentials \(\Phi (\v {r})\) berechnen könne
 
 
 
-<!-- l. 76 --><p class='noindent'> <img alt='PIC' src='Figures/Integration_Domain-.png' width='312' height='233' /> <a id='x1-2001r1'></a>
+<!-- l. 76 --><p class='noindent'> <img width='312' alt='PIC' src='Figures/Integration_Domain-.png' height='233' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 10.1: </span><span class='content'>Der Rand \(\partial \Omega \) begrenzt
@@ -91,7 +91,7 @@ definieren.
 
 </figure>
 <h3 class='sectionHead'><span class='titlemark'>10.2 </span> <a id='x1-300010.2'></a>Gitter</h3>
-<!-- l. 84 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1f20826b-88c9-44cf-9b09-acba01318cd7'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1f20826b-88c9-44cf-9b09-acba01318cd7</span></a>
+<!-- l. 84 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1f20826b-88c9-44cf-9b09-acba01318cd7' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1f20826b-88c9-44cf-9b09-acba01318cd7</span></a>
 </p><!-- l. 86 --><p class='indent'> Wir müssen nun geeignete Basisfunktionen wählen, um mit Hilfe
 der Galerkin-Bedingungen ein lineares Gleichungssystem zu erhalten.
 Hierbei ist es nützlich, die Formulierung im Sinne von Formfunktionen
@@ -122,7 +122,7 @@ gezeigt.
 
 
 
-<!-- l. 96 --><p class='noindent'> <img alt='PIC' src='Figures/mesh-.png' width='585' height='276' /> <a id='x1-4001r2'></a>
+<!-- l. 96 --><p class='noindent'> <img width='585' alt='PIC' src='Figures/mesh-.png' height='276' /> <a id='x1-4001r2'></a>
 <a id='x1-4002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 10.2: </span><span class='content'>Triangulierung eines rechteckigen Gebiets \(\Omega \) in ein (a)
@@ -141,13 +141,13 @@ ist der Funktionswert auf dem entsprechenden Knoten. Die Formfunktion ist dann
 eine Vorschrift, wie zwischen den Knoten (also über die Dreiecke) dieser
 Funktionswert interpoliert wird.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 108 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> In drei Dimensionen erfolgt die Zerlegung des Raumes
 üblicherweise in Tetraeder. Die Vernetzung eines solchen dreidimensionalen
 Gebiets ist höchst nicht-trivial. Alle kommerziellen Finite-Elemente Pakete
 haben Vernetzer eingebaut, die diesen Prozess übernehmen oder zumindest
 unterstützen. Eine freie Softwarelösung für die Vernetzung von komplexen
-Geometrien ist <span class='cmcsc-10x-x-120'>G<span class='small-caps'>msh</span> </span>(<a class='url' href='https://gmsh.info/'><span class='cmtt-12'>https://gmsh.info/</span></a>). </p></div>
+Geometrien ist <span class='cmcsc-10x-x-120'>G<span class='small-caps'>msh</span> </span>(<a href='https://gmsh.info/' class='url'><span class='cmtt-12'>https://gmsh.info/</span></a>). </p></div>
 <h4 class='subsectionHead'><span class='titlemark'>10.2.2 </span> <a id='x1-500010.2.2'></a>Strukturierung</h4>
 <!-- l. 114 --><p class='noindent'>Die Nutzung eines strukturierten Gitters vereinfacht die Zuweisung eines
 Knotenindices \(n\) bzw. eines Elementindices \((n)\) zu entsprechenden räumlichen
@@ -163,7 +163,7 @@ Knoten.
 
 
 
-<!-- l. 120 --><p class='noindent'><img alt='PIC' src='Figures/structured_grid.svg' width='780' height='426' /> <a id='x1-5001r3'></a>
+<!-- l. 120 --><p class='noindent'><img width='780' alt='PIC' src='Figures/structured_grid.svg' height='426' /> <a id='x1-5001r3'></a>
 <a id='x1-5002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 10.3: </span><span class='content'>Zerlegung eines rechteckigen Gebiets in ein strukturiertes
@@ -192,7 +192,7 @@ wobei nun \(l,m\) mit \(l\in \{0,1,\ldots ,M_x-1\}\) und \(m\in \{0,1,\ldots ,M_
 eines Kastens indiziert. Der Faktor \(2\) taucht in Gl. \eqref{eq:linindexel} auf, weil
 es zwei Elemente pro Kasten gibt.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 138 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Gleichungen \eqref{eq:linindex} und \eqref{eq:linindexel} sind die
 vermutlich einfachste Abbildung von Koordinaten auf einen linearen, konsekutiven
 Index. Andere Möglichkeiten, die auch in der Numerik eingesetzt werden,
@@ -207,7 +207,7 @@ und <span class='cmti-12'>Caches </span>nutzt. Eine Optimierung von Algorithmen 
 Hardwarearchitekturen ist höcht nicht-trivial und benötigt detailliertes Wissen
 über die Rechnerarchitektur. </p></div>
 <h3 class='sectionHead'><span class='titlemark'>10.3 </span> <a id='x1-600010.3'></a>Formfunktionen</h3>
-<!-- l. 144 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e070f7d8-2d2d-468d-9589-acba013b471a'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e070f7d8-2d2d-468d-9589-acba013b471a</span></a>
+<!-- l. 144 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e070f7d8-2d2d-468d-9589-acba013b471a' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e070f7d8-2d2d-468d-9589-acba013b471a</span></a>
 </p><!-- l. 146 --><p class='indent'> Unsere Formfunktionen leben auf den einzelnen Dreiecken der Triangulierung
 und müssen auf den jeweiligen Knoten entweder \(1\) sein oder verschwinden. Wir
 drücken die Formfunktionen hier mit Hilfe der skalierten Koordinaten \(\xi =(x-x_0)/\Delta x\) und \(\eta =(y-y_0)/\Delta y\) aus,
@@ -233,7 +233,7 @@ Element \((1)\) lauten die Formfunktionen \begin {align} N^{(1)}_0(\xi , \eta ) 
 
 
 
-<!-- l. 168 --><p class='noindent'><img alt='PIC' src='Figures/febasis2d.svg' width='350' height='280' /> <a id='x1-6001r4'></a>
+<!-- l. 168 --><p class='noindent'><img width='350' alt='PIC' src='Figures/febasis2d.svg' height='280' /> <a id='x1-6001r4'></a>
 <a id='x1-6002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 10.4: </span><span class='content'>Formfunktionen für lineare Dreieckelemente in zwei
@@ -262,7 +262,7 @@ ist daher besonders für unstrukturierte Gitter nützlich.
 verwandt haben, sind diese Ableitungen alle Konstanten.
 </p>
 <h3 class='sectionHead'><span class='titlemark'>10.4 </span> <a id='x1-700010.4'></a>Galerkin-Methode</h3>
-<!-- l. 223 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=0f06cd8a-1931-4d51-9572-acba0129bf64'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=0f06cd8a-1931-4d51-9572-acba0129bf64</span></a>
+<!-- l. 223 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=0f06cd8a-1931-4d51-9572-acba0129bf64' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=0f06cd8a-1931-4d51-9572-acba0129bf64</span></a>
 </p><!-- l. 225 --><p class='indent'> Wir können nun die Galerkin-Methode anwenden, um das lineare
 Gleichungssystem, welches die diskretisierte Differentialgleichung beschreibt, zu
 bestimmen. Wir unterscheiden hier wieder zwischen Elementmatrizen und der
@@ -274,7 +274,7 @@ wobei für zwei Vektorfelder \(\v {f}(\v {r})\) und \(\v {g}(\v {r})\) das Skala
 also als kartesisches Skalarprodukt zwischen den beiden Funktionswerten, zu
 verstehen ist. Der Beitrag des Elements zur rechten Seite lautet \begin {equation} f_I^{(n)} = \frac {1}{\varepsilon }(N_I^{(n)}, \rho ) + \int _{\partial \Omega } \dif ^2r\, N_I^{(n)}(\v {r})\nabla \Phi \cdot \hat {n}(\v {r}). \label {eq:rhs2d} \end {equation}
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 251 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Beispiel:</span></span> Wir berechnen nun die Elementmatrizen für die beiden Elemente
 unseres strukturierten Beispielgitters. So lautet z.B. die Komponente \(I=0\) und \(J=0\) des
 Elements \((0)\), \begin {equation} \begin {split} K_{00}^{(0)} &amp;= (\nabla N_0^{(0)}, \nabla N_0^{(0)}) \\ &amp;= \int _{\Omega ^{(0)}} \dif ^2r \left ( \frac {1}{\Delta x^2} + \frac {1}{\Delta y^2} \right ) \\ &amp;= \frac {\Delta x\Delta y}{2} \left ( \frac {1}{\Delta x^2} + \frac {1}{\Delta y^2} \right ) \\ &amp;= \frac {1}{2}\left (\frac {\Delta y}{\Delta x} + \frac {\Delta x}{\Delta y}\right ) \end {split} \end {equation}

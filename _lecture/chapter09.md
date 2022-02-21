@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 09 [Dec. 13-19]"
 parent: Vorlesung
-date: 2022-01-30
+date: 2022-02-21
 categories: lecture
 author: Lars Pastewka
 nav_order: 9
@@ -10,7 +10,7 @@ nav_order: 9
 
 
 <h2 class='chapterHead'><span class='titlemark'>Kapitel 9</span><br /><a id='x1-10009'></a>Finite Elemente in einer Dimension</h2>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 4 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> In diesem Kapitel werden einige Eigenschaften der finiten Elemente
 anhand eindimensionaler Beispiele diskutiert. Insbesondere wird gezeigt, wie mit
 linearen Elementen PDGLs zweiter Ordnung diskretisiert werden und wie
@@ -46,7 +46,7 @@ diskutiert wird ist \(\Omega =[a,b]\).
 
 
 
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 58 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Die linearen Basisfunktionen sind im klassischen Sinne
 noch nicht einmal einfach differenzierbar, weil sich der linksseitige und
 rechtsseitige Differenzenquotient an den Knicken der Funktion unterscheidet. Es
@@ -78,7 +78,7 @@ schwach differenzierbar sein. Gleichung \eqref{eq:afterpartialint} muss
 hier natürlich für alle einmal diffenzierbaren Testfunktionen \(v(x)\) erfüllt
 sein.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 71 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> In der Kollokationsmethode wird die “starke” Anforderung der
 zweimaligen Differenzierbarkeit nicht aufgehoben. Das sieht man z.B. daran,
 dass der Dirac-\(\delta \) als Testfunktion für die Kollokationsmethode noch nicht
@@ -115,7 +115,7 @@ Elemente im Rahmen der Strukturmechanik.) Der Term \(\v {f}\) wird oft als “re
 Seite” (engl. “right hand side”, oft als “rhs” abgekürzt) oder Lastvektor
 (wiederum aus der Strukturmechanik) bezeichnet.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 126 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> In der Strukturmechanik, die sich mit der Verformung von
 Festkörpern beschäftigt, ist \(\t {K}\) so etwas wie eine Federkonstante, \(\v {f}\) eine Kraft und \(\v {a}\)
 die <span class='cmti-12'>Verschiebungen </span>(engl. “displacements”) der Knoten, also der Abstand zum
@@ -136,7 +136,7 @@ und damit \begin {align} K_{nn} &amp;= \frac {1}{x_n - x_{n-1}} + \frac {1}{x_{n
 </p><!-- l. 146 --><p class='indent'> und \(K_{kn} = 0\) für \(|n-k|&gt;1\). Die Matrix \(\t {K}\) ist also dünnbesetzt, symmetrisch und nahezu
 tridiagonal.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 149 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Beispiel:</span></span> Für äquidistante Knoten mit Abstand \(\Delta x = x_{n+1}-x_n\) auf einer periodischen Gebiet
 erhält man für beispielsweise \(6\) Knoten (\(N=5\)): \begin {equation} \t {K} = \frac {1}{\Delta x} \begin {pmatrix} 2 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; -1 \\ -1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 \\ -1 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 2 \\ \end {pmatrix} \label {eq:systemmatrix1d-periodic-not-regular} \end {equation}
 Man beachte, dass die \(-1\) in der rechten oberen und linken unteren Ecke (\(K_{0N}\)
@@ -193,7 +193,7 @@ hier implizit die Bedingungen \((\varphi _0, R)=0\) und \((\varphi _N, R)=0\) au
 wurden. Die Basisfunktionen \(\varphi _0(x)\) und \(\varphi _N(x)\) tauchen aber selbstverständlich noch in der
 Reihenentwicklung \(\Phi _N(x)\) auf.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 225 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Beispiel:</span></span> In unserem Beispiel wird die Systemmatrix mit Dirichlet-Randbedingungen
 dann zu \begin {equation} \t {K} = \frac {1}{\Delta x} \begin {pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ -1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\ \end {pmatrix} \label {eq:systemmatrix1d-dirichlet} \end {equation}
 und \(f_0=\Phi _a/\Delta x\) und \(f_N=\Phi _b/\Delta x\): \begin {equation} \v {f} = \begin {pmatrix} \Phi _a/\Delta x \\ (\varphi _1(x), \rho (x))/\varepsilon \\ (\varphi _2(x), \rho (x))/\varepsilon \\ (\varphi _3(x), \rho (x))/\varepsilon \\ (\varphi _4(x), \rho (x))/\varepsilon \\ \Phi _b/\Delta x \end {pmatrix} \label {eq:rhs1d-dirichlet} \end {equation}
@@ -228,7 +228,7 @@ sowie alle weiteren \(K_{0n}=0\). Wir können dieses wieder (siehe Gl. \eqref{e
 schreiben. Ein entsprechender Satz von Gleichungen gilt für den rechten Rand
 mit \(k=N\).
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 310 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Beispiel:</span></span> In unserem Beispiel wird die Sytemmatrix für zwei
 Neumann-Randbedingungen dann zu \begin {equation} \t {K} = \frac {1}{\Delta x} \begin {pmatrix} 1 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ -1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 1 \\ \end {pmatrix}. \label {eq:systemmatrix1d-neumann} \end {equation}
 Man beachte, dass diese Systemmatrix sich leicht von der für
@@ -282,7 +282,7 @@ Reskalierungsfunktion, die am linken Rand des \(n\)-ten Elements \(\xi ^{(n)}=0\
 Rand des Elements \(\xi ^{(n)}=1\) wird. Hiermit wird die Größe des Elements von der
 Interpolationsvorschrift (der “Form”) entkoppelt.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 378 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Man beachte, dass es genau ein Element weniger als Knoten gibt,
 die wir bislang auch mit dem Index \(n\) bezeichnet haben. In dem eindimensionalen
 Fall ist der Zusammenhang zwischen globalen Knotenindice und Elementindice
@@ -300,7 +300,7 @@ den Basissatz den wir bislang verwendet haben, sind allerdings die linke
 und rechte Formfunktion (und damit der Elementyp) für alle Elemente
 identisch.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 384 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Die Basisfunktionen \(\varphi _n(x)\) sind global definiert, d.h. sie leben auf dem
 gesamten Simulationsgebiet \(\Omega \) (verschwinden aber in Abschnitten daraus).
 Die Formfunktion \(N^{(n)}_{i}(x)\) ist nur auf dem einzelnen Element \(n\) definiert, d.h. sie
@@ -341,12 +341,12 @@ Element \(k\) (dessen linker Knoten der Knoten \(k\) ist) und Element \(k-1\) (d
 Knoten der Knoten \(k\) ist). Das Zusammenbauen der Systemmatrix wird im
 Englischen oft als “assembly” bezeichnet.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div id='shaded*-1' class='framedenv'>
 <!-- l. 469 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Beispiel:</span></span> Wir formulieren das Beispielproblem (Poisson-Gleichung) hier noch
 einmal im Rahmen der Formfunktionen. Dies ist ein Prozess, welcher drei Schritte
 benötigt:
 </p><ol class='enumerate1'>
-<li class='enumerate' id='x1-7002x1'><span class='cmti-12'>Elementmatrix </span>und rechte Seite: Da alle Elemente identisch sind, sind
+<li id='x1-7002x1' class='enumerate'><span class='cmti-12'>Elementmatrix </span>und rechte Seite: Da alle Elemente identisch sind, sind
 auch die einzelnen Elementmatrizen identisch. Zunächst wenden
 wir wieder den Trick mit der partiellen Integration an, um die
 Differenzierbarkeitsbedingung zu reduzieren. Man erhält den Ausdruck
@@ -363,7 +363,7 @@ zu \begin {equation} \t {f}^{(n)} = \begin {pmatrix} (N^{(n)}_{0}, \rho )/\varep
 Diese rechte Seite kann für die unterschiedlichen Elemente anders sein,
 wenn \(\rho \) räumlich variiert.
 </p></li>
-<li class='enumerate' id='x1-7004x2'>Zusammenbauen der <span class='cmti-12'>Systemmatrix </span>und der rechten Seite (engl.
+<li id='x1-7004x2' class='enumerate'>Zusammenbauen der <span class='cmti-12'>Systemmatrix </span>und der rechten Seite (engl.
 “assembly”): Die Regeln für das Zusammenbauen der Systemmatrix
 ergeben sich aus der Galerkin-Bedingung, Gl. \eqref{eq:galerkinform2}.
 Hierzu muss die \(2\times 2\) Elementmatrix auf die \(6\times 6\) Systemmatrix aufgespannt und
@@ -378,7 +378,7 @@ daraus einfach die Systemmatrix zusammenbauen kann. Der Zusammenbau
 der rechten Seite folgt analog, ist aber einfacher da es sich um einen Vektor
 handelt.
 </li>
-<li class='enumerate' id='x1-7006x3'>Randbedingungen: Wir haben im Rahmen der Formfunktionen noch
+<li id='x1-7006x3' class='enumerate'>Randbedingungen: Wir haben im Rahmen der Formfunktionen noch
 nicht über Randbedingungen gesprochen. Hierbei müssen die
 entsprechenden Zeilen der Systemmatrix und der rechten Seite durch
 die entsprechende Randbedingung ersetzt werden. Die Matrix \(\t {K}\) aus
