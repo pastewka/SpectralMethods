@@ -2,7 +2,7 @@
 layout: default
 title: "Kapitel 11 [Jan. 10-16 (2022)]"
 parent: Vorlesung
-date: 2022-02-21
+date: 2022-03-10
 categories: lecture
 author: Lars Pastewka
 nav_order: 11
@@ -36,7 +36,7 @@ verschwindet.
 
 
 
-<!-- l. 21 --><p class='noindent'> <img alt='PIC' height='323' width='507' src='Figures/capacitor-.png' /> <a id='x1-2001r1'></a>
+<!-- l. 21 --><p class='noindent'> <img src='Figures/capacitor-.png' width='507' height='323' alt='PIC' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 11.1: </span><span class='content'>(a) Geometrie des in diesem Kapitel betrachteten
@@ -261,7 +261,7 @@ Simulation systematisch verbessert werden.
 
 
 
-<!-- l. 447 --><p class='noindent'><img alt='PIC' height='280' width='702' src='Figures/capacitor_potential.svg' /> <a id='x1-7001r2'></a>
+<!-- l. 447 --><p class='noindent'><img src='Figures/capacitor_potential.svg' width='702' height='280' alt='PIC' /> <a id='x1-7001r2'></a>
 <a id='x1-7002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 11.2: </span><span class='content'>Elektrostatisches Potential
@@ -325,7 +325,7 @@ werden aber in der Simulation abgebildet.
 
 
 
-<!-- l. 536 --><p class='noindent'><img alt='PIC' height='438' width='585' src='Figures/capacity.svg' /> <a id='x1-7047r3'></a>
+<!-- l. 536 --><p class='noindent'><img src='Figures/capacity.svg' width='585' height='438' alt='PIC' /> <a id='x1-7047r3'></a>
 <a id='x1-7048'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 11.3: </span><span class='content'>Kapazität \(C\) eines Plattenkondensators gegen den Abstand
