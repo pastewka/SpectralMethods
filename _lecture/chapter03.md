@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Kapitel 03 [24.-28. Okt.]"
+title: "Kap. 03 [24. Okt.-28. Okt.]"
 parent: Vorlesung
 date: 2022-10-11
 categories: lecture
