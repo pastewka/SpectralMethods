@@ -1,1 +1,1 @@
-JEKYLL_VERSION=4.0 docker run --rm -e "JEKYLL_ENV=docker" --name Simulationstechniken --volume="$PWD:/srv/jekyll" -p 4000:4000 -it jekyll/jekyll jekyll serve --config _config.yml,_config.docker.yml
+JEKYLL_VERSION=4.2.2 docker run --rm -e "JEKYLL_ENV=docker" --name Simulationstechniken --volume="$PWD:/srv/jekyll" -p 4000:4000 -it jekyll/jekyll:stable jekyll serve --config _config.yml,_config.docker.yml

@@ -1,6 +1,6 @@
 # Simulationstechniken
 
-Dieses Repositorium enthält Vorlesungsunterlagen für die Veranstaltung "Simulationstechniken" an der Albert-Ludwigs-Universität Freiburg. Die veröffentlichten Seiten können [hier](https://imtek-simulation.github.io/Simulationstechniken/) gefunden werden.
+Dieses Repositorium enthält Vorlesungsunterlagen für die Veranstaltung "Simulationstechniken" an der Albert-Ludwigs-Universität Freiburg. Die veröffentlichten Seiten können [hier](https://pastewka.github.io/Simulationstechniken/) gefunden werden.
 
 ## Entwicklung
 
