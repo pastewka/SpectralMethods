@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Kapitel 07 [Nov. 29-Dec. 5]"
+title: "Kapitel 07 [21.-25. Nov.]"
 parent: Vorlesung
-date: 2022-03-10
+date: 2022-10-11
 categories: lecture
 author: Lars Pastewka
 nav_order: 7
@@ -81,12 +81,13 @@ Kollokationspunkten.
 
 
 
-<!-- l. 110 --><p class='noindent'></p><!-- l. 111 --><p class='noindent'><img height='249' alt='PIC' width='585' src='Figures/coll5.svg' />
-</p><!-- l. 114 --><p class='noindent'><img height='256' alt='PIC' width='585' src='Figures/coll11.svg' />
-<a id='x1-3001r1'></a>
+<div class='subfigure'>
+<!-- l. 110 --><p class='noindent'></p><!-- l. 111 --><p class='noindent'><img alt='PIC' height='249' src='Figures/coll5.svg' width='585' />
+</p></div> <div class='subfigure'>
+<!-- l. 113 --><p class='noindent'></p><!-- l. 114 --><p class='noindent'><img alt='PIC' height='256' src='Figures/coll11.svg' width='585' />
+</p></div> <a id='x1-3001r1'></a>
 <a id='x1-3002'></a>
-</p>
-<figcaption class='caption'><span class='id'>Abbildung 7.1: </span><span class='content'>Approximation der auf dem Interval \([0,1]\) periodischen Funktion
+<div class='caption'><span class='id'>Abbildung 7.1: </span><span class='content'>Approximation der auf dem Interval \([0,1]\) periodischen Funktion
 \(f(x)=\sin (2\pi x)^3 + \cos (6\pi (x^2-1/2))\) mit einer Fourier-Basis und finiten Elementen. Es wurde jeweils \(5\)
 (oben) und \(11\) (unten) Basisfunktionen genutzt. Die Koeffizienten wurden
 mit der Kollokationsmethode bestimmt. Die runden Punkte zeigen die
@@ -95,7 +96,7 @@ Kollokationspunkte. (Der rechte Kollokationspunkt ist auf Grund der
 Periodizität identisch zum linken.) Die Approximation mit \(N=5\) Basisfunktionen
 kann die beiden rechten Oszillationen der Zielfunktion \(f(x)\) in beiden Fällen
 nicht abbilden.
-</span></figcaption><!-- tex4ht:label?: x1-3001r7.2 -->
+</span></div>
 
 
 
@@ -166,18 +167,19 @@ auch nicht an den Stützstellen exakt mit der zu approximierenden Funktion
 
 
 
-<!-- l. 190 --><p class='noindent'></p><!-- l. 191 --><p class='noindent'><img height='249' alt='PIC' width='585' src='Figures/gal5.svg' />
-</p><!-- l. 194 --><p class='noindent'><img height='247' alt='PIC' width='585' src='Figures/gal11.svg' />
-<a id='x1-5001r2'></a>
+<div class='subfigure'>
+<!-- l. 190 --><p class='noindent'></p><!-- l. 191 --><p class='noindent'><img alt='PIC' height='249' src='Figures/gal5.svg' width='585' />
+</p></div> <div class='subfigure'>
+<!-- l. 193 --><p class='noindent'></p><!-- l. 194 --><p class='noindent'><img alt='PIC' height='247' src='Figures/gal11.svg' width='585' />
+</p></div> <a id='x1-5001r2'></a>
 <a id='x1-5002'></a>
-</p>
-<figcaption class='caption'><span class='id'>Abbildung 7.2: </span><span class='content'>Approximation der auf dem Interval \([0,1]\) periodischen Funktion
+<div class='caption'><span class='id'>Abbildung 7.2: </span><span class='content'>Approximation der auf dem Interval \([0,1]\) periodischen Funktion
 \(f(x)=\sin (2\pi x)^3 + \cos (6\pi (x^2-1/2))\) mit einer Fourier-Basis und finiten Elementen. Es wurde jeweils \(5\) (oben)
 und \(11\) (unten) Basisfunktionen genutzt. Die Koeffizienten wurde mit Hilfe der
 Galerkinmethode bestimmt. Die Approximation mit \(5\) Basisfunktionen kann
 die beiden rechten Oszillationen der Zielfunktion \(f(x)\) in beiden Fällen nicht
 abbilden.
-</span></figcaption><!-- tex4ht:label?: x1-5001r7.4 -->
+</span></div>
 
 
 

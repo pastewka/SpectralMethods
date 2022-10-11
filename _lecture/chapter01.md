@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Kapitel 01 [18.-24. Okt. (2021)]"
+title: "Kapitel 01 [10.-14. Okt. (2022)]"
 parent: Vorlesung
-date: 2022-03-10
+date: 2022-10-11
 categories: lecture
 author: Lars Pastewka
 nav_order: 1
@@ -10,7 +10,7 @@ nav_order: 1
 
 
 <h2 class='chapterHead'><span class='titlemark'>Kapitel 1</span><br /><a id='x1-10001'></a>Einleitung</h2>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 6 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Kontext:</span></span> Die <span class='cmti-12'>Simulation </span>beschäftigt sich mit der numerischen
 (computergestützten) Lösung von <span class='cmti-12'>Modellen</span>. In diesem einleitenden Kapitel
 gehen wir auf Modellbildung ein und stellen unterschiedliche Klassen von
@@ -20,7 +20,7 @@ nicht immer) die numerische Lösung von gewöhnlichen oder partiellen
 Differentialgleichungen. In dieser Lehrveranstaltung werden wir vornehmlich die
 Lösung von partiellen Differentialgleichungen mit Hilfe der <span class='cmti-12'>Methode der finiten
 </span><span class='cmti-12'>Elemente </span>besprechen. </p></div>
-<!-- l. 10 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e484ec5a-a280-479d-8144-ac7201129f9f' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e484ec5a-a280-479d-8144-ac7201129f9f</span></a>
+<!-- l. 10 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e484ec5a-a280-479d-8144-ac7201129f9f'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e484ec5a-a280-479d-8144-ac7201129f9f</span></a>
 </p>
 <h3 class='sectionHead'><span class='titlemark'>1.1 </span> <a id='x1-20001.1'></a>Modelle</h3>
 <!-- l. 14 --><p class='noindent'>Modelle sind üblicherweise für bestimmte Längenskalen angemessen. So kann
@@ -31,7 +31,7 @@ darüber klar werden, welches der Phänomene der Ingenieurswissenschaften die
 Anwendung welcher physikalischer Modelle und welcher mathematischer
 Methoden verlangt.
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 18 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> “Wollen” ist hier das falsche Wort. Zum einen ist es auf Grund
 begrenzter Computerressourcen nicht möglich, zum anderen versteckt
 sich in einem solchen Modell unter Umständen die essentielle Frage,
@@ -67,7 +67,7 @@ Ortsvariablen zu tun haben, nämlich \(\Psi (\v {r}_1,\v {r}_2,\dots ,\v {r}_n;t
 
 <div class='center'>
 <!-- l. 41 --><p class='noindent'>
-</p><!-- l. 45 --><p class='noindent'> <img height='585' src='Figures/ExtendedSchemeD-.png' alt='PIC' width='774' /> <a id='x1-2001r1'></a>
+</p><!-- l. 45 --><p class='noindent'> <img alt='PIC' height='585' src='Figures/ExtendedSchemeD-.png' width='774' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 1.1: </span><span class='content'>Die vertikale Anordnung der Kisten repräsentiert die
@@ -81,7 +81,7 @@ Feldern und wählen einen spezifischen Anwendungsfall, der in die <span class='c
 
 
 </figure>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 51 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> </p>
 <ul class='itemize1'>
 <li class='itemize'>\(1\,\AA =10^{-10}\,\text {m}\)
@@ -111,15 +111,15 @@ rechtfertigen gilt.
 <li class='itemize'>“Mesoskopisch” heißt, dass das Modell über eine innere Längenskala
 verfügt und/oder thermische Fluktuationen wichtig sind. Diese
 Modelle operieren meistens auf Längenskalen oberhalb der atomaren
+
+
+
 Skala (\(\sim \) nm) aber unterhalb der Skalen unserer Wahrnehmung der
 Umwelt (\(\sim \) mm).
 </li>
 <li class='itemize'>“Bilanz” heißt, dass der Kern der Beschreibung
 eine <span class='cmti-12'>Erhaltungsgröße </span>ist, die einfach gezählt werden kann. Erhalten
 sind z.B. Teilchenzahlen. Eine <span class='cmti-12'>Bilanzgleichung </span>oder Bilanzierung zählt
-
-
-
 dann einfach die Teilchen, die über ein gewisses Zeitinterval in ein
 Volumen hinein fließen, heraus fließen oder darin produziert werden.
 Weitere Erhaltungsgrößen, die man bilanzieren kann, sind der Impuls
@@ -147,6 +147,9 @@ einzelne diskrete Elemente, beispielsweise Partikel (Atome, Moleküle,
 Körner, etc.), als zentrales Element haben und Modelle die kontinuierliche
 Felder (elektrostatisches Potential, Ionenkonzentrationen, mechanische
 Spannungen und Dehnungen) als zentrales Element haben. Im ersten Modelltyp
+
+
+
 werden Evolutionsgleichungen für diskrete Eigenschaften, welche auf den
 Partikeln definiert sind, wie z.B. deren Positionen \(\v {r}_i\) und Geschwindigkeiten \(\v {v}_i\),
 formuliert.
@@ -155,9 +158,6 @@ Newtonschen Bewegungsgleichungen lösen. D.h. wir müssen für jedes der \(n\)
 Teilchen \(6\) gewöhnliche Differentialgleichungen, die noch untereinander gekoppelt
 sind, lösen, nämlich: \begin {equation} \dot {\v {r}}_i(t)=\v {v}_i(t)=\frac {\v {p}_i(t)}{m_i} \label {eq:posupdate} \end {equation}
 Dies ist die Gleichung für die Bahnkurve des Teilchens \(i\) im Ortsraum. Da \(\v {r}\) ein
-
-
-
 Vektor ist, ist Gl. \eqref{eq:posupdate} ein System aus \(3\) gewöhnlichen
 Differentialgleichungen. Die Geschwindigkeit \(\v {v}_i\) des Teilchen \(i\) zum Zeitpunkt \(t\)
 unterliegt durch den Impuls \(\v {p}_i\) ebenfalls einem System von Differentialgleichungen:
@@ -187,19 +187,19 @@ einfaches konstituierendes Gesetz. Solche Gesetze werden oft <span class='cmti-1
 genannt. Die numerische Lösung der Newtonschen Bewegungsgleichungen für
 Atome wird als <span class='cmti-12'>Molekulardynamiksimulation </span>bezeichnet.
 </p>
-<div id='shaded*-1' class='framedenv'>
+<div class='framedenv' id='shaded*-1'>
 <!-- l. 124 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Anmerkung:</span></span> Der Begriff Konstitutivgesetz taucht öfter im Rahmen von
 Feldtheorien auf. Für das Lennard-Jones-Potential ist dieser Begriff eher
 ungewöhnlich, dieses Gesetzes ist aber trotzdem durchaus einer konstitutiven
+
+
+
 Natur. </p></div>
 <!-- l. 128 --><p class='indent'> Ein weiteres Beispiel von Modellen mit diskreten Elemente sind
 Netzwerkmodelle für elektrische Schaltkreise. Hierbei verknüpft ein Element
 eine Potentialdifferenz (Energiedifferenz) mit einem fließenden Strom,
 beispielweise beschreibt \begin {equation} i = u / R \label {eq:resistor} \end {equation}
 den Strom \(i\), der durch einen Widerstand \(R\) fließt, über den die Spannung \(u\) abfällt.
-
-
-
 Hinzu kommen die Kirchhoffschen Regeln für Strom und Spannung. Solche
 Modelle werden im englischen oft als “lumped-element models” bezeichnet.
 Gleichung \eqref{eq:resistor} hat natürlich auch die Qualität eines
@@ -230,6 +230,9 @@ auflösen. Dies kann man wiederum soweit treiben, dass zum Schluss ein
 Kontinuum entsteht - wir sind auf der <span class='cmti-12'>lokalen Bilanzebene </span>angekommen.
 Dazu wiederum brauchen wir Parameter, wie z.B. die Leitfähigkeit, die
 Viskosität oder die Diffusivität, die ihrerseits als Modelle nicht aus der
+
+
+
 kontinuierlichen Beschreibung der lokalen Bilanz ableitbar sind. Man braucht
 beispielsweise Experimente oder <span class='cmti-12'>ab-initio </span>Simulationen, um diese Größen zu
 ermitteln.
@@ -238,9 +241,6 @@ Dichte, Konzentration, Temperatur oder ähnliche Größe zuordnen können.
 Damit sind aber die zeitlichen Veränderungen der Ortsfreiheitsgrade - also die
 Impulse, respektive die Geschwindigkeiten - in ihrer Verteilung durch eine
 <span class='cmti-12'>lokale, thermodynamische Gleichgewichtsbedingung </span>festgelegt. (Die Impulse
-
-
-
 genügen im thermodynamischen Gleichgewicht einer Maxwell-Boltzmann
 Verteilung.) Dieses lokale Gleichgewicht bedeutet nicht, dass wir keine
 Dynamik mehr haben. Aber wenn wir an einen Schwarm von Gas- oder
@@ -271,6 +271,9 @@ werden.
 <!-- l. 174 --><p class='noindent'>Wohlgemerkt, wir haben keine der Beschreibungsebenen auf verschiedenen
 Längenskalen mit irgendeiner Wertung versehen. Nur weil sie Quantenmechanik
 heisst und den Einen oder die Andere ob ihrer Komplexität in Ehrfurcht
+
+
+
 erstarren lässt, bietet sie nicht notwendigerweise die Lösung. Ganz im
 Gegenteil, es kann sogar hinderlich sein, zu viel Detail aufösen zu wollen und wir
 müssen uns ständig fragen, wieviel Detail in der Simulation notwendig ist. Mehr
@@ -279,9 +282,6 @@ Simulation dieser Komplexität wirklich notwendig, oder kann ich das Problem
 vereinfachen?” Die Simulation sollte als Hilfsmittel gesehen werden und nicht
 als Selbstzweck, frei nach dem amerikanischen Mathematiker Richard
 Wesley Hamming (*1915, \(\dagger \)1998): <span class='cmti-12'>The purpose of computing is insight, not
-
-
-
 </span><span class='cmti-12'>numbers</span>.
 
 

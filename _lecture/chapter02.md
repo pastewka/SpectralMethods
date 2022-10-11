@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Kapitel 02 [25.-31. Okt.]"
+title: "Kapitel 02 [17.-21. Okt.]"
 parent: Vorlesung
-date: 2022-03-10
+date: 2022-10-11
 categories: lecture
 author: Lars Pastewka
 nav_order: 2
@@ -30,7 +30,7 @@ Differentialgleichungen. Bei all diesen Differentialgleichungen sind wir immer
 an einer Lösung für einen bestimmten Anfangswert (oder Randwert)
 interessiert, also z.B. \(x(t=0)=x_0\) etc. Dieser Anfangswert ist immer Teil der Definition der
 Differentialgleichung.
-</p><!-- l. 23 --><p class='indent'> <a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=c0711e7d-ca67-4039-a9f7-ac7201124448' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=c0711e7d-ca67-4039-a9f7-ac7201124448</span></a>
+</p><!-- l. 23 --><p class='indent'> <a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=c0711e7d-ca67-4039-a9f7-ac7201124448'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=c0711e7d-ca67-4039-a9f7-ac7201124448</span></a>
 </p><!-- l. 25 --><p class='noindent'>
 </p>
 <h4 class='subsectionHead'><span class='titlemark'>2.1.1 </span> <a id='x1-30002.1.1'></a>Linear und nichtlinear</h4>
@@ -122,10 +122,11 @@ Gl. \eqref{eq:PDE1Oquasi} mit einem Parameter \(s\) gemäß \(x(s)\) und \(t(s)
 </li>
 <li class='enumerate' id='x1-7004x2'>Wir bilden dann die <span class='cmti-12'>totale Ableitung </span>von \(u(x(s),t(s))\) nach \(s\) \begin {equation} \frac {\dif u(x(s),t(s))}{\dif s}= \frac {\partial u(x(s),t(s))}{\partial x}\frac {\dif x(s)}{\dif s}+ \frac {\partial u(x(s),t(s))}{\partial t}\frac {\dif t(s)}{\dif s}. \label {eq:totalderiv} \end {equation}
 </li>
-<li class='enumerate' id='x1-7006x3'>Durch den Vergleich der Koeffizienten der totalen Ableitung \eqref{eq:totalderiv}
+<li class='enumerate' id='x1-7006x3'>
+<!-- l. 132 --><p class='noindent'>Durch den Vergleich der Koeffizienten der totalen Ableitung \eqref{eq:totalderiv}
 mit der PDGL \eqref{eq:PDE1Oquasi} sieht man, dass diese DGL genau
 denn gelöst wird, wenn \begin {align} \frac {dx(s)}{ds}&amp;=P(x,t,u),\label {eq:transode1}\\ \frac {dt(s)}{ds}&amp;=Q(x,t,u)\quad \text {und}\\ \frac {du(s)}{ds} &amp;= R(u(s)).\label {eq:transode3} \end {align}
-<!-- l. 138 --><p class='noindent'>erfüllt ist. Dies beschreibt die Lösung entlang bestimmter Kurven in der
+</p><!-- l. 138 --><p class='noindent'>erfüllt ist. Dies beschreibt die Lösung entlang bestimmter Kurven in der
 \((x,t)\)-Ebene.</p></li></ol>
 <!-- l. 140 --><p class='noindent'>Wir haben damit die PDGL in einen Satz gekoppelter GDGLs erster Ordnung,
 Gl. \eqref{eq:transex1}-\eqref{eq:transex3} umgewandelt.
@@ -138,17 +139,18 @@ vor:
 <li class='enumerate' id='x1-7008x1'>Wir parameterisieren die Variablen \(x\) und \(t\) mit Hilfe einer neuen Variable
 \(s\), also \(x(s)\) und \(t(s)\). Wir suchen nun nach einem Ausdruck, mit dem wir \(x(s)\) und \(t(s)\)
 bestimmen können.
+
+
+
 </li>
 <li class='enumerate' id='x1-7010x2'>Wir stellen nun die Frage, wie sich die Funktion \(u(x(s),t(s))\) verhält. Diese Funktion
 beschreibt die Änderung eines Anfangswertes \(u(x(0),t(0))\) mit der Variable \(s\). Die totale
 Ableitung wird zu \begin {equation} \frac {\dif u(x(s),t(s))}{\dif s}=\frac {\partial u}{\partial t}\frac {\dif t(s)}{\dif s}+\frac {\partial u}{\partial x}\frac {\dif x(s)}{\dif s}. \end {equation}
 </li>
-<li class='enumerate' id='x1-7012x3'>Die totale Ableitung ist genau dann identisch zu der partiellen
+<li class='enumerate' id='x1-7012x3'>
+<!-- l. 155 --><p class='noindent'>Die totale Ableitung ist genau dann identisch zu der partiellen
 Differentialgleichung, die wir lösen wollen, wenn \begin {align} \frac {\dif x(s)}{\dif s} &amp;=c\quad \text {und} \label {eq:transex1}\\ \frac {\dif t(s)}{\dif s} &amp;=1. \end {align}
-
-
-
-<!-- l. 160 --><p class='noindent'>In diesem Fall gilt \begin {equation} \frac {\dif u(s)}{\dif s} = 0.\label {eq:transex3} \end {equation}
+</p><!-- l. 160 --><p class='noindent'>In diesem Fall gilt \begin {equation} \frac {\dif u(s)}{\dif s} = 0.\label {eq:transex3} \end {equation}
 </p></li>
 <li class='enumerate' id='x1-7014x4'>Die allgemeinen Lösungen für die drei gewöhnlichen
 Differentialgleichungen \eqref{eq:transex1}-\eqref{eq:transex3} sind
@@ -159,6 +161,9 @@ gegeben durch \begin {align} x(s) &amp;= cs + \text {const.},\\ t(s) &amp;= s + 
 transportiert. Die Lösung für \(u\) bleibt konstant, da die Ableitung von \(u\)
 Null ist, also behält \(u\) den durch die Anfangsbedingung gegebenen Wert.
 Das Feld \(u(x,0)\) wird also mit einer konstanten Geschwindigkeit \(c\) verschoben: \(u(x,t)=u(x-ct,0)\). </p></div>
+
+
+
 <!-- l. 175 --><p class='noindent'>
 </p>
 <h4 class='subsectionHead'><span class='titlemark'>2.2.2 </span> <a id='x1-80002.2.2'></a>Zweite Ordnung</h4>
@@ -174,9 +179,6 @@ Das Feld \(u(x,0)\) wird also mit einer konstanten Geschwindigkeit \(c\) verscho
 <!-- l. 194 --><p class='noindent'>Die zweite Ordnung bezieht sich hier auf die zweite Ableitung. Diese Beispiel sind
 für zwei Variablen formuliert, aber diese Differentialgleichungen können auch
 für mehr Freiheitsgrade aufgeschrieben werden.
-
-
-
 </p><!-- l. 196 --><p class='indent'> Für zwei Variablen lautet die allgemeine Form linearer PDGLs zweiter
 Ordnung, \begin {equation} a(x,y) \frac {\partial ^2 u}{\partial x^2}+ b(x,y)\frac {\partial ^2 u}{\partial x\partial y}+ c(x,y)\frac {\partial ^2 u}{\partial y^2}=F\left (x,y;u,\frac {\partial u}{\partial x},\frac {\partial u}{\partial y}\right ), \end {equation}
 wobei \(F\) selbst natürlich auch linear in den Argumenten sein muss, wenn die
@@ -185,7 +187,7 @@ PDGLs 2. Ordnung vor, stellen aber vorweg, dass diese Klassifizierung nicht
 erschöpfend ist und dass sie nur punktweise gilt. Letzteres heißt, dass die PDGL
 an unterschiedlichen Raumpunkten in eine andere Klassifizierung fallen
 kann.
-</p><!-- l. 205 --><p class='indent'> <a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=676322ed-a634-4f96-9561-ac7201129f7c' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=676322ed-a634-4f96-9561-ac7201129f7c</span></a>
+</p><!-- l. 205 --><p class='indent'> <a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=676322ed-a634-4f96-9561-ac7201129f7c'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=676322ed-a634-4f96-9561-ac7201129f7c</span></a>
 </p><!-- l. 207 --><p class='indent'> Wir nehmen zunächst an, dass \(F=0\) und \(a\), \(b\), \(c\) konstant seien. Dann erhalten wir:
 \begin {equation} a\frac {\partial ^2 u}{\partial x^2}+b\frac {\partial ^2 u}{\partial x\partial y}+ c\frac {\partial ^2 u}{\partial y^2}=0. \label {eq:n2ndoconst} \end {equation}
 Wir schreiben diese Gleichung um als die quadratische Form \begin {equation} \begin {pmatrix} \partial /\partial x \\ \partial /\partial y \end {pmatrix} \cdot \begin {pmatrix} a &amp; b/2 \\ b/2 &amp; c \end {pmatrix} \cdot \begin {pmatrix} \partial /\partial x \\ \partial /\partial y \end {pmatrix} u = \nabla \cdot \t {C} \cdot \nabla u =0 \label {eq:quadform} \end {equation}
@@ -193,6 +195,9 @@ Die Koeffizientenmatrix \(\t {C}\) können wir nun diagonalisieren. Dies für zu
 \begin {equation} \t {C} = \t {U} \cdot \begin {pmatrix} \lambda _1 &amp; 0 \\ 0 &amp; \lambda _2 \end {pmatrix}\cdot \t {U}^T, \label {eq:diagquadform} \end {equation}
 wobei \(\t {U}\) auf Grund der Symmetrie von \(\t {C}\) unitär ist, \(\t {U}^T \cdot \t {U}=\t {1}\). Die geometrische
 Interpretation der Operation \(\t {U}\) ist eine Rotation. Wir führen nun transformierte
+
+
+
 Koordinaten \(x'\) und \(y'\) ein, so dass \begin {equation} \nabla = \t {U} \cdot \nabla ' \end {equation}
 mit \(\nabla '=(\partial /\partial x', \partial /\partial y')\). Mit anderen Worten, die Transformationsmatrix ist gegeben als
 \begin {equation} \t {U} = \begin {pmatrix} \partial x'/\partial x &amp; \partial y'/\partial x \\ \partial x'/\partial y &amp; \partial y'/\partial y \end {pmatrix}. \end {equation}
@@ -217,9 +222,6 @@ beschreibt. (Für \(\lambda _1=\lambda _2\) ist es ein Kreis.) Wir formen nun di
 elliptischen Fall auf eine standardisierte Form um und führen die skalierten
 Koordinaten \(x'=\sqrt {\lambda _1} x''\) und \(y'=\sqrt {\lambda _2} y''\) ein. Dann wird aus Gl. \eqref{eq:diag2nd} die
 kanonische elliptische PDGL \begin {equation} \frac {\partial ^2 u}{\partial x''^2}+\frac {\partial ^2 u}{\partial y''^2}=0. \label {eqnelliptic} \end {equation}
-
-
-
 Die kanonische elliptische PDGL ist daher die Laplace-Gleichung,
 Gl. \eqref{eqnelliptic} (hier im Zweidimensionalen). Lösungen der
 Laplace-Gleichung heißen <span class='cmti-12'>harmonische Funktionen</span>.
@@ -231,6 +233,9 @@ beschreibt. Ohne Beschränkung der Allgemeinheit fordern wir nun \(\lambda _1&gt
 Dann können wir wieder skalierte Koordinaten \(x'=\sqrt {\lambda _1}x''\) und \(y'=\sqrt {-\lambda _2}y''\) einführen, so dass
 \begin {equation} \frac {\partial ^2 u}{\partial x''^2} - \frac {\partial ^2 u}{\partial y''^2} = \begin {pmatrix} \partial u/\partial x'' \\ \partial u/\partial y'' \end {pmatrix} \cdot \begin {pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end {pmatrix} \cdot \begin {pmatrix} \partial u/\partial x'' \\ \partial u/\partial y'' \end {pmatrix} = 0. \label {eq:hyb} \end {equation}
 Wir können nun durch eine weitere Koordinatentransformation, nämlich
+
+
+
 eine Rotation um \(45^\circ \), die Koeffizientenmatrix in Gl. \eqref{eq:hyb} auf eine
 Form bringen, in der die Diagonalelemente \(0\) und die Nebendiagonalelemente \(1\)
 sind. Dies ergibt die Differentialgleichung \begin {equation} \frac {\partial ^2 u}{\partial x''' \partial y'''}=0, \label {eqnd2udxideta0} \end {equation}
@@ -260,9 +265,6 @@ hierzu.
 durch Separation der Variablen. Dafür machen wir den Ansatz \(u(x,t)=X(x)T(t)\), was zu
 \begin {equation} \frac {1}{X}\frac {\partial ^2 X}{\partial x^2}=\frac {1}{c^2}\frac {1}{T}\frac {\partial ^2 T}{\partial t^2} \label {eqnseparate} \end {equation}
 führt. In Gl. \eqref{eqnseparate} hängt die linke Seite nur von der Variablen \(x\)
-
-
-
 ab, während die rechte Seite nur von \(t\) abhängt. Für beliebige \(x\) und \(t\) kann diese
 Gleichung nur erfüllt werden, wenn beide Seiten gleich einer Konstanten sind
 und wir erhalten somit \begin {equation} \frac {1}{X}\frac {\partial ^2 X}{\partial x^2}=-k^2=\frac {1}{c^2}\frac {1}{T}\frac {\partial ^2 T}{\partial t^2}\,\mathrm {.} \end {equation}

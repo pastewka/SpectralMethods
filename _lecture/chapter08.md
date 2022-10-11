@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Kapitel 08 [Dec. 6-12]"
+title: "Kapitel 08 [28. Nov. - 2. Dez.]"
 parent: Vorlesung
-date: 2022-03-10
+date: 2022-10-11
 categories: lecture
 author: Lars Pastewka
 nav_order: 8
@@ -46,7 +46,7 @@ bestimmen können.
 
 </p>
 <h3 class='sectionHead'><span class='titlemark'>8.2 </span> <a id='x1-30008.2'></a>Poisson-Gleichung in einer Dimension</h3>
-<!-- l. 41 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=88c55914-ce6f-4a02-96b5-aca8010e6886' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=88c55914-ce6f-4a02-96b5-aca8010e6886</span></a>
+<!-- l. 41 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=88c55914-ce6f-4a02-96b5-aca8010e6886'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=88c55914-ce6f-4a02-96b5-aca8010e6886</span></a>
 </p><!-- l. 43 --><p class='indent'> Als Demonstrator für diese Verhalten nutzen wir die (eindimensionale)
 Poisson-Gleichung, \begin {equation} \nabla ^2 \Phi \equiv \frac {\dif ^2 \Phi }{\dif x^2} = - \frac {\rho }{\varepsilon }. \label {eq:poisson-1d} \end {equation}
 Hier ist \(\rho \) eine Ladungsdichte und \(\Phi \) das elektrostatische Potential. Das Residuum ist
@@ -68,7 +68,7 @@ Dies ist die Fourier-Reihe der Lösung.
 </p><!-- l. 85 --><p class='noindent'>
 </p>
 <h3 class='sectionHead'><span class='titlemark'>8.3 </span> <a id='x1-40008.3'></a>Übergang zur Fourier-Transformation</h3>
-<!-- l. 87 --><p class='noindent'><a href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=bd5cfab2-323e-48dc-b7b9-aca9011cf271' class='url'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=bd5cfab2-323e-48dc-b7b9-aca9011cf271</span></a>
+<!-- l. 87 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=bd5cfab2-323e-48dc-b7b9-aca9011cf271'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=bd5cfab2-323e-48dc-b7b9-aca9011cf271</span></a>
 </p><!-- l. 89 --><p class='indent'> Die Fourier-Basis Gl. \eqref{eq:fourierbasis2} ist auf einem finiten Gebiet der
 Länge \(L\) periodisch. Wenn wir die Länge \(L\) gegen unendlich gehen lassen,
 bekommen wir eine Formulierung für nicht-periodische Funktionen. Dies führt
@@ -170,7 +170,7 @@ oder <span class='cmti-12'>Greensche Funktion </span>der (dreidimensionalen) Poi
 
 
 
-<!-- l. 255 --><p class='noindent'><img src='Figures/illustr_angles_1.svg' alt='PIC' width='390' height='390' /> <a id='x1-5001r1'></a>
+<!-- l. 255 --><p class='noindent'><img alt='PIC' height='390' src='Figures/illustr_angles_1.svg' width='390' /> <a id='x1-5001r1'></a>
 <a id='x1-5002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 8.1: </span><span class='content'>Volumenelement für die Integration in Kugelkoordination

@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Kapitel 06 [Nov. 22-28]"
+title: "Kapitel 06 [14.-18. Nov.]"
 parent: Vorlesung
-date: 2022-03-10
+date: 2022-10-11
 categories: lecture
 author: Lars Pastewka
 nav_order: 6
@@ -73,14 +73,14 @@ Innerhalb dieser Lehrveranstaltung werden wir nur den Fall \(w(x)=1\) benötigen
 Die Funktionen \(\varphi _i(x)\) heißen <span class='cmti-12'>Basisfunktionen</span>. Eine notwendige Eigenschaft der
 Basisfunktionen ist deren lineare Unabhängigkeit. Die Funktionen sind linear
 unabhängig, wenn keine der Basisfunktionen selbst als Linearkombination, also
+
+
+
 in der Form der Reiheentwicklung Gl. \eqref{eq:series2}, der anderen
 Basisfunktionen geschrieben werden kann. D.h. es muss erfüllt sein, dass
 \begin {equation} \sum _{n=0}^{N}a_n \varphi _n(x) = 0 \end {equation}
 dann und nur dann wenn alle \(a_n=0\). Linear unabhängige Elemente bilden eine
 Basis.
-
-
-
 </p><!-- l. 73 --><p class='indent'> Diese Basis heißt vollständig, wenn alle relevanten Funktionen
 (= Elemente des zu Grunde liegenden Vektorraums) sich durch die
 Reihenentwicklung \eqref{eq:series2} abbilden lassen. (Beweise der
@@ -112,14 +112,14 @@ Funktion auf die Basisvektoren. Wir erinnern uns daran, dass auch für
 kartesische Vektoren gilt: \(a_n = \v {a}\cdot \hat {e}_n\). (Der Normierungsfaktor entfällt hier, weil \(\hat {e}_n\cdot \hat {e}_n=1\).) Die
 Koordinaten, die durch Gl. \eqref{eq:coordinates} gegeben sind, sind in genau
 dem gleichen Kontext zu sehen.
+
+
+
 </p><!-- l. 102 --><p class='noindent'>
 </p>
 <h4 class='subsectionHead'><span class='titlemark'>6.3.1 </span> <a id='x1-50006.3.1'></a>Fourier-Basis</h4>
 <!-- l. 105 --><p class='noindent'><a class='url' href='https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=6e2bcafd-24b2-4ee5-b58c-ac840157f7bc'><span class='cmtt-12'>https://uni-freiburg.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=6e2bcafd-24b2-4ee5-b58c-ac840157f7bc</span></a>
 </p><!-- l. 107 --><p class='indent'> Ein berühmter und wichtiger Satz von Basisfunktionen ist die <span class='cmti-12'>Fourier-Basis</span>,
-
-
-
 \begin {equation} \varphi _n(x) = \exp \left ( i q_n x \right ), \label {eq:fourier-basis} \end {equation}
 auf dem Interval \(x\in [0,L]\) mit \(q_n = 2\pi n/L\) und \(n\in \mathbb {Z}\). Die Fourier-Basis ist periodisch auf diesem
 Interval und in Abb. <a href='#x1-5001r1'>6.1<!-- tex4ht:ref: fig:fourierbasis --></a> gezeigt. Es kann einfach gezeigt werden, dass
@@ -139,7 +139,7 @@ bis \(N\) läuft und man \(2N+1\) Koeffizienten erhält.
 
 
 
-<!-- l. 131 --><p class='noindent'><img src='Figures/fourierbasis.svg' alt='PIC' height='229' width='390' /> <a id='x1-5001r1'></a>
+<!-- l. 131 --><p class='noindent'><img alt='PIC' height='229' src='Figures/fourierbasis.svg' width='390' /> <a id='x1-5001r1'></a>
 <a id='x1-5002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 6.1:
@@ -178,7 +178,7 @@ höherer Ordnung eingesetzt.
 
 
 
-<!-- l. 165 --><p class='noindent'><img src='Figures/febasis.svg' alt='PIC' height='115' width='390' /> <a id='x1-6001r2'></a>
+<!-- l. 165 --><p class='noindent'><img alt='PIC' height='115' src='Figures/febasis.svg' width='390' /> <a id='x1-6001r2'></a>
 <a id='x1-6002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 6.2: </span><span class='content'>Die Basis der finiten Elemente in ihrer einfachsten, linearen

@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Kapitel 14 [Jan. 17-Feb. 11]"
+title: "Kapitel 14 [16. Jan. - 03. Feb.]"
 parent: Vorlesung
-date: 2022-03-10
+date: 2022-10-11
 categories: lecture
 author: Lars Pastewka
 nav_order: 14
@@ -47,7 +47,7 @@ gezeigt.
 
 
 
-<!-- l. 26 --><p class='noindent'> <img src='Figures/NewtonMethod/newton-.png' width='467' alt='PIC' height='350' /> <a id='x1-2001r1'></a>
+<!-- l. 26 --><p class='noindent'> <img alt='PIC' height='350' src='Figures/NewtonMethod/newton-.png' width='467' /> <a id='x1-2001r1'></a>
 <a id='x1-2002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Abbildung 14.1: </span><span class='content'>Illustration des Newton-Verfahrens zur Lösung der
