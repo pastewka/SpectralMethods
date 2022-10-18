@@ -44,7 +44,7 @@ def FEM_Laplace_Linear_1D_periodic(nb_grid_pts, dx, rhs_x):
 # Parameter definieren
 length = 1.5 # Länge der Periode
 diffusion_const = 0.8 # Diffusionskonstante
-concentration_average = 0 # vorgegebener Mittelwert der Konzentration
+concentration_average = 0.3 # vorgegebener Mittelwert der Konzentration
 
 N_list = np.array([2, 1])
 nb_grid_pts_list = 3*N_list + 1 # Anzahl Gitterpunkte
@@ -63,7 +63,7 @@ colors = ['red', 'blue', 'limegreen', 'black']
 # Analytische Lösung der Diffusionsgleichung
 x = np.linspace(0, length, 100)
 concentration_ana_x = (np.maximum(0, x-2*length/3) - np.maximum(0, x-length/3)) / diffusion_const
-concentration_ana_x += 1/3/diffusion_const * x
+concentration_ana_x += 1/3/diffusion_const * x + concentration_average
 ax.plot(x, concentration_ana_x, label='Analytisch', color=colors[0], linewidth=3)
 
 # FEM Lösung der Diffusionsgleichung
