@@ -2,7 +2,7 @@
 layout: default
 title: "Kap. 02 [17. Okt.-21. Okt.]"
 parent: Vorlesung
-date: 2022-10-11
+date: 2022-10-24
 categories: lecture
 author: Lars Pastewka
 nav_order: 2
@@ -68,7 +68,7 @@ Ordnung.
 Gleichungen \eqref{eq:sys1} und \eqref{eq:sys2} sind weiterhin nichtlinear.
 </p><!-- l. 73 --><p class='indent'> Differentialgleichungen höherer Ordnung können in ein System von
 Gleichungen 1. Ordnung umgeschrieben werden. Im Beispiel des gedämpften
-harmonische Oszillators, \begin {equation} \ddot {x}(t)+c\dot {x}(t)+kx=f(t), \end {equation}
+harmonische Oszillators, \begin {equation} m\ddot {x}(t)+c\dot {x}(t)+kx=f(t), \end {equation}
 ersetzen wir \(\dot {x} = y\) und erhalten dadurch zwei Gleichungen erster Ordnung anstatt der
 ursprünglichen Gleichung zweiter Ordnung, nämlich \begin {align} \dot {x} =&amp; y \\ m\dot {y} =&amp; -cy-kx+f(t) \end {align}
 </p><!-- l. 84 --><p class='noindent'>
