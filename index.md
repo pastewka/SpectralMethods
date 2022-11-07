@@ -11,5 +11,3 @@ Diese Webseiten enthalten Lernmaterial für eine Einführungsveranstaltung zur L
 [simulation]: https://www.imtek.de/laboratories/simulation
 [imtek]: https://www.imtek.de/
 [unifreiburg]: https://uni-freiburg.de/
-[issue]: https://github.com/IMTEK-Simulation/Simulationstechniken/issues
-[github]: https://github.com/IMTEK-Simulation/Simulationstechniken
