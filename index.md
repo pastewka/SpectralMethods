@@ -5,8 +5,7 @@
 layout: home
 ---
 
-Diese Webseiten enthalten Lernmaterial für eine Einführungsveranstaltung zur Lösung partieller Differentialgleichungen mit Hilfe der Methode der finiten Elemente, durchgeführt von der [Simulationsgruppe][simulation] am
-[Institut für Mikrosystemtechnik][imtek] der [Albert-Ludwigs-Universität Freiburg][unifreiburg]. Das Vorlesungsmaterial wird kontinuierlich während der Veranstaltung im Wintersemester 2022/23 aktualisiert.
+These web pages contain learning material for a course on the solution of partial differential equations using spectral methods, conducted by the [simulation group][simulation] at the [Department of Microsystems Engineering][imtek] of the [University of Freiburg][unifreiburg].
 
 [simulation]: https://www.imtek.de/laboratories/simulation
 [imtek]: https://www.imtek.de/

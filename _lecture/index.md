@@ -1,40 +1,12 @@
 ---
 layout: default
-title: Vorlesung
+title: Lecture
 nav_order: 3
 has_children: true
 ---
 
-# Vorlesung
+# Lecture
 
-## Lernmaterial
+## Learning material
 
-Herzlich willkommen zur Vorlesung **Simulationstechniken**. Sie finden hier das Lernmaterial welches wir für Sie spezifisch für diese Vorlesung zusammengestellt haben. Ziel dieses Materials ist es, Sie auf die Lösung der Übungsblätter vorzubereiten. Sie sollten selbstverständlich auch andere Informationsquellen, wie z.B. Sachbücher, zu rate ziehen. Wikipedia enthält auch nützliche Informationen zu den Inhalten dieser Vorlesung.
-
-Es gibt zwei Arten von Lernmaterial:
-* Videos mit kurzen (bis zu 30 Minuten) Vorlesungsschnipseln zu Aspekten dieses Kurses
-* Geschriebenen Text (das klassische "Skript"), welche Sie auch [hier](Simulationstechniken.pdf) als eine PDF Datei herunterladen können
-
-Das Lernmaterial ist nach Wochen sortiert um einen Takt vorzugeben, in dem Sie durch das Material arbeiten sollten. Sie können sich das Lernmaterial selbstverständlich schneller aneignen, sollten aber nicht zurückfallen.
-
-## Inhalte
-
-Die Lehrveranstaltung ist grob nach folgenden Themen strukturiert:
-
-* Was ist Modellbildung und Simulation?
-* Lineare Funktionenräume und Basisfunktionen
-* Approximation, Interpolation
-* Spektrale Methoden und die Methode der finiten Elemente
-* Zeitpropagation
-* Numerische Optimierungsverfahren für nichtlineare Probleme
-* Unstrukturierte Gitter
-
-Wir diskutieren folgende Anwendungsbeispiele:
-
-* Ionentransport in einem Elektrolyten
-* Festkörpermechanik
-
-Bitte sprechen Sie uns an wenn Sie Fehler oder Unklarheiten im Lernmaterial entdecken. Wir sind nicht unfehlbar und machen durchaus Fehler. Bitte kontaktieren Sie uns in diesem Fall umgehend, idealerweise über den [Issue Tracker][issue] des zugehörigen [Github-Repositoriums][github].
-
-[issue]: https://github.com/IMTEK-Simulation/Simulationstechniken/issues
-[github]: https://github.com/IMTEK-Simulation/Simulationstechniken
+Welcome to the lecture on **Spectral Simulation Methods**. Here you will find the learning material that we have compiled specifically for this lecture. The aim of this material is to prepare you for solving the exercise sheets. You should of course also consult other sources of information, such as non-fiction books. Wikipedia also contains useful information on the contents of this lecture.

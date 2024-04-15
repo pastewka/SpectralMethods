@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Notizen
+title: Notes
 nav_order: 5
 has_children: true
 ---
 
-Hier werden Notizen zu speziellen Themen rund um die Inhalte der Vorlesung gesammelt.
+You can find notes notes on assorted topics here.
