@@ -2,14 +2,14 @@
 layout: default
 title: "Differential equations"
 parent: Lecture
-date: 2024-04-16
+date: 2024-04-19
 categories: lecture
 author: Lars Pastewka
-nav_order: 1
+nav_order: 6
 ---
 
 
-<h2 class='chapterHead' id='differential-equations'><span class='titlemark'>Chapter 2</span><br /><a id='x1-10002'></a>Differential equations</h2>
+<h2 class='chapterHead' id='differential-equations'><span class='titlemark'>Chapter 7</span><br /><a id='x1-10007'></a>Differential equations</h2>
 <div class='framedenv' id='shaded*-1'>
 <!-- l. 7 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Context:</span></span> Most of the phenomena we encounter in engineering are very well
 described by differential equations. We remember the discrete network models
@@ -21,7 +21,7 @@ best described using a partial differential equation (partial differential equat
 In this chapter, we deal with an abstract classification of differential equations.
 The diffusion process will be repeated in more detail in the next chapter.
 </p></div>
-<h3 class='sectionHead' id='ordinary-differential-equations'><span class='titlemark'>2.1 </span> <a id='x1-20002.1'></a>Ordinary differential equations</h3>
+<h3 class='sectionHead' id='ordinary-differential-equations'><span class='titlemark'>7.1 </span> <a id='x1-20007.1'></a>Ordinary differential equations</h3>
 <!-- l. 18 --><p class='noindent'>We recall the classification (properties) of <span class='cmti-12'>ordinary </span>differential equations (ODEs)
 and recognize the different types of differential equations. For all these differential
 equations, we are always interested in a solution for a certain initial value (or
@@ -29,7 +29,7 @@ boundary value), e.g. \(x(t=0)=x_0\) etc. This initial value is always part of t
 differential equation.
 </p><!-- l. 20 --><p class='noindent'>
 </p>
-<h4 class='subsectionHead' id='linearity'><span class='titlemark'>2.1.1 </span> <a id='x1-30002.1.1'></a>Linearity</h4>
+<h4 class='subsectionHead' id='linearity'><span class='titlemark'>7.1.1 </span> <a id='x1-30007.1.1'></a>Linearity</h4>
 <!-- l. 22 --><p class='noindent'>A linear differential equation is, for example \begin {equation} m\ddot {x}(t)+c\dot {x}(t)+kx=f(t) \label {eq:linear} \end {equation}<a id='x1-3001r1'></a> which describes the damped and
 driven harmonic oscillator, while \begin {equation} \frac {\dif ^2x}{\dif t^2}+\mu (x^2-1)\frac {\dif x}{\dif t}+x= 0 \label {eq:nonlinear} \end {equation}<a id='x1-3002r2'></a> is a non-linear equation of motion for \(x\). It
 describes the so-called van der Pol oscillator. The non-linearity can be recognized
@@ -46,13 +46,13 @@ differential operator here. </p></div>
 
 
 
-<h4 class='subsectionHead' id='order'><span class='titlemark'>2.1.2 </span> <a id='x1-40002.1.2'></a>Order</h4>
+<h4 class='subsectionHead' id='order'><span class='titlemark'>7.1.2 </span> <a id='x1-40007.1.2'></a>Order</h4>
 <!-- l. 57 --><p class='noindent'>The order of a differential equation is given by the highest derivative that appears
 in the equation. Eq. \eqref{eq:linear} and Eq. \eqref{eq:nonlinear} are examples
 of second-order differential equations.
 </p><!-- l. 59 --><p class='noindent'>
 </p>
-<h4 class='subsectionHead' id='systems'><span class='titlemark'>2.1.3 </span> <a id='x1-50002.1.3'></a>Systems</h4>
+<h4 class='subsectionHead' id='systems'><span class='titlemark'>7.1.3 </span> <a id='x1-50007.1.3'></a>Systems</h4>
 <!-- l. 61 --><p class='noindent'>A system of first-order differential equations is formed, for example, by the
 equations \begin {align} \frac {\dif x}{\dif t} =&amp; x(m - n y), \label {eq:sys1} \\ \frac {\dif y}{\dif t} =&amp; - y(\gamma - \delta x), \label {eq:sys2} \end {align}
 </p><!-- l. 66 --><p class='indent'> the well-known Räuber-Beute equations or Lotka-Volterra equations.
@@ -63,7 +63,7 @@ and thus obtain two first-order equations instead of the original second-order
 equation, namely \begin {align} \dot {x} =&amp; y \\ m\dot {y} =&amp; -cy-kx+f(t) \end {align}
 </p><!-- l. 79 --><p class='noindent'>
 </p>
-<h3 class='sectionHead' id='partial-differential-equations'><span class='titlemark'>2.2 </span> <a id='x1-60002.2'></a>Partial differential equations</h3>
+<h3 class='sectionHead' id='partial-differential-equations'><span class='titlemark'>7.2 </span> <a id='x1-60007.2'></a>Partial differential equations</h3>
 <!-- l. 82 --><p class='noindent'>Partial differential equations (PDEs) are differential equations with more than one
 independent variable. As an example, we imagine a time-dependent heat transport
 problem in one dimension. This is represented by a diffusion equation
@@ -86,7 +86,7 @@ the time \(t\)) occur, which are then denoted by the differential operator \(\di
 
 <!-- l. 95 --><p class='noindent'>
 </p>
-<h4 class='subsectionHead' id='first-order'><span class='titlemark'>2.2.1 </span> <a id='x1-70002.2.1'></a>First order</h4>
+<h4 class='subsectionHead' id='first-order'><span class='titlemark'>7.2.1 </span> <a id='x1-70007.2.1'></a>First order</h4>
 <!-- l. 96 --><p class='noindent'>Quasilinear PDEs of the first order, i.e. equations of the form \begin {equation} P(x,t;u)\frac {\partial u(x,t)}{\partial x}+ Q(x,t;u)\frac {\partial u(x,t)}{\partial t}= R(x,t;u), \label {eq:PDE1Oquasi} \end {equation}<a id='x1-7001r9'></a> for an (unknown)
 function \(u(x,t)\) and the initial condition \(u(x,t=0)=u_0(x)\) can be systematically traced back to a system
 of coupled first-order ODEs. We want to investigate this important property.
@@ -149,7 +149,7 @@ given by the initial condition. The field \(u(x,0)\) is therefore shifted at a c
 
 <!-- l. 167 --><p class='noindent'>
 </p>
-<h4 class='subsectionHead' id='second-order'><span class='titlemark'>2.2.2 </span> <a id='x1-80002.2.2'></a>Second order</h4>
+<h4 class='subsectionHead' id='second-order'><span class='titlemark'>7.2.2 </span> <a id='x1-80007.2.2'></a>Second order</h4>
 <!-- l. 171 --><p class='noindent'>Examples of second-order PDEs are the... </p>
 <ul class='itemize1'>
 <li class='itemize'>...wave equation: \begin {equation} \frac {\partial ^2 u}{\partial t^2}-\frac {\partial ^2 u}{\partial x^2}=0 \end {equation}<a id='x1-8001r15'></a>

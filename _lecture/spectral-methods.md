@@ -2,14 +2,14 @@
 layout: default
 title: "Spectral methods"
 parent: Lecture
-date: 2024-04-16
+date: 2024-04-19
 categories: lecture
 author: Lars Pastewka
-nav_order: 6
+nav_order: 5
 ---
 
 
-<h2 class='chapterHead' id='spectral-methods'><span class='titlemark'>Chapter 7</span><br /><a id='x1-10007'></a>Spectral methods</h2>
+<h2 class='chapterHead' id='spectral-methods'><span class='titlemark'>Chapter 6</span><br /><a id='x1-10006'></a>Spectral methods</h2>
 <div class='framedenv' id='shaded*-1'>
 <!-- l. 6 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Context:</span></span> We now develop the ideas for solving partial differential equations
 outlined in the previous chapters. In this chapter, we deal with the Fourier
@@ -19,7 +19,7 @@ for numerical solutions, here we only discuss the Fourier transform as
 an analytical solution method. In addition to the application of these
 methods, we also extend the solution approaches to multidimensional spaces.
 </p></div>
-<h3 class='sectionHead' id='differential-operators'><span class='titlemark'>7.1 </span> <a id='x1-20007.1'></a>Differential operators</h3>
+<h3 class='sectionHead' id='differential-operators'><span class='titlemark'>6.1 </span> <a id='x1-20006.1'></a>Differential operators</h3>
 <!-- l. 12 --><p class='noindent'>To solve differential equations, we now use exactly the same methods that we
 developed in the previous chapter: Minimizing the residual using the Galerkin
 method. Our residual now has the general form \begin {equation} R(x,y,z,\ldots ; a_0, a_1, \ldots , a_N) = \mathcal {L} u_N(x,y,z,\ldots ) - f(x,y,z,\ldots ), \end {equation}<a id='x1-2001r1'></a> where the unknown function \(u_N\) is
@@ -37,7 +37,7 @@ equations, the residual becomes a trivial series expansion again and we can easi
 determine the coefficients due to the orthogonality of the basis.
 </p><!-- l. 38 --><p class='noindent'>
 </p>
-<h3 class='sectionHead' id='poisson-equation-in-one-dimension'><span class='titlemark'>7.2 </span> <a id='x1-30007.2'></a>Poisson equation in one dimension</h3>
+<h3 class='sectionHead' id='poisson-equation-in-one-dimension'><span class='titlemark'>6.2 </span> <a id='x1-30006.2'></a>Poisson equation in one dimension</h3>
 <!-- l. 41 --><p class='noindent'>We use the (one-dimensional) Poisson equation as a demonstrator for this
 behavior, \begin {equation} \nabla ^2 \Phi \equiv \frac {\dif ^2 \Phi }{\dif x^2} = - \frac {\rho }{\varepsilon }. \label {eq:poisson-1d} \end {equation}<a id='x1-3001r4'></a> Here \(\rho \) is a charge density and \(\Phi \) is the electrostatic potential. The
 residual is therefore \begin {equation} R(x)=\frac {\dif ^2 \Phi }{\dif x^2} + \frac {\rho }{\varepsilon }, \label {eq:poisson-1d-res} \end {equation}<a id='x1-3002r5'></a> and the solution of Eq. \eqref{eq:poisson-1d} is given by
@@ -57,7 +57,7 @@ the Poisson equation is thus given by \begin {equation} \Phi _N(x) = \sum _n \fr
 solution.
 </p><!-- l. 83 --><p class='noindent'>
 </p>
-<h3 class='sectionHead' id='transition-to-the-fourier-transform'><span class='titlemark'>7.3 </span> <a id='x1-40007.3'></a>Transition to the Fourier transform</h3>
+<h3 class='sectionHead' id='transition-to-the-fourier-transform'><span class='titlemark'>6.3 </span> <a id='x1-40006.3'></a>Transition to the Fourier transform</h3>
 <!-- l. 85 --><p class='noindent'>The Fourier basis Eq. \eqref{eq:fourierbasis2} is periodic on a finite domain of
 length \(L\). If we let the length \(L\) go to infinity, we get a formulation for non-periodic
 functions. This leads directly to the <span class='cmti-12'>Fourier transform</span>.
@@ -77,7 +77,7 @@ obtain countable coefficients \(a_n\). The reason for this is the periodicity of
 under consideration. </p></div>
 <!-- l. 124 --><p class='noindent'>
 </p>
-<h3 class='sectionHead' id='poisson-equation-in-several-dimensions'><span class='titlemark'>7.4 </span> <a id='x1-50007.4'></a>Poisson equation in several dimensions</h3>
+<h3 class='sectionHead' id='poisson-equation-in-several-dimensions'><span class='titlemark'>6.4 </span> <a id='x1-50006.4'></a>Poisson equation in several dimensions</h3>
 <!-- l. 126 --><p class='noindent'>Similar to how we constructed an approximated solution for a differential equation
 using a series expansion, we can now use the approach Eq. \eqref{eq:fouriertrafo2}
 to obtain analytical solutions. In this section, this is demonstrated using the
@@ -122,7 +122,7 @@ origin, \begin {equation} \rho (x,y,z) = Q \delta (x) \delta (y) \delta (z). \en
 Eq. \eqref{eq:fouriertrafo3}, \begin {equation} \tilde {\rho }(q_x,q_y,q_z) = Q. \end {equation}<a id='x1-5010r24'></a> I.e. the Fourier transform of the electrostatic
 potential is given by (see Eq. \eqref{eq:fourierpoissonsol}) \begin {equation} \tilde {\Phi }(\v {q}) = \frac {Q}{\varepsilon q^2}, \end {equation}<a id='x1-5011r25'></a> and thus the
 representation in real space is \begin {equation} \begin {split} \Phi (\v {r}) =&amp; \int _{-\infty }^\infty \frac {\dif ^3 q}{(2\pi )^3}\, \frac {Q}{\varepsilon q^2} \exp \left ( i \v {q}\cdot \v {r} \right ) \\ =&amp; \frac {Q}{(2\pi )^3 \varepsilon } \int _0^\infty \dif q \int _0^{2\pi } \dif \phi \int _{-1}^1 \dif (\cos \theta ) \, \exp \left ( i q r \cos \theta \right ) \end {split} \end {equation}<a id='x1-5012r26'></a> where \(\dif ^3 q = q^2 \dif q \dif \phi \dif (\cos \theta )\) with azimuth angle \(\phi \) and elevation angle \(\theta \),
-was used (see also Fig. <a href='#-volume-element-for-integration-in-sphere-coordination-'>7.1<!-- tex4ht:ref: fig:volume-spherical --></a>). We require here (without limiting the generality)
+was used (see also Fig. <a href='#-volume-element-for-integration-in-sphere-coordination-'>6.1<!-- tex4ht:ref: fig:volume-spherical --></a>). We require here (without limiting the generality)
 that \(\v {r}\) points in the direction of the zenith.
 </p><!-- l. 226 --><p class='indent'> One obtains \begin {equation} \begin {split} \Phi (\v {r}) =&amp; \frac {Q}{(2\pi )^2 \varepsilon } \int _0^\infty \dif q \int _{-1}^1 \dif (\cos \theta ) \, \exp \left ( i q r \cos \theta \right ) \\ =&amp; \frac {Q}{(2\pi )^2 \varepsilon } \int _0^\infty \dif q\, \frac {\exp ( i q r ) - \exp (-iqr)}{iqr} \\ =&amp; \frac {Q}{(2\pi )^2 \varepsilon } \int _{-\infty }^\infty \dif q\, \frac {\sin q r}{qr} \\ =&amp; \frac {Q}{4\pi \varepsilon r}, \end {split} \end {equation}<a id='x1-5013r27'></a> where \(\int \dif x\,\sin x/x=\pi \) was used. This is the known solution for the
 electrostatic potential of a point charge. It is also called the fundamental
@@ -141,7 +141,7 @@ solution or <span class='cmti-12'>Green’s function </span>of the (three-dimens
 
 <!-- l. 251 --><p class='noindent' id='-volume-element-for-integration-in-sphere-coordination-'><img alt='PIC' height='390' src='Figures/illustr_angles_1.svg' width='390' /> <a id='x1-5014r1'></a>
 </p>
-<figcaption class='caption'><span class='id'>Figure 7.1: </span><span class='content'>Volume element for integration in sphere coordination
+<figcaption class='caption'><span class='id'>Figure 6.1: </span><span class='content'>Volume element for integration in sphere coordination
 </span></figcaption><!-- tex4ht:label?: x1-5014r1 -->
 
 

@@ -1,9 +1,9 @@
 ---
 layout: default
 title: "Tutorial 2"
-parent: Lecture
+parent: Project
 date: 2024-04-19
-categories: lecture
+categories: project
 author: Lars Pastewka
 nav_order: 2
 ---

@@ -13,7 +13,7 @@ Welcome to the lecture on **Spectral Simulation Methods**. Here you will find th
 
 ## Single PDF
 
-The notes are available as a single PDF download: [SpectralSimulationMethods.pdf](SpectralSimulationMethods.pdf)
+The notes are available as a single PDF download: [SpectralMethods.pdf](SpectralMethods.pdf)
 
 ## Updates to the material
 

@@ -2,21 +2,21 @@
 layout: default
 title: "Approximation and interpolation"
 parent: Lecture
-date: 2024-04-16
+date: 2024-04-19
 categories: lecture
 author: Lars Pastewka
-nav_order: 5
+nav_order: 4
 ---
 
 
-<h2 class='chapterHead' id='approximation-and-interpolation'><span class='titlemark'>Chapter 6</span><br /><a id='x1-10006'></a>Approximation and interpolation</h2>
+<h2 class='chapterHead' id='approximation-and-interpolation'><span class='titlemark'>Chapter 5</span><br /><a id='x1-10005'></a>Approximation and interpolation</h2>
 <div class='framedenv' id='shaded*-1'>
 <!-- l. 6 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Context:</span></span> We now apply the idea of basis functions to approximate functions. To
 do this, we return to the concept of the residual. The goal of function
 approximation is that the approximated function minimizes the residual. Building
 on these ideas, we will then discuss the approximation of differential equations in
 the next chapter. </p></div>
-<h3 class='sectionHead' id='residual'><span class='titlemark'>6.1 </span> <a id='x1-20006.1'></a>Residual</h3>
+<h3 class='sectionHead' id='residual'><span class='titlemark'>5.1 </span> <a id='x1-20005.1'></a>Residual</h3>
 <!-- l. 12 --><p class='noindent'>In the previous section, we described how a series expansion can be constructed
 using basis functions. A typical series expansion contains a finite number of
 elements \(N+1\) and has the form \begin {equation} f_N(x) = \sum _{n=0}^N a_n \varphi _n(x), \end {equation}<a id='x1-2001r1'></a> where \(\varphi _n(x)\) are the basis functions introduced in the
@@ -33,7 +33,7 @@ the same space for the target function \(f(x)\). For the approximation of a peri
 function \(f(x)\), a periodic basis set should also be used.
 </p><!-- l. 26 --><p class='noindent'>
 </p>
-<h3 class='sectionHead' id='collocation'><span class='titlemark'>6.2 </span> <a id='x1-30006.2'></a>Collocation</h3>
+<h3 class='sectionHead' id='collocation'><span class='titlemark'>5.2 </span> <a id='x1-30005.2'></a>Collocation</h3>
 <!-- l. 28 --><p class='noindent'>The first minimization strategy introduced here is <span class='cmti-12'>collocation</span>. This method
 requires that the residual disappears at selected collocation points \(y_n\), \begin {equation} R(y_n) = 0 \quad \text {or}\quad f_N(y_n) = f(y_n). \end {equation}<a id='x1-3001r3'></a> The number
 of collocation points must correspond to the number of coefficients in the series
@@ -60,7 +60,7 @@ used. This means that the coefficients can be expressed as \begin {equation} a_l
 This is the <span class='cmti-12'>discrete Fourier transform </span>of the function \(f(y_n)\) discretized on the
 collocation points.
 </p><!-- l. 97 --><p class='indent'> As a simple example, we show the approximation of the example function \(f(x)=\sin (2\pi x)^3 + \cos (6\pi (x^2-1/2))\)
-using the Fourier basis and finite elements. Figure <a href='#-approximation-of-the-periodic-function-fx-x-x-on-the-interval-with-a-fourier-basis-and-finite-elements-in-each-case-top-and-bottom-basis-functions-were-used-the-coefficients-were-determined-using-the-galerkin-method-the-approximation-with-basis-functions-cannot-map-the-two-right-oscillations-of-the-target-function-fx-in-both-cases-'>6.2<!-- tex4ht:ref: fig:example-collocation --></a> shows this approximation
+using the Fourier basis and finite elements. Figure <a href='#-approximation-of-the-periodic-function-fx-x-x-on-the-interval-with-a-fourier-basis-and-finite-elements-in-each-case-top-and-bottom-basis-functions-were-used-the-coefficients-were-determined-using-the-galerkin-method-the-approximation-with-basis-functions-cannot-map-the-two-right-oscillations-of-the-target-function-fx-in-both-cases-'>5.2<!-- tex4ht:ref: fig:example-collocation --></a> shows this approximation
 for \(2N+1=5\) and \(2N+1=11\) basis functions with equidistant collocation points.
 </p>
 <figure class='figure' id='-approximation-of-the-periodic-function-fx-x-x-on-the-interval-with-a-fourier-basis-and-finite-elements-in-each-case-top-and-bottom-basis-functions-were-used-the-coefficients-were-determined-using-the-collocation-method-the-round-dots-show-the-collocation-points-both-approximations-run-exactly-through-these-collocation-points-the-right-collocation-point-is-identical-to-the-left-one-due-to-the-periodicity-the-approximation-with-n-basis-functions-cannot-map-the-two-right-oscillations-of-the-target-function-fx-in-both-cases-'>
@@ -76,7 +76,7 @@ for \(2N+1=5\) and \(2N+1=11\) basis functions with equidistant collocation poin
 <div class='subfigure'>
 <!-- l. 111 --><p class='noindent'></p><!-- l. 112 --><p class='noindent'><img alt='PIC' height='256' src='Figures/coll11.svg' width='585' /> </p></div>
 <a id='x1-3010r1'></a>
-<div class='caption'><span class='id'>Figure 6.1: </span><span class='content'>Approximation of the periodic function \(f(x)=\sin (2\pi x)^3 + \cos (6\pi (x^2-1/2))\) on the interval \([0,1]\) with a
+<div class='caption'><span class='id'>Figure 5.1: </span><span class='content'>Approximation of the periodic function \(f(x)=\sin (2\pi x)^3 + \cos (6\pi (x^2-1/2))\) on the interval \([0,1]\) with a
 Fourier basis and finite elements. In each case \(5\) (top) and \(11\) (bottom) basis
 functions were used. The coefficients were determined using the collocation
 method. The round dots show the collocation points. Both approximations
@@ -97,7 +97,7 @@ to a linear interpolation between the points. The Fourier basis is more
 complicated. The curve between the collocation points is called <span class='cmti-12'>Fourier
 interpolation</span>.
 </p>
-<h3 class='sectionHead' id='weighted-residuals'><span class='titlemark'>6.3 </span> <a id='x1-40006.3'></a>Weighted residuals</h3>
+<h3 class='sectionHead' id='weighted-residuals'><span class='titlemark'>5.3 </span> <a id='x1-40005.3'></a>Weighted residuals</h3>
 <!-- l. 124 --><p class='noindent'>We would now like to generalize the collocation method. To do this, we introduce
 the concept of <span class='cmti-12'>test function</span>. Instead of requiring that the residual vanishes at
 individual points, we require that the scalar product \begin {equation} (v, R) = 0 \label {eq:test-function} \end {equation}<a id='x1-4001r12'></a> with a function \(v(x)\) disappears.
@@ -123,7 +123,7 @@ properties follow from this, e.g. \begin {equation} \int \dif x\, \delta (x) = \
 </p></div>
 <!-- l. 150 --><p class='noindent'>
 </p>
-<h3 class='sectionHead' id='galerkin-method'><span class='titlemark'>6.4 </span> <a id='x1-50006.4'></a>Galerkin method</h3>
+<h3 class='sectionHead' id='galerkin-method'><span class='titlemark'>5.4 </span> <a id='x1-50005.4'></a>Galerkin method</h3>
 
 
 
@@ -135,7 +135,7 @@ has already been discussed in section <span class='cmbx-12'>??</span>.
 </p><!-- l. 168 --><p class='indent'> For a non-orthogonal basis set, e.g. the basis of the finite elements, a linear
 system of equations is obtained, \begin {equation} \sum _{m=0}^N (\varphi _n,\varphi _m) a_m = (\varphi _n, f), \label {eq:galerkin-coefficients} \end {equation}<a id='x1-5004r19'></a> where the matrix \(A_{nm}=(\varphi _n,\varphi _m)\) is sparse for the finite
 elements.
-</p><!-- l. 175 --><p class='indent'> Let us now return to our example function \(f(x)=\sin (2\pi x)^3 + \cos (6\pi (x^2-1/2))\). Figure <a href='#-approximation-of-the-periodic-function-fx-x-x-on-the-interval-with-a-fourier-basis-and-finite-elements-in-each-case-top-and-bottom-basis-functions-were-used-the-coefficients-were-determined-using-the-galerkin-method-the-approximation-with-basis-functions-cannot-map-the-two-right-oscillations-of-the-target-function-fx-in-both-cases-'>6.2<!-- tex4ht:ref: fig:example-collocation --></a> shows the
+</p><!-- l. 175 --><p class='indent'> Let us now return to our example function \(f(x)=\sin (2\pi x)^3 + \cos (6\pi (x^2-1/2))\). Figure <a href='#-approximation-of-the-periodic-function-fx-x-x-on-the-interval-with-a-fourier-basis-and-finite-elements-in-each-case-top-and-bottom-basis-functions-were-used-the-coefficients-were-determined-using-the-galerkin-method-the-approximation-with-basis-functions-cannot-map-the-two-right-oscillations-of-the-target-function-fx-in-both-cases-'>5.2<!-- tex4ht:ref: fig:example-collocation --></a> shows the
 approximation of this function with Fourier and finite element basis sets and the
 Galerkin method. There are no collocation points and the approximation using
 finite elements does not exactly match the function to be approximated at the
@@ -155,7 +155,7 @@ sense.
 <div class='subfigure'>
 <!-- l. 189 --><p class='noindent'></p><!-- l. 190 --><p class='noindent'><img alt='PIC' height='247' src='Figures/gal11.svg' width='585' /> </p></div>
 <a id='x1-5005r2'></a>
-<div class='caption'><span class='id'>Figure 6.2: </span><span class='content'>Approximation of the periodic function \(f(x)=\sin (2\pi x)^3 + \cos (6\pi (x^2-1/2))\) on the interval \([0,1]\) with a
+<div class='caption'><span class='id'>Figure 5.2: </span><span class='content'>Approximation of the periodic function \(f(x)=\sin (2\pi x)^3 + \cos (6\pi (x^2-1/2))\) on the interval \([0,1]\) with a
 Fourier basis and finite elements. In each case \(5\) (top) and \(11\) (bottom) basis
 functions were used. The coefficients were determined using the Galerkin
 method. The approximation with \(5\) basis functions cannot map the two right
@@ -172,7 +172,7 @@ words, the residual can only contain contributions to the function that
 cannot be mapped with the given basis set. However, this also means that
 we can systematically improve our solution by extending the basis set.
 </p></div>
-<h3 class='sectionHead' id='least-squares'><span class='titlemark'>6.5 </span> <a id='x1-60006.5'></a>Least squares</h3>
+<h3 class='sectionHead' id='least-squares'><span class='titlemark'>5.5 </span> <a id='x1-60005.5'></a>Least squares</h3>
 <!-- l. 207 --><p class='noindent'>An alternative approach to approximation is to minimize the square of the
 residual, \((R, R)\), also knows as a <span class='cmti-12'>least squares </span>approach. For a general series expansion
 with \(N\) basis functions, we obtain \begin {equation} \begin {split} (R, R) &amp;= (f, f) + (f_N, f_N) - (f_N, f) - (f, f_N) \\ &amp;= (f, f) + \sum _{n=0}^N \sum _{m=0}^N a_n^* a_m (\varphi _n, \varphi _m) - \sum _{n=0}^N a_n^* (\varphi _n, f) - \sum _{n=0}^N a_n (f, \varphi _n). \end {split} \end {equation}<a id='x1-6001r21'></a> This error square is minimized if \begin {equation} \frac {\partial (R,R)}{\partial a_k} = \sum _{n=0}^N a_n^* (\varphi _n, \varphi _k) - (f, \varphi _k) = 0 \end {equation}<a id='x1-6002r22'></a> and \begin {equation} \frac {\partial (R,R)}{\partial a^*_k} = \sum _{n=0}^N a_n (\varphi _k, \varphi _n) - (\varphi _k, f) = 0. \end {equation}<a id='x1-6003r23'></a> This
