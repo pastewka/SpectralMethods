@@ -1,9 +1,9 @@
 ---
 layout: default
 title: "Function spaces"
-parent: Lecture
-date: 2024-04-15
-categories: lecture
+parent: Project
+date: 2024-04-19
+categories: project
 author: Lars Pastewka
 nav_order: 4
 ---
@@ -58,8 +58,8 @@ these properties.
 <!-- l. 47 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Note:</span></span> The scalar product between two functions is often defined more
 generally with a weight function \(w(x)\), \begin {equation} (f,g) = \int _a^b \dif x\, f^*(x) g(x) w(x). \end {equation}<a id='x1-3002r5'></a> The question of orthogonality between
 functions can thus only be answered with respect to a certain definition of the
-scalar product. For example, the Chebyshev polynomials or the weight
-function \(w(x)=(1-x^2)^{-1/2}\) are orthogonal. Within this course we will only need the case \(w(x)=1\).
+scalar product. For example, the Chebyshev polynomials for the weight
+function \(w(x)=(1-x^2)^{-1/2}\) are orthogonal. Within this course, we will only need the case \(w(x)=1\).
 </p></div>
 <!-- l. 55 --><p class='noindent'>
 </p>
@@ -119,7 +119,7 @@ get \(2N+1\) coefficients.
 
 
 
-<!-- l. 127 --><p class='noindent' id='-real-part-of-the-fourier-basis-functions-eq-tht-x-thteqrefeqfourierbasis-tht-for-n-the-higher-order-basis-functions-oscillate-with-a-smaller-period-and-represent-higher-frequencies-'><img alt='PIC' height='229' src='figures/fourierbasis.svg' width='390' /> <a id='x1-5005r1'></a>
+<!-- l. 127 --><p class='noindent' id='-real-part-of-the-fourier-basis-functions-eq-tht-x-thteqrefeqfourierbasis-tht-for-n-the-higher-order-basis-functions-oscillate-with-a-smaller-period-and-represent-higher-frequencies-'><img alt='PIC' height='229' src='Figures/fourierbasis.svg' width='390' /> <a id='x1-5005r1'></a>
 </p>
 <figcaption class='caption'><span class='id'>Figure 5.1: </span><span class='content'>real part of the Fourier basis functions,
 Eq. \eqref{eq:fourier-basis}, for \(n=1,2,3,4\). The higher order basis functions oscillate
@@ -154,7 +154,7 @@ greater accuracy.
 
 
 
-<!-- l. 159 --><p class='noindent' id='-the-base-of-the-finite-elements-in-its-simplest-linear-incarnation-each-basis-function-is-a-marquee-that-runs-over-a-certain-interval-between-and-and-back-again-see-also-eq-tht-x-thteqrefeqfiniteelementbasis-tht-'><img alt='PIC' height='115' src='figures/febasis.svg' width='390' /> <a id='x1-6002r2'></a>
+<!-- l. 159 --><p class='noindent' id='-the-base-of-the-finite-elements-in-its-simplest-linear-incarnation-each-basis-function-is-a-marquee-that-runs-over-a-certain-interval-between-and-and-back-again-see-also-eq-tht-x-thteqrefeqfiniteelementbasis-tht-'><img alt='PIC' height='115' src='Figures/febasis.svg' width='390' /> <a id='x1-6002r2'></a>
 </p>
 <figcaption class='caption'><span class='id'>Figure 5.2: </span><span class='content'>The base of the finite elements in its simplest, linear incarnation.
 Each basis function is a “marquee” that runs over a certain interval between

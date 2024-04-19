@@ -2,7 +2,7 @@
 layout: default
 title: "Approximation and interpolation"
 parent: Lecture
-date: 2024-04-15
+date: 2024-04-16
 categories: lecture
 author: Lars Pastewka
 nav_order: 5

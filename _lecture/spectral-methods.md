@@ -2,7 +2,7 @@
 layout: default
 title: "Spectral methods"
 parent: Lecture
-date: 2024-04-15
+date: 2024-04-16
 categories: lecture
 author: Lars Pastewka
 nav_order: 6
@@ -65,7 +65,7 @@ functions. This leads directly to the <span class='cmti-12'>Fourier transform</s
 the factor \(1=L \Delta q/2\pi \) was inserted on the right-hand side of Eq. \eqref{eq:fouriertrafo1}.
 This now helps to form the limits \(L\to \infty \) and \(N\to \infty \). In this case, \(\Delta q \to dq\) and the sum becomes the
 integral. You get \begin {equation} \Phi (x) = \int _{-\infty }^\infty \frac {\dif q}{2\pi }\,\tilde {\Phi }(q) \exp \left ( i q x \right ), \label {eq:fouriertrafo2} \end {equation}<a id='x1-4002r12'></a> the Fourier back<span class='cmti-12'>transformation</span>.
-</p><!-- l. 99 --><p class='indent'> The (outward) transformation is obtained via a similar argument. We now
+</p><!-- l. 99 --><p class='indent'> The (forward) transformation is obtained via a similar argument. We now
 know that \begin {equation} \tilde {\Phi }(q_n) = L a_n = L \frac {(\varphi _n, \Phi _N)}{(\varphi _n, \varphi _n)} = (\varphi _n, \Phi _N) = \int _0^L \dif x \, \Phi _N(x) \exp \left ( -i q_n x \right ). \end {equation}<a id='x1-4003r13'></a> In the limiting case \(L\to \infty \) and \(N\to \infty \) this becomes \begin {equation} \tilde {\Phi }(q) = \int _{-\infty }^\infty \dif x \, \Phi (x) \exp \left ( -i q x \right ), \label {eq:fouriertrafo3} \end {equation}<a id='x1-4004r14'></a> of the Fourier transform. The
 Fourier transform is useful to obtain analytical solutions for partial differential
 equations on infinite domains.

@@ -2,7 +2,7 @@
 layout: default
 title: "Numerical solution"
 parent: Lecture
-date: 2024-04-15
+date: 2024-04-16
 categories: lecture
 author: Lars Pastewka
 nav_order: 3
@@ -23,7 +23,7 @@ of differential equations \begin {equation} \mathcal {L} u(x,y,z,\ldots ) = f(x,
 linear) operator that contains the differential (or integral) operations.
 We now introduce an important concept for the (numerical) solution
 of the differential equation: We approximate the function \(u\) by a <span class='cmti-12'>series
-expansion</span>. We write \begin {equation} u_N(x, y, z, \ldots ) = \sum _{n=0}^N a_n \varphi _n(x,y,z,\ldots ) \label {eq:seriesexpansion} \end {equation}<a id='x1-2002r2'></a> where the \(\varphi _n\) are called “base functions”. We will
+expansion</span>. We write \begin {equation} u_N(x, y, z, \ldots ) = \sum _{n=0}^N a_n \varphi _n(x,y,z,\ldots ) \label {eq:seriesexpansion} \end {equation}<a id='x1-2002r2'></a> where the \(\varphi _n\) are called “basis functions”. We will
 discuss the properties of these basis functions in more detail in the next
 chapter.
 </p><!-- l. 27 --><p class='indent'> We can now write the differential equation as, \begin {equation} \mathcal {L} u_N(x,y,z,\ldots ) = f(x,y,z,\ldots ). \end {equation}<a id='x1-2003r3'></a> This representation means that
@@ -44,9 +44,9 @@ statement, we would of course have to specify how we want to quantify errors.
 Numerically, we then search for the exact coefficients \(a_n\) that minimize the
 error.
 </p><!-- l. 37 --><p class='indent'> The choice of a good basis function is non-trivial. We will mainly use “finite
-elements” as basis functions here and briefly touch on other types. Before we go
-deeper into this topic, we need some more concepts to understand numerical
-analysis.
+element basis functions” as basis functions here and briefly touch on other types.
+Before we go deeper into this topic, we need some more concepts to understand
+numerical analysis.
 
 
 

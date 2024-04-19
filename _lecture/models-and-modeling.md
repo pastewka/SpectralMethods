@@ -2,7 +2,7 @@
 layout: default
 title: "Introduction"
 parent: Lecture
-date: 2024-04-15
+date: 2024-04-16
 categories: lecture
 author: Lars Pastewka
 nav_order: 0
@@ -115,36 +115,35 @@ energy. The balance equation is also called the <span class='cmti-12'>continuity
 </div>
 <!-- l. 65 --><p class='indent'> At the level of semiclassical and classical mechanics, also referred to as the
 kinetic kinetic level, the models are either described by molecular dynamics or by
-the equation of motion of the single-particle probabilitydensity in phase
-space \(f(\v {r},\v {p})\) - with the independent variables location \(\v {r}\) and momentum \(\v {p}\). In
-the second case, we have a function \(f(\v {r}(t),\v {p}(t),t)\) which of location, momentum and
-time both explicitly and implicitly via \(\v {r}(t)\) and \(\v {p}(t)\) depends. Let’s assume that
-we need \(f(\v {r}(t),\v {p}(t),t)\) must be interpolated by discrete sampling points. With a low
-resolution of 10 points per variable, this is already already 10,000,000
-interpolation points. This may be manageable, but the resolution is not
-particularly good. And therefore this undertaking is rather useless. We do
-not want to conceal the fact that there are methods for the numerical
-solution solution to the two problems described above, but these will
-not be discussed in detail in this will not be discussed in detail in this
+the equation of motion of the single-particle probabilitydensity in phase space \(f(\v {r},\v {p})\) -
+with the independent variables location \(\v {r}\) and momentum \(\v {p}\). In the second case, we
+have a function \(f(\v {r}(t),\v {p}(t),t)\) which of location, momentum and time both explicitly
+and implicitly via \(\v {r}(t)\) and \(\v {p}(t)\) depends. Let’s assume that we need \(f(\v {r}(t),\v {p}(t),t)\) must be
+interpolated by discrete sampling points. With a low resolution of 10
+points per variable, this is already 10,000,000 interpolation points. This
+may be manageable, but the resolution is not particularly good. And
+therefore this undertaking is rather useless. We do not want to conceal
+the fact that there are methods for the numerical solution to the two
+problems described above, but these will not be discussed in detail in this
 course.
 </p>
 <h3 class='sectionHead' id='particles'><span class='titlemark'>1.2 </span> <a id='x1-30001.2'></a>Particles</h3>
-<!-- l. 82 --><p class='noindent'>We can therefore roughly distinguish between two types of models: Models that
+<!-- l. 79 --><p class='noindent'>We can therefore roughly distinguish between two types of models: Models that
 have individual discrete elements, for example particles (atoms, molecules, grains,
 etc.), as the central element and models that have continuous fields (electrostatic
 potential, ion concentrations, mechanical stresses and strains) as the central
 element. In the first type of model, evolution equations are formulated for discrete
 properties defined on the particles, such as their positions \(\v {r}_i\) and velocities
 \(\v {v}_i\).
-</p><!-- l. 84 --><p class='indent'> For example, to describe the kinetics of these particles, we could solve
+</p><!-- l. 81 --><p class='indent'> For example, to describe the kinetics of these particles, we could solve
 Newton’s equations of motion. This means that for each of the \(n\) particles we have
 to formulate \(6\) ordinary differential equations, which are still coupled to each other,
 namely: \begin {equation} \dot {\v {r}}_i(t)=\v {v}_i(t)=\frac {\v {p}_i(t)}{m_i} \label {eq:posupdate} \end {equation}<a id='x1-3001r1'></a> This is the equation for the trajectory of the particle \(i\) in space. Since \(\v {r}\) is
 a vector, Eq. \eqref{eq:posupdate} is a system of \(3\) ordinary differential equations.
-
-
-
 differential equations. The velocity \(\v {v}_i\) of the particle \(i\) at time \(t\) is also subject to a
+
+
+
 system of differential equations due to the momentum \(\v {p}_i\) system of differential
 equations: \begin {equation} \dot {\v {p}}_i(t)=\sum _j\v {F}_{ij}(t) \label {eq:velupdate} \end {equation}<a id='x1-3002r2'></a> Equation \eqref{eq:velupdate} describes the temporal development
 of the momentum of the particle \(i\). Equation \eqref{eq:posupdate} and
@@ -153,7 +152,7 @@ example, we want to describe the movement of all molecules in a liter
 of water by a simulation, this is impossible due to the large number of
 equations and we must switch to a description using balance equations and
 fields.
-</p><!-- l. 107 --><p class='indent'> Newton’s equations of motion \eqref{eq:posupdate} and \eqref{eq:velupdate}
+</p><!-- l. 104 --><p class='indent'> Newton’s equations of motion \eqref{eq:posupdate} and \eqref{eq:velupdate}
 are by their nature <span class='cmti-12'>physical basic principles</span>. They apply to atoms or planets. The
 nature of the force itself, \(\v {F}_{ij}\) in the equations above, is of course based on
 physically describable effects, but is not necessarily a principle of nature. A
@@ -169,10 +168,10 @@ Newton’s equations of motion for atoms is called <span class='cmti-12'>molecul
 simulation</span>.
 </p>
 <div class='framedenv' id='shaded*-1'>
-<!-- l. 119 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Note:</span></span> The term constitutive law often appears in the context of field theories. For
+<!-- l. 116 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Note:</span></span> The term constitutive law often appears in the context of field theories. For
 the Lennard-Jones potential, this term is rather unusual, but this law is
 nevertheless of a constitutive nature. </p></div>
-<!-- l. 123 --><p class='indent'> Another example of models with discrete elements are network models for
+<!-- l. 120 --><p class='indent'> Another example of models with discrete elements are network models for
 electrical circuits. Here, an element links a potential difference (energy
 difference) with a flowing current, for example describes \begin {equation} i = u / R \label {eq:resistor} \end {equation}<a id='x1-3005r5'></a> describes the
 current \(i\) that flows through a resistor \(R\) across which the voltage \(u\) drops.
@@ -185,74 +184,72 @@ therefore referred to as <span class='cmti-12'>global balance</span>. “Lumped-
 lead to systems of ordinary differential equations, which are often solved
 numerically by explicit time propagation. Well-known representatives of
 this type of simulation software are, for example <span class='cmti-12'>SPICE </span>or <span class='cmti-12'>MATLAB
-
-
-
 Simulink</span>.
-</p><!-- l. 130 --><p class='indent'> This global image level is characterized by a lack of interest in local resolution.
+
+
+
+</p><!-- l. 127 --><p class='indent'> This global image level is characterized by a lack of interest in local resolution.
 We are not interested not in densities, but only in total masses, not in
 current densities but only for currents. This is best illustrated by the
-above-mentioned resistor whose contacts are at different potentials. This results in
-a current flow in the simplest case. We do not ask ourselves how how the
+above-mentioned resistor whose contacts are at different potentials. This results
+in a current flow in the simplest case. We do not ask ourselves how the
 current is distributed in the resistor. We do not even ask whether the
 resistor is homogeneous or inhomogeneous, we take it as a total value, as
 a black box to which we assign a parameter value. This approach has
 already been discussed in detail in electrical engineering and systems
 theory.
-</p><!-- l. 141 --><p class='noindent'>
+</p><!-- l. 137 --><p class='noindent'>
 </p>
 <h3 class='sectionHead' id='fields'><span class='titlemark'>1.3 </span> <a id='x1-40001.3'></a>Fields</h3>
-<!-- l. 143 --><p class='noindent'>However, if we now realize that the black box is only insufficiently described with
-one parameter, then we start replace it with a more complex equivalent circuit
-with details that resolve the internal state of the component. This in turn can be
-taken so far, that a continuum is created at the end - we have arrived at the <span class='cmti-12'>local
-image level</span>. For this, we need parameters such as conductivity, viscosity or
-diffusivity. viscosity or diffusivity, which in turn cannot be derived as
-models from the continuous continuous description of the local balance. For
+<!-- l. 139 --><p class='noindent'>However, if we now realize that the black box is only insufficiently described with
+one parameter, then we start replace it with a more complex equivalent
+circuit with details that resolve the internal state of the component. This
+in turn can be taken so far, that a continuum is created at the end -
+we have arrived at the <span class='cmti-12'>local image level</span>. For this, we need parameters
+such as conductivity, viscosity or diffusivity, which in turn cannot be
+derived as models from the continuous description of the local balance. For
 example, experiments or <span class='cmti-12'>ab-initio </span>simulations are needed to determine these
 parameters.
-</p><!-- l. 152 --><p class='indent'> Local balance means that we can assign a density, concentration, temperature
-or similar quantity to the system at each point in space. can be assigned.
-However, this means that the temporal changes in the local degrees of freedom -
-i.e. the momentum or velocity - are determined in their distribution by a <span class='cmti-12'>local,
-thermodynamic equilibrium condition </span>determined. (In thermodynamic equilibrium,
-the momentum satisfies a Maxwell-Boltzmann distribution). This local
-equilibrium does not mean that we no longer have dynamics. But if we think of a
-swarm of gas or liquid particles, then their individual velocities follow an
-equilibrium individual velocities follow an equilibrium distribution function, but
+</p><!-- l. 148 --><p class='indent'> Local balance means that we can assign a density, concentration, temperature
+or similar quantity to the system at each point in space. However, this means that
+the temporal changes in the local degrees of freedom - i.e. the momentum or
+velocity - are determined in their distribution by a <span class='cmti-12'>local, thermodynamic
+equilibrium condition </span>. (In thermodynamic equilibrium, the momentum satisfies a
+Maxwell-Boltzmann distribution). This local equilibrium does not mean that we
+no longer have dynamics. But if we think of a swarm of gas or liquid particles,
+then their individual velocities follow an equilibrium distribution function, but
 their mean follows the balance equation. The dynamics are therefore averaged
-over over a huge number of these particles. Local balance also does not mean that
+over a huge number of these particles. Local balance also does not mean that
 different temperatures or densities cannot exist at different locations. densities
 at different locations. The differences in these parameters are then the
 driving forces of the dynamics - temperature gradient, density gradient,
 etc.
+</p><!-- l. 159 --><p class='indent'> Such models fall into the field of field theories, and their mathematical
+description is based on <span class='cmti-12'>partial </span>differential equations. (This is in contrast to the
 
 
 
-</p><!-- l. 164 --><p class='indent'> Such models fall into the field of field theories, and their mathematical
-description is based on <span class='cmti-12'>partial </span>differential equations. differential equations. (This
-is in contrast to the ordinary differential equations of discrete models). A field
-theory based on the balancing of mass, momentum or energy always requires
-constitutive laws for the description of the material behavior. These constitutive
-laws contain <span class='cmti-12'>transport parameters </span>such as the viscosity or diffusion constant.
-There are also field theories that have the character of a basic physical principle.
-This is, for example, the Schrödinger equation mentioned above or the Maxwell
-equations of electrodynamics. In this course we want to concentrate on such
-continuous systems that are formulated as field theory with the help of partial
-differential equations.
-</p><!-- l. 167 --><p class='noindent'>
+ordinary differential equations of discrete models). A field theory based on the
+balancing of mass, momentum or energy always requires constitutive laws for the
+description of the material behavior. These constitutive laws contain <span class='cmti-12'>transport
+parameters </span>such as the viscosity or diffusion constant. There are also field theories
+that have the character of a basic physical principle. This is, for example,
+the Schrödinger equation mentioned above or the Maxwell equations of
+electrodynamics. In this course we want to concentrate on such continuous
+systems that are formulated as field theory with the help of partial differential
+equations.
+</p><!-- l. 162 --><p class='noindent'>
 </p>
 <h3 class='sectionHead' id='which-model-is-the-right-one'><span class='titlemark'>1.4 </span> <a id='x1-50001.4'></a>Which model is the right one?</h3>
-<!-- l. 169 --><p class='noindent'>Mind you, we have not assigned any of the levels of description on different length
+<!-- l. 164 --><p class='noindent'>Mind you, we have not assigned any of the levels of description on different length
 scales with any value. Just because it is called quantum mechanics and leaves one
-or the other in awe at its complexity, it does not awe at its complexity, it does not
-necessarily offer the solution. On the contrary On the contrary, it can even be a
-hindrance to want to resolve too much detail and we must constantly ask
-ourselves how much detail is necessary in the simulation. is necessary.
-Even more, we always ask ourselves before we start a simulation: “Is
-a simulation of this complexity really necessary, or can I simplify the
-problem?” The simulation should be seen as a tool and not as an end in itself,
-according to the American mathematician American mathematician Richard
+or the other in awe at its complexity, it does not necessarily offer the solution. On
+the contrary, it can even be a hindrance to want to resolve too much detail
+and we must constantly ask ourselves how much detail is necessary in
+the simulation. Even more, we always ask ourselves before we start a
+simulation: “Is a simulation of this complexity really necessary, or can I
+simplify the problem?” The simulation should be seen as a tool and not
+as an end in itself, according to the American mathematician Richard
 Wesley Hamming (*1915, \(\dagger \)1998): <span class='cmti-12'>The purpose of computing is insight, not
 numbers</span>.
 
