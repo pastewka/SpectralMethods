@@ -3,7 +3,7 @@ author: Wolfram Nöhring
 date:   2021-04-21
 layout: default
 title:  About
-nav_order: 6
+nav_order: 7
 ---
 Angaben gemäß § 5 TMG
 =====================
