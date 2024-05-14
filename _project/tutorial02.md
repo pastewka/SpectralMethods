@@ -5,7 +5,7 @@ parent: Project
 date: 2024-04-19
 categories: project
 author: Lars Pastewka
-nav_order: 2
+nav_order: 3
 ---
 
 # Tutorial 2: Fourier interpolation

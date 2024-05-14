@@ -5,7 +5,7 @@ parent: Project
 date: 2024-04-19
 categories: project
 author: Lars Pastewka
-nav_order: 1
+nav_order: 2
 ---
 
 # Tutorial 1: Playing with the Fourier transform
