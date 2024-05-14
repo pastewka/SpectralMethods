@@ -5,7 +5,7 @@ parent: Lecture
 date: 2024-04-19
 categories: lecture
 author: Lars Pastewka
-nav_order: 6
+nav_order: 7
 ---
 
 
@@ -109,7 +109,8 @@ to \(x(s)\) and \(t(s)\).
 <li class='enumerate' id='x1-7009x3'>
 <!-- l. 124 --><p class='noindent'>By comparing the coefficients of the total derivative \eqref{eq:totalderiv}
 with the PDE \eqref{eq:PDE1Oquasi}, you can see that this DGL is solved
-exactly when \begin {align} \frac {dx(s)}{ds}&amp;=P(x,t,u),\label {eq:transode1}\\\\frac {dt(s)}{ds}&amp;=Q(x,t,u)\quad \text {und}\\ \frac {du(s)}{ds} &amp;= R(u(s)).\label {eq:transode3} \end {align}
+exactly when \begin {align} \frac {dx(s)}{ds}&amp;=P(x,t,u),\label {eq:transode1}\\\
+\frac {dt(s)}{ds}&amp;=Q(x,t,u)\quad \text {und}\\ \frac {du(s)}{ds} &amp;= R(u(s)).\label {eq:transode3} \end {align}
 </p><!-- l. 130 --><p class='noindent'>is fulfilled. This describes the solution along certain curves in the
 \((x,t)\)-plane.</p></li></ol>
 <!-- l. 132 --><p class='noindent'>We have thus converted the PDE into a set of coupled first-order ODEs,

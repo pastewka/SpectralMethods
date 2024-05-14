@@ -5,7 +5,7 @@ parent: Lecture
 date: 2024-04-19
 categories: lecture
 author: Lars Pastewka
-nav_order: 1
+nav_order: 2
 ---
 
 
@@ -116,7 +116,8 @@ sampling points.
 </p><!-- l. 120 --><p class='indent'> In this case, we have \begin {equation} P(x,t+\tau )=pP(x+\Delta x,t)+qP(x-\Delta x,t) \end {equation}<a id='x1-4001r9'></a> which yields \begin {equation} \frac {P(x,t+\tau )-P(x,t)}{\tau }=\frac {\Delta x^2}{\tau }\frac {pP(x+\Delta x,t)-P(x,t)+qP(x-\Delta x,t)}{\Delta x^2}. \label {eq:driftpq} \end {equation}<a id='x1-4002r10'></a> This can be simplified by writing \begin {equation} p=\frac {1}{2}-\varepsilon \quad \text {and}\quad q=\frac {1}{2}+\varepsilon \quad \text {with}\quad 0\le |\varepsilon |\le \frac {1}{2} \quad \text {or}\quad 2\varepsilon = q-p, \end {equation}<a id='x1-4003r11'></a> where \(\varepsilon \)
 now indicates how much more likely a jump to <span class='cmti-12'>right </span>is than to the left. A positive \(\varepsilon \)
 therefore means that the particles will move to the right on average – this is called
-<span class='cmti-12'>drift</span>. We can now write Eq. \eqref{eq:driftpq} using \(\varepsilon \), giving \begin {equation} \begin {split} \frac {P(x,t+\tau )-P(x,t)}{\tau }=&amp; \frac {\Delta x^2}{2\tau }\frac {P(x+\Delta x,t)-2P(x,t)+P(x-\Delta x,t)}{\Delta x^2}\\\&amp;-\frac {2\varepsilon \Delta x}{\tau }\frac {P(x+\Delta x,t)-P(x-\Delta x,t)}{2\Delta x}. \end {split} \end {equation}<a id='x1-4004r12'></a> In the limit \(\tau \rightarrow 0\) and \(\Delta x\rightarrow 0\)
+<span class='cmti-12'>drift</span>. We can now write Eq. \eqref{eq:driftpq} using \(\varepsilon \), giving \begin {equation} \begin {split} \frac {P(x,t+\tau )-P(x,t)}{\tau }=&amp; \frac {\Delta x^2}{2\tau }\frac {P(x+\Delta x,t)-2P(x,t)+P(x-\Delta x,t)}{\Delta x^2}\\\
+&amp;-\frac {2\varepsilon \Delta x}{\tau }\frac {P(x+\Delta x,t)-P(x-\Delta x,t)}{2\Delta x}. \end {split} \end {equation}<a id='x1-4004r12'></a> In the limit \(\tau \rightarrow 0\) and \(\Delta x\rightarrow 0\)
 
 
 
