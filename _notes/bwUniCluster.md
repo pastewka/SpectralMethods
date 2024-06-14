@@ -51,8 +51,47 @@ After logging in to bwUniCluster at `uc2.scc.kit.edu`, you will need to set up y
 Please load the following modules (just execute these commands at the command line):
 
 ```bash
-module load compiler/gnu devel/cmake mpi/openmpi
+module load compiler/gnu mpi/openmpi devel/python
+```
+
+You can check whether the correct modules where loaded by executing
+
+```bash
 module list
+```
+
+Now compile you need to install `muFFT`. First compile `muFFT`'s dependencies. This is described in
+[the *Getting Started* page of `muFFT`](https://muspectre.github.io/muFFT/GettingStarted.html).
+In short, execute
+
+```bash
+curl -sSL https://raw.githubusercontent.com/muSpectre/muFFT/main/install_dependencies.sh | sh
+```
+
+Now setup a virtual python environment to install `muFFT`. You need to execute this in your home
+directory, which is where the `venv` directory will be located:
+
+```bash
+python3 -m venv venv
+```
+
+Upgrade [`pip`](https://pip.pypa.io/en/stable/) because older versions of `pip` do not play
+well with [`meson`](https://mesonbuild.com/) which is used for building `muFFT`:
+
+```bash
+python3 -m pip --upgrade pip
+```
+
+Now install `muFFT`:
+
+```bash
+PKG_CONFIG_PATH=$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH \
+    LIBRARY_PATH=$HOME/.local/lib:$LIBRARY_PATH \
+    CPATH=$HOME/.local/include:$CPATH \
+    pip install -v \
+        --force-reinstall --no-cache \
+        --no-binary muGrid --no-binary muFFT \
+        muGrid muFFT
 ```
 
 ## Compiling your code
