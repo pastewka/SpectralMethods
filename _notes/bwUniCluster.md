@@ -51,7 +51,7 @@ After logging in to bwUniCluster at `uc2.scc.kit.edu`, you will need to set up y
 Please load the following modules (just execute these commands at the command line):
 
 ```bash
-module load compiler/gnu mpi/openmpi devel/python
+module load compiler/gnu mpi/openmpi devel/python/3.12.3_gnu_13.3
 ```
 
 You can check whether the correct modules where loaded by executing
@@ -94,33 +94,20 @@ PKG_CONFIG_PATH=$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH \
         muGrid muFFT
 ```
 
-## Compiling your code
-
-You will first need to checkout your code on bwUniCluster. To compile your code on the command line, create a directory for building the code. This could be a directory named `build` in your source directory, e.g.:
-
-```bash
-mkdir build
-cd build
-```
-
-Run `CMake` to configure your build:
-```bash
-cmake -DCMAKE_BUILD_TYPE=Release ..
-```
-The two dots `..` tell CMake where the sources are located. If you create a build directory somewhere else, you may need to provide the full path to your sources there.
-
-Compile the code:
-```bash
-make
-```
-
 ## Running simulations
 
 bwUniCluster has extensive documentation that can be found here: <https://www.bwhpc-c5.de/wiki/index.php/Category:BwUniCluster>. Simulations are typically run as batch jobs. They have to be submitted through a batch or queueing system that takes care of assigning the actual hardware (compute node) to your job. A description of the queueing system can be found [here](https://wiki.bwhpc.de/wiki/index.php?title=BwUniCluster_2.0_Slurm_common_Features). Please make sure you understand the concept of a _partition_ described [here](https://wiki.bwhpc.de/wiki/index.php?title=BwUniCluster_2.0_Batch_Queues).
 
+Run simulations within a dedicated workspace. bwUniCluster provides a parallel file system for such [workspaces](https://wiki.bwhpc.de/e/Workspace). Create a workspace with
+
+```bash
+ws_allocate spectral_methods 30
+```
+
+where the number (30) is the lifetime of the workspace. This workspace will be deleted after 30 days. You can list all your workspaces with `ws_list` and extend their lifetime with `ws_extend`.
+
 **IMPORTANT**: never *ever* run a simulation on the front/login node (i.e.
-without submitting a job using the `sbatch` command, see below). Your access to
-bwUniCluster could be revoked if you do this.
+without submitting a job using the `sbatch` command, see below). Also do not run simulations in your home directory. Use a workspace. Your access to bwUniCluster could be revoked if you do this.
 
 ### Job scripts
 
@@ -136,12 +123,12 @@ To run you job, you need to write a job script. The job script is executed by th
 #SBATCH --export=ALL
 #SBATCH --partition=multiple
 
-module load compiler/gnu/11.1
-module load mpi/openmpi/4.1
+module load compiler/gnu mpi/openmpi devel/python
+source ${HOME}/venv/bin/activate
 
 echo "Running on ${SLURM_JOB_NUM_NODES} nodes with ${SLURM_JOB_CPUS_PER_NODE} cores each."
 echo "Each node has ${SLURM_MEM_PER_NODE} of memory allocated to this job."
-time mpirun ./yamd
+time mpirun python3 my_python_program.py
 ```
 
 Lines starting with a `#` are ignored by the shell. Lines starting with `#SBATCH` are ignored by the shell but are treated like command-line options to the `sbatch` command that you need to submit your job. You can see all options but running `man sbatch`.
