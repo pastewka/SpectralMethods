@@ -79,7 +79,7 @@ Upgrade [`pip`](https://pip.pypa.io/en/stable/) because older versions of `pip` 
 well with [`meson`](https://mesonbuild.com/) which is used for building `muFFT`:
 
 ```bash
-python3 -m pip --upgrade pip
+python3 -m pip install --upgrade pip
 ```
 
 Now install `muFFT`:
