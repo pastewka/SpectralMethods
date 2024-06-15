@@ -75,7 +75,13 @@ directory, which is where the `venv` directory will be located:
 python3 -m venv venv
 ```
 
-Upgrade [`pip`](https://pip.pypa.io/en/stable/) because older versions of `pip` do not play
+You activate the virtual environment with:
+
+```bash
+source venv/bin/activate
+```
+
+Upgrade [`pip`](https://pip.pypa.io/en/stable/) in your venv because older versions of `pip` do not play
 well with [`meson`](https://mesonbuild.com/) which is used for building `muFFT`:
 
 ```bash
@@ -129,7 +135,7 @@ To run you job, you need to write a job script. The job script is executed by th
 #SBATCH --export=ALL
 #SBATCH --partition=multiple
 
-module load compiler/gnu mpi/openmpi devel/python
+module load compiler/gnu mpi/openmpi devel/python/3.12.3_gnu_13.3
 source ${HOME}/venv/bin/activate
 
 echo "Running on ${SLURM_JOB_NUM_NODES} nodes with ${SLURM_JOB_CPUS_PER_NODE} cores each."
