@@ -82,6 +82,12 @@ well with [`meson`](https://mesonbuild.com/) which is used for building `muFFT`:
 python3 -m pip install --upgrade pip
 ```
 
+You also need to manually install `mpi4py`:
+
+```bash
+python3 -m pip install --force-reinstall --no-cache --no-binary mpi4py mpi4py
+```
+
 Now install `muFFT`:
 
 ```bash
@@ -118,7 +124,7 @@ To run you job, you need to write a job script. The job script is executed by th
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=40
 #SBATCH --time=00:40:00
-#SBATCH -J YAMD
+#SBATCH -J SpectralMethods
 #SBATCH --mem=6gb
 #SBATCH --export=ALL
 #SBATCH --partition=multiple
