@@ -68,7 +68,7 @@ In short, execute
 curl -sSL https://raw.githubusercontent.com/muSpectre/muFFT/main/install_dependencies.sh | sh
 ```
 
-Now setup a virtual python environment to install `muFFT`. You need to execute this in your home
+Now setup a [virtual python environment](https://docs.python.org/3/library/venv.html) to install `muFFT`. You need to execute this in your home
 directory, which is where the `venv` directory will be located:
 
 ```bash
