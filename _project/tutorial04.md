@@ -17,7 +17,9 @@ In this exercise, we will parallelize the three-dimensional solution of the heat
 ## Three-dimensional steady-state problem
 
 We will in this tutorial look back at the 3D variant of the implicit (steady-state) heat transport problem. The steady-state equation for which $\partial T/\partial t=0$, i.e. the solution where the temperature field does not change anymore, is given by
+
 $$R \equiv  \alpha \nabla^2 T + \dot{q}_S=0.$$
+
 Note that $R$ is called the _residual_ and the objective of a numerical solution of these equations is to minimize the residual given an approximation to the function $T(x)$.
 
 ## muGrid and muFFT
