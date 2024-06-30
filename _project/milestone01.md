@@ -23,7 +23,13 @@ equation in the rotational form that we will use for the project.
 
 The curl is a differential operation on a vector field. Given vector field $\vec{u}(\vec{r})$, which for the Navier-Stokes equation will be a velocity field, the curl is defined as
 
-$$\text{curl}\,\vec{u}=\nabla\times\vec{u}=\begin{pmatrix}\partial_y u_z - \partial_z u_y\\\partial_z u_x - \partial_x u_z\\\partial_x u_y - \partial_y u_x\end{pmatrix}$$
+$$\text{curl}\,\vec{u}=\nabla\times\vec{u}=\begin{pmatrix}\partial_y u_z - \partial_z u_y\\\partial_z u_x - \partial_x u_z\\\partial_x u_y - \partial_y u_x\end{pmatrix}.$$
+
+Using the curl, we can define the vorticity field
+
+$$\vec{\omega}=\frac{1}{2}\nabla\times\vec{u}.$$
+
+Note that some authors define $\vec{\omega}=\nabla\times\vec{u}$ without the factor of $1/2$. With our definition, $\omega$ becomes the angular velocity of a velocity field that corresponds to pure rotation, as can be easily checked by computing the vorticity of $\vec{u}(\vec{r})=\vec{\omega}\times\vec{r}$.
 
 ### Task 1: Fourier-representation of the curl
 
