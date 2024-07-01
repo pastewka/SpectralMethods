@@ -21,7 +21,7 @@ You will now implement the first solver for the incompressible Navier-Stokes equ
 
 $$\frac{\partial\vec{u}}{\partial t}=2\vec{u}\times \vec{\omega}+\nu \nabla^2 \vec{u}-\nabla P$$
 
-where $\nu$ is the (kinematic) viscosity and $P(x,y,z)$ the pressure field. The vorticity $\vec{\omega}=\frac{1}{2}\nabla\times\vec{u}$ was already introduced in the previous milestone. This equation is solved subject to the incompressibility condition,
+where $\nu$ is the (kinematic) viscosity and $P(x,y,z)$ the pressure field. The vorticity $\vec{\omega}=\frac{1}{2}\nabla\times\vec{u}$ was already introduced in the [previous milestone](milestone01.md). This equation is solved subject to the incompressibility condition,
 
 $$\nabla\cdot\vec{u}=0.$$
 
@@ -33,10 +33,10 @@ This equation is known as the pressure Poisson equation.
 
 ### Task 1: Spectral Navier-Stokes equations
 
-Rewrite the Navier-Stokes equations and the pressure Poisson equation in terms of the Fourier-transformed velocity field $\tilde{\vec{u}}$. Since $\vec{\omega}$ depends on $\vec{u}$ (see milestone 1), the term $\vec{u}\times\vec{\omega}$ is nonlinear in $\vec{u}$. This term is best computed in real (and not Fourier) space and it makes sense to leave the Fourier transform of this term, $\widetilde{\vec{u}\times\vec{\omega}}$, as is in the equations. Because this implies that part of the calculation is carried out in Fourier space and part in real space, the resulting numerical scheme is often denoted as *pseudo spectral*.
+Rewrite the Navier-Stokes equations and the pressure Poisson equation in terms of the Fourier-transformed velocity field $\tilde{\vec{u}}$. Since $\vec{\omega}$ depends on $\vec{u}$ (see [milestone 1](milestone01.md)), the term $\vec{u}\times\vec{\omega}$ is nonlinear in $\vec{u}$. This term is best computed in real (and not Fourier) space and it makes sense to leave the Fourier transform of this term, $\widetilde{\vec{u}\times\vec{\omega}}$, as is in the equations. Because this implies that part of the calculation is carried out in Fourier space and part in real space, the resulting numerical scheme is often denoted as *pseudo spectral*.
 Once you have written everything in the Fourier representation, you can use the pressure Poisson equation to eliminate the pressure in the Navier-Stokes equations.
 
-**Hint:** The final equation can be found for example in [Mortensen & Langtangen](https://doi.org/10.1016/j.cpc.2016.02.005). Make sure to include the full derivation of the this equation into your report.
+**Hint:** The final equation can be found for example in [Mortensen & Langtangen, Comput. Phys. Comm. (2016)](https://doi.org/10.1016/j.cpc.2016.02.005). The first report of a pseudo-spectral Navier-Stokes solver in the literature is from Orszag & Patterson, see [Statistical Models and Turbulence (1972)](https://doi.org/10.1007/3-540-05716-1_8) and [Physical Review Letters (1972)](https://doi.org/10.1103/PhysRevLett.28.76). Make sure to include the full derivation of the this equation into your report.
 
 ## Time stepping
 
@@ -80,21 +80,23 @@ Use the code snippet above and implement the main loop that steps the simulation
 
 The [Taylor-Green vortex](https://en.wikipedia.org/wiki/Taylor%E2%80%93Green_vortex) is a simple sinosoidal flow field. It is given by the velocity field
 
-$$\begin{aligned}u_x(x,y,z)&=A\cos ax\sin by\sin cz\\u_x(x,y,z)&=B\sin ax\cos by\sin cz\\u_x(x,y,z)&=C\cos ax\sin by\cos cz\end{aligned}.$$
+$$\begin{aligned}u_x(x,y,z)&=A\cos ax\sin by\sin cz\\u_y(x,y,z)&=B\sin ax\cos by\sin cz\\u_z(x,y,z)&=C\sin ax\sin by\cos cz\end{aligned}.$$
 
 The two-dimensional Taylor-Green vortex
 
-$$\begin{aligned}u_x(x,y,z)&=A\cos ax\sin by\\u_x(x,y,z)&=B\sin ax\cos by\\u_x(x,y,z)&=0\end{aligned}$$
+$$\begin{aligned}u_x(x,y,z)&=A\cos ax\sin by\\u_y(x,y,z)&=B\sin ax\cos by\\u_z(x,y,z)&=0\end{aligned}$$
 
 has an analytical solution that can be used to test whether your code works.
 
 ### Task 3: Analytical solution
 
-Derive the analytical solution for the time evolution of the two-dimensional Taylor-Green vortex.
+Show that the Taylor-Green vortex represents incompressible flow. The incompressibility condition will link the prefactors $A$, $B$ and $C$ (in the case of the three-dimensional vortex). Then derive the analytical solution for the time evolution of the two-dimensional Taylor-Green vortex. Assume that the prefactor is time-dependent and seek a solution for that time dependence.
 
 ### Task 4: Numerical solution
 
 Run a numerical calculation of the two-dimensional Taylor-Green vortex and check whether the results agree with your analytical solution.
+
+**Hint:** You can run the two-dimensional vortex on a system consisting only of a few grid points in one direction to save computational time. 
 
 ## Task summary
 
