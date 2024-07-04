@@ -78,7 +78,7 @@ We suggest to explore Fourier interpolation for four types of functions:
 
 Of course, feel free to evaluate other functions as well.
 
-### Task: Plot the function and its Fourier interpolation
+### Task 1: Plot the function and its Fourier interpolation
 
 In order to say something about interpolation, we need to turn the function into a discrete description. Discretize the function above into $N$ grid points (a parameter that you can play with) and then plot the discrete variant in combination with its Fourier interpolated variant, i.e. the discrete Fourier series of that function evaluated at a much finer grid.
 
@@ -90,11 +90,11 @@ $$f'(x_l) = \frac{1}{N} \sum_{k=-\lfloor (N-1)/2 \rfloor}^{\lfloor N/2 \rfloor} 
 
 Note that this is the _derivative of the Fourier interpolated function_. The Fourier transform of the derivative of a function is therefore $i q_k c_k$, given the Fourier transform (coefficients) $c_k$ of the function itself. The _gradient operation_ in reciprocal space is hence a multiplication with the (complex) number $D_k = iq_k$. We have transformed a differential operator into an algrebraic expression (that our computer can work with).
 
-### Task 1: Plot the derivative of the functions above
+### Task 2: Plot the derivative of the functions above
 
 Plot the full (Fourier interpolated) derivative of the functions above. What do you see?
 
-### Task 2: Finite differences
+### Task 3: Finite differences
 
 Compare the Fourier derivative to the derivative obtained from a difference quotient (also called a finite-differences approximation),
 

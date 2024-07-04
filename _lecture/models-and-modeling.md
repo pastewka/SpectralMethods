@@ -2,15 +2,15 @@
 layout: default
 title: "Introduction"
 parent: Lecture
-date: 2024-04-19
+date: 2024-07-04
 categories: lecture
 author: Lars Pastewka
-nav_order: 1
+nav_order: 0
 ---
 
 
 <h2 class='chapterHead' id='introduction'><span class='titlemark'>Chapter 1</span><br /><a id='x1-10001'></a>Introduction</h2>
-<div class='framedenv' id='shaded*-1'>
+<div class='framedenv' id='shaded_-1'>
 <!-- l. 6 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Context:</span></span> The term <span class='cmti-12'>simulation </span>refers to the numerical (computer-aided) solution
 of <span class='cmti-12'>models</span>. In this introductory chapter, we discuss how models of physical reality
 are build and present different classes of models. These models are usually
@@ -29,7 +29,7 @@ the ability to match the physical phenomenon we want to describe with
 the appropriate model and the mathematical method required for its
 solution.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div class='framedenv' id='shaded_-1'>
 <!-- l. 14 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Note:</span></span> While we <span class='cmti-12'>could </span>describe even macroscopic systems with atomic-scale
 models, this is typically prohibited by the computer resources available to us.
 Macroscopic systems consist of more than \(10^{23}\) (Avogadro’s number) atoms,
@@ -37,7 +37,7 @@ whose positions we would not be able to fit into present day computers. In
 addition, the gist of the question we want to answer may be hidden in such a
 fine-grained atomic-scale model like the legendary needle in a haystack.
 </p></div>
-<!-- l. 18 --><p class='indent'> Figure <a href='#-the-vertical-arrangement-of-the-boxes-corresponds-to-a-length-scale-with-the-shortest-scales-shown-on-the-bottom-the-boxes-themselves-show-categories-of-models-or-simulation-methods-that-are-used-on-these-scales-in-this-class-we-deal-with-the-discretization-of-fields-and-choose-a-specific-use-case-that-falls-into-the-local-balance-category-'>1.1<!-- tex4ht:ref: fig:Scheme --></a> shows on the vertical axis <span class='cmti-12'>length scales </span>and classes of models that
+<!-- l. 18 --><p class='indent'> Figure <a href='#the-vertical-arrangement-of-the-boxes-corresponds-to-a-length-scale-with-the-shortest-scales-shown-on-the-bottom-the-boxes-themselves-show-categories-of-models-or-simulation-methods-that-are-used-on-these-scales-in-this-class-we-deal-with-the-discretization-of-fields-and-choose-a-specific-use-case-that-falls-into-the-local-balance-category-'>1.1<!-- tex4ht:ref: fig:Scheme --></a> shows on the vertical axis <span class='cmti-12'>length scales </span>and classes of models that
 live on these scales. On the shortest length scale, a quantum mechanical
 description is usually necessary. This means that if we want to resolve the world
 with Å resolution, we find ourselves at the level of quantum mechanics and
@@ -69,7 +69,7 @@ model.
 
 <div class='center'>
 <!-- l. 32 --><p class='noindent'>
-</p><!-- l. 36 --><p class='noindent' id='-the-vertical-arrangement-of-the-boxes-corresponds-to-a-length-scale-with-the-shortest-scales-shown-on-the-bottom-the-boxes-themselves-show-categories-of-models-or-simulation-methods-that-are-used-on-these-scales-in-this-class-we-deal-with-the-discretization-of-fields-and-choose-a-specific-use-case-that-falls-into-the-local-balance-category-'> <img alt='PIC' height='585' src='Figures/ExtendedScheme-.png' width='774' /> <a id='x1-2001r1'></a>
+</p><!-- l. 36 --><p class='noindent' id='the-vertical-arrangement-of-the-boxes-corresponds-to-a-length-scale-with-the-shortest-scales-shown-on-the-bottom-the-boxes-themselves-show-categories-of-models-or-simulation-methods-that-are-used-on-these-scales-in-this-class-we-deal-with-the-discretization-of-fields-and-choose-a-specific-use-case-that-falls-into-the-local-balance-category-'> <img alt='PIC' height='585' src='Figures/ExtendedScheme-.png' width='774' /> <a id='x1-2001r1'></a>
 </p>
 <figcaption class='caption'><span class='id'>Figure 1.1: </span><span class='content'>The vertical arrangement of the boxes corresponds to a length
 scale, with the shortest scales shown on the bottom. The boxes themselves
@@ -81,7 +81,7 @@ specific use case that falls into the <span class='cmti-12'>local balance </span
 
 
 </figure>
-<div class='framedenv' id='shaded*-1'>
+<div class='framedenv' id='shaded_-1'>
 <!-- l. 42 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Note:</span></span> </p>
 <ul class='itemize1'>
 <li class='itemize'>\(1\,\r {A}=10^{-10}\,\text {m}\)
@@ -94,12 +94,12 @@ objects is the <span class='cmti-12'>Schrödinger equation</span>. It is itself 
 approximation, despite the fact that models derived from it are called
 <span class='cmti-12'>first principles </span>models!
 </li>
-<li class='itemize'>The single-particle Schrödinger equation is \(i\hbar \frac {\partial }{\partial t} \Psi (\v {r},t) = \hat {H} \Psi (\v {r},t)\). This is a partial
-differential equation for the location- and time-dependent scalar matter
-field \(\Psi (\v {r},t)\), with Planck’s constant \(\hbar \) and the Hamilton operator \(\hat {H}\), which
-contains the details of the model. The solution of an equation of motion
-for many interacting particles, as described by a wavefunction with
-mathematical structure \(\Psi (\v {r}_1,\v {r}_2,\dots ,\v {r}_n;t)\), is incomparably more complicated.
+<li class='itemize'>The single-particle Schrödinger equation is \(i\hbar \frac {\partial }{\partial t} \Psi (\v {r},t) = \hat {H} \Psi (\v {r},t)\). This is a partial differential
+equation for the location- and time-dependent scalar matter field \(\Psi (\v {r},t)\), with
+Planck’s constant \(\hbar \) and the Hamilton operator \(\hat {H}\), which contains the
+details of the model. The solution of an equation of motion for many
+interacting particles, as described by a wavefunction with mathematical
+structure \(\Psi (\v {r}_1,\v {r}_2,\dots ,\v {r}_n;t)\), is incomparably more complicated.
 </li>
 <li class='itemize'>“Semiclassical“ means that the motion of the particles is calculated
 according to classical mechanics, but the interactions between the
@@ -182,7 +182,7 @@ are often called <span class='cmti-12'>constitutive laws</span>. The numerical s
 equations of motion for atoms or molecules is called <span class='cmti-12'>molecular dynamics
 simulation</span>.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div class='framedenv' id='shaded_-1'>
 <!-- l. 113 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Note:</span></span> The term constitutive law often appears in the context of field theories. For
 the Lennard-Jones potential, this term is rather unusual, but this law is
 nevertheless of a constitutive nature. </p></div>
@@ -197,7 +197,7 @@ behind the individual parameter \(R\). For a fully formulated model of an electr
 
 
 circuits we also need Kirchhoff’s rules, that have the quality of <span class='cmti-12'>balance equations</span>.
-In Fig. <a href='#-the-vertical-arrangement-of-the-boxes-corresponds-to-a-length-scale-with-the-shortest-scales-shown-on-the-bottom-the-boxes-themselves-show-categories-of-models-or-simulation-methods-that-are-used-on-these-scales-in-this-class-we-deal-with-the-discretization-of-fields-and-choose-a-specific-use-case-that-falls-into-the-local-balance-category-'>1.1<!-- tex4ht:ref: fig:Scheme --></a>, these models are therefore referred to as <span class='cmti-12'>global balance </span>models.
+In Fig. <a href='#the-vertical-arrangement-of-the-boxes-corresponds-to-a-length-scale-with-the-shortest-scales-shown-on-the-bottom-the-boxes-themselves-show-categories-of-models-or-simulation-methods-that-are-used-on-these-scales-in-this-class-we-deal-with-the-discretization-of-fields-and-choose-a-specific-use-case-that-falls-into-the-local-balance-category-'>1.1<!-- tex4ht:ref: fig:Scheme --></a>, these models are therefore referred to as <span class='cmti-12'>global balance </span>models.
 “Lumped-element models” also lead to systems of ordinary differential equations,
 which are often solved numerically by explicit time propagation. Well-known
 representatives of this type of simulation software are, for example <span class='cmti-12'>SPICE </span>or

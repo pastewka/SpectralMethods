@@ -2,15 +2,15 @@
 layout: default
 title: "Differential equations"
 parent: Lecture
-date: 2024-04-19
+date: 2024-07-04
 categories: lecture
 author: Lars Pastewka
 nav_order: 7
 ---
 
 
-<h2 class='chapterHead' id='differential-equations'><span class='titlemark'>Chapter 7</span><br /><a id='x1-10007'></a>Differential equations</h2>
-<div class='framedenv' id='shaded*-1'>
+<h2 class='chapterHead' id='differential-equations'><span class='titlemark'>Chapter 8</span><br /><a id='x1-10008'></a>Differential equations</h2>
+<div class='framedenv' id='shaded_-1'>
 <!-- l. 7 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Context:</span></span> Most of the phenomena we encounter in engineering are very well
 described by differential equations. We remember the discrete network models
 from electrical engineering and systems theory. They are described by a system of
@@ -21,7 +21,7 @@ best described using a partial differential equation (partial differential equat
 In this chapter, we deal with an abstract classification of differential equations.
 The diffusion process will be repeated in more detail in the next chapter.
 </p></div>
-<h3 class='sectionHead' id='ordinary-differential-equations'><span class='titlemark'>7.1 </span> <a id='x1-20007.1'></a>Ordinary differential equations</h3>
+<h3 class='sectionHead' id='ordinary-differential-equations'><span class='titlemark'>8.1 </span> <a id='x1-20008.1'></a>Ordinary differential equations</h3>
 <!-- l. 18 --><p class='noindent'>We recall the classification (properties) of <span class='cmti-12'>ordinary </span>differential equations (ODEs)
 and recognize the different types of differential equations. For all these differential
 equations, we are always interested in a solution for a certain initial value (or
@@ -29,13 +29,13 @@ boundary value), e.g. \(x(t=0)=x_0\) etc. This initial value is always part of t
 differential equation.
 </p><!-- l. 20 --><p class='noindent'>
 </p>
-<h4 class='subsectionHead' id='linearity'><span class='titlemark'>7.1.1 </span> <a id='x1-30007.1.1'></a>Linearity</h4>
+<h4 class='subsectionHead' id='linearity'><span class='titlemark'>8.1.1 </span> <a id='x1-30008.1.1'></a>Linearity</h4>
 <!-- l. 22 --><p class='noindent'>A linear differential equation is, for example \begin {equation} m\ddot {x}(t)+c\dot {x}(t)+kx=f(t) \label {eq:linear} \end {equation}<a id='x1-3001r1'></a> which describes the damped and
 driven harmonic oscillator, while \begin {equation} \frac {\dif ^2x}{\dif t^2}+\mu (x^2-1)\frac {\dif x}{\dif t}+x= 0 \label {eq:nonlinear} \end {equation}<a id='x1-3002r2'></a> is a non-linear equation of motion for \(x\). It
 describes the so-called van der Pol oscillator. The non-linearity can be recognized
 here by the fact that \(x^2\) multiplies the derivative \(\dif x/\dif t\).
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div class='framedenv' id='shaded_-1'>
 <!-- l. 35 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Note:</span></span> The first or higher order derivative is a linear operation, since \begin {equation} \frac {\dif ^n}{\dif x^n} \lambda f(x) = \lambda \frac {\dif ^n}{\dif x^n} f(x) \end {equation}<a id='x1-3003r3'></a> for a
 constant \(\lambda \) and \begin {equation} \frac {\dif ^n}{\dif x^n} \left [f(x) + g(x)\right ] = \frac {\dif ^n}{\dif x^n} f(x) + \frac {\dif ^n}{\dif x^n} g(x). \end {equation}<a id='x1-3004r4'></a> Time derivatives are displayed with a dot, \begin {equation} \dot {x}(t)=\frac {\dif }{\dif t} x(t). \end {equation}<a id='x1-3005r5'></a> For functions of a
 variable, the derivative is often displayed with a dash, \begin {equation} f'(x)=\frac {\dif }{\dif x} f(x). \end {equation}<a id='x1-3006r6'></a> This is no longer possible
@@ -46,13 +46,13 @@ differential operator here. </p></div>
 
 
 
-<h4 class='subsectionHead' id='order'><span class='titlemark'>7.1.2 </span> <a id='x1-40007.1.2'></a>Order</h4>
+<h4 class='subsectionHead' id='order'><span class='titlemark'>8.1.2 </span> <a id='x1-40008.1.2'></a>Order</h4>
 <!-- l. 57 --><p class='noindent'>The order of a differential equation is given by the highest derivative that appears
 in the equation. Eq. \eqref{eq:linear} and Eq. \eqref{eq:nonlinear} are examples
 of second-order differential equations.
 </p><!-- l. 59 --><p class='noindent'>
 </p>
-<h4 class='subsectionHead' id='systems'><span class='titlemark'>7.1.3 </span> <a id='x1-50007.1.3'></a>Systems</h4>
+<h4 class='subsectionHead' id='systems'><span class='titlemark'>8.1.3 </span> <a id='x1-50008.1.3'></a>Systems</h4>
 <!-- l. 61 --><p class='noindent'>A system of first-order differential equations is formed, for example, by the
 equations \begin {align} \frac {\dif x}{\dif t} =&amp; x(m - n y), \label {eq:sys1} \\ \frac {\dif y}{\dif t} =&amp; - y(\gamma - \delta x), \label {eq:sys2} \end {align}
 </p><!-- l. 66 --><p class='indent'> the well-known Räuber-Beute equations or Lotka-Volterra equations.
@@ -63,7 +63,7 @@ and thus obtain two first-order equations instead of the original second-order
 equation, namely \begin {align} \dot {x} =&amp; y \\ m\dot {y} =&amp; -cy-kx+f(t) \end {align}
 </p><!-- l. 79 --><p class='noindent'>
 </p>
-<h3 class='sectionHead' id='partial-differential-equations'><span class='titlemark'>7.2 </span> <a id='x1-60007.2'></a>Partial differential equations</h3>
+<h3 class='sectionHead' id='partial-differential-equations'><span class='titlemark'>8.2 </span> <a id='x1-60008.2'></a>Partial differential equations</h3>
 <!-- l. 82 --><p class='noindent'>Partial differential equations (PDEs) are differential equations with more than one
 independent variable. As an example, we imagine a time-dependent heat transport
 problem in one dimension. This is represented by a diffusion equation
@@ -74,7 +74,7 @@ denotes the heat conduction coefficient. This equation was developed by
 Joseph Fourier (*1768, \(\dagger \)1830), whom we will encounter again during this
 course.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div class='framedenv' id='shaded_-1'>
 <!-- l. 91 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Note:</span></span> In Eq. \eqref{eq:heateq}\(\partial /\partial t\) denotes the <span class='cmti-12'>partial derivative</span>. This is the
 derivative with respect to one of the arguments (here \(t\)), i.e. the variation of
 the function if all other arguments are kept constant. With ODEs, in
@@ -86,11 +86,11 @@ the time \(t\)) occur, which are then denoted by the differential operator \(\di
 
 <!-- l. 95 --><p class='noindent'>
 </p>
-<h4 class='subsectionHead' id='first-order'><span class='titlemark'>7.2.1 </span> <a id='x1-70007.2.1'></a>First order</h4>
+<h4 class='subsectionHead' id='first-order'><span class='titlemark'>8.2.1 </span> <a id='x1-70008.2.1'></a>First order</h4>
 <!-- l. 96 --><p class='noindent'>Quasilinear PDEs of the first order, i.e. equations of the form \begin {equation} P(x,t;u)\frac {\partial u(x,t)}{\partial x}+ Q(x,t;u)\frac {\partial u(x,t)}{\partial t}= R(x,t;u), \label {eq:PDE1Oquasi} \end {equation}<a id='x1-7001r9'></a> for an (unknown)
 function \(u(x,t)\) and the initial condition \(u(x,t=0)=u_0(x)\) can be systematically traced back to a system
 of coupled first-order ODEs. We want to investigate this important property.
-</p><div class='framedenv' id='shaded*-1'>
+</p><div class='framedenv' id='shaded_-1'>
 <!-- l. 103 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Note:</span></span> In Eq. \eqref{eq:PDE1Oquasi} a representation with two variables \(x\) and \(t\)
 was chosen for illustration. In general, we can write \begin {equation} \sum \limits _i P_i(\{x_i\};u)\frac {\partial u(\{x_i\})}{\partial x_i}= R(\{x_i\};u) \end {equation}<a id='x1-7002r10'></a> The notation used here is \(u(\{x_i\})=u(x_0, x_1, x_2, \ldots )\),
 i.e. the curly brackets denote all degrees of freedom \(x_i\). </p></div>
@@ -109,8 +109,7 @@ to \(x(s)\) and \(t(s)\).
 <li class='enumerate' id='x1-7009x3'>
 <!-- l. 124 --><p class='noindent'>By comparing the coefficients of the total derivative \eqref{eq:totalderiv}
 with the PDE \eqref{eq:PDE1Oquasi}, you can see that this DGL is solved
-exactly when \begin {align} \frac {dx(s)}{ds}&amp;=P(x,t,u),\label {eq:transode1}\\\
-\frac {dt(s)}{ds}&amp;=Q(x,t,u)\quad \text {und}\\ \frac {du(s)}{ds} &amp;= R(u(s)).\label {eq:transode3} \end {align}
+exactly when \begin {align} \frac {dx(s)}{ds}&amp;=P(x,t,u),\label {eq:transode1}\\\\frac {dt(s)}{ds}&amp;=Q(x,t,u)\quad \text {und}\\ \frac {du(s)}{ds} &amp;= R(u(s)).\label {eq:transode3} \end {align}
 </p><!-- l. 130 --><p class='noindent'>is fulfilled. This describes the solution along certain curves in the
 \((x,t)\)-plane.</p></li></ol>
 <!-- l. 132 --><p class='noindent'>We have thus converted the PDE into a set of coupled first-order ODEs,
@@ -119,7 +118,7 @@ Eq. \eqref{eq:transex1}-\eqref{eq:transex3}.
 
 
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div class='framedenv' id='shaded_-1'>
 <!-- l. 134 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Example:</span></span> The transport equation \begin {equation} \frac {\partial u(x,t)}{\partial t}+c\frac {\partial u(x,t)}{\partial x}=0 \label {eq:transportexample} \end {equation}<a id='x1-7010r12'></a> with the initial condition \(u(x,t=0)=u_0(x)\) is to be solved. We
 proceed according to the recipe above:
 </p><ol class='enumerate1'>
@@ -150,7 +149,7 @@ given by the initial condition. The field \(u(x,0)\) is therefore shifted at a c
 
 <!-- l. 167 --><p class='noindent'>
 </p>
-<h4 class='subsectionHead' id='second-order'><span class='titlemark'>7.2.2 </span> <a id='x1-80007.2.2'></a>Second order</h4>
+<h4 class='subsectionHead' id='second-order'><span class='titlemark'>8.2.2 </span> <a id='x1-80008.2.2'></a>Second order</h4>
 <!-- l. 171 --><p class='noindent'>Examples of second-order PDEs are the... </p>
 <ul class='itemize1'>
 <li class='itemize'>...wave equation: \begin {equation} \frac {\partial ^2 u}{\partial t^2}-\frac {\partial ^2 u}{\partial x^2}=0 \end {equation}<a id='x1-8001r15'></a>
@@ -229,7 +228,7 @@ above.
 </p><!-- l. 315 --><p class='indent'> These three types of 2nd-order linear PDEs can also be solved analytically for
 some problems. In the following, we give an example of this.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div class='framedenv' id='shaded_-1'>
 <!-- l. 319 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Example:</span></span> We solve the one-dimensional wave equation. \begin {equation} \frac {\partial ^2 u}{\partial x^2}-\frac {1}{c^2}\frac {\partial ^2 u}{\partial t^2}=0 \label {eqn1Dwaveeqn} \end {equation}<a id='x1-8016r30'></a> by separating
 the variables. To do this, we take the approach \(u(x,t)=X(x)T(t)\), which leads to \begin {equation} \frac {1}{X}\frac {\partial ^2 X}{\partial x^2}=\frac {1}{c^2}\frac {1}{T}\frac {\partial ^2 T}{\partial t^2}. \label {eqnseparate} \end {equation}<a id='x1-8017r31'></a> In
 Eq. \eqref{eqnseparate}, the left-hand side depends only on the variable \(x\),

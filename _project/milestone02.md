@@ -29,7 +29,8 @@ We can use this incompressibility condition to compute the pressure. Taking the 
 
 $$\nabla^2 P=2\nabla\cdot\left(\vec{u}\times \vec{\omega}\right).$$
 
-This equation is known as the pressure Poisson equation.
+This equation is known as the pressure Poisson equation. You have seen how to solve equations of this type in
+[tutorial 3](tutorial03.md) and [tutorial 4](tutorial04.md).
 
 ### Task 1: Spectral Navier-Stokes equations
 

@@ -2,15 +2,15 @@
 layout: default
 title: "Transport theory"
 parent: Lecture
-date: 2024-04-19
+date: 2024-07-04
 categories: lecture
 author: Lars Pastewka
-nav_order: 2
+nav_order: 1
 ---
 
 
 <h2 class='chapterHead' id='transport-theory'><span class='titlemark'>Chapter 2</span><br /><a id='x1-10002'></a>Transport theory</h2>
-<div class='framedenv' id='shaded*-1'>
+<div class='framedenv' id='shaded_-1'>
 <!-- l. 8 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Context:</span></span> We introduce the foundations of transport theory, in particular how to
 balance conserved quantity. This leads to the <span class='cmti-12'>continuity equation</span>. We
 start from an illustrating example, the diffusion of suspended particles.
@@ -28,16 +28,16 @@ movement is caused by thermal fluctuations, i.e. molecules that randomly hit
 suspended particles and push them in random directions. This explanation
 requires the existence of atoms and was popularized in 1905 by Albert
 Einstein (<a href='#Xeinstein_uber_1905'>Einstein</a>, <a href='#Xeinstein_uber_1905'>1905</a>).
-</p><!-- l. 16 --><p class='indent'> Brownian molecular motion leads to diffusive transport. Figure <a href='#-illustration-of-diffusion-the-pollen-in-a-move-randomly-in-the-domain-after-a-certain-time-b-the-initial-concentration-difference-between-the-left-and-right-parts-of-the-domain-is-equalized-'>2.1<!-- tex4ht:ref: fig:brownian --></a> shows a
-simple qualitative thought experiment. The configuration in Fig. <a href='#-illustration-of-diffusion-the-pollen-in-a-move-randomly-in-the-domain-after-a-certain-time-b-the-initial-concentration-difference-between-the-left-and-right-parts-of-the-domain-is-equalized-'>2.1<!-- tex4ht:ref: fig:brownian --></a>a shows a
+</p><!-- l. 16 --><p class='indent'> Brownian molecular motion leads to diffusive transport. Figure <a href='#illustration-of-diffusion-the-pollen-in-a-move-randomly-in-the-domain-after-a-certain-time-b-the-initial-concentration-difference-between-the-left-and-right-parts-of-the-domain-is-equalized'>2.1<!-- tex4ht:ref: fig:brownian --></a> shows a
+simple qualitative thought experiment. The configuration in Fig. <a href='#illustration-of-diffusion-the-pollen-in-a-move-randomly-in-the-domain-after-a-certain-time-b-the-initial-concentration-difference-between-the-left-and-right-parts-of-the-domain-is-equalized'>2.1<!-- tex4ht:ref: fig:brownian --></a>a shows a
 localization of the “pollen” in the left half of the domain shown. Due to their
-random movement (shown as an example by the red line in Fig. <a href='#-illustration-of-diffusion-the-pollen-in-a-move-randomly-in-the-domain-after-a-certain-time-b-the-initial-concentration-difference-between-the-left-and-right-parts-of-the-domain-is-equalized-'>2.1<!-- tex4ht:ref: fig:brownian --></a>a), some of
+random movement (shown as an example by the red line in Fig. <a href='#illustration-of-diffusion-the-pollen-in-a-move-randomly-in-the-domain-after-a-certain-time-b-the-initial-concentration-difference-between-the-left-and-right-parts-of-the-domain-is-equalized'>2.1<!-- tex4ht:ref: fig:brownian --></a>a), some of
 the pollen will cross the dashed boundary line into the right half and also come
 back again. After a certain time, the initial state can no longer be identified and
-the pollen are distributed throughout the domain (Fig. <a href='#-illustration-of-diffusion-the-pollen-in-a-move-randomly-in-the-domain-after-a-certain-time-b-the-initial-concentration-difference-between-the-left-and-right-parts-of-the-domain-is-equalized-'>2.1<!-- tex4ht:ref: fig:brownian --></a>b). The concentration
+the pollen are distributed throughout the domain (Fig. <a href='#illustration-of-diffusion-the-pollen-in-a-move-randomly-in-the-domain-after-a-certain-time-b-the-initial-concentration-difference-between-the-left-and-right-parts-of-the-domain-is-equalized'>2.1<!-- tex4ht:ref: fig:brownian --></a>b). The concentration
 is now constant. The pollen continue to move, but on average the same
 number of pollen move to the left as to the right. In the case shown in
-Fig. <a href='#-illustration-of-diffusion-the-pollen-in-a-move-randomly-in-the-domain-after-a-certain-time-b-the-initial-concentration-difference-between-the-left-and-right-parts-of-the-domain-is-equalized-'>2.1<!-- tex4ht:ref: fig:brownian --></a>a, this left/right symmetry is broken which leads to a finite flux to the
+Fig. <a href='#illustration-of-diffusion-the-pollen-in-a-move-randomly-in-the-domain-after-a-certain-time-b-the-initial-concentration-difference-between-the-left-and-right-parts-of-the-domain-is-equalized'>2.1<!-- tex4ht:ref: fig:brownian --></a>a, this left/right symmetry is broken which leads to a finite flux to the
 right.
 </p>
 <figure class='figure'>
@@ -48,7 +48,7 @@ right.
 
 
 
-<!-- l. 22 --><p class='noindent' id='-illustration-of-diffusion-the-pollen-in-a-move-randomly-in-the-domain-after-a-certain-time-b-the-initial-concentration-difference-between-the-left-and-right-parts-of-the-domain-is-equalized-'> <img alt='PIC' height='222' src='Figures/Brownian_Motion-.png' width='585' /> <a id='x1-2001r1'></a>
+<!-- l. 22 --><p class='noindent' id='illustration-of-diffusion-the-pollen-in-a-move-randomly-in-the-domain-after-a-certain-time-b-the-initial-concentration-difference-between-the-left-and-right-parts-of-the-domain-is-equalized'> <img alt='PIC' height='222' src='Figures/Brownian_Motion-.png' width='585' /> <a id='x1-2001r1'></a>
 </p>
 <figcaption class='caption'><span class='id'>Figure 2.1: </span><span class='content'>Illustration of diffusion. The “pollen” in (a) move randomly in the
 domain. After a certain time (b), the initial concentration difference between
@@ -63,7 +63,7 @@ a particle that performs a random movement in one dimension is performed. We
 start with a particle that randomly jumps back and forth on a straight line. The
 straight line lies along the x-direction. The particle can only move to
 predetermined positions on the x-axis, which we denote by \(x_j\) and which are
-equidistant, \(x_j-x_{j-1}=\Delta x\) for \(j\in \mathbb {Z}\) (see Fig. <a href='#-random-movement-in-one-dimension-is-given-by-transition-probabilities-p-for-a-movement-to-the-left-and-q-for-a-movement-to-the-right-'>2.2<!-- tex4ht:ref: fig:Brown --></a>).
+equidistant, \(x_j-x_{j-1}=\Delta x\) for \(j\in \mathbb {Z}\) (see Fig. <a href='#random-movement-in-one-dimension-is-given-by-transition-probabilities-p-for-a-movement-to-the-left-and-q-for-a-movement-to-the-right'>2.2<!-- tex4ht:ref: fig:Brown --></a>).
 </p>
 <figure class='figure'>
 
@@ -73,7 +73,7 @@ equidistant, \(x_j-x_{j-1}=\Delta x\) for \(j\in \mathbb {Z}\) (see Fig. <a hre
 
 
 
-<!-- l. 34 --><p class='center' id='-random-movement-in-one-dimension-is-given-by-transition-probabilities-p-for-a-movement-to-the-left-and-q-for-a-movement-to-the-right-'><img alt='PICT' src='single-transport-theory0x.svg' /><a id='x1-2002r2'></a>
+<!-- l. 34 --><p class='center' id='random-movement-in-one-dimension-is-given-by-transition-probabilities-p-for-a-movement-to-the-left-and-q-for-a-movement-to-the-right'><img alt='PICT' src='single-transport-theory0x.svg' /><a id='x1-2002r2'></a>
 </p>
 <figcaption class='caption'><span class='id'>Figure 2.2: </span><span class='content'>Random movement in one dimension is given by transition
 probabilities \(p\) (for a movement to the left) and \(q\) for a movement to the right.
@@ -101,7 +101,7 @@ diffusion equation. In multiple dimensions, the second derivative becomes the
 Laplace operator \(\nabla ^2\), \begin {equation} \frac {\partial P(x,t)}{\partial t}=D \nabla ^2 P(x,t). \label {eq:diffusion} \end {equation}<a id='x1-3005r5'></a> This equation is only correct if the diffusion constant is
 actually constant and does not vary spatially.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div class='framedenv' id='shaded_-1'>
 <!-- l. 95 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Note:</span></span> The operator \(\nabla \) is a vector of the partial derivatives in the Cartesian
 direction, i.e. \begin {equation} \nabla = \begin {pmatrix} \partial /\partial x \\ \partial /\partial y \\ \partial /\partial z \end {pmatrix}. \end {equation}<a id='x1-3006r6'></a> Applying it to a scalar function \(f(x,y,z)\) yields the gradient, \begin {equation} \nabla f= \text {grad}\,f = \begin {pmatrix} \partial f/\partial x \\ \partial f/\partial y \\ \partial f/\partial z \end {pmatrix}. \end {equation}<a id='x1-3007r7'></a> The Laplacian
 is sometimes denoted by \(\nabla ^2\) (often in the anglosaxon literature) or \(\Delta \) (e.g. in the
@@ -116,8 +116,7 @@ sampling points.
 </p><!-- l. 120 --><p class='indent'> In this case, we have \begin {equation} P(x,t+\tau )=pP(x+\Delta x,t)+qP(x-\Delta x,t) \end {equation}<a id='x1-4001r9'></a> which yields \begin {equation} \frac {P(x,t+\tau )-P(x,t)}{\tau }=\frac {\Delta x^2}{\tau }\frac {pP(x+\Delta x,t)-P(x,t)+qP(x-\Delta x,t)}{\Delta x^2}. \label {eq:driftpq} \end {equation}<a id='x1-4002r10'></a> This can be simplified by writing \begin {equation} p=\frac {1}{2}-\varepsilon \quad \text {and}\quad q=\frac {1}{2}+\varepsilon \quad \text {with}\quad 0\le |\varepsilon |\le \frac {1}{2} \quad \text {or}\quad 2\varepsilon = q-p, \end {equation}<a id='x1-4003r11'></a> where \(\varepsilon \)
 now indicates how much more likely a jump to <span class='cmti-12'>right </span>is than to the left. A positive \(\varepsilon \)
 therefore means that the particles will move to the right on average – this is called
-<span class='cmti-12'>drift</span>. We can now write Eq. \eqref{eq:driftpq} using \(\varepsilon \), giving \begin {equation} \begin {split} \frac {P(x,t+\tau )-P(x,t)}{\tau }=&amp; \frac {\Delta x^2}{2\tau }\frac {P(x+\Delta x,t)-2P(x,t)+P(x-\Delta x,t)}{\Delta x^2}\\\
-&amp;-\frac {2\varepsilon \Delta x}{\tau }\frac {P(x+\Delta x,t)-P(x-\Delta x,t)}{2\Delta x}. \end {split} \end {equation}<a id='x1-4004r12'></a> In the limit \(\tau \rightarrow 0\) and \(\Delta x\rightarrow 0\)
+<span class='cmti-12'>drift</span>. We can now write Eq. \eqref{eq:driftpq} using \(\varepsilon \), giving \begin {equation} \begin {split} \frac {P(x,t+\tau )-P(x,t)}{\tau }=&amp; \frac {\Delta x^2}{2\tau }\frac {P(x+\Delta x,t)-2P(x,t)+P(x-\Delta x,t)}{\Delta x^2}\\\&amp;-\frac {2\varepsilon \Delta x}{\tau }\frac {P(x+\Delta x,t)-P(x-\Delta x,t)}{2\Delta x}. \end {split} \end {equation}<a id='x1-4004r12'></a> In the limit \(\tau \rightarrow 0\) and \(\Delta x\rightarrow 0\)
 
 
 
@@ -128,7 +127,7 @@ and \eqref{eq:driftdiffusion} it can be seen that the unit of \(v\) corresponds 
 to a velocity). It is the speed at which the particle moves (on average) along the
 \(x\)-axis.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div class='framedenv' id='shaded_-1'>
 <!-- l. 162 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Note:</span></span> The motion of our particle was modeled using a <span class='cmti-12'>probability density</span> \(P\). In the
 thermodynamic limit, i.e. for many particles (usually of the order of Avogadro’s
 number \(N_\text {A}\sim 10^{23}\)), this probability becomes the (mass) density \(\rho \) or the concentration
@@ -150,9 +149,9 @@ over the total volume of our system, essentially the physical world of the
 model.
 </p><!-- l. 183 --><p class='indent'> For a small section of our physical world with volume \(V\), the number of particles
 can change because they can flow over the walls of the sample volume
-(see Fig. <a href='#-particles-can-only-leave-the-volume-v-through-the-side-walls-the-change-in-the-number-of-particles-n-over-a-time-interval-is-therefore-given-by-the-number-of-particles-flowing-through-the-walls-for-this-we-need-the-particle-flows-j-the-number-of-particles-flowing-through-a-surface-is-then-given-by-ja-where-a-is-the-area-of-the-side-wall-'>2.3<!-- tex4ht:ref: fig:continuity --></a>). The change in the number of particles within \(V\) is given by
+(see Fig. <a href='#particles-can-only-leave-the-volume-v-through-the-side-walls-the-change-in-the-number-of-particles-n-over-a-time-interval-is-therefore-given-by-the-number-of-particles-flowing-through-the-walls-for-this-we-need-the-particle-flows-j-the-number-of-particles-flowing-through-a-surface-is-then-given-by-ja-where-a-is-the-area-of-the-side-wall'>2.3<!-- tex4ht:ref: fig:continuity --></a>). The change in the number of particles within \(V\) is given by
 \begin {equation} \dot {N}_\text {V} = \frac {\partial }{\partial t} \int _V \dif ^3r \, c(\v {r}, t) = \int _V \dif ^3r \, \frac {\partial c}{\partial t}. \label {eq:nchange} \end {equation}<a id='x1-5002r18'></a> However, the change \(\dot {N}_\text {V}\) must also be given by the number of particles
-flowing through the side walls. For a cube (Fig. <a href='#-particles-can-only-leave-the-volume-v-through-the-side-walls-the-change-in-the-number-of-particles-n-over-a-time-interval-is-therefore-given-by-the-number-of-particles-flowing-through-the-walls-for-this-we-need-the-particle-flows-j-the-number-of-particles-flowing-through-a-surface-is-then-given-by-ja-where-a-is-the-area-of-the-side-wall-'>2.3<!-- tex4ht:ref: fig:continuity --></a>) with six walls, it is
+flowing through the side walls. For a cube (Fig. <a href='#particles-can-only-leave-the-volume-v-through-the-side-walls-the-change-in-the-number-of-particles-n-over-a-time-interval-is-therefore-given-by-the-number-of-particles-flowing-through-the-walls-for-this-we-need-the-particle-flows-j-the-number-of-particles-flowing-through-a-surface-is-then-given-by-ja-where-a-is-the-area-of-the-side-wall'>2.3<!-- tex4ht:ref: fig:continuity --></a>) with six walls, it is
 approximately given \begin {equation} \begin {split} \dot {N}_\text {V} = &amp; - j_{\text {right}} A_{\text {right}} - j_{\text {left}} A_{\text {left}} \\ &amp; - j_{\text {above}} A_{\text {above}} - j_{\text {bottom}} A_{\text {bottom}} \\ &amp; - j_{\text {front}} A_{\text {front}} - j_{\text {back}} A_{\text {back}} \end {split} \label {eq:dotN} \end {equation}<a id='x1-5003r19'></a> if the walls are small enough so that \(j\) is almost
 constant over \(A\). We have, in passing, introduced the current density \(j\) has
 the unit number of particles/time/area. The quantities \(j A\) are hence the
@@ -170,7 +169,7 @@ number of particles flowing per unit time through one of the walls with are
 
 
 
-<!-- l. 223 --><p class='noindent' id='-particles-can-only-leave-the-volume-v-through-the-side-walls-the-change-in-the-number-of-particles-n-over-a-time-interval-is-therefore-given-by-the-number-of-particles-flowing-through-the-walls-for-this-we-need-the-particle-flows-j-the-number-of-particles-flowing-through-a-surface-is-then-given-by-ja-where-a-is-the-area-of-the-side-wall-'><img alt='PIC' height='282' src='Figures/continuity.png' width='272' /> <a id='x1-5004r3'></a>
+<!-- l. 223 --><p class='noindent' id='particles-can-only-leave-the-volume-v-through-the-side-walls-the-change-in-the-number-of-particles-n-over-a-time-interval-is-therefore-given-by-the-number-of-particles-flowing-through-the-walls-for-this-we-need-the-particle-flows-j-the-number-of-particles-flowing-through-a-surface-is-then-given-by-ja-where-a-is-the-area-of-the-side-wall'><img alt='PIC' height='282' src='Figures/continuity.png' width='272' /> <a id='x1-5004r3'></a>
 </p>
 <figcaption class='caption'><span class='id'>Figure 2.3: </span><span class='content'>Particles can only leave the volume \(V\) through the side walls. The
 change in the number of particles \(N\) over a time interval \(\tau \) is therefore given
@@ -205,7 +204,7 @@ becomes \begin {equation} \dot {N} = -\int _{V} \dif ^3r \, \nabla \cdot \v {j}(
 Eq. \eqref{eq:divergencetheorem}) to express Eq. \eqref{eq:flux} as a volume
 integral.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div class='framedenv' id='shaded_-1'>
 <!-- l. 302 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Note:</span></span> We have expressed the <span class='cmti-12'>divergence </span>of a vectorial field \(\v {f}(\v {r})\) through the nabla
 operator, \begin {equation} \nabla \cdot \v {f} = \text {div}\, \v {f} = \frac {\partial f_x}{\partial x} + \frac {\partial f_y}{\partial y} + \frac {\partial f_z}{\partial z} \end {equation}<a id='x1-5010r25'></a> The <span class='cmti-12'>divergence theorem </span>is an important result of vector calculus. It
 converts an integral over a volume \(V\) into an integral over the surface \(\partial V\) of this
@@ -219,7 +218,7 @@ this applies to any volume \(V\), the equation \begin {equation} \frac {\partial
 <span class='cmti-12'>continuity equation</span>. It describes the conservation of the number of particles or the
 mass of the system.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div class='framedenv' id='shaded_-1'>
 <!-- l. 343 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Note:</span></span> In the derivation presented here, we have already implicitly used the
 <span class='cmti-12'>strong </span>formulation and a <span class='cmti-12'>weak </span>formulation of a differential equation.
 
@@ -245,7 +244,7 @@ particle or heat source, the continuity equation can be extended to \begin {equa
 continuity equation with source term is also sometimes referred to as the <span class='cmti-12'>balance
 equation</span>.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div class='framedenv' id='shaded_-1'>
 <!-- l. 354 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Note:</span></span> Equation \eqref{eq:continuitywithsource} describes the change in
 concentration \(c\) over time. A related question is how to solve this equation after a
 very long time - when a dynamic equilibrium has been reached and the
@@ -272,7 +271,7 @@ the diffusion equation \eqref{eq:diffusion}.
 equations \eqref{eq:diffusion} and \eqref{eq:driftdiffusion}, this equation also
 applies if the diffusion constant \(D\) or drift velocity \(\v {v}\) varies spatially.
 </p>
-<div class='framedenv' id='shaded*-1'>
+<div class='framedenv' id='shaded_-1'>
 <!-- l. 387 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Note:</span></span> We have introduced transport theory here in terms of a particle
 concentration \(c\). However, the continuity equation generally describes the
 <span class='cmti-12'>conservation </span>of a certain quantity, in our case the number of particles (or
@@ -286,8 +285,8 @@ equation. </p></div>
 <h2 class='likechapterHead' id='bibliography'><a id='x1-8000'></a>Bibliography</h2>
 <div class='thebibliography'>
 <p class='bibitem'><span class='biblabel'>
-<a id='Xeinstein_uber_1905'></a><span class='bibsp'>   </span></span>A. Einstein. Über die von der molekularkinetischen Theorie der Wärme
-geforderte Bewegung von in ruhenden Flüssigkeiten suspendierten
+<a id='Xeinstein_uber_1905'></a><span class='bibsp'>   </span></span>A. Einstein. Über die von der molekularkinetischen Theorie der
+Wärme geforderte Bewegung von in ruhenden Flüssigkeiten suspendierten
 Teilchen. <span class='cmti-12'>Ann. Phys.</span>, 17:549, 1905.
 </p>
 </div>
