@@ -61,9 +61,9 @@ with the inner (or scalar) product \(\v {a}\cdot \v {b}\), we will always explic
 <!-- l. 136 --><p class='noindent'>
 </p>
 <h3 class='sectionHead' id='newtonian-fluids'><span class='titlemark'>3.4 </span> <a id='x1-50003.4'></a>Newtonian fluids</h3>
-<!-- l. 138 --><p class='noindent'>The simplest constitutive law for fluids is given by \begin {equation} \t {\tau } = P\t {1} - \eta \t {\dot \gamma }, \end {equation}<a id='x1-5001r11'></a> where \(P\) is the fluid pressure, \(\eta \)
-the viscosity and \begin {equation} \t {\dot \gamma } = \nabla \otimes \t {v} \end {equation}<a id='x1-5002r12'></a> the shear-rate tensor.
-</p><!-- l. 152 --><p class='indent'> The overall equation for momentum equation then becomes \begin {equation} \frac {\partial \v {j}_\rho }{\partial t} + \nabla \cdot \left ( \rho \v {v}\otimes \v {v} + P\t {1} - \eta \t {\dot \gamma } \right ) = 0 \end {equation}<a id='x1-5003r13'></a> For
+<!-- l. 138 --><p class='noindent'>The simplest constitutive law for fluids is given by \begin {equation} \t {\tau } = P\t {1} - \eta \dot {\t {\gamma }}, \end {equation}<a id='x1-5001r11'></a> where \(P\) is the fluid pressure, \(\eta \)
+the viscosity and \begin {equation} \dot {\t {\gamma }} = \nabla \otimes \t {v} \end {equation}<a id='x1-5002r12'></a> the shear-rate tensor.
+</p><!-- l. 152 --><p class='indent'> The overall equation for momentum equation then becomes \begin {equation} \frac {\partial \v {j}_\rho }{\partial t} + \nabla \cdot \left ( \rho \v {v}\otimes \v {v} + P\t {1} - \eta \dot {\t {\gamma }} \right ) = 0 \end {equation}<a id='x1-5003r13'></a> For
 incompressible flow, this can be simplified to \begin {equation} \frac {\partial \v {v}}{\partial t} + \left ( \v {v} \cdot \nabla \right ) \v {v} + \nabla p - \nu \nabla ^2\v {v} = 0. \label {eq:incompressible-navier-stokes} \end {equation}<a id='x1-5004r14'></a> with kinematic viscosity \(\nu =\eta /\rho \)
 and specific pressure \(p=P/\rho \). We can further rewrite the convective term to
 \begin {equation} \frac {\partial \v {v}}{\partial t} = \v {v} \times \left ( \nabla \times \v {v} \right ) + \nu \nabla ^2\v {v} - \nabla p. \label {eq:rotational-navier-stokes} \end {equation}<a id='x1-5005r15'></a>
