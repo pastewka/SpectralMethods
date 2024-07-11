@@ -15,7 +15,7 @@ Welcome to the lecture on **Spectral Simulation Methods**. Here you will find th
 
 We specifically recommend the following resources:
 
-* Spectral Methods:_ J. P. Boyd, Chebyshev and Fourier Spectral Methods, Springer (1989) - [Link](https://link.springer.com/book/9783540514879), [PDF](https://depts.washington.edu/ph506/Boyd.pdf)
+* _Spectral Methods:_ J. P. Boyd, Chebyshev and Fourier Spectral Methods, Springer (1989) - [Link](https://link.springer.com/book/9783540514879), [PDF](https://depts.washington.edu/ph506/Boyd.pdf)
 
 ## Single PDF
 
