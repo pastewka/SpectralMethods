@@ -2,7 +2,7 @@
 layout: default
 title: "Introduction"
 parent: Lecture
-date: 2024-07-04
+date: 2024-07-11
 categories: lecture
 author: Lars Pastewka
 nav_order: 0

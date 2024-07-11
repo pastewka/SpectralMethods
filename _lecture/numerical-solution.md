@@ -2,22 +2,22 @@
 layout: default
 title: "Numerical solution"
 parent: Lecture
-date: 2024-07-04
+date: 2024-07-11
 categories: lecture
 author: Lars Pastewka
-nav_order: 2
+nav_order: 3
 ---
 
 
-<h2 class='chapterHead' id='numerical-solution'><span class='titlemark'>Chapter 3</span><br /><a id='x1-10003'></a>Numerical solution</h2>
+<h2 class='chapterHead' id='numerical-solution'><span class='titlemark'>Chapter 4</span><br /><a id='x1-10004'></a>Numerical solution</h2>
 <div class='framedenv' id='shaded_-1'>
-<!-- l. 6 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Context:</span></span> We will now put the transportation problem aside for a while and
-devote ourselves to the <span class='cmti-12'>numerical </span>solution of differential equations. This chapter
-shows the basics of the numerical analysis of differential equations and
+<!-- l. 6 --><p class='noindent'><span class='underline'><span class='cmbx-12'>Context:</span></span> We will now put the transport problem aside for a while and devote
+ourselves to the <span class='cmti-12'>numerical </span>solution of differential equations. This chapter
+illustrates the basic ideas behind numerical analysis of differential equations. It
 introduces a few important concepts, in particular the series expansion and
 the residual. The presentation here follows chapter 1 from <a href='#Xboyd_chebyshev_2000'>Boyd</a> (<a href='#Xboyd_chebyshev_2000'>2000</a>).
 </p></div>
-<h3 class='sectionHead' id='series-expansion'><span class='titlemark'>3.1 </span> <a id='x1-20003.1'></a>Series expansion</h3>
+<h3 class='sectionHead' id='series-expansion'><span class='titlemark'>4.1 </span> <a id='x1-20004.1'></a>Series expansion</h3>
 <!-- l. 12 --><p class='noindent'>In abstract notation, we are looking for unknown functions \(u(x,y,z,...)\) that solve a set
 of differential equations \begin {equation} \mathcal {L} u(x,y,z,\ldots ) = f(x,y,z,\ldots ) \label {eq:gendgl} \end {equation}<a id='x1-2001r1'></a> must be fulfilled. Here, \(\mathcal {L}\) is a (not necessarily
 linear) operator that contains the differential (or integral) operations. We
@@ -49,7 +49,7 @@ non-trivial.
 
 
 </p>
-<h3 class='sectionHead' id='residual'><span class='titlemark'>3.2 </span> <a id='x1-30003.2'></a>Residual</h3>
+<h3 class='sectionHead' id='residual'><span class='titlemark'>4.2 </span> <a id='x1-30004.2'></a>Residual</h3>
 <!-- l. 41 --><p class='noindent'>An important concept is that of the <span class='cmti-12'>residual</span>. Our goal is to solve
 Eq. \eqref{eq:gendgl}. The exact solution would be \(\mathcal {L} u - f\equiv 0\). However, since we can only
 construct an approximate solution, this condition will not be fulfilled exactly. We
@@ -74,7 +74,7 @@ optimization methods can be found in the book by <a href='#Xnocedal_numerical_20
 </p></div>
 <!-- l. 54 --><p class='noindent'>
 </p>
-<h3 class='sectionHead' id='a-first-example'><span class='titlemark'>3.3 </span> <a id='x1-40003.3'></a>A first example</h3>
+<h3 class='sectionHead' id='a-first-example'><span class='titlemark'>4.3 </span> <a id='x1-40004.3'></a>A first example</h3>
 <!-- l. 57 --><p class='noindent'>We now want to concretize these abstract ideas using an example and introduce a
 few important terms. Let’s look at the one-dimensional boundary value problem, \begin {equation} \frac {\dif ^2 u}{\dif x^2} - (x^6 + 3x^2)u = 0, \label {eq:odeexample} \end {equation}<a id='x1-4001r5'></a>
 with the boundary conditions \(u(-1)=u(1)=1\). (I.e. \(x\in [-1,1]\) is the domain on which we are looking for
@@ -102,7 +102,7 @@ restricted to a limited set of functions, namely the functions covered by
 Eq. \eqref{eq:approxexample}. </p></div>
 <!-- l. 98 --><p class='indent'> From the collocation condition we now get a linear system of equations with
 three unknowns: \begin {align} R(x_0; a_0, a_1, a_2) \equiv &amp; -\frac {659}{256} a_0 + \frac {1683}{512} a_1 - \frac {1171}{1024} a_2 - \frac {49}{64} = 0 \\ R(x_1; a_0, a_1, a_2) \equiv &amp; -2(a_0-a_2) = 0 \\ R(x_2; a_0, a_1, a_2) \equiv &amp; -\frac {659}{256} a_0 - \frac {1683}{512} a_1 - \frac {1171}{1024} a_2 - \frac {49}{64} = 0 \\ \end {align}
-</p><!-- l. 104 --><p class='indent'> The solution of these equations results in \begin {equation} a_0 = -\frac {784}{3807}, \quad a_1 = 0 \quad \text {and} \quad a_2 = a_0. \end {equation}<a id='x1-4008r12'></a> Figure <a href='#analytical-solution-ux-and-numerical-approximate-solution-ux-of-the-gdgl-tht-x-thteqrefeqodeexample-tht'>3.1<!-- tex4ht:ref: fig:first_example --></a> shows the “numerical”
+</p><!-- l. 104 --><p class='indent'> The solution of these equations results in \begin {equation} a_0 = -\frac {784}{3807}, \quad a_1 = 0 \quad \text {and} \quad a_2 = a_0. \end {equation}<a id='x1-4008r12'></a> Figure <a href='#analytical-solution-ux-and-numerical-approximate-solution-ux-of-the-gdgl-tht-x-thteqrefeqodeexample-tht'>4.1<!-- tex4ht:ref: fig:first_example --></a> shows the “numerical”
 solution \(u_2(x)\) in comparison with the exact solution \(u(x)\).
 </p>
 <figure class='figure'>
@@ -115,7 +115,7 @@ solution \(u_2(x)\) in comparison with the exact solution \(u(x)\).
 
 <!-- l. 114 --><p class='noindent' id='analytical-solution-ux-and-numerical-approximate-solution-ux-of-the-gdgl-tht-x-thteqrefeqodeexample-tht'> <img alt='PIC' height='250' src='Figures/numerical_example-.png' width='585' /> <a id='x1-4009r1'></a>
 </p>
-<figcaption class='caption'><span class='id'>Figure 3.1: </span><span class='content'>Analytical solution \(u(x)\) and “numerical” approximate solution \(u_2(x)\) of
+<figcaption class='caption'><span class='id'>Figure 4.1: </span><span class='content'>Analytical solution \(u(x)\) and “numerical” approximate solution \(u_2(x)\) of
 the GDGL \eqref{eq:odeexample}.
 </span></figcaption><!-- tex4ht:label?: x1-4009r1 -->
 
